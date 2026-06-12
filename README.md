@@ -4,7 +4,7 @@ VS Code extension to coc.nvim converter — package registry & migration documen
 
 ## Registry
 
-[`registry.json`](./registry.json) — list of available VS Code extensions that can be converted to coc.nvim plugins via [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).
+[`registry.json`](./registry.json) — list of available VS Code extensions that can be loaded via [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).
 
 ## Documentation
 
@@ -25,6 +25,6 @@ All migration reference docs are in [`docs/`](./docs/):
 ## Usage
 
 ```bash
-# coc-converter plugin fetches registry from here automatically
-:CocCommand converter.updateRegistry
+# coc-vscode-loader fetches registry from here automatically
+:CocCommand loader.updateRegistry
 ```
