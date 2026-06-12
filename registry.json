@@ -2,7 +2,7 @@
   {
     "name": "volar",
     "displayName": "Volar (Vue)",
-    "description": "Vue language support \u2014 template/script/style IntelliSense",
+    "description": "Vue language support — template/script/style IntelliSense",
     "type": "ts-bridge",
     "source": {
       "type": "github",
@@ -21,7 +21,7 @@
   {
     "name": "prisma",
     "displayName": "Prisma",
-    "description": "Prisma schema language support \u2014 syntax highlight, lint, format",
+    "description": "Prisma schema language support — syntax highlight, lint, format",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -57,7 +57,7 @@
   {
     "name": "lua",
     "displayName": "Lua",
-    "description": "Lua language support \u2014 completion, lint, and type checking",
+    "description": "Lua language support — completion, lint, and type checking",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -75,6 +75,35 @@
       "repo": "LuaLS/lua-language-server",
       "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
       "binaryPath": "bin/lua-language-server"
+    }
+  },
+  {
+    "name": "deno",
+    "displayName": "Deno",
+    "description": "Deno language support — IntelliSense, linting, formatting, testing",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "denoland/vscode_deno"
+    },
+    "url": "https://github.com/denoland/vscode_deno",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.1.2",
+    "serverBinary": {
+      "repo": "denoland/deno",
+      "asset": "deno-{{rust-target}}.zip",
+      "binaryPath": "deno",
+      "args": [
+        "lsp"
+      ]
     }
   }
 ]
