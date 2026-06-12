@@ -21,7 +21,13 @@ Edit [`registry.json`](./registry.json) and add a new entry:
 }
 ```
 
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version, e.g. `"1.1.2"` |
+| `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
+| `serverBinary` | ❌ | Binary LSP download config. See README for fields. |
+
 Then open a Pull Request.
+
+**Note:** Run `python3 -c "import json; json.load(open('registry.json'))"` to validate your entry before committing.
 
 ## Documentation improvements
 

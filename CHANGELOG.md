@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0] - 2026-06-13
+
+### Added
+- Ansible registry entry with `pipPackages` support (`["ansible-lint"]`)
+- `pipPackages` field documentation in README and CONTRIBUTING
+
 ## [1.0.0] - 2026-06-12
 
 ### Added

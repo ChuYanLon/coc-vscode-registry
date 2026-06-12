@@ -19,6 +19,7 @@ Package registry & migration documentation for [coc-vscode-loader](https://www.n
 | `languages` | ✅ | Language IDs this plugin supports |
 | `categories` | ✅ | e.g. `["LSP"]` |
 | `minPluginVersion` | ❌ | Minimum `coc-vscode-loader` version required (e.g. `"1.1.2"`). Entries with `minPluginVersion > current version` are hidden from users. |
+| `pipPackages` | ❌ | Python packages to install via pip during build, e.g. `["ansible-lint"]`. Used by plugins with Python dependencies. |
 | `serverBinary` | ❌ | Auto-download a binary language server from GitHub Releases. See [serverBinary](#serverbinary-config) below. |
 
 ### serverBinary config
