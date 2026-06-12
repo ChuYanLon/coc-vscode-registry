@@ -105,5 +105,33 @@
         "lsp"
       ]
     }
+  },
+  {
+    "name": "taplo",
+    "displayName": "TOML (Taplo)",
+    "description": "TOML language support based on Taplo — formatting, validation, schema",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "tamasfe/taplo",
+      "subdir": "editors/vscode"
+    },
+    "url": "https://github.com/tamasfe/taplo",
+    "languages": [
+      "toml"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.1.2",
+    "serverBinary": {
+      "repo": "tamasfe/taplo",
+      "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
+      "binaryPath": "taplo-{{platform}}-{{raw-arch}}",
+      "args": [
+        "lsp",
+        "stdio"
+      ]
+    }
   }
 ]
