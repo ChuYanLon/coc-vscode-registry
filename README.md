@@ -35,8 +35,8 @@ Package registry & migration documentation for [coc-vscode-loader](https://www.n
 | Field | Required | Description |
 |-------|----------|-------------|
 | `repo` | ✅ | GitHub repo for releases (e.g. `"denoland/deno"`) |
-| `asset` | ✅ | Asset filename template. Variables: `{{version}}`, `{{platform}}` (darwin/linux/win32), `{{arch}}` (x64/arm64), `{{rust-target}}` (aarch64-apple-darwin) |
-| `binaryPath` | ❌ | Relative path inside the archive, e.g. `"bin/lua-language-server"`. Falls back to extracting from asset name. |
+| `asset` | ✅ | Asset filename template. Variables: `{{version}}`, `{{platform}}` (darwin/linux/win32), `{{arch}}` (x64/arm64), `{{raw-arch}}` (aarch64/x86_64), `{{rust-target}}` (aarch64-apple-darwin). Supported archive formats: `.zip`, `.tar.gz`, `.gz` (single file). |
+| `binaryPath` | ❌ | Relative path inside the archive, e.g. `"bin/lua-language-server"`. Supports template variables. Falls back to extracting from asset name. |
 | `args` | ❌ | CLI arguments for the binary LSP (e.g. `["lsp"]` for `deno lsp`). When set, the pipeline uses `{ command, args }` instead of `{ module }` for LanguageClient. |
 
 ## Documentation
