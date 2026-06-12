@@ -1,6 +1,6 @@
 # coc-vscode-registry
 
-Package registry & migration documentation for [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).
+Package registry & migration documentation for [coc-vscode-loader](https://www.npmjs.com/package/coc-vscode-loader).
 
 ## Registry
 
