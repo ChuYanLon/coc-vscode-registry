@@ -1,6 +1,6 @@
 # coc-vscode-registry
 
-VS Code extension to coc.nvim converter — package registry & migration documentation.
+Package registry & migration documentation for [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).
 
 ## Registry
 
@@ -25,6 +25,6 @@ All migration reference docs are in [`docs/`](./docs/):
 ## Usage
 
 ```bash
-# coc-vscode-loader fetches registry from here automatically
+# coc-vscode-loader fetches the registry from this repository
 :CocCommand loader.updateRegistry
 ```
