@@ -151,6 +151,7 @@
     "categories": [
       "LSP"
     ],
+    "minPluginVersion": "1.1.2",
     "pipPackages": [
       "ansible-lint"
     ]
