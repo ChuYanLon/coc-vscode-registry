@@ -217,6 +217,38 @@
     ]
   },
   {
+    "name": "yaml",
+    "displayName": "YAML",
+    "description": "YAML language support — validation, completion, schema, formatting",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "redhat-developer/vscode-yaml"
+    },
+    "url": "https://github.com/redhat-developer/vscode-yaml",
+    "languages": ["yaml"],
+    "categories": ["LSP"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "yaml-language-server",
+          "entry": "bin"
+        },
+        "languages": ["yaml"]
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"],
+        "keepDeps": {
+          "ajv": "^8.17.1"
+        }
+      }
+    ]
+  },
+  {
     "name": "tailwindcss",
     "displayName": "Tailwind CSS IntelliSense",
     "description": "Tailwind CSS class name completion, hover preview, and linting",
