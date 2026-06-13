@@ -17,7 +17,7 @@
       "LSP",
       "TypeScript"
     ],
-    "minPluginVersion": "1.1.4"
+    "minPluginVersion": "1.1.5"
   },
   {
     "name": "prisma",
@@ -36,7 +36,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.1.4"
+    "minPluginVersion": "1.1.5"
   },
   {
     "name": "html-css-support",
@@ -55,7 +55,7 @@
     "categories": [
       "Completion"
     ],
-    "minPluginVersion": "1.1.4"
+    "minPluginVersion": "1.1.5"
   },
   {
     "name": "lua",
@@ -79,7 +79,7 @@
       "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
       "binaryPath": "bin/lua-language-server"
     },
-    "minPluginVersion": "1.1.4"
+    "minPluginVersion": "1.1.5"
   },
   {
     "name": "deno",
@@ -100,7 +100,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.1.4",
+    "minPluginVersion": "1.1.5",
     "serverBinary": {
       "repo": "denoland/deno",
       "asset": "deno-{{rust-target}}.zip",
@@ -127,7 +127,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.1.4",
+    "minPluginVersion": "1.1.5",
     "serverBinary": {
       "repo": "tamasfe/taplo",
       "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
@@ -155,7 +155,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.1.4",
+    "minPluginVersion": "1.1.5",
     "pipPackages": [
       "ansible-lint"
     ]
