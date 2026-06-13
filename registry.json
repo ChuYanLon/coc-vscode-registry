@@ -548,5 +548,36 @@
         "transforms": ["import-mapping"]
       }
     ]
+  },
+  {
+    "name": "svelte",
+    "displayName": "Svelte",
+    "description": "Svelte language support — diagnostics, formatting, IntelliSense",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "sveltejs/language-tools",
+      "subdir": "packages/svelte-vscode"
+    },
+    "url": "https://github.com/sveltejs/language-tools",
+    "languages": ["svelte"],
+    "categories": ["LSP", "TypeScript"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "svelte-language-server",
+          "entry": "bin",
+          "binName": "svelteserver"
+        },
+        "languages": ["svelte"]
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"]
+      }
+    ]
   }
 ]
