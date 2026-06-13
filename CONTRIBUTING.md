@@ -17,13 +17,19 @@ Edit [`registry.json`](./registry.json) and add a new entry:
   },
   "url": "https://github.com/owner/repo",
   "languages": ["lang1", "lang2"],
-  "categories": ["Category"]
+  "categories": ["Category"],
+  "convert": [
+    // v2.0 config-driven conversion steps
+    // See docs/converter-design-v2.md for full reference
+    { "type": "source", "transforms": ["import-mapping"] }
+  ]
 }
 ```
 
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version, e.g. `"1.1.2"` |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version, e.g. `"1.2.0"` |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README for fields. |
+| `convert` | ❌ | v2.0 conversion steps. Required for coc-vscode-loader >= 1.2.0. See [converter-design-v2.md](docs/converter-design-v2.md). |
 
 Then open a Pull Request.
 

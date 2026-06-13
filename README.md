@@ -21,6 +21,7 @@ Package registry & migration documentation for [coc-vscode-loader](https://www.n
 | `minPluginVersion` | ❌ | Minimum `coc-vscode-loader` version required (e.g. `"1.1.2"`). Entries with `minPluginVersion > current version` are hidden from users. |
 | `pipPackages` | ❌ | Python packages to install via pip during build, e.g. `["ansible-lint"]`. Used by plugins with Python dependencies. |
 | `serverBinary` | ❌ | Auto-download a binary language server from GitHub Releases. See [serverBinary](#serverbinary-config) below. |
+| `convert` | ❌ | v2.0 config-driven conversion steps. Array of step objects describing how to transform the extension. See [converter-design-v2.md](docs/converter-design-v2.md). |
 
 ### serverBinary config
 
