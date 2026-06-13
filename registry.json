@@ -617,5 +617,27 @@
         }
       }
     ]
+  },
+  {
+    "name": "gitignore",
+    "displayName": "gitignore",
+    "description": "Generate .gitignore files from GitHub's gitignore templates",
+    "type": "direct-api",
+    "source": {
+      "type": "github",
+      "repo": "codezombiech/vscode-gitignore"
+    },
+    "url": "https://github.com/codezombiech/vscode-gitignore",
+    "languages": ["gitignore"],
+    "categories": ["Other"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "source",
+        "transforms": ["import-mapping"],
+        "entry": "src/extension.ts",
+        "activationEvents": ["onCommand:gitignore.addgitignore"]
+      }
+    ]
   }
 ]
