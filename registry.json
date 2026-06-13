@@ -278,5 +278,34 @@
         "transforms": ["import-mapping"]
       }
     ]
+  },
+  {
+    "name": "stylelint",
+    "displayName": "Stylelint",
+    "description": "CSS/SCSS/Less linting with Stylelint language server",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "stylelint/vscode-stylelint"
+    },
+    "url": "https://github.com/stylelint/vscode-stylelint",
+    "languages": ["css", "scss", "less"],
+    "categories": ["LSP", "Linter"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@stylelint/language-server",
+          "entry": "bin"
+        },
+        "languages": ["css", "scss", "less"]
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"]
+      }
+    ]
   }
 ]
