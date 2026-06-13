@@ -215,5 +215,36 @@
         "transforms": ["import-mapping"]
       }
     ]
+  },
+  {
+    "name": "tailwindcss",
+    "displayName": "Tailwind CSS IntelliSense",
+    "description": "Tailwind CSS class name completion, hover preview, and linting",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "tailwindlabs/tailwindcss-intellisense",
+      "subdir": "packages/vscode-tailwindcss"
+    },
+    "url": "https://github.com/tailwindlabs/tailwindcss-intellisense",
+    "languages": ["css", "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "svelte", "scss"],
+    "categories": ["LSP", "Completion"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@tailwindcss/language-server",
+          "entry": "bin",
+          "binName": "tailwindcss-language-server"
+        },
+        "languages": ["css", "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "svelte", "scss"]
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"]
+      }
+    ]
   }
 ]
