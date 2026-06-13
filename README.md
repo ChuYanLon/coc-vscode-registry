@@ -68,7 +68,7 @@ Each `convert` step is an object with a `type` field. Common fields:
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `transforms` | ✅ | Array of transforms: `import-mapping`, `class-to-factory`, `provider-register`, `enum-offset`, `strip-volar` |
+| `transforms` | ✅ | Array of transforms: `import-mapping`, `class-to-factory`, `provider-register`, `enum-offset`, `strip-volar`, `language-client` |
 | `entry` | ❌ | Entry point for esbuild (default: auto-detected) |
 | `activationEvents` | ❌ | Override activation events (only without language-client) |
 | `keepDeps` | ❌ | Dependencies to keep from the original package.json. Array (auto-resolve version) or object (manual version). |
@@ -100,8 +100,8 @@ Each `convert` step is an object with a `type` field. Common fields:
 | Field | Required | Description |
 |-------|----------|-------------|
 | `repo` | ✅ | GitHub repo for releases (e.g. `"denoland/deno"`) |
-| `asset` | ✅ | Asset filename template. Variables: `{{version}}`, `{{platform}}` (darwin/linux/win32), `{{arch}}` (x64/arm64), `{{raw-arch}}` (aarch64/x86_64), `{{rust-target}}` (aarch64-apple-darwin). Supported archive formats: `.zip`, `.tar.gz`, `.gz` (single file). |
-| `binaryPath` | ❌ | Relative path inside the archive, e.g. `"bin/lua-language-server"`. Supports template variables. Falls back to extracting from asset name. |
+| `asset` | ✅ | Asset filename template. Variables: `{{version}}`, `{{platform}}` (darwin/linux/win32), `{{arch}}` (x64/arm64), `{{raw-arch}}` (aarch64/x86_64), `{{rust-target}}` (aarch64-apple-darwin). Supported formats: `.zip`, `.tar.gz`, `.gz` (single file), or raw binary (no extension). Raw binaries are moved directly to server dir. |
+| `binaryPath` | ❌ | Relative path inside the archive, e.g. `"bin/lua-language-server"`. For raw binaries, this is the output filename. Supports template variables. |
 | `args` | ❌ | CLI arguments for the binary LSP (e.g. `["lsp"]` for `deno lsp`). When set, the pipeline uses `{ command, args }` instead of `{ module }` for LanguageClient. |
 
 ## Documentation
