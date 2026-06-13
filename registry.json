@@ -576,7 +576,45 @@
       },
       {
         "type": "source",
-        "transforms": ["import-mapping"]
+        "transforms": ["import-mapping"],
+        "keepDeps": {
+          "typescript": "*"
+        }
+      }
+    ]
+  },
+  {
+    "name": "astro",
+    "displayName": "Astro",
+    "description": "Astro language support — diagnostics, formatting, IntelliSense",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "withastro/language-tools",
+      "subdir": "packages/vscode"
+    },
+    "url": "https://github.com/withastro/language-tools",
+    "languages": ["astro"],
+    "categories": ["LSP", "TypeScript"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@astrojs/language-server",
+          "entry": "bin",
+          "binName": "astro-ls"
+        },
+        "languages": ["astro"],
+        "initializationOptions": "{ typescript: { tsdk: path.join(__dirname, '..', 'node_modules', 'typescript', 'lib') } }"
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"],
+        "keepDeps": {
+          "typescript": "*"
+        }
       }
     ]
   }

@@ -54,6 +54,7 @@ Each `convert` step is an object with a `type` field. Common fields:
 | `server.entry` | ❌ | `"main"` (default) or `"bin"`. `"bin"` resolves the package's `bin` field. Falls back to `require.resolve('pkg/package.json')` when the package has no `main` field. |
 | `server.binName` | ❌ | When `entry: "bin"` and package has multiple bin entries, pick a specific one by name (e.g. `"tailwindcss-language-server"`). Requires `minPluginVersion: "1.2.2"`. |
 | `languages` | ✅ | Language IDs for document selector |
+| `initializationOptions` | ❌ | JS object expression injected as `initializationOptions` to LanguageClient (e.g. `{ typescript: { tsdk: path.join(...) } }` for Volar-based servers). Inserted as-is in generated code. |
 
 #### source step
 
