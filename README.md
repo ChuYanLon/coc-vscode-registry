@@ -23,6 +23,69 @@ Package registry & migration documentation for [coc-vscode-loader](https://www.n
 | `serverBinary` | ❌ | Auto-download a binary language server from GitHub Releases. See [serverBinary](#serverbinary-config) below. |
 | `convert` | ❌ | v2.0 config-driven conversion steps. Array of step objects describing how to transform the extension. See [converter-design-v2.md](docs/converter-design-v2.md). |
 
+### convert step fields
+
+Each `convert` step is an object with a `type` field. Common fields:
+
+| Field | Applies to | Description |
+|-------|-----------|-------------|
+| `type` | all | `"language-client"` \| `"source"` \| `"bridge"` \| `"mark-unsupported"` |
+| `verbose` | `language-client`, `source` | Enable debug logging in generated code |
+
+#### language-client step
+
+```json
+{
+  "type": "language-client",
+  "server": {
+    "kind": "module",
+    "package": "@tailwindcss/language-server",
+    "entry": "bin",
+    "binName": "tailwindcss-language-server"
+  },
+  "languages": ["css", "html"]
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `server.kind` | ✅ | `"module"` (npm package) or `"binary"` (downloaded binary) |
+| `server.package` | ✅ | npm package name |
+| `server.entry` | ❌ | `"main"` (default) or `"bin"`. `"bin"` resolves the package's `bin` field. Falls back to `require.resolve('pkg/package.json')` when the package has no `main` field. |
+| `server.binName` | ❌ | When `entry: "bin"` and package has multiple bin entries, pick a specific one by name (e.g. `"tailwindcss-language-server"`). Requires `minPluginVersion: "1.2.2"`. |
+| `languages` | ✅ | Language IDs for document selector |
+
+#### source step
+
+```json
+{
+  "type": "source",
+  "transforms": ["import-mapping"],
+  "entry": "src/extension.ts",
+  "keepDeps": ["lodash"]
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `transforms` | ✅ | Array of transforms: `import-mapping`, `class-to-factory`, `provider-register`, `enum-offset`, `strip-volar` |
+| `entry` | ❌ | Entry point for esbuild (default: auto-detected) |
+| `activationEvents` | ❌ | Override activation events (only without language-client) |
+| `keepDeps` | ❌ | Dependencies to keep from the original package.json. Array (auto-resolve version) or object (manual version). |
+
+#### bridge step
+
+```json
+{
+  "type": "bridge",
+  "preset": "ts-bridge"
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `preset` | ✅ | Preset name (currently only `"ts-bridge"`) |
+
 ### serverBinary config
 
 ```json
