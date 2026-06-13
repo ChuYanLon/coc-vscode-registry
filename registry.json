@@ -307,5 +307,28 @@
         "transforms": ["import-mapping"]
       }
     ]
+  },
+  {
+    "name": "prettier-vscode",
+    "displayName": "Prettier",
+    "description": "Code formatter using Prettier — JS/TS/CSS/HTML/JSON/Markdown/YAML",
+    "type": "direct-api",
+    "source": {
+      "type": "github",
+      "repo": "prettier/prettier-vscode"
+    },
+    "url": "https://github.com/prettier/prettier-vscode",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact", "css", "html", "json", "yaml", "markdown", "scss", "less"],
+    "categories": ["Formatter"],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "source",
+        "transforms": ["import-mapping", "class-to-factory", "provider-register", "enum-offset"],
+        "entry": "src/extension.ts",
+        "activationEvents": ["*"],
+        "keepDeps": ["prettier"]
+      }
+    ]
   }
 ]

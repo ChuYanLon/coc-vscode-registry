@@ -57,12 +57,12 @@
 | VS Code | coc.nvim | 备注 |
 |---------|----------|------|
 | `workspace.rootPath` | `workspace.rootPath` | ≈ vscode 可 undefined |
-| `workspace.workspaceFolders` | `workspace.workspaceFolders` | ≈ 类型微差 |
+| `workspace.workspaceFolders` | `workspace.workspaceFolders` | ≈ coc 可能返回 undefined，取用时需 `\|\| []` |
 | `workspace.name` | — | vscode 独有 |
 | `workspace.workspaceFile` | — | vscode 独有 |
 | `workspace.textDocuments` | `workspace.textDocuments` | ≈ coc 返回 LinesTextDocument |
 | `workspace.fs` | — | vscode 独有 |
-| `workspace.isTrusted` | `workspace.isTrusted` | ≈ coc 硬编码 true |
+| `workspace.isTrusted` | — | coc 无此属性，converter 替换为 `true` |
 | `workspace.getConfiguration()` | `workspace.getConfiguration()` | 相同 |
 | `workspace.openTextDocument(uri)` | `workspace.openTextDocument(uri)` | ≈ coc 返回 Document 而非 TextDocument |
 | `workspace.openTextDocument(path)` | `workspace.openTextDocument(path)` | ≈ 同上 |
@@ -90,9 +90,9 @@
 
 | VS Code | coc.nvim | 备注 |
 |---------|----------|------|
-| `window.activeTextEditor` | `window.activeTextEditor` | 相同 |
-| `window.visibleTextEditors` | `window.visibleTextEditors` | 相同 |
-| `window.onDidChangeActiveTextEditor` | `window.onDidChangeActiveTextEditor` | 相同 |
+| `window.activeTextEditor` | — | coc 无此属性，converter 注入 polyfill 使用 `workspace.getDocument()` 近似 |
+| `window.visibleTextEditors` | — | vscode 独有 |
+| `window.onDidChangeActiveTextEditor` | `workspace.onDidOpenTextDocument` | coc 无此事件，converter 替换为 `workspace.onDidOpenTextDocument` |
 | `window.onDidChangeVisibleTextEditors` | `window.onDidChangeVisibleTextEditors` | 相同 |
 | `window.onDidChangeTextEditorSelection` | — | vscode 独有 |
 | `window.onDidChangeTextEditorVisibleRanges` | — | vscode 独有 |
@@ -107,10 +107,11 @@
 | `window.showInputBox` | — | vscode 独有（coc 用 requestInput） |
 | `window.createQuickPick` | `window.createQuickPick` | ≈ coc 返回 Promise |
 | `window.createInputBox` | `window.createInputBox` | ≈ 签名完全不同 |
-| `window.showOpenDialog` | — | vscode 独有 |
+| `window.showOpenDialog` | — | vscode 独有，converter 替换为 `void 0` |
 | `window.showSaveDialog` | — | vscode 独有 |
-| `window.createOutputChannel(name, languageId?)` | `window.createOutputChannel(name)` | ≈ coc 少 languageId |
-| `window.createStatusBarItem(id, alignment?, priority?)` | `window.createStatusBarItem(priority?, option?)` | ≈ 参数不同 |
+| `window.createOutputChannel(name, languageId?)` | `window.createOutputChannel(name)` | ≈ coc 少 languageId（`workspace` 上的已废弃） |
+| `window.createStatusBarItem(id, alignment?, priority?)` | `window.createStatusBarItem(priority?, option?)` | ≈ 参数不同，converter 丢弃前两个参数 |
+| `languages.createLanguageStatusItem` | — | vscode 独有，converter 替换为 no-op |
 | `window.setStatusBarMessage` | — | vscode 独有 |
 | `window.withProgress` | `window.withProgress` | ≈ Thenable vs Promise |
 | `window.createTreeView` | `window.createTreeView` | 相同 |
@@ -128,7 +129,9 @@
 | `languages.getLanguages` | — | vscode 独有（coc 用 workspace.languageIds） |
 | `languages.setTextDocumentLanguage` | — | vscode 独有 |
 | `languages.setLanguageConfiguration` | — | vscode 独有 |
-| `languages.createLanguageStatusItem` | — | vscode 独有 |
+| `languages.createLanguageStatusItem` | — | vscode 独有，converter 替换为 no-op |
+| `languages.registerDocumentFormattingEditProvider` | `languages.registerDocumentFormatProvider` | ≈ 命名不同，converter 默认加 priority=1 |
+| `languages.registerDocumentRangeFormattingEditProvider` | `languages.registerDocumentRangeFormatProvider` | ≈ 同上 |
 | `languages.getDiagnostics` | — | vscode 独有 |
 | `languages.registerCompletionItemProvider` | `languages.registerCompletionItemProvider` | ≈ coc 多 name/shortcut/priority 参数 |
 | `languages.registerInlineCompletionItemProvider` | `languages.registerInlineCompletionItemProvider` | 相同 |

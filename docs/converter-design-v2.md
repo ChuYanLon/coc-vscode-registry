@@ -105,20 +105,25 @@ interface BridgePreset {
 
 ### 当前内置 preset
 
+`presets.json` 中定义了 `type` 字段，映射到 `converter/src/steps/bridge.ts` 的 `BRIDGE_TEMPLATES`：
+
+| 预设 | type | 用途 |
+|------|------|------|
+| `ts-bridge` | `tsserver-forward` | Volar 的 TypeScript 桥接 |
+| `prettier`（已废弃） | `prettier` | 原 prettier 独立生成器，已改用 `source` 步骤 |
+
 ```typescript
-// presets.ts — 只有一个 ts-bridge preset
-'ts-bridge': {
-  name: 'ts-bridge',
-  notification: 'tsserver/request',
-  responseNotification: 'tsserver/response',
-  requiresCommand: 'typescript.tsserverRequest',
-  extraDeps: ['typescript'],
+// BRIDGE_TEMPLATES in bridge.ts
+'tsserver-forward': (opts) => ({
   code: `client.onNotification('tsserver/request', async ([seq, command, args]) => {
     const result = await commands.executeCommand('typescript.tsserverRequest', ...)
     client.sendNotification('tsserver/response', [seq, result?.body])
   })`,
-}
+  ...
+}),
 ```
+
+> **注意**：`prettier` preset 已废弃。prettier-vscode 改用 `source` 步骤直接转换源码。新插件应优先使用 `source`。
 
 ### 桥接检测
 
@@ -126,7 +131,7 @@ scanner 从源码检测 `tsserver/request`、`_vue:`、`typescript.tsserverReque
 
 ### 添加新桥接
 
-只需在 `presets.ts` 加新 preset + `scanner.ts` 加检测模式，不需要改 `convert.ts`。
+只需在 `bridge.ts` 的 `BRIDGE_TEMPLATES` 添加新类型 + `presets.json` 加预设定义。不需要改 `convert.ts`。
 
 ---
 
