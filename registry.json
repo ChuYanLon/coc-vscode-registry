@@ -2545,32 +2545,6 @@
     ]
   },
   {
-    "name": "vscode-snippets",
-    "displayName": "Cypress Snippets",
-    "description": "Cypress Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "andrew-codes/vscode-snippets"
-    },
-    "url": "https://github.com/andrew-codes/vscode-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-java-snippets",
     "displayName": "Java Snippets",
     "description": "Java Snippets",
