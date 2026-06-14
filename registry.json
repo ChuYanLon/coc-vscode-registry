@@ -1974,31 +1974,6 @@
     ]
   },
   {
-    "name": "css",
-    "displayName": "CSS Snippets",
-    "description": "CSS Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "joy-yu/vsc-css-snippets"
-    },
-    "url": "https://github.com/joy-yu/vsc-css-snippets",
-    "languages": [
-      "css",
-      "less",
-      "scss"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "ionic",
     "displayName": "Ionic Snippets",
     "description": "Ionic Snippets",
