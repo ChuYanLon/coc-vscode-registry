@@ -866,10 +866,21 @@
       "repo": "jundat95/react-native-snippet"
     },
     "url": "https://github.com/jundat95/react-native-snippet",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "chai-snippets",
@@ -881,10 +892,19 @@
       "repo": "nwhatt/vs-chai-snippets"
     },
     "url": "https://github.com/nwhatt/vs-chai-snippets",
-    "languages": ["javascript", "typescript"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "cypress-snippets",
@@ -896,10 +916,21 @@
       "repo": "ijsto/cypress-snippets"
     },
     "url": "https://github.com/ijsto/cypress-snippets",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "playwright-snippets",
@@ -911,10 +942,21 @@
       "repo": "nitayneeman/vscode-playwright-snippets"
     },
     "url": "https://github.com/nitayneeman/vscode-playwright-snippets",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "postgresql-snippets",
@@ -926,10 +968,18 @@
       "repo": "Manuel7806/postgresql-snippets"
     },
     "url": "https://github.com/Manuel7806/postgresql-snippets",
-    "languages": ["sql"],
-    "categories": ["Snippets"],
+    "languages": [
+      "sql"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "mysql-snippets",
@@ -941,10 +991,19 @@
       "repo": "zendobk/vscode-mysql"
     },
     "url": "https://github.com/zendobk/vscode-mysql",
-    "languages": ["mysql", "sql"],
-    "categories": ["Snippets"],
+    "languages": [
+      "mysql",
+      "sql"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "nuxt-snippets",
@@ -956,10 +1015,21 @@
       "repo": "praburangki/nuxt-vscode-snippets"
     },
     "url": "https://github.com/praburangki/nuxt-vscode-snippets",
-    "languages": ["vue", "html", "javascript", "typescript"],
-    "categories": ["Snippets"],
+    "languages": [
+      "vue",
+      "html",
+      "javascript",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "nextjs-snippets",
@@ -971,10 +1041,21 @@
       "repo": "ijsto/reactnextjssnippets"
     },
     "url": "https://github.com/ijsto/reactnextjssnippets",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "svelte-snippets",
@@ -986,10 +1067,22 @@
       "repo": "ryanyang52/vscode-svelte-snippets"
     },
     "url": "https://github.com/ryanyang52/vscode-svelte-snippets",
-    "languages": ["svelte", "javascript", "typescript", "css", "html"],
-    "categories": ["Snippets"],
+    "languages": [
+      "svelte",
+      "javascript",
+      "typescript",
+      "css",
+      "html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "solidjs-snippets",
@@ -1001,10 +1094,21 @@
       "repo": "solidjs-community/solid-snippets"
     },
     "url": "https://github.com/solidjs-community/solid-snippets",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-    "categories": ["Snippets"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "unity-snippets",
@@ -1016,10 +1120,18 @@
       "repo": "YclepticStudios/vscode-unity-snippets"
     },
     "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
-    "languages": ["csharp"],
-    "categories": ["Snippets"],
+    "languages": [
+      "csharp"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "nestjs-snippets",
@@ -1031,10 +1143,18 @@
       "repo": "ManuelGil/vscode-nestjs-snippets"
     },
     "url": "https://github.com/ManuelGil/vscode-nestjs-snippets",
-    "languages": ["typescript"],
-    "categories": ["Snippets"],
+    "languages": [
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
   {
     "name": "fastapi-snippets",
@@ -1046,12 +1166,19 @@
       "repo": "damildrizzy/fastapi-snippets"
     },
     "url": "https://github.com/damildrizzy/fastapi-snippets",
-    "languages": ["python"],
-    "categories": ["Snippets"],
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
     "minPluginVersion": "1.2.6",
-    "convert": [{ "type": "snippets" }]
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   },
-
   {
     "name": "vsc_html5_boilerplate",
     "displayName": "HTML Boilerplate",
@@ -3075,6 +3202,31 @@
     "url": "https://github.com/cemuka/vscode-unity-code-snippets",
     "languages": [
       "csharp"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "ejs-snippets",
+    "displayName": "EJS Snippets",
+    "description": "EJS (Embedded JavaScript) template code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "theranbrig/ejs-snippets"
+    },
+    "url": "https://github.com/theranbrig/ejs-snippets",
+    "languages": [
+      "ejs",
+      "html",
+      "javascript"
     ],
     "categories": [
       "Snippets"
