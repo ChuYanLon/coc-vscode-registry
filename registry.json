@@ -849,5 +849,187 @@
         "type": "snippets"
       }
     ]
+  },
+  {
+    "name": "react-native-snippets",
+    "displayName": "React Native Snippet",
+    "description": "React Native code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "jundat95/react-native-snippet"
+    },
+    "url": "https://github.com/jundat95/react-native-snippet",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "chai-snippets",
+    "displayName": "Chai snippets",
+    "description": "Chai assertion library code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "nwhatt/vs-chai-snippets"
+    },
+    "url": "https://github.com/nwhatt/vs-chai-snippets",
+    "languages": ["javascript", "typescript"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "cypress-snippets",
+    "displayName": "Cypress Snippets",
+    "description": "Cypress testing framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ijsto/cypress-snippets"
+    },
+    "url": "https://github.com/ijsto/cypress-snippets",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "playwright-snippets",
+    "displayName": "Playwright Snippets",
+    "description": "Playwright testing framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "nitayneeman/vscode-playwright-snippets"
+    },
+    "url": "https://github.com/nitayneeman/vscode-playwright-snippets",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "postgresql-snippets",
+    "displayName": "PostgreSQL Snippets",
+    "description": "PostgreSQL code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "Manuel7806/postgresql-snippets"
+    },
+    "url": "https://github.com/Manuel7806/postgresql-snippets",
+    "languages": ["sql"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "mysql-snippets",
+    "displayName": "MySQL Snippets",
+    "description": "MySQL syntax highlighting and code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "zendobk/vscode-mysql"
+    },
+    "url": "https://github.com/zendobk/vscode-mysql",
+    "languages": ["mysql", "sql"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "nuxt-snippets",
+    "displayName": "Vue & Nuxt Snippets",
+    "description": "Nuxt and Vue.js code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "praburangki/nuxt-vscode-snippets"
+    },
+    "url": "https://github.com/praburangki/nuxt-vscode-snippets",
+    "languages": ["vue", "html", "javascript", "typescript"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "nextjs-snippets",
+    "displayName": "Next.js React Snippets",
+    "description": "Next.js and React code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ijsto/reactnextjssnippets"
+    },
+    "url": "https://github.com/ijsto/reactnextjssnippets",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "svelte-snippets",
+    "displayName": "Svelte 3 Snippets",
+    "description": "Svelte 3 code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ryanyang52/vscode-svelte-snippets"
+    },
+    "url": "https://github.com/ryanyang52/vscode-svelte-snippets",
+    "languages": ["svelte", "javascript", "typescript", "css", "html"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "solidjs-snippets",
+    "displayName": "SolidJS Snippets",
+    "description": "SolidJS framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "solidjs-community/solid-snippets"
+    },
+    "url": "https://github.com/solidjs-community/solid-snippets",
+    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "unity-snippets",
+    "displayName": "Unity Snippets",
+    "description": "Unity game engine C# code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "YclepticStudios/vscode-unity-snippets"
+    },
+    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
+    "languages": ["csharp"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "nestjs-snippets",
+    "displayName": "NestJS Snippets",
+    "description": "NestJS framework code snippets for TypeScript",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ManuelGil/vscode-nestjs-snippets"
+    },
+    "url": "https://github.com/ManuelGil/vscode-nestjs-snippets",
+    "languages": ["typescript"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
+  },
+  {
+    "name": "fastapi-snippets",
+    "displayName": "FastAPI Snippets",
+    "description": "FastAPI Python framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "damildrizzy/fastapi-snippets"
+    },
+    "url": "https://github.com/damildrizzy/fastapi-snippets",
+    "languages": ["python"],
+    "categories": ["Snippets"],
+    "convert": [{ "type": "snippets" }]
   }
 ]
