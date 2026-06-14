@@ -131,39 +131,41 @@ function render() {
   currentPage = 1;
   renderFilters();
   renderPackageCards(filtered);
-
-  document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const cmd = btn.dataset.cmd;
-      try {
-        await navigator.clipboard.writeText(cmd);
-      } catch {
-        const ta = document.createElement('textarea');
-        ta.value = cmd;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-      }
-      const orig = btn.innerHTML;
-      btn.classList.add('btn-copied');
-      btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Copied!`;
-      setTimeout(() => {
-        btn.classList.remove('btn-copied');
-        btn.innerHTML = orig;
-      }, 2000);
-    });
-  });
-
-  document.querySelectorAll('.load-more').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentPage = parseInt(btn.dataset.page);
-      const filtered = filterPackages();
-      renderPackageCards(filtered);
-      document.querySelector('.pagination')?.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 }
+
+// Event delegation for dynamic buttons
+document.getElementById('package-list').addEventListener('click', async e => {
+  const copyBtn = e.target.closest('.copy-btn');
+  if (copyBtn) {
+    const cmd = copyBtn.dataset.cmd;
+    try {
+      await navigator.clipboard.writeText(cmd);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = cmd;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    const orig = copyBtn.innerHTML;
+    copyBtn.classList.add('btn-copied');
+    copyBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Copied!`;
+    setTimeout(() => {
+      copyBtn.classList.remove('btn-copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    return;
+  }
+
+  const loadBtn = e.target.closest('.load-more');
+  if (loadBtn) {
+    currentPage = parseInt(loadBtn.dataset.page);
+    const filtered = filterPackages();
+    renderPackageCards(filtered);
+    document.querySelector('.pagination')?.scrollIntoView({ behavior: 'smooth' });
+  }
+});
 
 // Filter clicks via event delegation (no re-binding on every render)
 document.getElementById('type-filters').addEventListener('click', e => {
