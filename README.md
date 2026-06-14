@@ -24,7 +24,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `name` | ✅ | Unique package identifier |
 | `displayName` | ✅ | Human-readable name |
 | `description` | ✅ | Short description |
-| `type` | ✅ | `"pure-lsp"` \| `"ts-bridge"` \| `"direct-api"` |
+| `type` | ✅ | `"pure-lsp"` \| `"ts-bridge"` \| `"direct-api"` \| `"snippets"` |
 | `source` | ✅ | `{ type: "github", repo: "org/repo", subdir?: "path" }` |
 | `url` | ✅ | Project homepage |
 | `languages` | ✅ | Language IDs this plugin supports |
@@ -42,6 +42,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `source` | Apply AST transforms to source files |
 | `bridge` | Generate bridge code (e.g. ts-bridge for Volar-like plugins) |
 | `mark-unsupported` | Comment out unsupported API calls |
+| `snippets` | Copy snippet files and generate empty entry for pure snippet extensions |
 
 ### serverBinary config
 
