@@ -2,6 +2,12 @@
 
 [![website](https://img.shields.io/badge/🌐_Browse_Registry-coc--plugin.github.io-blue?style=for-the-badge)](https://coc-plugin.github.io/coc-vscode-registry/)
 
+Browse and install VS Code extensions on **coc.nvim** — search, filter, and copy install commands.
+
+![Registry preview](https://raw.githubusercontent.com/coc-plugin/coc-vscode-registry/main/assets/registry-preview.png)
+
+---
+
 Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).
 
 ## Files
@@ -64,11 +70,5 @@ Defines reusable bridge presets (currently only `ts-bridge`):
   }
 }
 ```
-
-## Website
-
-**[coc-plugin.github.io/coc-vscode-registry](https://coc-plugin.github.io/coc-vscode-registry/)** — search, filter, and copy install commands.
-
-![Registry preview](https://raw.githubusercontent.com/coc-plugin/coc-vscode-registry/main/assets/registry-preview.png)
 
 > 📖 Migration docs, API mapping references, and converter design: [`coc-vscode-loader/docs`](https://github.com/coc-plugin/coc-vscode-loader/tree/main/docs)
