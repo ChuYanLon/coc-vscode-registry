@@ -4,7 +4,7 @@
 
 Browse and install VS Code extensions on **coc.nvim** — search, filter, and copy install commands.
 
-![Registry preview](https://raw.githubusercontent.com/coc-plugin/coc-vscode-registry/main/assets/registry-preview.png)
+![Registry preview](https://cdn.jsdelivr.net/gh/coc-plugin/coc-vscode-registry@main/assets/registry-preview.png)
 
 ---
 
