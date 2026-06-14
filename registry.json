@@ -1,6 +1,6 @@
 [
   {
-    "name": "volar",
+    "name": "vscode-volar",
     "displayName": "Volar (Vue)",
     "description": "Vue language support — template/script/style IntelliSense",
     "type": "ts-bridge",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "name": "prisma",
+    "name": "vscode-prisma",
     "displayName": "Prisma",
     "description": "Prisma schema language support — syntax highlight, lint, format",
     "type": "pure-lsp",
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "name": "html-css-support",
+    "name": "vscode-html-css-support",
     "displayName": "HTML CSS Support",
     "description": "CSS class name completion for HTML attributes",
     "type": "direct-api",
@@ -123,7 +123,7 @@
     ]
   },
   {
-    "name": "lua",
+    "name": "vscode-lua",
     "displayName": "Lua",
     "description": "Lua language support — completion, lint, and type checking",
     "type": "pure-lsp",
@@ -170,7 +170,7 @@
     ]
   },
   {
-    "name": "deno",
+    "name": "vscode-deno",
     "displayName": "Deno",
     "description": "Deno language support — IntelliSense, linting, formatting, testing",
     "type": "pure-lsp",
@@ -228,7 +228,7 @@
     ]
   },
   {
-    "name": "taplo",
+    "name": "vscode-taplo",
     "displayName": "TOML (Taplo)",
     "description": "TOML language support based on Taplo — formatting, validation, schema",
     "type": "pure-lsp",
@@ -283,7 +283,7 @@
     ]
   },
   {
-    "name": "ansible",
+    "name": "vscode-ansible",
     "displayName": "Ansible",
     "description": "Ansible language support — completion, navigation, validation, playbook runner",
     "type": "pure-lsp",
@@ -325,7 +325,7 @@
     ]
   },
   {
-    "name": "yaml",
+    "name": "vscode-yaml",
     "displayName": "YAML",
     "description": "YAML language support — validation, completion, schema, formatting",
     "type": "pure-lsp",
@@ -365,7 +365,7 @@
     ]
   },
   {
-    "name": "tailwindcss",
+    "name": "vscode-tailwindcss",
     "displayName": "Tailwind CSS IntelliSense",
     "description": "Tailwind CSS class name completion, hover preview, and linting",
     "type": "pure-lsp",
@@ -421,7 +421,7 @@
     ]
   },
   {
-    "name": "stylelint",
+    "name": "vscode-stylelint",
     "displayName": "Stylelint",
     "description": "CSS/SCSS/Less linting with Stylelint language server",
     "type": "pure-lsp",
@@ -463,7 +463,7 @@
     ]
   },
   {
-    "name": "prettier-vscode",
+    "name": "vscode-prettier-vscode",
     "displayName": "Prettier",
     "description": "Code formatter using Prettier — JS/TS/CSS/HTML/JSON/Markdown/YAML",
     "type": "direct-api",
@@ -509,7 +509,7 @@
     ]
   },
   {
-    "name": "biome",
+    "name": "vscode-biome",
     "displayName": "Biome",
     "description": "Linter and formatter for JS/TS/CSS/JSON — one tool, fast",
     "type": "pure-lsp",
@@ -588,7 +588,7 @@
     ]
   },
   {
-    "name": "svelte",
+    "name": "vscode-svelte",
     "displayName": "Svelte",
     "description": "Svelte language support — diagnostics, formatting, IntelliSense",
     "type": "pure-lsp",
@@ -631,7 +631,7 @@
     ]
   },
   {
-    "name": "astro",
+    "name": "vscode-astro",
     "displayName": "Astro",
     "description": "Astro language support — diagnostics, formatting, IntelliSense",
     "type": "pure-lsp",
@@ -675,7 +675,7 @@
     ]
   },
   {
-    "name": "gitignore",
+    "name": "vscode-gitignore",
     "displayName": "gitignore",
     "description": "Generate .gitignore files from GitHub's gitignore templates",
     "type": "direct-api",
@@ -705,7 +705,7 @@
     ]
   },
   {
-    "name": "javascript-snippets",
+    "name": "vscode-javascript-snippets",
     "displayName": "JavaScript ES6 Snippets",
     "description": "Code snippets for JavaScript in ES6 syntax",
     "type": "snippets",
@@ -733,7 +733,7 @@
     ]
   },
   {
-    "name": "react-snippets",
+    "name": "vscode-react-snippets",
     "displayName": "Reactjs code snippets",
     "description": "Code snippets for React.js in ES6 syntax",
     "type": "snippets",
@@ -759,7 +759,7 @@
     ]
   },
   {
-    "name": "typescript-react-snippets",
+    "name": "vscode-typescript-react-snippets",
     "displayName": "Typescript React code snippets",
     "description": "Code snippets for React.js in TypeScript",
     "type": "snippets",
@@ -783,7 +783,7 @@
     ]
   },
   {
-    "name": "es7-react-snippets",
+    "name": "vscode-es7-react-snippets",
     "displayName": "ES7+ React/Redux/React-Native snippets",
     "description": "Snippets for React, Redux, React Native in ES7+",
     "type": "snippets",
@@ -809,7 +809,7 @@
     ]
   },
   {
-    "name": "vue-snippets",
+    "name": "vscode-vue-snippets",
     "displayName": "Vue VSCode Snippets",
     "description": "Snippets for Vue.js 2",
     "type": "snippets",
@@ -833,7 +833,7 @@
     ]
   },
   {
-    "name": "vue3-snippets",
+    "name": "vscode-vue3-snippets",
     "displayName": "Vue 3 Snippets",
     "description": "Snippets for Vue.js 3",
     "type": "snippets",
@@ -857,7 +857,7 @@
     ]
   },
   {
-    "name": "react-native-snippets",
+    "name": "vscode-react-native-snippets",
     "displayName": "React Native Snippet",
     "description": "React Native code snippets",
     "type": "snippets",
@@ -883,7 +883,7 @@
     ]
   },
   {
-    "name": "chai-snippets",
+    "name": "vscode-chai-snippets",
     "displayName": "Chai snippets",
     "description": "Chai assertion library code snippets",
     "type": "snippets",
@@ -907,7 +907,7 @@
     ]
   },
   {
-    "name": "cypress-snippets",
+    "name": "vscode-cypress-snippets",
     "displayName": "Cypress Snippets",
     "description": "Cypress testing framework code snippets",
     "type": "snippets",
@@ -933,7 +933,7 @@
     ]
   },
   {
-    "name": "playwright-snippets",
+    "name": "vscode-playwright-snippets",
     "displayName": "Playwright Snippets",
     "description": "Playwright testing framework code snippets",
     "type": "snippets",
@@ -959,7 +959,7 @@
     ]
   },
   {
-    "name": "postgresql-snippets",
+    "name": "vscode-postgresql-snippets",
     "displayName": "PostgreSQL Snippets",
     "description": "PostgreSQL code snippets",
     "type": "snippets",
@@ -982,7 +982,7 @@
     ]
   },
   {
-    "name": "mysql-snippets",
+    "name": "vscode-mysql-snippets",
     "displayName": "MySQL Snippets",
     "description": "MySQL syntax highlighting and code snippets",
     "type": "snippets",
@@ -1006,7 +1006,7 @@
     ]
   },
   {
-    "name": "nuxt-snippets",
+    "name": "vscode-nuxt-snippets",
     "displayName": "Vue & Nuxt Snippets",
     "description": "Nuxt and Vue.js code snippets",
     "type": "snippets",
@@ -1032,7 +1032,7 @@
     ]
   },
   {
-    "name": "nextjs-snippets",
+    "name": "vscode-nextjs-snippets",
     "displayName": "Next.js React Snippets",
     "description": "Next.js and React code snippets",
     "type": "snippets",
@@ -1058,7 +1058,7 @@
     ]
   },
   {
-    "name": "svelte-snippets",
+    "name": "vscode-svelte-snippets",
     "displayName": "Svelte 3 Snippets",
     "description": "Svelte 3 code snippets",
     "type": "snippets",
@@ -1085,7 +1085,7 @@
     ]
   },
   {
-    "name": "solidjs-snippets",
+    "name": "vscode-solidjs-snippets",
     "displayName": "SolidJS Snippets",
     "description": "SolidJS framework code snippets",
     "type": "snippets",
@@ -1111,7 +1111,7 @@
     ]
   },
   {
-    "name": "unity-snippets",
+    "name": "vscode-unity-snippets",
     "displayName": "Unity Snippets",
     "description": "Unity game engine C# code snippets",
     "type": "snippets",
@@ -1134,7 +1134,7 @@
     ]
   },
   {
-    "name": "nestjs-snippets",
+    "name": "vscode-nestjs-snippets",
     "displayName": "NestJS Snippets",
     "description": "NestJS framework code snippets for TypeScript",
     "type": "snippets",
@@ -1157,7 +1157,7 @@
     ]
   },
   {
-    "name": "fastapi-snippets",
+    "name": "vscode-fastapi-snippets",
     "displayName": "FastAPI Snippets",
     "description": "FastAPI Python framework code snippets",
     "type": "snippets",
@@ -1180,7 +1180,7 @@
     ]
   },
   {
-    "name": "vsc_html5_boilerplate",
+    "name": "vscode-vsc_html5_boilerplate",
     "displayName": "HTML Boilerplate",
     "description": "HTML Boilerplate",
     "type": "snippets",
@@ -1207,7 +1207,7 @@
     ]
   },
   {
-    "name": "angular",
+    "name": "vscode-angular",
     "displayName": "Angular Snippets (Version 18)",
     "description": "Angular Snippets (Version 18)",
     "type": "snippets",
@@ -1234,7 +1234,7 @@
     ]
   },
   {
-    "name": "bootstrap4",
+    "name": "vscode-bootstrap4",
     "displayName": "Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets",
     "description": "Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets",
     "type": "snippets",
@@ -1278,7 +1278,7 @@
     ]
   },
   {
-    "name": "es7-javascript-react",
+    "name": "vscode-es7-javascript-react",
     "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
     "description": "ES7 React/Redux/GraphQL/React-Native snippets",
     "type": "snippets",
@@ -1304,7 +1304,7 @@
     ]
   },
   {
-    "name": "laravel5-snippets",
+    "name": "vscode-laravel5-snippets",
     "displayName": "Laravel Snippets",
     "description": "Laravel Snippets",
     "type": "snippets",
@@ -1328,7 +1328,7 @@
     ]
   },
   {
-    "name": "VSCode-Angular-TypeScript-Snippets",
+    "name": "vscode-angular-ngrx-snippets",
     "displayName": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
     "description": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
     "type": "snippets",
@@ -1353,7 +1353,7 @@
     ]
   },
   {
-    "name": "flutter",
+    "name": "vscode-flutter",
     "displayName": "Flutter Widget Snippets",
     "description": "Flutter Widget Snippets",
     "type": "snippets",
@@ -1376,7 +1376,7 @@
     ]
   },
   {
-    "name": "VSC-React-Native-React-Redux-Snippets",
+    "name": "vscode-react-native-redux-snippets",
     "displayName": "React-Native/React/Redux snippets for es6/es7",
     "description": "React-Native/React/Redux snippets for es6/es7",
     "type": "snippets",
@@ -1403,7 +1403,7 @@
     ]
   },
   {
-    "name": "cpp",
+    "name": "vscode-cpp",
     "displayName": "C/C++ Snippets",
     "description": "C/C++ Snippets",
     "type": "snippets",
@@ -1427,7 +1427,7 @@
     ]
   },
   {
-    "name": "djaneiro",
+    "name": "vscode-djaneiro",
     "displayName": "Djaneiro - Django Snippets",
     "description": "Djaneiro - Django Snippets",
     "type": "snippets",
@@ -1452,7 +1452,7 @@
     ]
   },
   {
-    "name": "python",
+    "name": "vscode-python",
     "displayName": "python-snippets",
     "description": "python-snippets",
     "type": "snippets",
@@ -1475,7 +1475,7 @@
     ]
   },
   {
-    "name": "python-snippet-pack",
+    "name": "vscode-python-snippet-pack",
     "displayName": "python snippets",
     "description": "python snippets",
     "type": "snippets",
@@ -1498,7 +1498,7 @@
     ]
   },
   {
-    "name": "awesome-flutter",
+    "name": "vscode-awesome-flutter",
     "displayName": "Awesome Flutter Snippets",
     "description": "Awesome Flutter Snippets",
     "type": "snippets",
@@ -1521,7 +1521,7 @@
     ]
   },
   {
-    "name": "react-typescript",
+    "name": "vscode-react-typescript",
     "displayName": "Typescript React code snippets",
     "description": "Typescript React code snippets",
     "type": "snippets",
@@ -1545,7 +1545,7 @@
     ]
   },
   {
-    "name": "node",
+    "name": "vscode-node",
     "displayName": "node-snippets",
     "description": "node-snippets",
     "type": "snippets",
@@ -1571,7 +1571,7 @@
     ]
   },
   {
-    "name": "csharp",
+    "name": "vscode-csharp",
     "displayName": "C# Snippets",
     "description": "C# Snippets",
     "type": "snippets",
@@ -1594,7 +1594,7 @@
     ]
   },
   {
-    "name": "bootstrap-3",
+    "name": "vscode-bootstrap-3",
     "displayName": "Bootstrap 3 Snippets",
     "description": "Bootstrap 3 Snippets",
     "type": "snippets",
@@ -1625,7 +1625,7 @@
     ]
   },
   {
-    "name": "flask",
+    "name": "vscode-flask",
     "displayName": "flask-snippets",
     "description": "flask-snippets",
     "type": "snippets",
@@ -1649,7 +1649,7 @@
     ]
   },
   {
-    "name": "Pygame-Snippets",
+    "name": "vscode-pygame-snippets",
     "displayName": "Pygame Snippets",
     "description": "Pygame Snippets",
     "type": "snippets",
@@ -1672,7 +1672,7 @@
     ]
   },
   {
-    "name": "bootstrap-v4",
+    "name": "vscode-bootstrap-v4",
     "displayName": "Bootstrap v4 Snippets",
     "description": "Bootstrap v4 Snippets",
     "type": "snippets",
@@ -1700,7 +1700,7 @@
     ]
   },
   {
-    "name": "svelte",
+    "name": "vscode-svelte-2",
     "displayName": "Svelte 3 Snippets",
     "description": "Svelte 3 Snippets",
     "type": "snippets",
@@ -1726,7 +1726,7 @@
     ]
   },
   {
-    "name": "wordpress-toolbox",
+    "name": "vscode-wordpress-toolbox",
     "displayName": "WordPress Snippets",
     "description": "WordPress Snippets",
     "type": "snippets",
@@ -1750,7 +1750,7 @@
     ]
   },
   {
-    "name": "material2",
+    "name": "vscode-material2",
     "displayName": "Angular Material 2, Flex layout 1, Covalent 1 & Material icon snippets",
     "description": "Angular Material 2, Flex layout 1, Covalent 1 & Material icon snippets",
     "type": "snippets",
@@ -1784,7 +1784,7 @@
     ]
   },
   {
-    "name": "B5-SNIPPETS",
+    "name": "vscode-bootstrap5-snippets",
     "displayName": "Bootstrap 5 & Font Awesome Snippets",
     "description": "Bootstrap 5 & Font Awesome Snippets",
     "type": "snippets",
@@ -1828,7 +1828,7 @@
     ]
   },
   {
-    "name": "angular",
+    "name": "vscode-angular-2",
     "displayName": "Angular 8 and TypeScript/HTML VS Code Snippets",
     "description": "Angular 8 and TypeScript/HTML VS Code Snippets",
     "type": "snippets",
@@ -1852,7 +1852,7 @@
     ]
   },
   {
-    "name": "unity",
+    "name": "vscode-unity",
     "displayName": "Unity Snippets",
     "description": "Unity Snippets",
     "type": "snippets",
@@ -1875,7 +1875,7 @@
     ]
   },
   {
-    "name": "django",
+    "name": "vscode-django",
     "displayName": "Django Snippets",
     "description": "Django Snippets",
     "type": "snippets",
@@ -1898,7 +1898,7 @@
     ]
   },
   {
-    "name": "jest",
+    "name": "vscode-jest",
     "displayName": "Jest Snippets",
     "description": "Jest Snippets",
     "type": "snippets",
@@ -1924,7 +1924,7 @@
     ]
   },
   {
-    "name": "next.js",
+    "name": "vscode-next.js",
     "displayName": "Nextjs snippets",
     "description": "Nextjs snippets",
     "type": "snippets",
@@ -1950,7 +1950,7 @@
     ]
   },
   {
-    "name": "ng2-typescript",
+    "name": "vscode-ng2-typescript",
     "displayName": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
     "description": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
     "type": "snippets",
@@ -1974,7 +1974,7 @@
     ]
   },
   {
-    "name": "ionic",
+    "name": "vscode-ionic",
     "displayName": "Ionic Snippets",
     "description": "Ionic Snippets",
     "type": "snippets",
@@ -2001,7 +2001,7 @@
     ]
   },
   {
-    "name": "python-snippet-pack-2.0",
+    "name": "vscode-python-snippet-pack-2.0",
     "displayName": "Python Snippets 3",
     "description": "Python Snippets 3",
     "type": "snippets",
@@ -2026,7 +2026,7 @@
     ]
   },
   {
-    "name": "jquery-snippets",
+    "name": "vscode-jquery-snippets",
     "displayName": "jQuery Snippets",
     "description": "jQuery Snippets",
     "type": "snippets",
@@ -2049,7 +2049,7 @@
     ]
   },
   {
-    "name": "tkinter",
+    "name": "vscode-tkinter",
     "displayName": "Tkinter Snippets",
     "description": "Tkinter Snippets",
     "type": "snippets",
@@ -2072,7 +2072,7 @@
     ]
   },
   {
-    "name": "php-awesome",
+    "name": "vscode-php-awesome",
     "displayName": "PHP Awesome Snippets",
     "description": "PHP Awesome Snippets",
     "type": "snippets",
@@ -2097,7 +2097,7 @@
     ]
   },
   {
-    "name": "react-redux-react-router",
+    "name": "vscode-react-redux-react-router",
     "displayName": "React/Redux/react-router Snippets",
     "description": "React/Redux/react-router Snippets",
     "type": "snippets",
@@ -2122,7 +2122,7 @@
     ]
   },
   {
-    "name": "OpencvSnippets",
+    "name": "vscode-opencv-snippets",
     "displayName": "Opencv Snippets",
     "description": "Opencv Snippets",
     "type": "snippets",
@@ -2145,7 +2145,7 @@
     ]
   },
   {
-    "name": "styled-components-snippets",
+    "name": "vscode-styled-components-snippets",
     "displayName": "styled-components-snippets",
     "description": "styled-components-snippets",
     "type": "snippets",
@@ -2173,7 +2173,7 @@
     ]
   },
   {
-    "name": "vue2",
+    "name": "vscode-vue2",
     "displayName": "Vue 2 Snippets",
     "description": "Vue 2 Snippets",
     "type": "snippets",
@@ -2204,7 +2204,7 @@
     ]
   },
   {
-    "name": "full-react",
+    "name": "vscode-full-react",
     "displayName": "Fullstack React/React Native snippets",
     "description": "Fullstack React/React Native snippets",
     "type": "snippets",
@@ -2230,7 +2230,7 @@
     ]
   },
   {
-    "name": "standardjs",
+    "name": "vscode-standardjs",
     "displayName": "JavaScript standardjs styled snippets",
     "description": "JavaScript standardjs styled snippets",
     "type": "snippets",
@@ -2256,7 +2256,7 @@
     ]
   },
   {
-    "name": "angular-bootstrap-code",
+    "name": "vscode-angular-bootstrap-code",
     "displayName": "Angular UI Bootstrap Snippets",
     "description": "Angular UI Bootstrap Snippets",
     "type": "snippets",
@@ -2280,7 +2280,7 @@
     ]
   },
   {
-    "name": "tensorflow",
+    "name": "vscode-tensorflow",
     "displayName": "TensorFlow Snippets",
     "description": "TensorFlow Snippets",
     "type": "snippets",
@@ -2303,7 +2303,7 @@
     ]
   },
   {
-    "name": "vue3-snippets-for",
+    "name": "vscode-vue3-snippets-for",
     "displayName": "vue3-snippets-for-vscode",
     "description": "vue3-snippets-for-vscode",
     "type": "snippets",
@@ -2329,7 +2329,7 @@
     ]
   },
   {
-    "name": "pytorch",
+    "name": "vscode-pytorch",
     "displayName": "PyTorch Snippets",
     "description": "PyTorch Snippets",
     "type": "snippets",
@@ -2352,7 +2352,7 @@
     ]
   },
   {
-    "name": "phpstorm-snippets-for",
+    "name": "vscode-phpstorm-snippets-for",
     "displayName": "PHP Snippets from PHPStorm",
     "description": "PHP Snippets from PHPStorm",
     "type": "snippets",
@@ -2375,7 +2375,7 @@
     ]
   },
   {
-    "name": "laravel-model",
+    "name": "vscode-laravel-model",
     "displayName": "Laravel Model Snippets",
     "description": "Laravel Model Snippets",
     "type": "snippets",
@@ -2398,7 +2398,7 @@
     ]
   },
   {
-    "name": "liquid",
+    "name": "vscode-liquid",
     "displayName": "Shopify Liquid Template Snippets",
     "description": "Shopify Liquid Template Snippets",
     "type": "snippets",
@@ -2421,7 +2421,7 @@
     ]
   },
   {
-    "name": "asp-net-core",
+    "name": "vscode-asp-net-core",
     "displayName": "ASP.NET Core Snippets",
     "description": "ASP.NET Core Snippets",
     "type": "snippets",
@@ -2445,7 +2445,7 @@
     ]
   },
   {
-    "name": "arduino",
+    "name": "vscode-arduino",
     "displayName": "arduino-snippets",
     "description": "arduino-snippets",
     "type": "snippets",
@@ -2468,7 +2468,7 @@
     ]
   },
   {
-    "name": "uni-app-snippets",
+    "name": "vscode-uni-app-snippets",
     "displayName": "uni-app-snippets",
     "description": "uni-app-snippets",
     "type": "snippets",
@@ -2503,7 +2503,7 @@
     ]
   },
   {
-    "name": "springboot",
+    "name": "vscode-springboot",
     "displayName": "Spring Boot Snippets",
     "description": "Spring Boot Snippets",
     "type": "snippets",
@@ -2528,7 +2528,7 @@
     ]
   },
   {
-    "name": "apacheconf",
+    "name": "vscode-apacheconf",
     "displayName": "Apache Conf Snippets",
     "description": "Apache Conf Snippets",
     "type": "snippets",
@@ -2551,7 +2551,7 @@
     ]
   },
   {
-    "name": "Wildlife-Theme",
+    "name": "vscode-java-imports-snippets",
     "displayName": "Java Imports Snippets",
     "description": "Java Imports Snippets",
     "type": "snippets",
@@ -2574,7 +2574,7 @@
     ]
   },
   {
-    "name": "angular1",
+    "name": "vscode-angular1",
     "displayName": "Angular 1 JavaScript and TypeScript Snippets",
     "description": "Angular 1 JavaScript and TypeScript Snippets",
     "type": "snippets",
@@ -2598,7 +2598,7 @@
     ]
   },
   {
-    "name": "flutter-riverpod",
+    "name": "vscode-flutter-riverpod",
     "displayName": "Flutter Riverpod Snippets",
     "description": "Flutter Riverpod Snippets",
     "type": "snippets",
@@ -2621,7 +2621,7 @@
     ]
   },
   {
-    "name": "rxjs-snippets",
+    "name": "vscode-rxjs-snippets",
     "displayName": "rxjs-snippets",
     "description": "rxjs-snippets",
     "type": "snippets",
@@ -2644,7 +2644,7 @@
     ]
   },
   {
-    "name": "nestsjs",
+    "name": "vscode-nestsjs",
     "displayName": "Vscode NestJs Snippets",
     "description": "Vscode NestJs Snippets",
     "type": "snippets",
@@ -2667,7 +2667,7 @@
     ]
   },
   {
-    "name": "flutter",
+    "name": "vscode-flutter-2",
     "displayName": "Flutter Snippets",
     "description": "Flutter Snippets",
     "type": "snippets",
@@ -2690,7 +2690,7 @@
     ]
   },
   {
-    "name": "snippets",
+    "name": "vscode-snippets",
     "displayName": "Cypress Snippets",
     "description": "Cypress Snippets",
     "type": "snippets",
@@ -2716,7 +2716,7 @@
     ]
   },
   {
-    "name": "Java-Snippets",
+    "name": "vscode-java-snippets",
     "displayName": "Java Snippets",
     "description": "Java Snippets",
     "type": "snippets",
@@ -2739,7 +2739,7 @@
     ]
   },
   {
-    "name": "node-js",
+    "name": "vscode-node-js",
     "displayName": "Nodejs Snippets",
     "description": "Nodejs Snippets",
     "type": "snippets",
@@ -2762,7 +2762,7 @@
     ]
   },
   {
-    "name": "javascript",
+    "name": "vscode-javascript",
     "displayName": "JavaScript Snippets",
     "description": "JavaScript Snippets",
     "type": "snippets",
@@ -2788,7 +2788,7 @@
     ]
   },
   {
-    "name": "angular2-test",
+    "name": "vscode-angular2-test",
     "displayName": "Angular 2 TypeScript Test Snippets",
     "description": "Angular 2 TypeScript Test Snippets",
     "type": "snippets",
@@ -2811,7 +2811,7 @@
     ]
   },
   {
-    "name": "express",
+    "name": "vscode-express",
     "displayName": "Express Snippets",
     "description": "Express Snippets",
     "type": "snippets",
@@ -2834,7 +2834,7 @@
     ]
   },
   {
-    "name": "rust-flash",
+    "name": "vscode-rust-flash",
     "displayName": "Rust Flash Snippets",
     "description": "Rust Flash Snippets",
     "type": "snippets",
@@ -2857,7 +2857,7 @@
     ]
   },
   {
-    "name": "uni-ui-snippets",
+    "name": "vscode-uni-ui-snippets",
     "displayName": "uni-ui-snippets",
     "description": "uni-ui-snippets",
     "type": "snippets",
@@ -2882,7 +2882,7 @@
     ]
   },
   {
-    "name": "snp-pandas-basic",
+    "name": "vscode-snp-pandas-basic",
     "displayName": "Pandas Basic Snippets",
     "description": "Pandas Basic Snippets",
     "type": "snippets",
@@ -2905,7 +2905,7 @@
     ]
   },
   {
-    "name": "uni-cloud-snippets",
+    "name": "vscode-uni-cloud-snippets",
     "displayName": "uni-cloud-snippets",
     "description": "uni-cloud-snippets",
     "type": "snippets",
@@ -2934,7 +2934,7 @@
     ]
   },
   {
-    "name": "Vscode-Emoji-Snippets",
+    "name": "vscode-emoji-snippets",
     "displayName": "Emoji Snippets",
     "description": "Emoji Snippets",
     "type": "snippets",
@@ -2973,7 +2973,7 @@
     ]
   },
   {
-    "name": "classic-asp",
+    "name": "vscode-classic-asp",
     "displayName": "Classic ASP Syntaxes and Snippets",
     "description": "Classic ASP Syntaxes and Snippets",
     "type": "snippets",
@@ -2996,7 +2996,7 @@
     ]
   },
   {
-    "name": "tensorflow2snippets",
+    "name": "vscode-tensorflow2snippets",
     "displayName": "Tensorflow 2.0 Snippets",
     "description": "Tensorflow 2.0 Snippets",
     "type": "snippets",
@@ -3019,7 +3019,7 @@
     ]
   },
   {
-    "name": "font-awesome-codes-html",
+    "name": "vscode-font-awesome-codes-html",
     "displayName": "Font-awesome codes for html (snippets)",
     "description": "Font-awesome codes for html (snippets)",
     "type": "snippets",
@@ -3046,7 +3046,7 @@
     ]
   },
   {
-    "name": "ue4-snippets-vs",
+    "name": "vscode-ue4-snippets-vs",
     "displayName": "Unreal Engine 4 Snippets",
     "description": "Unreal Engine 4 Snippets",
     "type": "snippets",
@@ -3069,7 +3069,7 @@
     ]
   },
   {
-    "name": "terraform-doc",
+    "name": "vscode-terraform-doc",
     "displayName": "Terraform doc snippets",
     "description": "Terraform doc snippets",
     "type": "snippets",
@@ -3092,7 +3092,7 @@
     ]
   },
   {
-    "name": "vue-typescript",
+    "name": "vscode-vue-typescript",
     "displayName": "Vue TypeScript Snippets",
     "description": "Vue TypeScript Snippets",
     "type": "snippets",
@@ -3116,7 +3116,7 @@
     ]
   },
   {
-    "name": "eslint-disable",
+    "name": "vscode-eslint-disable",
     "displayName": "eslint-disable-snippets",
     "description": "eslint-disable-snippets",
     "type": "snippets",
@@ -3143,7 +3143,7 @@
     ]
   },
   {
-    "name": "unity",
+    "name": "vscode-unity-2",
     "displayName": "Unity Snippets Modified",
     "description": "Unity Snippets Modified",
     "type": "snippets",
@@ -3166,7 +3166,7 @@
     ]
   },
   {
-    "name": "unity-code",
+    "name": "vscode-unity-code",
     "displayName": "Unity Code Snippets",
     "description": "Unity Code Snippets",
     "type": "snippets",
@@ -3189,7 +3189,7 @@
     ]
   },
   {
-    "name": "ejs-snippets",
+    "name": "vscode-ejs-snippets",
     "displayName": "EJS Snippets",
     "description": "EJS (Embedded JavaScript) template code snippets",
     "type": "snippets",
