@@ -725,6 +725,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -750,6 +751,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -773,6 +775,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -798,6 +801,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -821,6 +825,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -844,6 +849,7 @@
     "categories": [
       "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
         "type": "snippets"
@@ -862,6 +868,7 @@
     "url": "https://github.com/jundat95/react-native-snippet",
     "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -876,6 +883,7 @@
     "url": "https://github.com/nwhatt/vs-chai-snippets",
     "languages": ["javascript", "typescript"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -890,6 +898,7 @@
     "url": "https://github.com/ijsto/cypress-snippets",
     "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -904,6 +913,7 @@
     "url": "https://github.com/nitayneeman/vscode-playwright-snippets",
     "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -918,6 +928,7 @@
     "url": "https://github.com/Manuel7806/postgresql-snippets",
     "languages": ["sql"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -932,6 +943,7 @@
     "url": "https://github.com/zendobk/vscode-mysql",
     "languages": ["mysql", "sql"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -946,6 +958,7 @@
     "url": "https://github.com/praburangki/nuxt-vscode-snippets",
     "languages": ["vue", "html", "javascript", "typescript"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -960,6 +973,7 @@
     "url": "https://github.com/ijsto/reactnextjssnippets",
     "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -974,6 +988,7 @@
     "url": "https://github.com/ryanyang52/vscode-svelte-snippets",
     "languages": ["svelte", "javascript", "typescript", "css", "html"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -988,6 +1003,7 @@
     "url": "https://github.com/solidjs-community/solid-snippets",
     "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -1002,6 +1018,7 @@
     "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
     "languages": ["csharp"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -1016,6 +1033,7 @@
     "url": "https://github.com/ManuelGil/vscode-nestjs-snippets",
     "languages": ["typescript"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   },
   {
@@ -1030,6 +1048,7 @@
     "url": "https://github.com/damildrizzy/fastapi-snippets",
     "languages": ["python"],
     "categories": ["Snippets"],
+    "minPluginVersion": "1.2.6",
     "convert": [{ "type": "snippets" }]
   }
 ]
