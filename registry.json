@@ -730,5 +730,124 @@
         "type": "snippets"
       }
     ]
+  },
+  {
+    "name": "react-snippets",
+    "displayName": "Reactjs code snippets",
+    "description": "Code snippets for React.js in ES6 syntax",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "xabikos/vscode-react"
+    },
+    "url": "https://github.com/xabikos/vscode-react",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "typescript-react-snippets",
+    "displayName": "Typescript React code snippets",
+    "description": "Code snippets for React.js in TypeScript",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "infeng/vscode-react-typescript"
+    },
+    "url": "https://github.com/infeng/vscode-react-typescript",
+    "languages": [
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "es7-react-snippets",
+    "displayName": "ES7+ React/Redux/React-Native snippets",
+    "description": "Snippets for React, Redux, React Native in ES7+",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "r5n-labs/vscode-react-javascript-snippets"
+    },
+    "url": "https://github.com/r5n-labs/vscode-react-javascript-snippets",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vue-snippets",
+    "displayName": "Vue VSCode Snippets",
+    "description": "Snippets for Vue.js 2",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "sdras/vue-vscode-snippets"
+    },
+    "url": "https://github.com/sdras/vue-vscode-snippets",
+    "languages": [
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vue3-snippets",
+    "displayName": "Vue 3 Snippets",
+    "description": "Snippets for Vue.js 3",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "hollowtree/vscode-vue-snippets"
+    },
+    "url": "https://github.com/hollowtree/vscode-vue-snippets",
+    "languages": [
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   }
 ]
