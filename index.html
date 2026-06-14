@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coc-vscode-registry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>coc-vscode-registry</h1>
+      <p class="subtitle">
+        Package registry for
+        <a href="https://github.com/coc-plugin/coc-vscode-loader">coc-vscode-loader</a>
+        — install VS Code extensions on
+        <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search by name, description, or language..." autofocus>
+      <div class="filters">
+        <div class="filter-group">
+          <span class="filter-label">Type</span>
+          <div class="filter-badges" id="type-filters"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Category</span>
+          <div class="filter-badges" id="category-filters"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span id="package-count">0</span> packages
+    </div>
+
+    <div id="package-list" class="package-list"></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="https://github.com/coc-plugin/coc-vscode-registry">coc-vscode-registry</a>
+      &middot;
+      <a href="https://github.com/coc-plugin/coc-vscode-loader">coc-vscode-loader</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

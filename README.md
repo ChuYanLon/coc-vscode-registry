@@ -7,6 +7,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | File | Purpose |
 |------|---------|
 | [`registry.json`](./registry.json) | Available VS Code extensions that can be loaded via coc-vscode-loader |
+| [`index.html`](./index.html) | Registry website (GitHub Pages) |
 | [`presets.json`](./presets.json) | Bridge preset definitions (ts-bridge) |
 
 ## registry.json entry fields
@@ -60,5 +61,9 @@ Defines reusable bridge presets (currently only `ts-bridge`):
   }
 }
 ```
+
+## Website
+
+Browse packages online: <https://coc-plugin.github.io/coc-vscode-registry/>
 
 > 📖 Migration docs, API mapping references, and converter design: [`coc-vscode-loader/docs`](https://github.com/coc-plugin/coc-vscode-loader/tree/main/docs)

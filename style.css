@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 32px 0 24px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+.subtitle {
+  margin-top: 6px;
+  color: #8b949e;
+  font-size: 15px;
+}
+
+/* Controls */
+.controls {
+  margin: 24px 0 16px;
+}
+#search {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#search:focus {
+  border-color: #58a6ff;
+}
+#search::placeholder {
+  color: #484f58;
+}
+
+.filters {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 13px;
+  color: #8b949e;
+  font-weight: 600;
+}
+.filter-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.filter-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  background: transparent;
+  color: #c9d1d9;
+  transition: all 0.15s;
+  user-select: none;
+}
+.filter-badge:hover {
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+.filter-badge.active {
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: #fff;
+}
+
+/* Stats */
+.stats {
+  font-size: 13px;
+  color: #8b949e;
+  margin-bottom: 16px;
+}
+
+/* Package List */
+.package-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.package-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: border-color 0.15s;
+}
+.package-card:hover {
+  border-color: #484f58;
+}
+.package-card.hidden {
+  display: none;
+}
+
+.package-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.package-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+.package-name {
+  font-size: 13px;
+  color: #484f58;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.package-desc {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.package-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.package-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.package-tag.lang {
+  background: #1f6feb22;
+  color: #79c0ff;
+  border: 1px solid #1f6feb44;
+}
+.package-tag.cat {
+  background: #3fb95022;
+  color: #7ee787;
+  border: 1px solid #3fb95044;
+}
+.package-tag.type {
+  background: #d2992222;
+  color: #d29922;
+  border: 1px solid #d2992244;
+}
+.package-tag.type.ts-bridge {
+  background: #bc8cff22;
+  color: #bc8cff;
+  border-color: #bc8cff44;
+}
+.package-tag.type.direct-api {
+  background: #f7816622;
+  color: #f78166;
+  border-color: #f7816644;
+}
+
+.package-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  background: #21262d;
+  color: #c9d1d9;
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.btn:hover {
+  background: #30363d;
+  border-color: #484f58;
+}
+.btn-primary {
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #388bfd;
+  border-color: #388bfd;
+}
+.btn-copied {
+  background: #3fb950;
+  border-color: #3fb950;
+  color: #fff;
+}
+.btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #30363d;
+  font-size: 13px;
+  color: #484f58;
+  text-align: center;
+}
