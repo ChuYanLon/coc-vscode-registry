@@ -1007,33 +1007,6 @@
     ]
   },
   {
-    "name": "vscode-nuxt-snippets",
-    "displayName": "Vue & Nuxt Snippets",
-    "description": "Nuxt and Vue.js code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "praburangki/nuxt-vscode-snippets"
-    },
-    "url": "https://github.com/praburangki/nuxt-vscode-snippets",
-    "languages": [
-      "vue",
-      "html",
-      "javascript",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets",
-        "build": "deno run --allow-read --allow-write src/app.ts --snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-nextjs-snippets",
     "displayName": "Next.js React Snippets",
     "description": "Next.js and React code snippets",
@@ -2939,29 +2912,6 @@
     "url": "https://github.com/CAPTNCAPS/ue4-snippets-vs",
     "languages": [
       "cpp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-terraform-doc",
-    "displayName": "Terraform doc snippets",
-    "description": "Terraform doc snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "run-at-scale/vscode-terraform-doc-snippets"
-    },
-    "url": "https://github.com/run-at-scale/vscode-terraform-doc-snippets",
-    "languages": [
-      "terraform"
     ],
     "categories": [
       "Snippets"
