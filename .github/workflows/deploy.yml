@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'registry.json'
+      - 'index.html'
+      - 'script.js'
+      - 'style.css'
+      - 'assets/**'
   workflow_dispatch:
 
 permissions:
