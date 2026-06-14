@@ -2,6 +2,9 @@ let allPackages = [];
 let activeTypeFilters = new Set();
 let activeCategoryFilters = new Set();
 let searchQuery = '';
+let searchTimeout = null;
+let currentPage = 1;
+const PAGE_SIZE = 50;
 
 async function init() {
   const resp = await fetch('registry.json');
@@ -52,24 +55,6 @@ function renderFilters() {
   catContainer.innerHTML = cats.map(c =>
     `<span class="filter-badge category ${activeCategoryFilters.has(c) ? 'active' : ''}" data-cat="${c}">${c}</span>`
   ).join('');
-
-  document.querySelectorAll('.filter-badge.type').forEach(el => {
-    el.addEventListener('click', () => {
-      const t = el.dataset.type;
-      if (activeTypeFilters.has(t)) activeTypeFilters.delete(t);
-      else activeTypeFilters.add(t);
-      render();
-    });
-  });
-
-  document.querySelectorAll('.filter-badge.category').forEach(el => {
-    el.addEventListener('click', () => {
-      const c = el.dataset.cat;
-      if (activeCategoryFilters.has(c)) activeCategoryFilters.delete(c);
-      else activeCategoryFilters.add(c);
-      render();
-    });
-  });
 }
 
 function renderPackageCards(pkgs) {
@@ -78,7 +63,13 @@ function renderPackageCards(pkgs) {
     container.innerHTML = '<div class="package-card" style="text-align:center;color:#484f58;padding:40px;">No packages match your filters.</div>';
     return;
   }
-  container.innerHTML = pkgs.map(p => {
+
+  const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
+  const start = 0;
+  const end = Math.min(currentPage * PAGE_SIZE, pkgs.length);
+  const pageItems = pkgs.slice(start, end);
+
+  let html = pageItems.map(p => {
     const installCmd = getInstallCmd(p);
     const langTags = p.languages.map(l => `<span class="package-tag lang">${escapeHtml(l)}</span>`).join('');
     const catTags = p.categories.map(c => `<span class="package-tag cat">${escapeHtml(c)}</span>`).join('');
@@ -111,6 +102,22 @@ function renderPackageCards(pkgs) {
       </div>
     `;
   }).join('');
+
+  // Pagination
+  let paginationHtml = '';
+  if (totalPages > 1) {
+    paginationHtml = '<div class="pagination">';
+    paginationHtml += `<span class="page-info">${end} / ${pkgs.length} packages</span>`;
+    if (currentPage < totalPages) {
+      paginationHtml += `<button class="btn load-more" data-page="${currentPage + 1}">Load more (${Math.min(PAGE_SIZE, pkgs.length - end)} remaining)</button>`;
+    }
+    if (currentPage > 1) {
+      paginationHtml = `<button class="btn load-more" data-page="1">Show less</button> ` + paginationHtml;
+    }
+    paginationHtml += '</div>';
+  }
+
+  container.innerHTML = html + paginationHtml;
 }
 
 function escapeHtml(s) {
@@ -121,6 +128,7 @@ function escapeHtml(s) {
 
 function render() {
   const filtered = filterPackages();
+  currentPage = 1;
   renderFilters();
   renderPackageCards(filtered);
 
@@ -146,11 +154,43 @@ function render() {
       }, 2000);
     });
   });
+
+  document.querySelectorAll('.load-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentPage = parseInt(btn.dataset.page);
+      const filtered = filterPackages();
+      renderPackageCards(filtered);
+      document.querySelector('.pagination')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 }
 
-document.getElementById('search').addEventListener('input', e => {
-  searchQuery = e.target.value;
+// Filter clicks via event delegation (no re-binding on every render)
+document.getElementById('type-filters').addEventListener('click', e => {
+  const el = e.target.closest('.filter-badge.type');
+  if (!el) return;
+  const t = el.dataset.type;
+  if (activeTypeFilters.has(t)) activeTypeFilters.delete(t);
+  else activeTypeFilters.add(t);
   render();
+});
+
+document.getElementById('category-filters').addEventListener('click', e => {
+  const el = e.target.closest('.filter-badge.category');
+  if (!el) return;
+  const c = el.dataset.cat;
+  if (activeCategoryFilters.has(c)) activeCategoryFilters.delete(c);
+  else activeCategoryFilters.add(c);
+  render();
+});
+
+// Debounced search
+document.getElementById('search').addEventListener('input', e => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    searchQuery = e.target.value;
+    render();
+  }, 200);
 });
 
 init();

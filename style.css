@@ -258,3 +258,17 @@ footer {
   color: #484f58;
   text-align: center;
 }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px 0;
+}
+.page-info {
+  font-size: 13px;
+  color: #8b949e;
+}
