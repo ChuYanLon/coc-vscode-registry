@@ -518,14 +518,34 @@
       "repo": "biomejs/biome-vscode"
     },
     "url": "https://github.com/biomejs/biome-vscode",
-    "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact", "json", "jsonc", "css", "html", "vue", "svelte", "astro", "xml", "graphql"],
-    "categories": ["LSP", "Linter", "Formatter"],
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "json",
+      "jsonc",
+      "css",
+      "html",
+      "vue",
+      "svelte",
+      "astro",
+      "xml",
+      "graphql"
+    ],
+    "categories": [
+      "LSP",
+      "Linter",
+      "Formatter"
+    ],
     "minPluginVersion": "1.2.2",
     "serverBinary": {
       "repo": "biomejs/biome",
       "asset": "biome-{{platform}}-{{arch}}",
       "binaryPath": "biome",
-      "args": ["lsp-proxy"]
+      "args": [
+        "lsp-proxy"
+      ]
     },
     "convert": [
       {
@@ -538,14 +558,32 @@
             "asset": "biome-{{platform}}-{{arch}}",
             "binaryPath": "biome"
           },
-          "args": ["lsp-proxy"]
+          "args": [
+            "lsp-proxy"
+          ]
         },
         "transport": "stdio",
-        "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact", "json", "jsonc", "css", "html", "vue", "svelte", "astro", "xml", "graphql"]
+        "languages": [
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact",
+          "json",
+          "jsonc",
+          "css",
+          "html",
+          "vue",
+          "svelte",
+          "astro",
+          "xml",
+          "graphql"
+        ]
       },
       {
         "type": "source",
-        "transforms": ["import-mapping"]
+        "transforms": [
+          "import-mapping"
+        ]
       }
     ]
   },
@@ -560,8 +598,13 @@
       "subdir": "packages/svelte-vscode"
     },
     "url": "https://github.com/sveltejs/language-tools",
-    "languages": ["svelte"],
-    "categories": ["LSP", "TypeScript"],
+    "languages": [
+      "svelte"
+    ],
+    "categories": [
+      "LSP",
+      "TypeScript"
+    ],
     "minPluginVersion": "1.2.2",
     "convert": [
       {
@@ -572,11 +615,15 @@
           "entry": "bin",
           "binName": "svelteserver"
         },
-        "languages": ["svelte"]
+        "languages": [
+          "svelte"
+        ]
       },
       {
         "type": "source",
-        "transforms": ["import-mapping"],
+        "transforms": [
+          "import-mapping"
+        ],
         "keepDeps": {
           "typescript": "*"
         }
@@ -594,8 +641,13 @@
       "subdir": "packages/vscode"
     },
     "url": "https://github.com/withastro/language-tools",
-    "languages": ["astro"],
-    "categories": ["LSP", "TypeScript"],
+    "languages": [
+      "astro"
+    ],
+    "categories": [
+      "LSP",
+      "TypeScript"
+    ],
     "minPluginVersion": "1.2.2",
     "convert": [
       {
@@ -606,12 +658,16 @@
           "entry": "bin",
           "binName": "astro-ls"
         },
-        "languages": ["astro"],
+        "languages": [
+          "astro"
+        ],
         "initializationOptions": "{ typescript: { tsdk: path.join(__dirname, '..', 'node_modules', 'typescript', 'lib') } }"
       },
       {
         "type": "source",
-        "transforms": ["import-mapping"],
+        "transforms": [
+          "import-mapping"
+        ],
         "keepDeps": {
           "typescript": "*"
         }
@@ -628,15 +684,50 @@
       "repo": "codezombiech/vscode-gitignore"
     },
     "url": "https://github.com/codezombiech/vscode-gitignore",
-    "languages": ["gitignore"],
-    "categories": ["Other"],
+    "languages": [
+      "gitignore"
+    ],
+    "categories": [
+      "Other"
+    ],
     "minPluginVersion": "1.2.2",
     "convert": [
       {
         "type": "source",
-        "transforms": ["import-mapping"],
+        "transforms": [
+          "import-mapping"
+        ],
         "entry": "src/extension.ts",
-        "activationEvents": ["onCommand:gitignore.addgitignore"]
+        "activationEvents": [
+          "onCommand:gitignore.addgitignore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "javascript-snippets",
+    "displayName": "JavaScript ES6 Snippets",
+    "description": "Code snippets for JavaScript in ES6 syntax",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "xabikos/vscode-javascript"
+    },
+    "url": "https://github.com/xabikos/vscode-javascript",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "html",
+      "vue"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "convert": [
+      {
+        "type": "snippets"
       }
     ]
   }
