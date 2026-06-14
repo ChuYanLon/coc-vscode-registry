@@ -721,7 +721,7 @@
     "categories": [
       "Linter"
     ],
-    "minPluginVersion": "1.2.2",
+    "minPluginVersion": "1.2.9",
     "convert": [
       {
         "type": "source",
