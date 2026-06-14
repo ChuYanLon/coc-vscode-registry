@@ -123,7 +123,6 @@ function render() {
   const filtered = filterPackages();
   renderFilters();
   renderPackageCards(filtered);
-  document.getElementById('package-count').textContent = filtered.length;
 
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
