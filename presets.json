@@ -6,11 +6,5 @@
       "services": ["tsserver"],
       "command": "typescript.tsserverRequest"
     }
-  },
-  "prettier": {
-    "type": "prettier",
-    "options": {
-      "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact", "css", "html", "json", "yaml", "markdown", "scss", "less"]
-    }
   }
 }

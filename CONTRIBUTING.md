@@ -4,7 +4,7 @@
 
 **This repository holds registry data only. The converter (parser) lives in [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader).**
 
-Adding a new plugin requires both repos to work together. First read [coc-vscode-loader/CONTRIBUTING.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/CONTRIBUTING.md) to understand the full workflow, then add data here:
+Adding a new plugin requires both repos to work together. First read [`../CONTRIBUTING.md`](../CONTRIBUTING.md) to understand the full workflow, then add data here:
 
 1. Edit [`registry.json`](./registry.json) with a new entry:
 
