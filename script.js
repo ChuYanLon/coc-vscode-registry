@@ -108,12 +108,10 @@ function renderPackageCards(pkgs) {
   if (totalPages > 1) {
     paginationHtml = '<div class="pagination">';
     paginationHtml += `<span class="page-info">${end} / ${pkgs.length} packages</span>`;
-    if (currentPage < totalPages) {
-      paginationHtml += `<button class="btn load-more" data-page="${currentPage + 1}">Load more (${Math.min(PAGE_SIZE, pkgs.length - end)} remaining)</button>`;
-    }
     if (currentPage > 1) {
-      paginationHtml = `<button class="btn load-more" data-page="1">Show less</button> ` + paginationHtml;
+      paginationHtml = `<button class="btn show-less" data-page="1">Show less</button> ` + paginationHtml;
     }
+    paginationHtml += '<div class="scroll-sentinel"></div>';
     paginationHtml += '</div>';
   }
 
@@ -158,14 +156,40 @@ document.getElementById('package-list').addEventListener('click', async e => {
     return;
   }
 
-  const loadBtn = e.target.closest('.load-more');
-  if (loadBtn) {
-    currentPage = parseInt(loadBtn.dataset.page);
+  const showLessBtn = e.target.closest('.show-less');
+  if (showLessBtn) {
+    currentPage = 1;
     const filtered = filterPackages();
     renderPackageCards(filtered);
     document.querySelector('.pagination')?.scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+// Infinite scroll via IntersectionObserver
+let scrollObserver = null;
+function setupScrollObserver() {
+  if (scrollObserver) scrollObserver.disconnect();
+  const sentinel = document.querySelector('.scroll-sentinel');
+  if (!sentinel) return;
+  scrollObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      const pkgs = filterPackages();
+      const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPackageCards(pkgs);
+      }
+    }
+  }, { rootMargin: '200px' });
+  scrollObserver.observe(sentinel);
+}
+
+// Monkey-patch renderPackageCards to run observer after rendering
+const origRender = renderPackageCards;
+renderPackageCards = function(pkgs) {
+  origRender(pkgs);
+  setupScrollObserver();
+};
 
 // Filter clicks via event delegation (no re-binding on every render)
 document.getElementById('type-filters').addEventListener('click', e => {
