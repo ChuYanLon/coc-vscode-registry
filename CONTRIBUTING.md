@@ -39,9 +39,21 @@ Adding a new plugin requires both repos to work together. First read [`../CONTRI
 2. Validate JSON:
 
 ```bash
-python3 -c "import json; json.load(open('registry.json'))"
+# Schema validation (run from coc-vscode-loader root)
+cd ..
+npm test                    # Includes registry-validation.test.ts (12 checks)
+
+# Or manual check
+python3 -c "import json; json.load(open('coc-vscode-registry/registry.json'))"
 ```
 
-3. Submit a PR.
+3. Add converter tests if needed. Run the smoke test to verify your entry works:
+
+```bash
+cd ../converter
+npm run test:smoke           # Converts all 112 entries, validates output
+```
+
+4. Submit a PR.
 
 > ⚠️ If the converter cannot handle your plugin, do not add only a registry entry — you must also extend the converter in [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader). Both changes are required; one without the other will not work.

@@ -28,6 +28,10 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `source` | ✅ | `{ type: "github", repo: "org/repo", subdir?: "path" }` |
 | `url` | ✅ | Project homepage |
 | `languages` | ✅ | Language IDs this plugin supports |
+| `categories` | ✅ | Categories for filtering (e.g. `"LSP"`, `"Snippets"`) |
+| `convert` | ✅ | Array of conversion steps. See [coc-vscode-loader/CONTRIBUTING.md](../CONTRIBUTING.md) |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`) |
+| `pipPackages` | ❌ | Python dependencies for pip install (`["ansible-lint"]`) |
 | `categories` | ✅ | e.g. `["LSP"]` |
 | `minPluginVersion` | ❌ | Minimum `coc-vscode-loader` version required (e.g. `"1.1.2"`) |
 | `pipPackages` | ❌ | Python packages to install via pip, e.g. `["ansible-lint"]` |
