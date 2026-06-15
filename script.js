@@ -1,3 +1,18 @@
+/* ── Theme ── */
+(function() {
+  const saved = localStorage.getItem('coc-registry-theme') || 'dark'
+  document.documentElement.setAttribute('data-theme', saved)
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const html = document.documentElement
+      const cur = html.getAttribute('data-theme')
+      const next = cur === 'dark' ? 'light' : 'dark'
+      html.setAttribute('data-theme', next)
+      localStorage.setItem('coc-registry-theme', next)
+    })
+  })
+})()
+
 let allPackages = [];
 let activeTypeFilters = new Set();
 let activeCategoryFilters = new Set();
@@ -64,7 +79,6 @@ function renderPackageCards(pkgs) {
     return;
   }
 
-  const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
   const end = Math.min(currentPage * PAGE_SIZE, pkgs.length);
   const pageItems = pkgs.slice(0, end);
 
@@ -113,7 +127,6 @@ function renderPackageCards(pkgs) {
     `;
   }).join('');
 
-  // "Show more" button
   if (end < pkgs.length) {
     const remaining = pkgs.length - end;
     html += `<button class="show-more">Show ${Math.min(remaining, PAGE_SIZE)} more (${end}/${pkgs.length})</button>`;
@@ -228,4 +241,4 @@ document.getElementById('search').addEventListener('input', e => {
   }, 200);
 });
 
-init();
+document.addEventListener('DOMContentLoaded', init);
