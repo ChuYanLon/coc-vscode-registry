@@ -2,7 +2,7 @@
   {
     "name": "vscode-volar",
     "displayName": "Volar (Vue)",
-    "description": "Vue language support \u2014 template/script/style IntelliSense",
+    "description": "Vue language support — template/script/style IntelliSense",
     "type": "ts-bridge",
     "source": {
       "type": "github",
@@ -44,48 +44,1050 @@
     ]
   },
   {
-    "name": "vscode-prisma",
-    "displayName": "Prisma",
-    "description": "Prisma schema language support \u2014 syntax highlight, lint, format",
+    "name": "vscode-vue-snippets",
+    "displayName": "Vue VSCode Snippets",
+    "description": "Snippets for Vue.js 2",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "sdras/vue-vscode-snippets"
+    },
+    "url": "https://github.com/sdras/vue-vscode-snippets",
+    "languages": [
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-vue-typescript",
+    "displayName": "Vue TypeScript Snippets",
+    "description": "Vue TypeScript Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ducksoupdev/vscode-vue-typescript-snippets"
+    },
+    "url": "https://github.com/ducksoupdev/vscode-vue-typescript-snippets",
+    "languages": [
+      "html",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-vue2",
+    "displayName": "Vue 2 Snippets",
+    "description": "Vue 2 Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "xianghongai/vscode-vue2-snippets"
+    },
+    "url": "https://github.com/xianghongai/vscode-vue2-snippets",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "javascriptreact",
+      "less",
+      "scss",
+      "typescript",
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets",
+        "build": "node merge.js"
+      }
+    ]
+  },
+  {
+    "name": "vscode-vue3-snippets",
+    "displayName": "Vue 3 Snippets",
+    "description": "Snippets for Vue.js 3",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "hollowtree/vscode-vue-snippets"
+    },
+    "url": "https://github.com/hollowtree/vscode-vue-snippets",
+    "languages": [
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-vue3-snippets-for",
+    "displayName": "vue3-snippets-for-vscode",
+    "description": "vue3-snippets-for-vscode",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "wejectchen/vue3-snippets-for-vscode"
+    },
+    "url": "https://github.com/wejectchen/vue3-snippets-for-vscode",
+    "languages": [
+      "html",
+      "javascript",
+      "typescript",
+      "vue"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-es7-javascript-react",
+    "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
+    "description": "ES7 React/Redux/GraphQL/React-Native snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "rodrigovallades/vscode-es7-javascript-react-snippets"
+    },
+    "url": "https://github.com/rodrigovallades/vscode-es7-javascript-react-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-es7-react-snippets",
+    "displayName": "ES7+ React/Redux/React-Native snippets",
+    "description": "Snippets for React, Redux, React Native in ES7+",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "r5n-labs/vscode-react-javascript-snippets"
+    },
+    "url": "https://github.com/r5n-labs/vscode-react-javascript-snippets",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets",
+        "build": "npm run compile"
+      }
+    ]
+  },
+  {
+    "name": "vscode-full-react",
+    "displayName": "Fullstack React/React Native snippets",
+    "description": "Fullstack React/React Native snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "walteribeiro/full-react-snippets"
+    },
+    "url": "https://github.com/walteribeiro/full-react-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-js-jsx-snippets",
+    "displayName": "JS JSX Snippets",
+    "description": "JavaScript and React/JSX code snippets (1.4M+ installs)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "skyran1278/js-jsx-snippets"
+    },
+    "url": "https://github.com/skyran1278/js-jsx-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.3.0",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-react-native-redux-snippets",
+    "displayName": "React-Native/React/Redux snippets for es6/es7",
+    "description": "React-Native/React/Redux snippets for es6/es7",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "EQuimper/VSC-React-Native-React-Redux-Snippets"
+    },
+    "url": "https://github.com/EQuimper/VSC-React-Native-React-Redux-Snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "jsx",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-react-native-snippets",
+    "displayName": "React Native Snippet",
+    "description": "React Native code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "jundat95/react-native-snippet"
+    },
+    "url": "https://github.com/jundat95/react-native-snippet",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-react-redux-react-router",
+    "displayName": "React/Redux/react-router Snippets",
+    "description": "React/Redux/react-router Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "discountry/vscode-react-redux-react-router-snippets"
+    },
+    "url": "https://github.com/discountry/vscode-react-redux-react-router-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "jsx"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-react-snippets",
+    "displayName": "Reactjs code snippets",
+    "description": "Code snippets for React.js in ES6 syntax",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "xabikos/vscode-react"
+    },
+    "url": "https://github.com/xabikos/vscode-react",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-react-typescript",
+    "displayName": "Typescript React code snippets",
+    "description": "Typescript React code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "infeng/vscode-react-typescript"
+    },
+    "url": "https://github.com/infeng/vscode-react-typescript",
+    "languages": [
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-simple-react-snippets",
+    "displayName": "Simple React Snippets",
+    "description": "Basic React code snippets (6.4M+ installs)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "burkeholland/simple-react-snippets"
+    },
+    "url": "https://github.com/burkeholland/simple-react-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.3.0",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-styled-components-snippets",
+    "displayName": "styled-components-snippets",
+    "description": "styled-components-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "jonkwheeler/styled-components-snippets-vscode"
+    },
+    "url": "https://github.com/jonkwheeler/styled-components-snippets-vscode",
+    "languages": [
+      "css",
+      "javascript",
+      "javascriptreact",
+      "styled-css",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-typescript-react-snippets",
+    "displayName": "Typescript React code snippets",
+    "description": "Code snippets for React.js in TypeScript",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "infeng/vscode-react-typescript"
+    },
+    "url": "https://github.com/infeng/vscode-react-typescript",
+    "languages": [
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-next.js",
+    "displayName": "Nextjs snippets",
+    "description": "Nextjs snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "pulkitgangwar/next.js-snippets"
+    },
+    "url": "https://github.com/pulkitgangwar/next.js-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-nextjs-snippets",
+    "displayName": "Next.js React Snippets",
+    "description": "Next.js and React code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ijsto/reactnextjssnippets"
+    },
+    "url": "https://github.com/ijsto/reactnextjssnippets",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-solidjs-snippets",
+    "displayName": "SolidJS Snippets",
+    "description": "SolidJS framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "solidjs-community/solid-snippets"
+    },
+    "url": "https://github.com/solidjs-community/solid-snippets",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular",
+    "displayName": "Angular Snippets (Version 18)",
+    "description": "Angular Snippets (Version 18)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "johnpapa/vscode-angular-snippets"
+    },
+    "url": "https://github.com/johnpapa/vscode-angular-snippets",
+    "languages": [
+      "dockerfile",
+      "html",
+      "javascript",
+      "jsonc",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular-2",
+    "displayName": "Angular 8 and TypeScript/HTML VS Code Snippets",
+    "description": "Angular 8 and TypeScript/HTML VS Code Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "danwahlin/angular-snippets"
+    },
+    "url": "https://github.com/danwahlin/angular-snippets",
+    "languages": [
+      "html",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular-bootstrap-code",
+    "displayName": "Angular UI Bootstrap Snippets",
+    "description": "Angular UI Bootstrap Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "herrherrmann/angular-bootstrap-code"
+    },
+    "url": "https://github.com/herrherrmann/angular-bootstrap-code",
+    "languages": [
+      "html",
+      "javascript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular-ngrx-snippets",
+    "displayName": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
+    "description": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "BeastCode/VSCode-Angular-TypeScript-Snippets"
+    },
+    "url": "https://github.com/BeastCode/VSCode-Angular-TypeScript-Snippets",
+    "languages": [
+      "html",
+      "json",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular1",
+    "displayName": "Angular 1 JavaScript and TypeScript Snippets",
+    "description": "Angular 1 JavaScript and TypeScript Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "johnpapa/vscode-angular1-snippets"
+    },
+    "url": "https://github.com/johnpapa/vscode-angular1-snippets",
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-angular2-test",
+    "displayName": "Angular 2 TypeScript Test Snippets",
+    "description": "Angular 2 TypeScript Test Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "marinho/vscode-angular2-test-snippets"
+    },
+    "url": "https://github.com/marinho/vscode-angular2-test-snippets",
+    "languages": [
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-ng2-typescript",
+    "displayName": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
+    "description": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ultrasonicsoft/vscode-ng2-typescript-snippets"
+    },
+    "url": "https://github.com/ultrasonicsoft/vscode-ng2-typescript-snippets",
+    "languages": [
+      "html",
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-svelte",
+    "displayName": "Svelte",
+    "description": "Svelte language support — diagnostics, formatting, IntelliSense",
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "prisma/language-tools",
-      "subdir": "packages/vscode"
+      "repo": "sveltejs/language-tools",
+      "subdir": "packages/svelte-vscode"
     },
-    "url": "https://github.com/prisma/language-tools",
+    "url": "https://github.com/sveltejs/language-tools",
     "languages": [
-      "prisma"
+      "svelte"
     ],
     "categories": [
-      "LSP"
+      "LSP",
+      "TypeScript"
     ],
-    "minPluginVersion": "1.2.0",
+    "minPluginVersion": "1.2.2",
     "convert": [
       {
         "type": "language-client",
         "server": {
           "kind": "module",
-          "package": "@prisma/language-server",
-          "entry": "bin"
+          "package": "svelte-language-server",
+          "entry": "bin",
+          "binName": "svelteserver"
         },
         "languages": [
-          "prisma"
+          "svelte"
         ]
       },
       {
         "type": "source",
         "transforms": [
-          "import-mapping",
-          "enum-offset"
+          "import-mapping"
         ],
-        "entry": "src/extension.ts",
-        "keepDeps": [
-          "@hono/node-server",
-          "prisma-6-language-server"
-        ]
+        "keepDeps": {
+          "typescript": "*"
+        }
       }
     ]
+  },
+  {
+    "name": "vscode-svelte-2",
+    "displayName": "Svelte 3 Snippets",
+    "description": "Svelte 3 Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "fivethree-team/vscode-svelte-snippets"
+    },
+    "url": "https://github.com/fivethree-team/vscode-svelte-snippets",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "svelte"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-svelte-snippets",
+    "displayName": "Svelte 3 Snippets",
+    "description": "Svelte 3 code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ryanyang52/vscode-svelte-snippets"
+    },
+    "url": "https://github.com/ryanyang52/vscode-svelte-snippets",
+    "languages": [
+      "svelte",
+      "javascript",
+      "typescript",
+      "css",
+      "html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-astro",
+    "displayName": "Astro",
+    "description": "Astro language support — diagnostics, formatting, IntelliSense",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "withastro/language-tools",
+      "subdir": "packages/vscode"
+    },
+    "url": "https://github.com/withastro/language-tools",
+    "languages": [
+      "astro"
+    ],
+    "categories": [
+      "LSP",
+      "TypeScript"
+    ],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@astrojs/language-server",
+          "entry": "bin",
+          "binName": "astro-ls"
+        },
+        "languages": [
+          "astro"
+        ],
+        "initializationOptions": "{ typescript: { tsdk: path.join(__dirname, '..', 'node_modules', 'typescript', 'lib') } }"
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ],
+        "keepDeps": {
+          "typescript": "*"
+        }
+      }
+    ]
+  },
+  {
+    "name": "vscode-bootstrap-3",
+    "displayName": "Bootstrap 3 Snippets",
+    "description": "Bootstrap 3 Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "wcwhitehead/bootstrap-3-snippets"
+    },
+    "url": "https://github.com/wcwhitehead/bootstrap-3-snippets",
+    "languages": [
+      "handlebars",
+      "html",
+      "jade",
+      "javascript",
+      "javascriptreact",
+      "php",
+      "razor",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-bootstrap-v4",
+    "displayName": "Bootstrap v4 Snippets",
+    "description": "Bootstrap v4 Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "Zaczero/bootstrap-v4-snippets",
+      "subdir": "bootstrap-v4-snippets"
+    },
+    "url": "https://github.com/Zaczero/bootstrap-v4-snippets",
+    "languages": [
+      "blade",
+      "cfml",
+      "html",
+      "razor",
+      "smarty",
+      "vue"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-bootstrap5-snippets",
+    "displayName": "Bootstrap 5 & Font Awesome Snippets",
+    "description": "Bootstrap 5 & Font Awesome Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "HansUXdev/B5-SNIPPETS"
+    },
+    "url": "https://github.com/HansUXdev/B5-SNIPPETS",
+    "languages": [
+      "HTML (Eex)",
+      "blade",
+      "django-html",
+      "ejs",
+      "erb",
+      "handlebars",
+      "html",
+      "javascript",
+      "javascriptreact",
+      "jinja-html",
+      "latte",
+      "nunjucks",
+      "php",
+      "plaintext",
+      "razor",
+      "tpl",
+      "twig",
+      "typescript",
+      "typescriptreact",
+      "volt",
+      "vue",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-css-modules",
+    "displayName": "CSS Modules",
+    "description": "CSS Modules support — autocomplete and go-to-definition for CSS class names in React/JSX/TSX/Astro projects",
+    "type": "direct-api",
+    "source": {
+      "type": "github",
+      "repo": "clinyong/vscode-css-modules"
+    },
+    "url": "https://github.com/clinyong/vscode-css-modules",
+    "languages": [
+      "typescriptreact",
+      "javascriptreact",
+      "javascript",
+      "typescript",
+      "astro"
+    ],
+    "categories": [
+      "Completion"
+    ],
+    "convert": [
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping",
+          "class-to-factory",
+          "provider-register"
+        ],
+        "entry": "src/extension.ts",
+        "activationEvents": [
+          "onLanguage:typescriptreact",
+          "onLanguage:javascriptreact",
+          "onLanguage:javascript",
+          "onLanguage:typescript",
+          "onLanguage:astro"
+        ],
+        "keepDeps": [
+          "fs-extra",
+          "json5",
+          "lodash"
+        ],
+        "patches": [
+          {
+            "find": "\\[a-zA-Z0-9\\._\\[\"']\\]",
+            "replace": "[a-zA-Z0-9._[\"'-]"
+          }
+        ]
+      }
+    ],
+    "minPluginVersion": "1.4.3"
+  },
+  {
+    "name": "vscode-css-peek",
+    "displayName": "CSS Peek",
+    "description": "CSS Peek — peek/go-to-definition/hover for CSS classes and IDs in HTML/JSX/Vue/etc.",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "pranaygp/vscode-css-peek"
+    },
+    "url": "https://github.com/pranaygp/vscode-css-peek",
+    "languages": [
+      "css",
+      "scss",
+      "less"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "../server/out/server"
+        },
+        "languages": [
+          "css",
+          "scss",
+          "less",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "svelte",
+          "php",
+          "pug",
+          "handlebars",
+          "ejs"
+        ],
+        "initializationOptions": "{ stylesheets: [], peekFromLanguages: [\"html\", \"javascript\", \"javascriptreact\", \"typescript\", \"typescriptreact\", \"vue\", \"svelte\", \"php\"], peekToLinkedOnly: false }",
+        "id": "cssPeek"
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ],
+        "entry": "client/src/extension.ts",
+        "keepDeps": {
+          "minimatch": "^9.0.3",
+          "vscode-css-languageservice": "^6.2.6",
+          "vscode-html-languageservice": "^5.0.6",
+          "vscode-languageserver": "^8.1.0",
+          "vscode-languageserver-textdocument": "^1.0.8"
+        }
+      }
+    ],
+    "minPluginVersion": "1.4.2"
   },
   {
     "name": "vscode-html-css-support",
@@ -123,222 +1125,23 @@
     ]
   },
   {
-    "name": "vscode-lua",
-    "displayName": "Lua",
-    "description": "Lua language support \u2014 completion, lint, and type checking",
+    "name": "vscode-stylelint",
+    "displayName": "Stylelint",
+    "description": "CSS/SCSS/Less linting with Stylelint language server",
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "sumneko/vscode-lua",
-      "subdir": "client"
+      "repo": "stylelint/vscode-stylelint"
     },
-    "url": "https://github.com/sumneko/vscode-lua",
+    "url": "https://github.com/stylelint/vscode-stylelint",
     "languages": [
-      "lua"
+      "css",
+      "scss",
+      "less"
     ],
     "categories": [
-      "LSP"
-    ],
-    "serverBinary": {
-      "repo": "LuaLS/lua-language-server",
-      "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
-      "binaryPath": "bin/lua-language-server"
-    },
-    "minPluginVersion": "1.2.0",
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "binary",
-          "package": "lua",
-          "binary": {
-            "repo": "LuaLS/lua-language-server",
-            "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
-            "binaryPath": "bin/lua-language-server"
-          }
-        },
-        "languages": [
-          "lua"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-deno",
-    "displayName": "Deno",
-    "description": "Deno language support \u2014 IntelliSense, linting, formatting, testing",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "denoland/vscode_deno"
-    },
-    "url": "https://github.com/denoland/vscode_deno",
-    "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
-    ],
-    "categories": [
-      "LSP"
-    ],
-    "minPluginVersion": "1.2.0",
-    "serverBinary": {
-      "repo": "denoland/deno",
-      "asset": "deno-{{rust-target}}.zip",
-      "binaryPath": "deno",
-      "args": [
-        "lsp"
-      ]
-    },
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "binary",
-          "package": "deno",
-          "binary": {
-            "repo": "denoland/deno",
-            "asset": "deno-{{rust-target}}.zip",
-            "binaryPath": "deno"
-          },
-          "args": [
-            "lsp"
-          ]
-        },
-        "languages": [
-          "javascript",
-          "typescript",
-          "javascriptreact",
-          "typescriptreact"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-taplo",
-    "displayName": "TOML (Taplo)",
-    "description": "TOML language support based on Taplo \u2014 formatting, validation, schema",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "tamasfe/taplo",
-      "subdir": "editors/vscode"
-    },
-    "url": "https://github.com/tamasfe/taplo",
-    "languages": [
-      "toml"
-    ],
-    "categories": [
-      "LSP"
-    ],
-    "minPluginVersion": "1.2.0",
-    "serverBinary": {
-      "repo": "tamasfe/taplo",
-      "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
-      "binaryPath": "taplo-{{platform}}-{{raw-arch}}",
-      "args": [
-        "lsp",
-        "stdio"
-      ]
-    },
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "binary",
-          "package": "taplo",
-          "binary": {
-            "repo": "tamasfe/taplo",
-            "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
-            "binaryPath": "taplo-{{platform}}-{{raw-arch}}"
-          },
-          "args": [
-            "lsp",
-            "stdio"
-          ]
-        },
-        "languages": [
-          "toml"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-ansible",
-    "displayName": "Ansible",
-    "description": "Ansible language support \u2014 completion, navigation, validation, playbook runner",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "ansible/vscode-ansible"
-    },
-    "url": "https://github.com/ansible/vscode-ansible",
-    "languages": [
-      "ansible",
-      "yaml"
-    ],
-    "categories": [
-      "LSP"
-    ],
-    "minPluginVersion": "1.2.0",
-    "pipPackages": [
-      "ansible-lint"
-    ],
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "module",
-          "package": "@ansible/ansible-language-server",
-          "entry": "bin"
-        },
-        "languages": [
-          "ansible",
-          "yaml"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-yaml",
-    "displayName": "YAML",
-    "description": "YAML language support \u2014 validation, completion, schema, formatting",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "redhat-developer/vscode-yaml"
-    },
-    "url": "https://github.com/redhat-developer/vscode-yaml",
-    "languages": [
-      "yaml"
-    ],
-    "categories": [
-      "LSP"
+      "LSP",
+      "Linter"
     ],
     "minPluginVersion": "1.2.2",
     "convert": [
@@ -346,21 +1149,20 @@
         "type": "language-client",
         "server": {
           "kind": "module",
-          "package": "yaml-language-server",
+          "package": "@stylelint/language-server",
           "entry": "bin"
         },
         "languages": [
-          "yaml"
+          "css",
+          "scss",
+          "less"
         ]
       },
       {
         "type": "source",
         "transforms": [
           "import-mapping"
-        ],
-        "keepDeps": {
-          "ajv": "^8.17.1"
-        }
+        ]
       }
     ]
   },
@@ -421,51 +1223,9 @@
     ]
   },
   {
-    "name": "vscode-stylelint",
-    "displayName": "Stylelint",
-    "description": "CSS/SCSS/Less linting with Stylelint language server",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "stylelint/vscode-stylelint"
-    },
-    "url": "https://github.com/stylelint/vscode-stylelint",
-    "languages": [
-      "css",
-      "scss",
-      "less"
-    ],
-    "categories": [
-      "LSP",
-      "Linter"
-    ],
-    "minPluginVersion": "1.2.2",
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "module",
-          "package": "@stylelint/language-server",
-          "entry": "bin"
-        },
-        "languages": [
-          "css",
-          "scss",
-          "less"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
     "name": "vscode-prettier-vscode",
     "displayName": "Prettier",
-    "description": "Code formatter using Prettier \u2014 JS/TS/CSS/HTML/JSON/Markdown/YAML",
+    "description": "Code formatter using Prettier — JS/TS/CSS/HTML/JSON/Markdown/YAML",
     "type": "direct-api",
     "source": {
       "type": "github",
@@ -511,7 +1271,7 @@
   {
     "name": "vscode-biome",
     "displayName": "Biome",
-    "description": "Linter and formatter for JS/TS/CSS/JSON \u2014 one tool, fast",
+    "description": "Linter and formatter for JS/TS/CSS/JSON — one tool, fast",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -588,89 +1348,764 @@
     ]
   },
   {
-    "name": "vscode-svelte",
-    "displayName": "Svelte",
-    "description": "Svelte language support \u2014 diagnostics, formatting, IntelliSense",
+    "name": "vscode-deno",
+    "displayName": "Deno",
+    "description": "Deno language support — IntelliSense, linting, formatting, testing",
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "sveltejs/language-tools",
-      "subdir": "packages/svelte-vscode"
+      "repo": "denoland/vscode_deno"
     },
-    "url": "https://github.com/sveltejs/language-tools",
+    "url": "https://github.com/denoland/vscode_deno",
     "languages": [
-      "svelte"
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
     ],
     "categories": [
-      "LSP",
-      "TypeScript"
+      "LSP"
     ],
-    "minPluginVersion": "1.2.2",
+    "minPluginVersion": "1.2.0",
+    "serverBinary": {
+      "repo": "denoland/deno",
+      "asset": "deno-{{rust-target}}.zip",
+      "binaryPath": "deno",
+      "args": [
+        "lsp"
+      ]
+    },
     "convert": [
       {
         "type": "language-client",
         "server": {
-          "kind": "module",
-          "package": "svelte-language-server",
-          "entry": "bin",
-          "binName": "svelteserver"
+          "kind": "binary",
+          "package": "deno",
+          "binary": {
+            "repo": "denoland/deno",
+            "asset": "deno-{{rust-target}}.zip",
+            "binaryPath": "deno"
+          },
+          "args": [
+            "lsp"
+          ]
         },
         "languages": [
-          "svelte"
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
         ]
       },
       {
         "type": "source",
         "transforms": [
           "import-mapping"
-        ],
-        "keepDeps": {
-          "typescript": "*"
-        }
+        ]
       }
     ]
   },
   {
-    "name": "vscode-astro",
-    "displayName": "Astro",
-    "description": "Astro language support \u2014 diagnostics, formatting, IntelliSense",
+    "name": "vscode-javascript",
+    "displayName": "JavaScript Snippets",
+    "description": "JavaScript Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "nathanchapman/vscode-javascript-snippets"
+    },
+    "url": "https://github.com/nathanchapman/vscode-javascript-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-javascript-snippets",
+    "displayName": "JavaScript ES6 Snippets",
+    "description": "Code snippets for JavaScript in ES6 syntax",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "xabikos/vscode-javascript"
+    },
+    "url": "https://github.com/xabikos/vscode-javascript",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "html",
+      "vue"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-node",
+    "displayName": "node-snippets",
+    "description": "node-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "softchris/node-snippets"
+    },
+    "url": "https://github.com/softchris/node-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-node-js",
+    "displayName": "Nodejs Snippets",
+    "description": "Nodejs Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "abdoseadaa/node-js-snippets"
+    },
+    "url": "https://github.com/abdoseadaa/node-js-snippets",
+    "languages": [
+      "javascript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-standardjs",
+    "displayName": "JavaScript standardjs styled snippets",
+    "description": "JavaScript standardjs styled snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "capaj/vscode-standardjs-snippets"
+    },
+    "url": "https://github.com/capaj/vscode-standardjs-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-djaneiro",
+    "displayName": "Djaneiro - Django Snippets",
+    "description": "Djaneiro - Django Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ScottBarkman/vscode-djaneiro"
+    },
+    "url": "https://github.com/ScottBarkman/vscode-djaneiro",
+    "languages": [
+      "django-html",
+      "html",
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-django",
+    "displayName": "Django Snippets",
+    "description": "Django Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "iambibhas/vscode-django-snippets"
+    },
+    "url": "https://github.com/iambibhas/vscode-django-snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-fastapi-snippets",
+    "displayName": "FastAPI Snippets",
+    "description": "FastAPI Python framework code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "damildrizzy/fastapi-snippets"
+    },
+    "url": "https://github.com/damildrizzy/fastapi-snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-flask",
+    "displayName": "flask-snippets",
+    "description": "flask-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "cstrap/flask-snippets"
+    },
+    "url": "https://github.com/cstrap/flask-snippets",
+    "languages": [
+      "html",
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-opencv-snippets",
+    "displayName": "Opencv Snippets",
+    "description": "Opencv Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "gsGupta11/vscode-OpencvSnippets"
+    },
+    "url": "https://github.com/gsGupta11/vscode-OpencvSnippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-pygame-snippets",
+    "displayName": "Pygame Snippets",
+    "description": "Pygame Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "tushortz/vscode-Pygame-Snippets"
+    },
+    "url": "https://github.com/tushortz/vscode-Pygame-Snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-python",
+    "displayName": "python-snippets",
+    "description": "python-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "cstrap/python-snippets"
+    },
+    "url": "https://github.com/cstrap/python-snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-python-snippet-pack",
+    "displayName": "python snippets",
+    "description": "python snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ylcnfrht/vscode-python-snippet-pack"
+    },
+    "url": "https://github.com/ylcnfrht/vscode-python-snippet-pack",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-python-snippet-pack-2.0",
+    "displayName": "Python Snippets 3",
+    "description": "Python Snippets 3",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ericsia/vscode-python-snippet-pack-2.0"
+    },
+    "url": "https://github.com/ericsia/vscode-python-snippet-pack-2.0",
+    "languages": [
+      "django-html",
+      "django-txt",
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-pytorch",
+    "displayName": "PyTorch Snippets",
+    "description": "PyTorch Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "SvenBecker/vscode-pytorch"
+    },
+    "url": "https://github.com/SvenBecker/vscode-pytorch",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-snp-pandas-basic",
+    "displayName": "Pandas Basic Snippets",
+    "description": "Pandas Basic Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "snippington/snp-pandas-basic"
+    },
+    "url": "https://github.com/snippington/snp-pandas-basic",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-tensorflow2snippets",
+    "displayName": "Tensorflow 2.0 Snippets",
+    "description": "Tensorflow 2.0 Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "changkaiyan/tensorflow2snippets"
+    },
+    "url": "https://github.com/changkaiyan/tensorflow2snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-tkinter",
+    "displayName": "Tkinter Snippets",
+    "description": "Tkinter Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "lunaluvgood/tkinter-snippets"
+    },
+    "url": "https://github.com/lunaluvgood/tkinter-snippets",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-intelephense",
+    "displayName": "PHP Intelephense",
+    "description": "PHP code intelligence — completion, diagnostics, navigation, formatting (17.5M+ installs)",
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "withastro/language-tools",
-      "subdir": "packages/vscode"
+      "repo": "bmewburn/vscode-intelephense"
     },
-    "url": "https://github.com/withastro/language-tools",
+    "url": "https://github.com/bmewburn/vscode-intelephense",
     "languages": [
-      "astro"
+      "php"
     ],
     "categories": [
-      "LSP",
-      "TypeScript"
+      "LSP"
     ],
-    "minPluginVersion": "1.2.2",
+    "minPluginVersion": "1.3.0",
     "convert": [
       {
         "type": "language-client",
         "server": {
           "kind": "module",
-          "package": "@astrojs/language-server",
-          "entry": "bin",
-          "binName": "astro-ls"
+          "package": "intelephense",
+          "entry": "lib/intelephense.js"
         },
         "languages": [
-          "astro"
+          "php"
         ],
-        "initializationOptions": "{ typescript: { tsdk: path.join(__dirname, '..', 'node_modules', 'typescript', 'lib') } }"
+        "initializationOptions": "{ storagePath: context.storagePath, clearCache: false, globalStoragePath: context.globalStoragePath, isVscode: false }"
       },
       {
         "type": "source",
         "transforms": [
           "import-mapping"
-        ],
-        "keepDeps": {
-          "typescript": "*"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-laravel-model",
+    "displayName": "Laravel Model Snippets",
+    "description": "Laravel Model Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ahinkle/vscode-laravel-model-snippets"
+    },
+    "url": "https://github.com/ahinkle/vscode-laravel-model-snippets",
+    "languages": [
+      "php"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-laravel5-snippets",
+    "displayName": "Laravel Snippets",
+    "description": "Laravel Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "onecentlin/laravel5-snippets-vscode"
+    },
+    "url": "https://github.com/onecentlin/laravel5-snippets-vscode",
+    "languages": [
+      "blade",
+      "php"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-php-awesome",
+    "displayName": "PHP Awesome Snippets",
+    "description": "PHP Awesome Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "h4kst3r/php-awesome-snippets"
+    },
+    "url": "https://github.com/h4kst3r/php-awesome-snippets",
+    "languages": [
+      "html",
+      "php",
+      "plaintext"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-phpstorm-snippets-for",
+    "displayName": "PHP Snippets from PHPStorm",
+    "description": "PHP Snippets from PHPStorm",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "phiterf/phpstorm-snippets-for-vscode"
+    },
+    "url": "https://github.com/phiterf/phpstorm-snippets-for-vscode",
+    "languages": [
+      "php"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-wordpress-toolbox",
+    "displayName": "WordPress Snippets",
+    "description": "WordPress Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "jason-pomerleau/vscode-wordpress-toolbox"
+    },
+    "url": "https://github.com/jason-pomerleau/vscode-wordpress-toolbox",
+    "languages": [
+      "blade",
+      "php"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-rust-analyzer",
+    "displayName": "rust-analyzer",
+    "description": "Rust language support — completion, navigation, diagnostics, refactoring (6.3M+ installs)",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "rust-lang/rust-analyzer",
+      "subdir": "editors/code"
+    },
+    "url": "https://github.com/rust-lang/rust-analyzer",
+    "languages": [
+      "rust"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.3.0",
+    "serverBinary": {
+      "repo": "rust-lang/rust-analyzer",
+      "asset": "rust-analyzer-{{rust-target}}.gz",
+      "binaryPath": "rust-analyzer-{{rust-target}}",
+      "args": []
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "binary",
+          "package": "rust-analyzer",
+          "binary": {
+            "repo": "rust-lang/rust-analyzer",
+            "asset": "rust-analyzer-{{rust-target}}.gz",
+            "binaryPath": "rust-analyzer-{{rust-target}}"
+          },
+          "args": []
+        },
+        "languages": [
+          "rust"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-rust-flash",
+    "displayName": "Rust Flash Snippets",
+    "description": "Rust Flash Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "Metalymph/rust-flash-snippets"
+    },
+    "url": "https://github.com/Metalymph/rust-flash-snippets",
+    "languages": [
+      "rust"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-ansible",
+    "displayName": "Ansible",
+    "description": "Ansible language support — completion, navigation, validation, playbook runner",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "ansible/vscode-ansible"
+    },
+    "url": "https://github.com/ansible/vscode-ansible",
+    "languages": [
+      "ansible",
+      "yaml"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.2.0",
+    "pipPackages": [
+      "ansible-lint"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@ansible/ansible-language-server",
+          "entry": "bin"
+        },
+        "languages": [
+          "ansible",
+          "yaml"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
       }
     ]
   },
@@ -700,6 +2135,97 @@
         "entry": "src/extension.ts",
         "activationEvents": [
           "onCommand:gitignore.addgitignore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-lua",
+    "displayName": "Lua",
+    "description": "Lua language support — completion, lint, and type checking",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "sumneko/vscode-lua",
+      "subdir": "client"
+    },
+    "url": "https://github.com/sumneko/vscode-lua",
+    "languages": [
+      "lua"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "serverBinary": {
+      "repo": "LuaLS/lua-language-server",
+      "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
+      "binaryPath": "bin/lua-language-server"
+    },
+    "minPluginVersion": "1.2.0",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "binary",
+          "package": "lua",
+          "binary": {
+            "repo": "LuaLS/lua-language-server",
+            "asset": "lua-language-server-{{version}}-{{platform}}-{{arch}}.tar.gz",
+            "binaryPath": "bin/lua-language-server"
+          }
+        },
+        "languages": [
+          "lua"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-prisma",
+    "displayName": "Prisma",
+    "description": "Prisma schema language support — syntax highlight, lint, format",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "prisma/language-tools",
+      "subdir": "packages/vscode"
+    },
+    "url": "https://github.com/prisma/language-tools",
+    "languages": [
+      "prisma"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.2.0",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@prisma/language-server",
+          "entry": "bin"
+        },
+        "languages": [
+          "prisma"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping",
+          "enum-offset"
+        ],
+        "entry": "src/extension.ts",
+        "keepDeps": [
+          "@hono/node-server",
+          "prisma-6-language-server"
         ]
       }
     ]
@@ -746,22 +2272,112 @@
     ]
   },
   {
-    "name": "vscode-javascript-snippets",
-    "displayName": "JavaScript ES6 Snippets",
-    "description": "Code snippets for JavaScript in ES6 syntax",
+    "name": "vscode-taplo",
+    "displayName": "TOML (Taplo)",
+    "description": "TOML language support based on Taplo — formatting, validation, schema",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "tamasfe/taplo",
+      "subdir": "editors/vscode"
+    },
+    "url": "https://github.com/tamasfe/taplo",
+    "languages": [
+      "toml"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.2.0",
+    "serverBinary": {
+      "repo": "tamasfe/taplo",
+      "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
+      "binaryPath": "taplo-{{platform}}-{{raw-arch}}",
+      "args": [
+        "lsp",
+        "stdio"
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "binary",
+          "package": "taplo",
+          "binary": {
+            "repo": "tamasfe/taplo",
+            "asset": "taplo-{{platform}}-{{raw-arch}}.gz",
+            "binaryPath": "taplo-{{platform}}-{{raw-arch}}"
+          },
+          "args": [
+            "lsp",
+            "stdio"
+          ]
+        },
+        "languages": [
+          "toml"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-yaml",
+    "displayName": "YAML",
+    "description": "YAML language support — validation, completion, schema, formatting",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "redhat-developer/vscode-yaml"
+    },
+    "url": "https://github.com/redhat-developer/vscode-yaml",
+    "languages": [
+      "yaml"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.2.2",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "yaml-language-server",
+          "entry": "bin"
+        },
+        "languages": [
+          "yaml"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ],
+        "keepDeps": {
+          "ajv": "^8.17.1"
+        }
+      }
+    ]
+  },
+  {
+    "name": "vscode-arduino",
+    "displayName": "arduino-snippets",
+    "description": "arduino-snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "xabikos/vscode-javascript"
+      "repo": "ronaldosena/arduino-snippets"
     },
-    "url": "https://github.com/xabikos/vscode-javascript",
+    "url": "https://github.com/ronaldosena/arduino-snippets",
     "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "html",
-      "vue"
+      "cpp"
     ],
     "categories": [
       "Snippets"
@@ -774,20 +2390,18 @@
     ]
   },
   {
-    "name": "vscode-react-snippets",
-    "displayName": "Reactjs code snippets",
-    "description": "Code snippets for React.js in ES6 syntax",
+    "name": "vscode-cpp",
+    "displayName": "C/C++ Snippets",
+    "description": "C/C++ Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "xabikos/vscode-react"
+      "repo": "one-harsh/vscode-cpp-snippets"
     },
-    "url": "https://github.com/xabikos/vscode-react",
+    "url": "https://github.com/one-harsh/vscode-cpp-snippets",
     "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
+      "c",
+      "cpp"
     ],
     "categories": [
       "Snippets"
@@ -800,18 +2414,17 @@
     ]
   },
   {
-    "name": "vscode-typescript-react-snippets",
-    "displayName": "Typescript React code snippets",
-    "description": "Code snippets for React.js in TypeScript",
+    "name": "vscode-csharp",
+    "displayName": "C# Snippets",
+    "description": "C# Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "infeng/vscode-react-typescript"
+      "repo": "J0rgeSerran0/vscode-csharp-snippets"
     },
-    "url": "https://github.com/infeng/vscode-react-typescript",
+    "url": "https://github.com/J0rgeSerran0/vscode-csharp-snippets",
     "languages": [
-      "typescript",
-      "typescriptreact"
+      "csharp"
     ],
     "categories": [
       "Snippets"
@@ -824,45 +2437,17 @@
     ]
   },
   {
-    "name": "vscode-es7-react-snippets",
-    "displayName": "ES7+ React/Redux/React-Native snippets",
-    "description": "Snippets for React, Redux, React Native in ES7+",
+    "name": "vscode-java-imports-snippets",
+    "displayName": "Java Imports Snippets",
+    "description": "Java Imports Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "r5n-labs/vscode-react-javascript-snippets"
+      "repo": "tushortz/vscode-Java-Imports"
     },
-    "url": "https://github.com/r5n-labs/vscode-react-javascript-snippets",
+    "url": "https://github.com/tushortz/vscode-Java-Imports",
     "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets",
-        "build": "npm run compile"
-      }
-    ]
-  },
-  {
-    "name": "vscode-vue-snippets",
-    "displayName": "Vue VSCode Snippets",
-    "description": "Snippets for Vue.js 2",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "sdras/vue-vscode-snippets"
-    },
-    "url": "https://github.com/sdras/vue-vscode-snippets",
-    "languages": [
-      "vue",
-      "vue-html"
+      "java"
     ],
     "categories": [
       "Snippets"
@@ -875,18 +2460,17 @@
     ]
   },
   {
-    "name": "vscode-vue3-snippets",
-    "displayName": "Vue 3 Snippets",
-    "description": "Snippets for Vue.js 3",
+    "name": "vscode-java-snippets",
+    "displayName": "Java Snippets",
+    "description": "Java Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "hollowtree/vscode-vue-snippets"
+      "repo": "tushortz/vscode-Java-Snippets"
     },
-    "url": "https://github.com/hollowtree/vscode-vue-snippets",
+    "url": "https://github.com/tushortz/vscode-Java-Snippets",
     "languages": [
-      "vue",
-      "vue-html"
+      "java"
     ],
     "categories": [
       "Snippets"
@@ -899,20 +2483,180 @@
     ]
   },
   {
-    "name": "vscode-react-native-snippets",
-    "displayName": "React Native Snippet",
-    "description": "React Native code snippets",
+    "name": "vscode-awesome-flutter",
+    "displayName": "Awesome Flutter Snippets",
+    "description": "Awesome Flutter Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "jundat95/react-native-snippet"
+      "repo": "Neevash/awesome-flutter-snippets"
     },
-    "url": "https://github.com/jundat95/react-native-snippet",
+    "url": "https://github.com/Neevash/awesome-flutter-snippets",
     "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
+      "dart"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-flutter",
+    "displayName": "Flutter Widget Snippets",
+    "description": "Flutter Widget Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "Alexisvt/flutter-snippets"
+    },
+    "url": "https://github.com/Alexisvt/flutter-snippets",
+    "languages": [
+      "dart"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-flutter-2",
+    "displayName": "Flutter Snippets",
+    "description": "Flutter Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "zyllus17/flutter-snippets"
+    },
+    "url": "https://github.com/zyllus17/flutter-snippets",
+    "languages": [
+      "dart"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-flutter-riverpod",
+    "displayName": "Flutter Riverpod Snippets",
+    "description": "Flutter Riverpod Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "RobertBrunhage/flutter-riverpod-snippets"
+    },
+    "url": "https://github.com/RobertBrunhage/flutter-riverpod-snippets",
+    "languages": [
+      "dart"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-express",
+    "displayName": "Express Snippets",
+    "description": "Express Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "robsonkades/vscode-express-snippets"
+    },
+    "url": "https://github.com/robsonkades/vscode-express-snippets",
+    "languages": [
+      "javascript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-nestjs-snippets",
+    "displayName": "NestJS Snippets",
+    "description": "NestJS framework code snippets for TypeScript",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ManuelGil/vscode-nestjs-snippets"
+    },
+    "url": "https://github.com/ManuelGil/vscode-nestjs-snippets",
+    "languages": [
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-nestsjs",
+    "displayName": "Vscode NestJs Snippets",
+    "description": "Vscode NestJs Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "ashinzekene/vscode-nestsjs-snippets"
+    },
+    "url": "https://github.com/ashinzekene/vscode-nestsjs-snippets",
+    "languages": [
+      "typescript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-springboot",
+    "displayName": "Spring Boot Snippets",
+    "description": "Spring Boot Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "DeveloperSoapbox/vscode-springboot-snippets"
+    },
+    "url": "https://github.com/DeveloperSoapbox/vscode-springboot-snippets",
+    "languages": [
+      "java",
+      "spring-boot-properties",
+      "spring-boot-properties-yaml"
     ],
     "categories": [
       "Snippets"
@@ -975,6 +2719,32 @@
     ]
   },
   {
+    "name": "vscode-jest",
+    "displayName": "Jest Snippets",
+    "description": "Jest Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "andys8/vscode-jest-snippets"
+    },
+    "url": "https://github.com/andys8/vscode-jest-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
     "name": "vscode-playwright-snippets",
     "displayName": "Playwright Snippets",
     "description": "Playwright testing framework code snippets",
@@ -989,29 +2759,6 @@
       "typescript",
       "javascriptreact",
       "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-postgresql-snippets",
-    "displayName": "PostgreSQL Snippets",
-    "description": "PostgreSQL code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Manuel7806/postgresql-snippets"
-    },
-    "url": "https://github.com/Manuel7806/postgresql-snippets",
-    "languages": [
-      "sql"
     ],
     "categories": [
       "Snippets"
@@ -1048,1310 +2795,17 @@
     ]
   },
   {
-    "name": "vscode-nextjs-snippets",
-    "displayName": "Next.js React Snippets",
-    "description": "Next.js and React code snippets",
+    "name": "vscode-postgresql-snippets",
+    "displayName": "PostgreSQL Snippets",
+    "description": "PostgreSQL code snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "ijsto/reactnextjssnippets"
+      "repo": "Manuel7806/postgresql-snippets"
     },
-    "url": "https://github.com/ijsto/reactnextjssnippets",
+    "url": "https://github.com/Manuel7806/postgresql-snippets",
     "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-svelte-snippets",
-    "displayName": "Svelte 3 Snippets",
-    "description": "Svelte 3 code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ryanyang52/vscode-svelte-snippets"
-    },
-    "url": "https://github.com/ryanyang52/vscode-svelte-snippets",
-    "languages": [
-      "svelte",
-      "javascript",
-      "typescript",
-      "css",
-      "html"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-solidjs-snippets",
-    "displayName": "SolidJS Snippets",
-    "description": "SolidJS framework code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "solidjs-community/solid-snippets"
-    },
-    "url": "https://github.com/solidjs-community/solid-snippets",
-    "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-unity-snippets",
-    "displayName": "Unity Snippets",
-    "description": "Unity game engine C# code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "YclepticStudios/vscode-unity-snippets"
-    },
-    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
-    "languages": [
-      "csharp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-nestjs-snippets",
-    "displayName": "NestJS Snippets",
-    "description": "NestJS framework code snippets for TypeScript",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ManuelGil/vscode-nestjs-snippets"
-    },
-    "url": "https://github.com/ManuelGil/vscode-nestjs-snippets",
-    "languages": [
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-fastapi-snippets",
-    "displayName": "FastAPI Snippets",
-    "description": "FastAPI Python framework code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "damildrizzy/fastapi-snippets"
-    },
-    "url": "https://github.com/damildrizzy/fastapi-snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-vsc_html5_boilerplate",
-    "displayName": "HTML Boilerplate",
-    "description": "HTML Boilerplate",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "sidthesloth92/vsc_html5_boilerplate"
-    },
-    "url": "https://github.com/sidthesloth92/vsc_html5_boilerplate",
-    "languages": [
-      "django-html",
-      "html",
-      "njk",
-      "php",
-      "ruby"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular",
-    "displayName": "Angular Snippets (Version 18)",
-    "description": "Angular Snippets (Version 18)",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "johnpapa/vscode-angular-snippets"
-    },
-    "url": "https://github.com/johnpapa/vscode-angular-snippets",
-    "languages": [
-      "dockerfile",
-      "html",
-      "javascript",
-      "jsonc",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-es7-javascript-react",
-    "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
-    "description": "ES7 React/Redux/GraphQL/React-Native snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "rodrigovallades/vscode-es7-javascript-react-snippets"
-    },
-    "url": "https://github.com/rodrigovallades/vscode-es7-javascript-react-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-laravel5-snippets",
-    "displayName": "Laravel Snippets",
-    "description": "Laravel Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "onecentlin/laravel5-snippets-vscode"
-    },
-    "url": "https://github.com/onecentlin/laravel5-snippets-vscode",
-    "languages": [
-      "blade",
-      "php"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular-ngrx-snippets",
-    "displayName": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
-    "description": "Angular 17 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "BeastCode/VSCode-Angular-TypeScript-Snippets"
-    },
-    "url": "https://github.com/BeastCode/VSCode-Angular-TypeScript-Snippets",
-    "languages": [
-      "html",
-      "json",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-flutter",
-    "displayName": "Flutter Widget Snippets",
-    "description": "Flutter Widget Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Alexisvt/flutter-snippets"
-    },
-    "url": "https://github.com/Alexisvt/flutter-snippets",
-    "languages": [
-      "dart"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-react-native-redux-snippets",
-    "displayName": "React-Native/React/Redux snippets for es6/es7",
-    "description": "React-Native/React/Redux snippets for es6/es7",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "EQuimper/VSC-React-Native-React-Redux-Snippets"
-    },
-    "url": "https://github.com/EQuimper/VSC-React-Native-React-Redux-Snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "jsx",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-cpp",
-    "displayName": "C/C++ Snippets",
-    "description": "C/C++ Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "one-harsh/vscode-cpp-snippets"
-    },
-    "url": "https://github.com/one-harsh/vscode-cpp-snippets",
-    "languages": [
-      "c",
-      "cpp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-djaneiro",
-    "displayName": "Djaneiro - Django Snippets",
-    "description": "Djaneiro - Django Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ScottBarkman/vscode-djaneiro"
-    },
-    "url": "https://github.com/ScottBarkman/vscode-djaneiro",
-    "languages": [
-      "django-html",
-      "html",
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-python",
-    "displayName": "python-snippets",
-    "description": "python-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "cstrap/python-snippets"
-    },
-    "url": "https://github.com/cstrap/python-snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-python-snippet-pack",
-    "displayName": "python snippets",
-    "description": "python snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ylcnfrht/vscode-python-snippet-pack"
-    },
-    "url": "https://github.com/ylcnfrht/vscode-python-snippet-pack",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-awesome-flutter",
-    "displayName": "Awesome Flutter Snippets",
-    "description": "Awesome Flutter Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Neevash/awesome-flutter-snippets"
-    },
-    "url": "https://github.com/Neevash/awesome-flutter-snippets",
-    "languages": [
-      "dart"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-react-typescript",
-    "displayName": "Typescript React code snippets",
-    "description": "Typescript React code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "infeng/vscode-react-typescript"
-    },
-    "url": "https://github.com/infeng/vscode-react-typescript",
-    "languages": [
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-node",
-    "displayName": "node-snippets",
-    "description": "node-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "softchris/node-snippets"
-    },
-    "url": "https://github.com/softchris/node-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-csharp",
-    "displayName": "C# Snippets",
-    "description": "C# Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "J0rgeSerran0/vscode-csharp-snippets"
-    },
-    "url": "https://github.com/J0rgeSerran0/vscode-csharp-snippets",
-    "languages": [
-      "csharp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-bootstrap-3",
-    "displayName": "Bootstrap 3 Snippets",
-    "description": "Bootstrap 3 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "wcwhitehead/bootstrap-3-snippets"
-    },
-    "url": "https://github.com/wcwhitehead/bootstrap-3-snippets",
-    "languages": [
-      "handlebars",
-      "html",
-      "jade",
-      "javascript",
-      "javascriptreact",
-      "php",
-      "razor",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-flask",
-    "displayName": "flask-snippets",
-    "description": "flask-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "cstrap/flask-snippets"
-    },
-    "url": "https://github.com/cstrap/flask-snippets",
-    "languages": [
-      "html",
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-pygame-snippets",
-    "displayName": "Pygame Snippets",
-    "description": "Pygame Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "tushortz/vscode-Pygame-Snippets"
-    },
-    "url": "https://github.com/tushortz/vscode-Pygame-Snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-bootstrap-v4",
-    "displayName": "Bootstrap v4 Snippets",
-    "description": "Bootstrap v4 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Zaczero/bootstrap-v4-snippets",
-      "subdir": "bootstrap-v4-snippets"
-    },
-    "url": "https://github.com/Zaczero/bootstrap-v4-snippets",
-    "languages": [
-      "blade",
-      "cfml",
-      "html",
-      "razor",
-      "smarty",
-      "vue"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-svelte-2",
-    "displayName": "Svelte 3 Snippets",
-    "description": "Svelte 3 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "fivethree-team/vscode-svelte-snippets"
-    },
-    "url": "https://github.com/fivethree-team/vscode-svelte-snippets",
-    "languages": [
-      "css",
-      "html",
-      "javascript",
-      "svelte"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-wordpress-toolbox",
-    "displayName": "WordPress Snippets",
-    "description": "WordPress Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "jason-pomerleau/vscode-wordpress-toolbox"
-    },
-    "url": "https://github.com/jason-pomerleau/vscode-wordpress-toolbox",
-    "languages": [
-      "blade",
-      "php"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-bootstrap5-snippets",
-    "displayName": "Bootstrap 5 & Font Awesome Snippets",
-    "description": "Bootstrap 5 & Font Awesome Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "HansUXdev/B5-SNIPPETS"
-    },
-    "url": "https://github.com/HansUXdev/B5-SNIPPETS",
-    "languages": [
-      "HTML (Eex)",
-      "blade",
-      "django-html",
-      "ejs",
-      "erb",
-      "handlebars",
-      "html",
-      "javascript",
-      "javascriptreact",
-      "jinja-html",
-      "latte",
-      "nunjucks",
-      "php",
-      "plaintext",
-      "razor",
-      "tpl",
-      "twig",
-      "typescript",
-      "typescriptreact",
-      "volt",
-      "vue",
-      "vue-html"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular-2",
-    "displayName": "Angular 8 and TypeScript/HTML VS Code Snippets",
-    "description": "Angular 8 and TypeScript/HTML VS Code Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "danwahlin/angular-snippets"
-    },
-    "url": "https://github.com/danwahlin/angular-snippets",
-    "languages": [
-      "html",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-unity",
-    "displayName": "Unity Snippets",
-    "description": "Unity Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "YclepticStudios/vscode-unity-snippets"
-    },
-    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
-    "languages": [
-      "csharp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-django",
-    "displayName": "Django Snippets",
-    "description": "Django Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "iambibhas/vscode-django-snippets"
-    },
-    "url": "https://github.com/iambibhas/vscode-django-snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-jest",
-    "displayName": "Jest Snippets",
-    "description": "Jest Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "andys8/vscode-jest-snippets"
-    },
-    "url": "https://github.com/andys8/vscode-jest-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-next.js",
-    "displayName": "Nextjs snippets",
-    "description": "Nextjs snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "pulkitgangwar/next.js-snippets"
-    },
-    "url": "https://github.com/pulkitgangwar/next.js-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-ng2-typescript",
-    "displayName": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
-    "description": "Angular 2, 4 and upcoming latest TypeScript HTML Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ultrasonicsoft/vscode-ng2-typescript-snippets"
-    },
-    "url": "https://github.com/ultrasonicsoft/vscode-ng2-typescript-snippets",
-    "languages": [
-      "html",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-ionic",
-    "displayName": "Ionic Snippets",
-    "description": "Ionic Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "fivethree-team/vscode-ionic-snippets"
-    },
-    "url": "https://github.com/fivethree-team/vscode-ionic-snippets",
-    "languages": [
-      "html",
-      "scss",
-      "typescript",
-      "typescriptreact",
-      "vue-html"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-python-snippet-pack-2.0",
-    "displayName": "Python Snippets 3",
-    "description": "Python Snippets 3",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ericsia/vscode-python-snippet-pack-2.0"
-    },
-    "url": "https://github.com/ericsia/vscode-python-snippet-pack-2.0",
-    "languages": [
-      "django-html",
-      "django-txt",
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-jquery-snippets",
-    "displayName": "jQuery Snippets",
-    "description": "jQuery Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "DonJayamanne/jquerysnippets"
-    },
-    "url": "https://github.com/DonJayamanne/jquerysnippets",
-    "languages": [
-      "javascript",
-      "html",
-      "pug",
-      "jade"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-tkinter",
-    "displayName": "Tkinter Snippets",
-    "description": "Tkinter Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "lunaluvgood/tkinter-snippets"
-    },
-    "url": "https://github.com/lunaluvgood/tkinter-snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-php-awesome",
-    "displayName": "PHP Awesome Snippets",
-    "description": "PHP Awesome Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "h4kst3r/php-awesome-snippets"
-    },
-    "url": "https://github.com/h4kst3r/php-awesome-snippets",
-    "languages": [
-      "html",
-      "php",
-      "plaintext"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-react-redux-react-router",
-    "displayName": "React/Redux/react-router Snippets",
-    "description": "React/Redux/react-router Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "discountry/vscode-react-redux-react-router-snippets"
-    },
-    "url": "https://github.com/discountry/vscode-react-redux-react-router-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "jsx"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-opencv-snippets",
-    "displayName": "Opencv Snippets",
-    "description": "Opencv Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "gsGupta11/vscode-OpencvSnippets"
-    },
-    "url": "https://github.com/gsGupta11/vscode-OpencvSnippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-styled-components-snippets",
-    "displayName": "styled-components-snippets",
-    "description": "styled-components-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "jonkwheeler/styled-components-snippets-vscode"
-    },
-    "url": "https://github.com/jonkwheeler/styled-components-snippets-vscode",
-    "languages": [
-      "css",
-      "javascript",
-      "javascriptreact",
-      "styled-css",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-vue2",
-    "displayName": "Vue 2 Snippets",
-    "description": "Vue 2 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "xianghongai/vscode-vue2-snippets"
-    },
-    "url": "https://github.com/xianghongai/vscode-vue2-snippets",
-    "languages": [
-      "css",
-      "html",
-      "javascript",
-      "javascriptreact",
-      "less",
-      "scss",
-      "typescript",
-      "vue",
-      "vue-html"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets",
-        "build": "node merge.js"
-      }
-    ]
-  },
-  {
-    "name": "vscode-full-react",
-    "displayName": "Fullstack React/React Native snippets",
-    "description": "Fullstack React/React Native snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "walteribeiro/full-react-snippets"
-    },
-    "url": "https://github.com/walteribeiro/full-react-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-standardjs",
-    "displayName": "JavaScript standardjs styled snippets",
-    "description": "JavaScript standardjs styled snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "capaj/vscode-standardjs-snippets"
-    },
-    "url": "https://github.com/capaj/vscode-standardjs-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular-bootstrap-code",
-    "displayName": "Angular UI Bootstrap Snippets",
-    "description": "Angular UI Bootstrap Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "herrherrmann/angular-bootstrap-code"
-    },
-    "url": "https://github.com/herrherrmann/angular-bootstrap-code",
-    "languages": [
-      "html",
-      "javascript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-vue3-snippets-for",
-    "displayName": "vue3-snippets-for-vscode",
-    "description": "vue3-snippets-for-vscode",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "wejectchen/vue3-snippets-for-vscode"
-    },
-    "url": "https://github.com/wejectchen/vue3-snippets-for-vscode",
-    "languages": [
-      "html",
-      "javascript",
-      "typescript",
-      "vue"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-pytorch",
-    "displayName": "PyTorch Snippets",
-    "description": "PyTorch Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "SvenBecker/vscode-pytorch"
-    },
-    "url": "https://github.com/SvenBecker/vscode-pytorch",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-phpstorm-snippets-for",
-    "displayName": "PHP Snippets from PHPStorm",
-    "description": "PHP Snippets from PHPStorm",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "phiterf/phpstorm-snippets-for-vscode"
-    },
-    "url": "https://github.com/phiterf/phpstorm-snippets-for-vscode",
-    "languages": [
-      "php"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-laravel-model",
-    "displayName": "Laravel Model Snippets",
-    "description": "Laravel Model Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ahinkle/vscode-laravel-model-snippets"
-    },
-    "url": "https://github.com/ahinkle/vscode-laravel-model-snippets",
-    "languages": [
-      "php"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-liquid",
-    "displayName": "Shopify Liquid Template Snippets",
-    "description": "Shopify Liquid Template Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "killalau/vscode-liquid-snippets"
-    },
-    "url": "https://github.com/killalau/vscode-liquid-snippets",
-    "languages": [
-      "liquid"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-arduino",
-    "displayName": "arduino-snippets",
-    "description": "arduino-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ronaldosena/arduino-snippets"
-    },
-    "url": "https://github.com/ronaldosena/arduino-snippets",
-    "languages": [
-      "cpp"
+      "sql"
     ],
     "categories": [
       "Snippets"
@@ -2399,322 +2853,23 @@
     ]
   },
   {
-    "name": "vscode-springboot",
-    "displayName": "Spring Boot Snippets",
-    "description": "Spring Boot Snippets",
+    "name": "vscode-uni-cloud-snippets",
+    "displayName": "uni-cloud-snippets",
+    "description": "uni-cloud-snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "DeveloperSoapbox/vscode-springboot-snippets"
+      "repo": "uni-helper/uni-cloud-snippets-vscode"
     },
-    "url": "https://github.com/DeveloperSoapbox/vscode-springboot-snippets",
+    "url": "https://github.com/uni-helper/uni-cloud-snippets-vscode",
     "languages": [
-      "java",
-      "spring-boot-properties",
-      "spring-boot-properties-yaml"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-apacheconf",
-    "displayName": "Apache Conf Snippets",
-    "description": "Apache Conf Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "hrdtbs/vscode-apacheconf-snippets"
-    },
-    "url": "https://github.com/hrdtbs/vscode-apacheconf-snippets",
-    "languages": [
-      "apacheconf"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-java-imports-snippets",
-    "displayName": "Java Imports Snippets",
-    "description": "Java Imports Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "tushortz/vscode-Java-Imports"
-    },
-    "url": "https://github.com/tushortz/vscode-Java-Imports",
-    "languages": [
-      "java"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular1",
-    "displayName": "Angular 1 JavaScript and TypeScript Snippets",
-    "description": "Angular 1 JavaScript and TypeScript Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "johnpapa/vscode-angular1-snippets"
-    },
-    "url": "https://github.com/johnpapa/vscode-angular1-snippets",
-    "languages": [
-      "javascript",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-flutter-riverpod",
-    "displayName": "Flutter Riverpod Snippets",
-    "description": "Flutter Riverpod Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "RobertBrunhage/flutter-riverpod-snippets"
-    },
-    "url": "https://github.com/RobertBrunhage/flutter-riverpod-snippets",
-    "languages": [
-      "dart"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-rxjs-snippets",
-    "displayName": "rxjs-snippets",
-    "description": "rxjs-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "prashantkoshta/rxjs-snippets-vscode"
-    },
-    "url": "https://github.com/prashantkoshta/rxjs-snippets-vscode",
-    "languages": [
-      "javascript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-nestsjs",
-    "displayName": "Vscode NestJs Snippets",
-    "description": "Vscode NestJs Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ashinzekene/vscode-nestsjs-snippets"
-    },
-    "url": "https://github.com/ashinzekene/vscode-nestsjs-snippets",
-    "languages": [
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-flutter-2",
-    "displayName": "Flutter Snippets",
-    "description": "Flutter Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "zyllus17/flutter-snippets"
-    },
-    "url": "https://github.com/zyllus17/flutter-snippets",
-    "languages": [
-      "dart"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-java-snippets",
-    "displayName": "Java Snippets",
-    "description": "Java Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "tushortz/vscode-Java-Snippets"
-    },
-    "url": "https://github.com/tushortz/vscode-Java-Snippets",
-    "languages": [
-      "java"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-node-js",
-    "displayName": "Nodejs Snippets",
-    "description": "Nodejs Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "abdoseadaa/node-js-snippets"
-    },
-    "url": "https://github.com/abdoseadaa/node-js-snippets",
-    "languages": [
-      "javascript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-javascript",
-    "displayName": "JavaScript Snippets",
-    "description": "JavaScript Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "nathanchapman/vscode-javascript-snippets"
-    },
-    "url": "https://github.com/nathanchapman/vscode-javascript-snippets",
-    "languages": [
+      "html",
       "javascript",
       "javascriptreact",
       "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-angular2-test",
-    "displayName": "Angular 2 TypeScript Test Snippets",
-    "description": "Angular 2 TypeScript Test Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "marinho/vscode-angular2-test-snippets"
-    },
-    "url": "https://github.com/marinho/vscode-angular2-test-snippets",
-    "languages": [
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-express",
-    "displayName": "Express Snippets",
-    "description": "Express Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "robsonkades/vscode-express-snippets"
-    },
-    "url": "https://github.com/robsonkades/vscode-express-snippets",
-    "languages": [
-      "javascript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-rust-flash",
-    "displayName": "Rust Flash Snippets",
-    "description": "Rust Flash Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Metalymph/rust-flash-snippets"
-    },
-    "url": "https://github.com/Metalymph/rust-flash-snippets",
-    "languages": [
-      "rust"
+      "typescriptreact",
+      "vue",
+      "vue-html"
     ],
     "categories": [
       "Snippets"
@@ -2752,170 +2907,6 @@
     ]
   },
   {
-    "name": "vscode-snp-pandas-basic",
-    "displayName": "Pandas Basic Snippets",
-    "description": "Pandas Basic Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "snippington/snp-pandas-basic"
-    },
-    "url": "https://github.com/snippington/snp-pandas-basic",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-uni-cloud-snippets",
-    "displayName": "uni-cloud-snippets",
-    "description": "uni-cloud-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "uni-helper/uni-cloud-snippets-vscode"
-    },
-    "url": "https://github.com/uni-helper/uni-cloud-snippets-vscode",
-    "languages": [
-      "html",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "vue",
-      "vue-html"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-emoji-snippets",
-    "displayName": "Emoji Snippets",
-    "description": "Emoji Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Devzstudio/Vscode-Emoji-Snippets"
-    },
-    "url": "https://github.com/Devzstudio/Vscode-Emoji-Snippets",
-    "languages": [
-      "css",
-      "git-commit",
-      "go",
-      "html",
-      "jade",
-      "java",
-      "javascript",
-      "javascriptreact",
-      "markdown",
-      "php",
-      "python",
-      "scss",
-      "typescript",
-      "typescriptreact",
-      "vb",
-      "vue",
-      "xml"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-classic-asp",
-    "displayName": "Classic ASP Syntaxes and Snippets",
-    "description": "Classic ASP Syntaxes and Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "jtjoo/vscode-classic-asp-extension"
-    },
-    "url": "https://github.com/jtjoo/vscode-classic-asp-extension",
-    "languages": [
-      "asp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-tensorflow2snippets",
-    "displayName": "Tensorflow 2.0 Snippets",
-    "description": "Tensorflow 2.0 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "changkaiyan/tensorflow2snippets"
-    },
-    "url": "https://github.com/changkaiyan/tensorflow2snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-font-awesome-codes-html",
-    "displayName": "Font-awesome codes for html (snippets)",
-    "description": "Font-awesome codes for html (snippets)",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "dslpp056193/font-awesome-codes-html"
-    },
-    "url": "https://github.com/dslpp056193/font-awesome-codes-html",
-    "languages": [
-      "ejs",
-      "html",
-      "javascriptreact",
-      "pug",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-ue4-snippets-vs",
     "displayName": "Unreal Engine 4 Snippets",
     "description": "Unreal Engine 4 Snippets",
@@ -2939,45 +2930,17 @@
     ]
   },
   {
-    "name": "vscode-vue-typescript",
-    "displayName": "Vue TypeScript Snippets",
-    "description": "Vue TypeScript Snippets",
+    "name": "vscode-unity",
+    "displayName": "Unity Snippets",
+    "description": "Unity Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "ducksoupdev/vscode-vue-typescript-snippets"
+      "repo": "YclepticStudios/vscode-unity-snippets"
     },
-    "url": "https://github.com/ducksoupdev/vscode-vue-typescript-snippets",
+    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
     "languages": [
-      "html",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-eslint-disable",
-    "displayName": "eslint-disable-snippets",
-    "description": "eslint-disable-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "drKnoxy/eslint-disable-snippets"
-    },
-    "url": "https://github.com/drKnoxy/eslint-disable-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "vue"
+      "csharp"
     ],
     "categories": [
       "Snippets"
@@ -3036,6 +2999,75 @@
     ]
   },
   {
+    "name": "vscode-unity-snippets",
+    "displayName": "Unity Snippets",
+    "description": "Unity game engine C# code snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "YclepticStudios/vscode-unity-snippets"
+    },
+    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
+    "languages": [
+      "csharp"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-apacheconf",
+    "displayName": "Apache Conf Snippets",
+    "description": "Apache Conf Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "hrdtbs/vscode-apacheconf-snippets"
+    },
+    "url": "https://github.com/hrdtbs/vscode-apacheconf-snippets",
+    "languages": [
+      "apacheconf"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-classic-asp",
+    "displayName": "Classic ASP Syntaxes and Snippets",
+    "description": "Classic ASP Syntaxes and Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "jtjoo/vscode-classic-asp-extension"
+    },
+    "url": "https://github.com/jtjoo/vscode-classic-asp-extension",
+    "languages": [
+      "asp"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
     "name": "vscode-ejs-snippets",
     "displayName": "EJS Snippets",
     "description": "EJS (Embedded JavaScript) template code snippets",
@@ -3061,203 +3093,222 @@
     ]
   },
   {
-    "name": "vscode-intelephense",
-    "displayName": "PHP Intelephense",
-    "description": "PHP code intelligence \u2014 completion, diagnostics, navigation, formatting (17.5M+ installs)",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "bmewburn/vscode-intelephense"
-    },
-    "url": "https://github.com/bmewburn/vscode-intelephense",
-    "languages": [
-      "php"
-    ],
-    "categories": [
-      "LSP"
-    ],
-    "minPluginVersion": "1.3.0",
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "module",
-          "package": "intelephense",
-          "entry": "lib/intelephense.js"
-        },
-        "languages": [
-          "php"
-        ],
-        "initializationOptions": "{ storagePath: context.storagePath, clearCache: false, globalStoragePath: context.globalStoragePath, isVscode: false }"
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-simple-react-snippets",
-    "displayName": "Simple React Snippets",
-    "description": "Basic React code snippets (6.4M+ installs)",
+    "name": "vscode-emoji-snippets",
+    "displayName": "Emoji Snippets",
+    "description": "Emoji Snippets",
     "type": "snippets",
     "source": {
       "type": "github",
-      "repo": "burkeholland/simple-react-snippets"
+      "repo": "Devzstudio/Vscode-Emoji-Snippets"
     },
-    "url": "https://github.com/burkeholland/simple-react-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.3.0",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-js-jsx-snippets",
-    "displayName": "JS JSX Snippets",
-    "description": "JavaScript and React/JSX code snippets (1.4M+ installs)",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "skyran1278/js-jsx-snippets"
-    },
-    "url": "https://github.com/skyran1278/js-jsx-snippets",
-    "languages": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.3.0",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-rust-analyzer",
-    "displayName": "rust-analyzer",
-    "description": "Rust language support \u2014 completion, navigation, diagnostics, refactoring (6.3M+ installs)",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "rust-lang/rust-analyzer",
-      "subdir": "editors/code"
-    },
-    "url": "https://github.com/rust-lang/rust-analyzer",
-    "languages": [
-      "rust"
-    ],
-    "categories": [
-      "LSP"
-    ],
-    "minPluginVersion": "1.3.0",
-    "serverBinary": {
-      "repo": "rust-lang/rust-analyzer",
-      "asset": "rust-analyzer-{{rust-target}}.gz",
-      "binaryPath": "rust-analyzer-{{rust-target}}",
-      "args": []
-    },
-    "convert": [
-      {
-        "type": "language-client",
-        "server": {
-          "kind": "binary",
-          "package": "rust-analyzer",
-          "binary": {
-            "repo": "rust-lang/rust-analyzer",
-            "asset": "rust-analyzer-{{rust-target}}.gz",
-            "binaryPath": "rust-analyzer-{{rust-target}}"
-          },
-          "args": []
-        },
-        "languages": [
-          "rust"
-        ]
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "vscode-css-peek",
-    "displayName": "CSS Peek",
-    "description": "CSS Peek \u2014 peek/go-to-definition/hover for CSS classes and IDs in HTML/JSX/Vue/etc.",
-    "type": "pure-lsp",
-    "source": {
-      "type": "github",
-      "repo": "pranaygp/vscode-css-peek"
-    },
-    "url": "https://github.com/pranaygp/vscode-css-peek",
+    "url": "https://github.com/Devzstudio/Vscode-Emoji-Snippets",
     "languages": [
       "css",
+      "git-commit",
+      "go",
+      "html",
+      "jade",
+      "java",
+      "javascript",
+      "javascriptreact",
+      "markdown",
+      "php",
+      "python",
       "scss",
-      "less"
+      "typescript",
+      "typescriptreact",
+      "vb",
+      "vue",
+      "xml"
     ],
     "categories": [
-      "LSP"
+      "Snippets"
     ],
+    "minPluginVersion": "1.2.6",
     "convert": [
       {
-        "type": "language-client",
-        "server": {
-          "kind": "module",
-          "package": "../server/out/server"
-        },
-        "languages": [
-          "css",
-          "scss",
-          "less",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "vue",
-          "svelte",
-          "php",
-          "pug",
-          "handlebars",
-          "ejs"
-        ],
-        "initializationOptions": "{ stylesheets: [], peekFromLanguages: [\"html\", \"javascript\", \"javascriptreact\", \"typescript\", \"typescriptreact\", \"vue\", \"svelte\", \"php\"], peekToLinkedOnly: false }",
-        "id": "cssPeek"
-      },
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping"
-        ],
-        "entry": "client/src/extension.ts",
-        "keepDeps": {
-          "minimatch": "^9.0.3",
-          "vscode-css-languageservice": "^6.2.6",
-          "vscode-html-languageservice": "^5.0.6",
-          "vscode-languageserver": "^8.1.0",
-          "vscode-languageserver-textdocument": "^1.0.8"
-        }
+        "type": "snippets"
       }
+    ]
+  },
+  {
+    "name": "vscode-eslint-disable",
+    "displayName": "eslint-disable-snippets",
+    "description": "eslint-disable-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "drKnoxy/eslint-disable-snippets"
+    },
+    "url": "https://github.com/drKnoxy/eslint-disable-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue"
     ],
-    "minPluginVersion": "1.4.2"
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-font-awesome-codes-html",
+    "displayName": "Font-awesome codes for html (snippets)",
+    "description": "Font-awesome codes for html (snippets)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "dslpp056193/font-awesome-codes-html"
+    },
+    "url": "https://github.com/dslpp056193/font-awesome-codes-html",
+    "languages": [
+      "ejs",
+      "html",
+      "javascriptreact",
+      "pug",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-ionic",
+    "displayName": "Ionic Snippets",
+    "description": "Ionic Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "fivethree-team/vscode-ionic-snippets"
+    },
+    "url": "https://github.com/fivethree-team/vscode-ionic-snippets",
+    "languages": [
+      "html",
+      "scss",
+      "typescript",
+      "typescriptreact",
+      "vue-html"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-jquery-snippets",
+    "displayName": "jQuery Snippets",
+    "description": "jQuery Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "DonJayamanne/jquerysnippets"
+    },
+    "url": "https://github.com/DonJayamanne/jquerysnippets",
+    "languages": [
+      "javascript",
+      "html",
+      "pug",
+      "jade"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-liquid",
+    "displayName": "Shopify Liquid Template Snippets",
+    "description": "Shopify Liquid Template Snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "killalau/vscode-liquid-snippets"
+    },
+    "url": "https://github.com/killalau/vscode-liquid-snippets",
+    "languages": [
+      "liquid"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-rxjs-snippets",
+    "displayName": "rxjs-snippets",
+    "description": "rxjs-snippets",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "prashantkoshta/rxjs-snippets-vscode"
+    },
+    "url": "https://github.com/prashantkoshta/rxjs-snippets-vscode",
+    "languages": [
+      "javascript"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-vsc_html5_boilerplate",
+    "displayName": "HTML Boilerplate",
+    "description": "HTML Boilerplate",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "sidthesloth92/vsc_html5_boilerplate"
+    },
+    "url": "https://github.com/sidthesloth92/vsc_html5_boilerplate",
+    "languages": [
+      "django-html",
+      "html",
+      "njk",
+      "php",
+      "ruby"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.2.6",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
   }
 ]
