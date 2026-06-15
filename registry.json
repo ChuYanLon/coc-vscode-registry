@@ -3059,5 +3059,144 @@
         "type": "snippets"
       }
     ]
+  },
+  {
+    "name": "vscode-intelephense",
+    "displayName": "PHP Intelephense",
+    "description": "PHP code intelligence — completion, diagnostics, navigation, formatting (17.5M+ installs)",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "bmewburn/vscode-intelephense"
+    },
+    "url": "https://github.com/bmewburn/vscode-intelephense",
+    "languages": [
+      "php"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.3.0",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "intelephense",
+          "entry": "lib/intelephense.js"
+        },
+        "languages": [
+          "php"
+        ],
+        "initializationOptions": "{ storagePath: context.storagePath, clearCache: false, globalStoragePath: context.globalStoragePath, isVscode: false }"
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-simple-react-snippets",
+    "displayName": "Simple React Snippets",
+    "description": "Basic React code snippets (6.4M+ installs)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "burkeholland/simple-react-snippets"
+    },
+    "url": "https://github.com/burkeholland/simple-react-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.3.0",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-js-jsx-snippets",
+    "displayName": "JS JSX Snippets",
+    "description": "JavaScript and React/JSX code snippets (1.4M+ installs)",
+    "type": "snippets",
+    "source": {
+      "type": "github",
+      "repo": "skyran1278/js-jsx-snippets"
+    },
+    "url": "https://github.com/skyran1278/js-jsx-snippets",
+    "languages": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "categories": [
+      "Snippets"
+    ],
+    "minPluginVersion": "1.3.0",
+    "convert": [
+      {
+        "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-rust-analyzer",
+    "displayName": "rust-analyzer",
+    "description": "Rust language support — completion, navigation, diagnostics, refactoring (6.3M+ installs)",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "rust-lang/rust-analyzer",
+      "subdir": "editors/code"
+    },
+    "url": "https://github.com/rust-lang/rust-analyzer",
+    "languages": [
+      "rust"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.3.0",
+    "serverBinary": {
+      "repo": "rust-lang/rust-analyzer",
+      "asset": "rust-analyzer-{{rust-target}}.gz",
+      "binaryPath": "rust-analyzer-{{rust-target}}",
+      "args": []
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "binary",
+          "package": "rust-analyzer",
+          "binary": {
+            "repo": "rust-lang/rust-analyzer",
+            "asset": "rust-analyzer-{{rust-target}}.gz",
+            "binaryPath": "rust-analyzer-{{rust-target}}"
+          },
+          "args": []
+        },
+        "languages": [
+          "rust"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
   }
 ]
