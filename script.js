@@ -65,9 +65,8 @@ function renderPackageCards(pkgs) {
   }
 
   const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
-  const start = 0;
   const end = Math.min(currentPage * PAGE_SIZE, pkgs.length);
-  const pageItems = pkgs.slice(start, end);
+  const pageItems = pkgs.slice(0, end);
 
   let html = pageItems.map(p => {
     const installCmd = getInstallCmd(p);
@@ -75,27 +74,38 @@ function renderPackageCards(pkgs) {
     const catTags = p.categories.map(c => `<span class="package-tag cat">${escapeHtml(c)}</span>`).join('');
     const typeTag = `<span class="package-tag type ${p.type}">${escapeHtml(p.type)}</span>`;
 
+    let extraTags = '';
+    if (p.minPluginVersion) {
+      extraTags += `<span class="package-tag version">≥${escapeHtml(p.minPluginVersion)}</span>`;
+    }
+    if (p.pipPackages && p.pipPackages.length > 0) {
+      extraTags += p.pipPackages.map(pkg => `<span class="package-tag pip">pip: ${escapeHtml(pkg)}</span>`).join('');
+    }
+    if (p.serverBinary) {
+      extraTags += `<span class="package-tag binary">bin: ${escapeHtml(p.serverBinary.repo)}</span>`;
+    }
+
     return `
       <div class="package-card">
         <div class="package-header">
-          <div>
+          <div class="package-body">
             <div class="package-title">
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
             </div>
             <div class="package-desc">${escapeHtml(p.description)}</div>
             <div class="package-meta">
-              ${typeTag}${langTags}${catTags}
+              ${typeTag}${langTags}${catTags}${extraTags}
             </div>
           </div>
           <div class="package-actions">
             <button class="btn btn-primary copy-btn" data-cmd="${installCmd}">
               <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-              Copy install
+              <span class="btn-label">Copy</span>
             </button>
             <a href="${escapeHtml(p.url)}" class="btn" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-              Source
+              <span class="btn-label">Source</span>
             </a>
           </div>
         </div>
@@ -103,19 +113,14 @@ function renderPackageCards(pkgs) {
     `;
   }).join('');
 
-  // Pagination
-  let paginationHtml = '';
-  if (totalPages > 1) {
-    paginationHtml = '<div class="pagination">';
-    paginationHtml += `<span class="page-info">${end} / ${pkgs.length} packages</span>`;
-    if (currentPage > 1) {
-      paginationHtml = `<button class="btn show-less" data-page="1">Show less</button> ` + paginationHtml;
-    }
-    paginationHtml += '<div class="scroll-sentinel"></div>';
-    paginationHtml += '</div>';
+  // "Show more" button
+  if (end < pkgs.length) {
+    const remaining = pkgs.length - end;
+    html += `<button class="show-more">Show ${Math.min(remaining, PAGE_SIZE)} more (${end}/${pkgs.length})</button>`;
   }
+  html += '<div class="scroll-sentinel"></div>';
 
-  container.innerHTML = html + paginationHtml;
+  container.innerHTML = html;
 }
 
 function escapeHtml(s) {
@@ -124,14 +129,22 @@ function escapeHtml(s) {
   return div.innerHTML;
 }
 
+function renderStats(filtered) {
+  const el = document.getElementById('stats');
+  const activeTypes = activeTypeFilters.size > 0 ? `, type: ${[...activeTypeFilters].join(', ')}` : '';
+  const activeCats = activeCategoryFilters.size > 0 ? `, category: ${[...activeCategoryFilters].join(', ')}` : '';
+  el.textContent = `${filtered.length} / ${allPackages.length} packages${activeTypes}${activeCats}`;
+}
+
 function render() {
   const filtered = filterPackages();
   currentPage = 1;
   renderFilters();
   renderPackageCards(filtered);
+  renderStats(filtered);
 }
 
-// Event delegation for dynamic buttons
+// Event delegation
 document.getElementById('package-list').addEventListener('click', async e => {
   const copyBtn = e.target.closest('.copy-btn');
   if (copyBtn) {
@@ -146,22 +159,29 @@ document.getElementById('package-list').addEventListener('click', async e => {
       document.execCommand('copy');
       document.body.removeChild(ta);
     }
-    const orig = copyBtn.innerHTML;
     copyBtn.classList.add('btn-copied');
-    copyBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Copied!`;
+    const label = copyBtn.querySelector('.btn-label');
+    if (label) label.textContent = 'Copied!';
     setTimeout(() => {
       copyBtn.classList.remove('btn-copied');
-      copyBtn.innerHTML = orig;
+      if (label) label.textContent = 'Copy';
     }, 2000);
     return;
   }
 
-  const showLessBtn = e.target.closest('.show-less');
-  if (showLessBtn) {
-    currentPage = 1;
-    const filtered = filterPackages();
-    renderPackageCards(filtered);
-    document.querySelector('.pagination')?.scrollIntoView({ behavior: 'smooth' });
+  const showMore = e.target.closest('.show-more');
+  if (showMore) {
+    showMore.disabled = true;
+    const prevText = showMore.textContent;
+    showMore.textContent = 'Loading...';
+    const pkgs = filterPackages();
+    const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPackageCards(pkgs);
+    }
+    renderStats(pkgs);
+    return;
   }
 });
 
@@ -180,18 +200,17 @@ function setupScrollObserver() {
         renderPackageCards(pkgs);
       }
     }
-  }, { rootMargin: '200px' });
+  }, { rootMargin: '400px' });
   scrollObserver.observe(sentinel);
 }
 
-// Monkey-patch renderPackageCards to run observer after rendering
 const origRender = renderPackageCards;
 renderPackageCards = function(pkgs) {
   origRender(pkgs);
   setupScrollObserver();
 };
 
-// Filter clicks via event delegation (no re-binding on every render)
+// Filter clicks
 document.getElementById('type-filters').addEventListener('click', e => {
   const el = e.target.closest('.filter-badge.type');
   if (!el) return;

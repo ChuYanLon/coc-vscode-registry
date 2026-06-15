@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -25,40 +26,41 @@ a:hover {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 /* Header */
 header {
   background: #161b22;
   border-bottom: 1px solid #30363d;
-  padding: 32px 0 24px;
+  padding: 24px 0 16px;
 }
 header h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #f0f6fc;
 }
 .subtitle {
-  margin-top: 6px;
+  margin-top: 4px;
   color: #8b949e;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 /* Controls */
 .controls {
-  margin: 24px 0 16px;
+  margin: 16px 0 12px;
 }
 #search {
   width: 100%;
   padding: 10px 14px;
-  font-size: 15px;
+  font-size: 16px;
   background: #0d1117;
   border: 1px solid #30363d;
   border-radius: 6px;
   color: #c9d1d9;
   outline: none;
   transition: border-color 0.15s;
+  -webkit-appearance: none;
 }
 #search:focus {
   border-color: #58a6ff;
@@ -69,24 +71,26 @@ header h1 {
 
 .filters {
   display: flex;
-  gap: 24px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 .filter-group {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 6px;
   flex-wrap: wrap;
 }
 .filter-label {
-  font-size: 13px;
+  font-size: 12px;
   color: #8b949e;
   font-weight: 600;
+  line-height: 26px;
+  white-space: nowrap;
 }
 .filter-badges {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 .filter-badge {
@@ -100,6 +104,9 @@ header h1 {
   color: #c9d1d9;
   transition: all 0.15s;
   user-select: none;
+  line-height: 1.4;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .filter-badge:hover {
   border-color: #58a6ff;
@@ -111,18 +118,24 @@ header h1 {
   color: #fff;
 }
 
-/* Stats */
+/* Stats bar */
 .stats {
   font-size: 13px;
   color: #8b949e;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.stats span {
+  white-space: nowrap;
 }
 
 /* Package List */
 .package-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
 }
 
@@ -130,54 +143,64 @@ header h1 {
   background: #161b22;
   border: 1px solid #30363d;
   border-radius: 8px;
-  padding: 16px 20px;
-  transition: border-color 0.15s;
+  padding: 12px 16px;
+  transition: border-color 0.15s, opacity 0.2s;
+  animation: card-in 0.25s ease-out;
+}
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .package-card:hover {
   border-color: #484f58;
-}
-.package-card.hidden {
-  display: none;
 }
 
 .package-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 8px;
+}
+.package-body {
+  min-width: 0;
+  flex: 1;
 }
 .package-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
   color: #f0f6fc;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 .package-name {
-  font-size: 13px;
+  font-size: 12px;
   color: #484f58;
   font-weight: 400;
-  margin-left: 8px;
 }
-
 .package-desc {
-  margin-top: 4px;
-  font-size: 14px;
+  margin-top: 2px;
+  font-size: 13px;
   color: #8b949e;
+  line-height: 1.5;
 }
 
 .package-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 4px;
+  margin-top: 8px;
   align-items: center;
 }
 
 .package-tag {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 1px 7px;
   font-size: 11px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 500;
+  line-height: 1.5;
 }
 .package-tag.lang {
   background: #1f6feb22;
@@ -204,18 +227,33 @@ header h1 {
   color: #f78166;
   border-color: #f7816644;
 }
+.package-tag.version {
+  background: #484f5822;
+  color: #848d97;
+  border: 1px solid #484f5844;
+}
+.package-tag.pip {
+  background: #8957e522;
+  color: #b087f0;
+  border: 1px solid #8957e544;
+}
+.package-tag.binary {
+  background: #f0883e22;
+  color: #f09b4a;
+  border: 1px solid #f0883e44;
+}
 
 .package-actions {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
 }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  font-size: 13px;
+  gap: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
   border-radius: 6px;
   cursor: pointer;
   border: 1px solid #30363d;
@@ -224,6 +262,8 @@ header h1 {
   transition: all 0.15s;
   white-space: nowrap;
   font-family: inherit;
+  line-height: 1.4;
+  touch-action: manipulation;
 }
 .btn:hover {
   background: #30363d;
@@ -247,28 +287,88 @@ header h1 {
   width: 14px;
   height: 14px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 /* Footer */
 footer {
-  margin-top: 40px;
-  padding: 20px 0;
+  margin-top: 32px;
+  padding: 16px 0;
   border-top: 1px solid #30363d;
   font-size: 13px;
   color: #484f58;
   text-align: center;
 }
 
-/* Pagination */
+/* Pagination / Load More */
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
-  padding: 12px 0;
+  margin-top: 16px;
+  padding: 8px 0;
 }
 .page-info {
   font-size: 13px;
   color: #8b949e;
+}
+.show-more {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  background: #21262d;
+  color: #c9d1d9;
+  transition: all 0.15s;
+  text-align: center;
+  font-family: inherit;
+}
+.show-more:hover {
+  background: #30363d;
+  border-color: #484f58;
+}
+.show-more:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.scroll-sentinel {
+  height: 1px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  header { padding: 16px 0 12px; }
+  header h1 { font-size: 20px; }
+  .subtitle { font-size: 12px; }
+
+  .package-card { padding: 10px 12px; }
+  .package-header { flex-direction: column; }
+  .package-actions {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .package-actions .btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  .package-title { font-size: 14px; }
+  .package-desc { font-size: 12px; }
+  .package-name { font-size: 11px; }
+
+  .filters { gap: 8px; }
+  .filter-badge { padding: 4px 10px; font-size: 12px; }
+
+  #search { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .package-meta { gap: 3px; }
+  .package-tag { font-size: 10px; padding: 1px 6px; }
+  .stats { font-size: 12px; gap: 8px; flex-direction: column; }
+  .container { padding: 0 10px; }
 }
