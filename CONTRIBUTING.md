@@ -29,12 +29,43 @@ Adding a new plugin requires both repos to work together. First read [`../CONTRI
 }
 ```
 
+For plugins with a **local language server** (TypeScript source in `server/` subdirectory, not a published npm package):
+
+```jsonc
+{
+  "name": "vscode-css-peek",
+  "type": "pure-lsp",
+  "convert": [
+    {
+      "type": "language-client",
+      "server": {
+        "kind": "module",
+        "package": "../server/out/server"     // relative path to compiled server
+      },
+      "languages": ["css", "html"],
+      "initializationOptions": "{ stylesheets: [], peekFromLanguages: [\"html\"], peekToLinkedOnly: false }"
+    },
+    {
+      "type": "source",
+      "transforms": ["import-mapping"],
+      "keepDeps": { "vscode-languageserver": "^8.1.0" }
+    }
+  ]
+}
+```
+
 | Field | Required | Description |
 |-------|----------|-------------|
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**. |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
+
+**Local server requirements** (`server.package` starts with `./` or `../`):
+- Source repo must have a `server/` directory with its own `package.json` + `tsconfig.json`
+- `minPluginVersion: "1.4.2"` (required for local server support in converter + pipeline)
+- Server code compiled automatically by `esbuild.mjs` at build time
+- Pipeline copies `server/` from source to build directory before `npm install`
 
 2. Validate JSON:
 
@@ -51,7 +82,7 @@ python3 -c "import json; json.load(open('coc-vscode-registry/registry.json'))"
 
 ```bash
 cd ../converter
-npm run test:smoke           # Converts all 112 entries, validates output
+npm run test:smoke           # Converts all 113 entries, validates output
 ```
 
 4. Submit a PR.

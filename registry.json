@@ -2,7 +2,7 @@
   {
     "name": "vscode-volar",
     "displayName": "Volar (Vue)",
-    "description": "Vue language support — template/script/style IntelliSense",
+    "description": "Vue language support \u2014 template/script/style IntelliSense",
     "type": "ts-bridge",
     "source": {
       "type": "github",
@@ -46,7 +46,7 @@
   {
     "name": "vscode-prisma",
     "displayName": "Prisma",
-    "description": "Prisma schema language support — syntax highlight, lint, format",
+    "description": "Prisma schema language support \u2014 syntax highlight, lint, format",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -125,7 +125,7 @@
   {
     "name": "vscode-lua",
     "displayName": "Lua",
-    "description": "Lua language support — completion, lint, and type checking",
+    "description": "Lua language support \u2014 completion, lint, and type checking",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -172,7 +172,7 @@
   {
     "name": "vscode-deno",
     "displayName": "Deno",
-    "description": "Deno language support — IntelliSense, linting, formatting, testing",
+    "description": "Deno language support \u2014 IntelliSense, linting, formatting, testing",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -230,7 +230,7 @@
   {
     "name": "vscode-taplo",
     "displayName": "TOML (Taplo)",
-    "description": "TOML language support based on Taplo — formatting, validation, schema",
+    "description": "TOML language support based on Taplo \u2014 formatting, validation, schema",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -285,7 +285,7 @@
   {
     "name": "vscode-ansible",
     "displayName": "Ansible",
-    "description": "Ansible language support — completion, navigation, validation, playbook runner",
+    "description": "Ansible language support \u2014 completion, navigation, validation, playbook runner",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -327,7 +327,7 @@
   {
     "name": "vscode-yaml",
     "displayName": "YAML",
-    "description": "YAML language support — validation, completion, schema, formatting",
+    "description": "YAML language support \u2014 validation, completion, schema, formatting",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -465,7 +465,7 @@
   {
     "name": "vscode-prettier-vscode",
     "displayName": "Prettier",
-    "description": "Code formatter using Prettier — JS/TS/CSS/HTML/JSON/Markdown/YAML",
+    "description": "Code formatter using Prettier \u2014 JS/TS/CSS/HTML/JSON/Markdown/YAML",
     "type": "direct-api",
     "source": {
       "type": "github",
@@ -511,7 +511,7 @@
   {
     "name": "vscode-biome",
     "displayName": "Biome",
-    "description": "Linter and formatter for JS/TS/CSS/JSON — one tool, fast",
+    "description": "Linter and formatter for JS/TS/CSS/JSON \u2014 one tool, fast",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -590,7 +590,7 @@
   {
     "name": "vscode-svelte",
     "displayName": "Svelte",
-    "description": "Svelte language support — diagnostics, formatting, IntelliSense",
+    "description": "Svelte language support \u2014 diagnostics, formatting, IntelliSense",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -633,7 +633,7 @@
   {
     "name": "vscode-astro",
     "displayName": "Astro",
-    "description": "Astro language support — diagnostics, formatting, IntelliSense",
+    "description": "Astro language support \u2014 diagnostics, formatting, IntelliSense",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -3063,7 +3063,7 @@
   {
     "name": "vscode-intelephense",
     "displayName": "PHP Intelephense",
-    "description": "PHP code intelligence — completion, diagnostics, navigation, formatting (17.5M+ installs)",
+    "description": "PHP code intelligence \u2014 completion, diagnostics, navigation, formatting (17.5M+ installs)",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -3153,7 +3153,7 @@
   {
     "name": "vscode-rust-analyzer",
     "displayName": "rust-analyzer",
-    "description": "Rust language support — completion, navigation, diagnostics, refactoring (6.3M+ installs)",
+    "description": "Rust language support \u2014 completion, navigation, diagnostics, refactoring (6.3M+ installs)",
     "type": "pure-lsp",
     "source": {
       "type": "github",
@@ -3198,5 +3198,66 @@
         ]
       }
     ]
+  },
+  {
+    "name": "vscode-css-peek",
+    "displayName": "CSS Peek",
+    "description": "CSS Peek \u2014 peek/go-to-definition/hover for CSS classes and IDs in HTML/JSX/Vue/etc.",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "pranaygp/vscode-css-peek"
+    },
+    "url": "https://github.com/pranaygp/vscode-css-peek",
+    "languages": [
+      "css",
+      "scss",
+      "less"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "../server/out/server"
+        },
+        "languages": [
+          "css",
+          "scss",
+          "less",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "svelte",
+          "php",
+          "pug",
+          "handlebars",
+          "ejs"
+        ],
+        "initializationOptions": "{ stylesheets: [], peekFromLanguages: [\"html\", \"javascript\", \"javascriptreact\", \"typescript\", \"typescriptreact\", \"vue\", \"svelte\", \"php\"], peekToLinkedOnly: false }",
+        "id": "cssPeek"
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ],
+        "entry": "client/src/extension.ts",
+        "keepDeps": {
+          "minimatch": "^9.0.3",
+          "vscode-css-languageservice": "^6.2.6",
+          "vscode-html-languageservice": "^5.0.6",
+          "vscode-languageserver": "^8.1.0",
+          "vscode-languageserver-textdocument": "^1.0.8"
+        }
+      }
+    ],
+    "minPluginVersion": "1.4.2"
   }
 ]
