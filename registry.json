@@ -563,6 +563,47 @@
     ]
   },
   {
+    "name": "vscode-ng-language-service",
+    "displayName": "Angular Language Service",
+    "description": "Editor services for Angular templates — diagnostics, completions, IntelliSense",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "angular/vscode-ng-language-service"
+    },
+    "url": "https://github.com/angular/vscode-ng-language-service",
+    "languages": ["html", "typescript"],
+    "categories": ["LSP"],
+    "minPluginVersion": "1.4.3",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "@angular/language-server",
+          "entry": "bin",
+          "binName": "ngserver",
+          "args": [
+            "--ngProbeLocations",
+            "{pluginDir}",
+            "--tsProbeLocations",
+            "{pluginDir}",
+            "--logToConsole"
+          ]
+        },
+        "languages": ["html", "typescript"]
+      },
+      {
+        "type": "source",
+        "transforms": ["import-mapping"],
+        "entry": "client/src/extension.ts",
+        "keepDeps": {
+          "typescript": "*"
+        }
+      }
+    ]
+  },
+  {
     "name": "vscode-angular",
     "displayName": "Angular Snippets (Version 18)",
     "description": "Angular Snippets (Version 18)",
@@ -1020,7 +1061,7 @@
         ],
         "patches": [
           {
-            "find": "\\[a-zA-Z0-9\\._\\[\"']\\]",
+            "find": "\\[a-zA-Z0-9\\._\\[\\\"'\\]",
             "replace": "[a-zA-Z0-9._[\"'-]"
           }
         ]
