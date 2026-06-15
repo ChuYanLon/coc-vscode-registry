@@ -30,7 +30,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `languages` | ✅ | Language IDs this plugin supports |
 | `categories` | ✅ | Categories for filtering (e.g. `"LSP"`, `"Snippets"`) |
 | `convert` | ✅ | Array of conversion steps. See [coc-vscode-loader/CONTRIBUTING.md](../CONTRIBUTING.md) |
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers** |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`** |
 | `pipPackages` | ❌ | Python dependencies for pip install (`["ansible-lint"]`) |
 | `serverBinary` | ❌ | Auto-download a binary language server from GitHub Releases |
 
@@ -53,6 +53,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `server.package` | ✅ | npm package name or **relative path** (`"../server/out/server"`) for local servers |
 | `server.entry` | ❌ | `"main"` or `"bin"` (npm packages only) |
 | `server.binName` | ❌ | Specific bin entry name for packages with multiple bins |
+| `server.args` | ❌ | CLI arguments for the server (v1.4.3+). Supports `{dir}` and `{pluginDir}` placeholders for module kind |
 | `languages` | ✅ | Language IDs to associate with this server |
 | `initializationOptions` | ❌ | JS object passed to LanguageClient during initialization |
 | `multRoot` | ❌ | Start one client per workspace folder |
@@ -65,7 +66,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `repo` | ✅ | GitHub repo for releases (e.g. `"denoland/deno"`) |
 | `asset` | ✅ | Asset filename template with `{{version}}`, `{{platform}}`, `{{arch}}` etc. |
 | `binaryPath` | ❌ | Relative path inside archive, or output filename for raw binaries |
-| `args` | ❌ | CLI arguments for the binary LSP (e.g. `["lsp"]`) |
+| `args` | ❌ | CLI arguments for the binary LSP (e.g. `["lsp"]`). For module-kind servers (v1.4.3+), use `server.args` in the `language-client` step instead |
 
 ## presets.json
 

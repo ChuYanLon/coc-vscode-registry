@@ -56,7 +56,7 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**. |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**. |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
@@ -82,7 +82,7 @@ python3 -c "import json; json.load(open('coc-vscode-registry/registry.json'))"
 
 ```bash
 cd ../converter
-npm run test:smoke           # Converts all 113 entries, validates output
+npm run test:smoke           # Converts all 114 entries, validates output
 ```
 
 4. Submit a PR.
