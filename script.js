@@ -60,7 +60,7 @@ function renderFilters() {
 function renderPackageCards(pkgs) {
   const container = document.getElementById('package-list');
   if (pkgs.length === 0) {
-    container.innerHTML = '<div class="package-card" style="text-align:center;color:#484f58;padding:40px;">No packages match your filters.</div>';
+    container.innerHTML = '<div class="no-results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><p>No packages match your filters.</p></div>';
     return;
   }
 
@@ -129,19 +129,11 @@ function escapeHtml(s) {
   return div.innerHTML;
 }
 
-function renderStats(filtered) {
-  const el = document.getElementById('stats');
-  const activeTypes = activeTypeFilters.size > 0 ? `, type: ${[...activeTypeFilters].join(', ')}` : '';
-  const activeCats = activeCategoryFilters.size > 0 ? `, category: ${[...activeCategoryFilters].join(', ')}` : '';
-  el.textContent = `${filtered.length} / ${allPackages.length} packages${activeTypes}${activeCats}`;
-}
-
 function render() {
   const filtered = filterPackages();
   currentPage = 1;
   renderFilters();
   renderPackageCards(filtered);
-  renderStats(filtered);
 }
 
 // Event delegation
@@ -172,7 +164,6 @@ document.getElementById('package-list').addEventListener('click', async e => {
   const showMore = e.target.closest('.show-more');
   if (showMore) {
     showMore.disabled = true;
-    const prevText = showMore.textContent;
     showMore.textContent = 'Loading...';
     const pkgs = filterPackages();
     const totalPages = Math.ceil(pkgs.length / PAGE_SIZE);
@@ -180,7 +171,6 @@ document.getElementById('package-list').addEventListener('click', async e => {
       currentPage++;
       renderPackageCards(pkgs);
     }
-    renderStats(pkgs);
     return;
   }
 });
