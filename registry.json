@@ -2376,6 +2376,37 @@
     ]
   },
   {
+    "name": "vscode-docker",
+    "displayName": "Docker",
+    "description": "Dockerfile language support — completion, diagnostics, hover",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "microsoft/vscode-docker"
+    },
+    "url": "https://github.com/microsoft/vscode-docker",
+    "languages": [
+      "dockerfile"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.4.5",
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "module",
+          "package": "dockerfile-language-server-nodejs",
+          "entry": "bin"
+        },
+        "languages": [
+          "dockerfile"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-shellcheck",
     "displayName": "ShellCheck",
     "description": "Integrates ShellCheck into VS Code, a linter for Shell scripts",
