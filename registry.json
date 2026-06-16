@@ -2338,6 +2338,44 @@
     ]
   },
   {
+    "name": "vscode-bash-language-server",
+    "displayName": "Bash IDE",
+    "description": "A language server for Bash",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "bash-lsp/bash-language-server",
+      "subdir": "vscode-client"
+    },
+    "url": "https://github.com/bash-lsp/bash-language-server",
+    "languages": [
+      "sh"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.4.5",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "bashIde",
+        "server": {
+          "kind": "module",
+          "package": "bash-language-server",
+          "entry": "bin",
+          "binName": "bash-language-server",
+          "args": [
+            "start"
+          ]
+        },
+        "transport": "stdio",
+        "languages": [
+          "sh"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-shellcheck",
     "displayName": "ShellCheck",
     "description": "Integrates ShellCheck into VS Code, a linter for Shell scripts",
@@ -2348,7 +2386,7 @@
     },
     "url": "https://github.com/vscode-shellcheck/vscode-shellcheck",
     "languages": [
-      "shellscript",
+      "sh",
       "bats"
     ],
     "categories": [
@@ -2366,7 +2404,7 @@
         ],
         "entry": "src/extension.ts",
         "activationEvents": [
-          "onLanguage:shellscript",
+          "onLanguage:sh",
           "onLanguage:bats"
         ],
         "keepDeps": [
