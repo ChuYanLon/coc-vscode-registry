@@ -1877,6 +1877,40 @@
     ]
   },
   {
+    "name": "vscode-pyright",
+    "displayName": "Pyright",
+    "description": "VS Code static type checking for Python — diagnostics, completion, navigation, type hints",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "microsoft/pyright",
+      "subdir": "packages/vscode-pyright"
+    },
+    "url": "https://github.com/microsoft/pyright",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.2.0",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "pyright",
+        "server": {
+          "kind": "module",
+          "package": "pyright",
+          "entry": "bin",
+          "binName": "pyright-langserver"
+        },
+        "languages": [
+          "python"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-snp-pandas-basic",
     "displayName": "Pandas Basic Snippets",
     "description": "Pandas Basic Snippets",
@@ -2099,6 +2133,42 @@
     "convert": [
       {
         "type": "snippets"
+      }
+    ]
+  },
+  {
+    "name": "vscode-go",
+    "displayName": "Go",
+    "description": "Rich Go language support — completion, navigation, diagnostics, formatting (gopls)",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "golang/vscode-go",
+      "subdir": "extension"
+    },
+    "url": "https://github.com/golang/vscode-go",
+    "languages": [
+      "go"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.0",
+    "goPackages": [
+      "golang.org/x/tools/gopls@latest"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "go",
+        "server": {
+          "kind": "binary",
+          "package": "gopls",
+          "args": []
+        },
+        "languages": [
+          "go"
+        ]
       }
     ]
   },

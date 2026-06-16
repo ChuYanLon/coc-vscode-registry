@@ -56,8 +56,10 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**. |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**. |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
+| `goPackages` | ❌ | Go packages, pipeline runs `go install` to compile to `server/`, e.g. `["golang.org/x/tools/gopls@latest"]` |
+| `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root` then copies binary to `server/`, e.g. `[{ "crate": "nil", "binary": "nil" }]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
 
