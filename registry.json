@@ -2636,6 +2636,66 @@
     ]
   },
   {
+    "name": "vscode-clangd",
+    "displayName": "clangd",
+    "description": "C/C++ completion, navigation, and insights — clangd language server",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "clangd/vscode-clangd"
+    },
+    "url": "https://github.com/clangd/vscode-clangd",
+    "languages": [
+      "c",
+      "cpp",
+      "cuda-cpp",
+      "objective-c",
+      "objective-cpp"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.0",
+    "serverBinary": {
+      "repo": "clangd/clangd",
+      "asset": "clangd-linux-{{version}}.zip",
+      "binaryPath": "clangd_{{version}}/bin/clangd",
+      "targetAssets": [
+        { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" },
+        { "platform": "linux", "file": "clangd-linux-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" },
+        { "platform": "win32", "file": "clangd-windows-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd.exe" }
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "clangd",
+        "server": {
+          "kind": "binary",
+          "package": "clangd",
+          "binary": {
+            "repo": "clangd/clangd",
+            "asset": "clangd-linux-{{version}}.zip",
+            "binaryPath": "clangd_{{version}}/bin/clangd",
+            "targetAssets": [
+              { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" },
+              { "platform": "linux", "file": "clangd-linux-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" },
+              { "platform": "win32", "file": "clangd-windows-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd.exe" }
+            ]
+          },
+          "args": []
+        },
+        "languages": [
+          "c",
+          "cpp",
+          "cuda-cpp",
+          "objective-c",
+          "objective-cpp"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-cpp",
     "displayName": "C/C++ Snippets",
     "description": "C/C++ Snippets",

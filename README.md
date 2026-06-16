@@ -70,6 +70,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `asset` | ✅ | Asset filename template with `{{version}}`, `{{platform}}`, `{{arch}}` etc. |
 | `binaryPath` | ❌ | Relative path inside archive, or output filename for raw binaries |
 | `args` | ❌ | CLI arguments for the binary LSP (e.g. `["lsp"]`). For module-kind servers (v1.4.3+), use `server.args` in the `language-client` step instead |
+| `targetAssets` | ❌ | Per-platform asset overrides. Array of `{ platform?, arch?, file, binaryPath? }`. When the platform naming differs from our standard `{{platform}}` (e.g. clangd uses `mac`/`windows` vs `darwin`/`win32`), define per-platform templates. Requires `minPluginVersion: "1.5.0"`. |
 
 ## presets.json
 

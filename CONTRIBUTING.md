@@ -76,6 +76,12 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 - 使用 `server.patches` 时设置 `minPluginVersion: "1.4.5"`
 - 详见 loader 仓库的 [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#%E6%8F%92%E4%BB%B6%E7%BA%A7%E6%96%87%E6%9C%AC%E8%A1%A5%E4%B8%81-patchessource-step)
 
+**Per-platform assets** (`targetAssets`, v1.5.0+):
+- 当二进制发布使用非标准平台命名时（如 clangd 用 `mac`/`windows` 而非 `darwin`/`win32`），使用 `targetAssets` 定义各平台的 asset 文件和 binaryPath
+- 示例：`[ { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" } ]`
+- 使用 `targetAssets` 时设置 `minPluginVersion: "1.5.0"`
+- 详见 loader 仓库的 [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#targetassets-%E5%AD%97%E6%AE%B5v150)
+
 2. Validate JSON:
 
 ```bash
