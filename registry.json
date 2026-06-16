@@ -1447,6 +1447,72 @@
     ]
   },
   {
+    "name": "vscode-eslint",
+    "displayName": "ESLint",
+    "description": "Integrates ESLint JavaScript into VS Code.",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "microsoft/vscode-eslint"
+    },
+    "url": "https://github.com/microsoft/vscode-eslint",
+    "languages": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "html",
+      "vue",
+      "markdown",
+      "json",
+      "jsonc"
+    ],
+    "categories": [
+      "LSP",
+      "Linter"
+    ],
+    "minPluginVersion": "1.4.5",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "eslint",
+        "syncConfig": true,
+        "server": {
+          "kind": "module",
+          "package": "../server/out/eslintServer.js",
+          "patches": [
+            {
+              "file": "eslintServer.js",
+              "find": "connection\\.listen\\(\\);",
+              "replace": "connection.listen();\ndocuments.onDidOpen(async (e) => {\n  try {\n    const doc = e.document;\n    const settings = await eslint_1.ESLint.resolveSettings(doc);\n    if (eslint_1.TextDocumentSettings.hasLibrary(settings)) {\n      const diagnostics = await eslint_1.ESLint.validate(doc, settings);\n      connection.sendDiagnostics({ uri: doc.uri, diagnostics });\n    }\n  } catch (ex) {\n    connection.console.error(String(ex));\n  }\n});\ndocuments.onDidChangeContent(async (change) => {\n  try {\n    const doc = change.document;\n    const settings = await eslint_1.ESLint.resolveSettings(doc);\n    if (eslint_1.TextDocumentSettings.hasLibrary(settings)) {\n      const diagnostics = await eslint_1.ESLint.validate(doc, settings);\n      connection.sendDiagnostics({ uri: doc.uri, diagnostics });\n    }\n  } catch (ex) {\n    connection.console.error(String(ex));\n  }\n});"
+            },
+            {
+              "file": "eslint.js",
+              "find": "if \\(settings\\.validate === settings_1\\.Validate\\.off\\) \\{\n                return settings;\n            \\}",
+              "replace": "if (settings.validate === settings_1.Validate.off) {\n                settings.validate = settings_1.Validate.probe;\n            }"
+            },
+            {
+              "file": "eslintServer.js",
+              "find": "connection\\.languages\\.diagnostics\\.on\\(async \\(params\\) => \\{\n    const document = documents\\.get\\(params\\.textDocument\\.uri\\);",
+              "replace": "connection.languages.diagnostics.on(async (params) => {\n    return emptyDiagnosticResult; // disabled for coc.nvim (push diagnostics used instead)\n    const document = documents.get(params.textDocument.uri);"
+            }
+          ]
+        },
+        "languages": [
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact",
+          "html",
+          "vue",
+          "markdown",
+          "json",
+          "jsonc"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-javascript",
     "displayName": "JavaScript Snippets",
     "description": "JavaScript Snippets",

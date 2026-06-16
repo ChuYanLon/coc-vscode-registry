@@ -56,7 +56,7 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**. |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**. |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
@@ -66,6 +66,13 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 - `minPluginVersion: "1.4.2"` (required for local server support in converter + pipeline)
 - Server code compiled automatically by `esbuild.mjs` at build time
 - Pipeline copies `server/` from source to build directory before `npm install`
+
+**Server patches** (`server.patches`, v1.4.5+):
+- 对 local server 编译后的 JS 文件做文本替换，在 `tsc` 编译后、`esbuild` 打包前执行
+- 适用于修复 server 端 behavior（如禁用 pull diagnostics、注入事件钩子等）
+- 示例：`{ "file": "eslintServer.js", "find": "connection\\.listen\\(\\);", "replace": "connection.listen();\\ndocuments.onDidOpen(...)..." }`
+- 使用 `server.patches` 时设置 `minPluginVersion: "1.4.5"`
+- 详见 loader 仓库的 [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#%E6%8F%92%E4%BB%B6%E7%BA%A7%E6%96%87%E6%9C%AC%E8%A1%A5%E4%B8%81-patchessource-step)
 
 2. Validate JSON:
 
