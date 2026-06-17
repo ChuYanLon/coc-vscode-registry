@@ -2003,30 +2003,6 @@
     ]
   },
   {
-    "name": "vscode-react-typescript",
-    "displayName": "Typescript React code snippets",
-    "description": "Typescript React code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "infeng/vscode-react-typescript"
-    },
-    "url": "https://github.com/infeng/vscode-react-typescript",
-    "languages": [
-      "typescript",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-simple-react-snippets",
     "displayName": "Simple React Snippets",
     "description": "Basic React code snippets (6.4M+ installs)",
@@ -2477,7 +2453,7 @@
     },
     "url": "https://github.com/HansUXdev/B5-SNIPPETS",
     "languages": [
-      "HTML (Eex)",
+      "html-eex",
       "blade",
       "django-html",
       "ejs",
@@ -3704,29 +3680,6 @@
       "repo": "cemuka/vscode-unity-code-snippets"
     },
     "url": "https://github.com/cemuka/vscode-unity-code-snippets",
-    "languages": [
-      "csharp"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-unity-snippets",
-    "displayName": "Unity Snippets",
-    "description": "Unity game engine C# code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "YclepticStudios/vscode-unity-snippets"
-    },
-    "url": "https://github.com/YclepticStudios/vscode-unity-snippets",
     "languages": [
       "csharp"
     ],
