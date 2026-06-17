@@ -228,6 +228,7 @@
         "server"
       ]
     },
+    "minPluginVersion": "1.5.0",
     "convert": [
       {
         "type": "language-client",
