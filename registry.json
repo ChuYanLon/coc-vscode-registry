@@ -203,6 +203,54 @@
     ]
   },
   {
+    "name": "vscode-ruff",
+    "displayName": "Ruff",
+    "description": "Python linting and formatting — Ruff language server (3.9M+ installs)",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "astral-sh/ruff-vscode"
+    },
+    "url": "https://github.com/astral-sh/ruff-vscode",
+    "languages": [
+      "python"
+    ],
+    "categories": [
+      "LSP",
+      "Linter",
+      "Formatter"
+    ],
+    "serverBinary": {
+      "repo": "astral-sh/ruff",
+      "asset": "ruff-{{rust-target}}.tar.gz",
+      "binaryPath": "ruff-{{rust-target}}/ruff",
+      "args": [
+        "server"
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "ruff",
+        "server": {
+          "kind": "binary",
+          "package": "ruff",
+          "binary": {
+            "repo": "astral-sh/ruff",
+            "asset": "ruff-{{rust-target}}.tar.gz",
+            "binaryPath": "ruff-{{rust-target}}/ruff"
+          },
+          "args": [
+            "server"
+          ]
+        },
+        "languages": [
+          "python"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-ng-language-service",
     "displayName": "Angular Language Service",
     "description": "Editor services for Angular templates — diagnostics, completions, IntelliSense",
