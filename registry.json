@@ -169,6 +169,105 @@
     ]
   },
   {
+    "name": "vscode-gleam",
+    "displayName": "Gleam",
+    "description": "Gleam language support — type-safe compiled language on the BEAM",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "gleam-lang/vscode-gleam"
+    },
+    "url": "https://github.com/gleam-lang/vscode-gleam",
+    "languages": [
+      "gleam"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.3",
+    "serverBinary": {
+      "repo": "gleam-lang/gleam",
+      "asset": "gleam-v{{version}}-{{rust-target}}.tar.gz",
+      "binaryPath": "gleam",
+      "args": [
+        "lsp"
+      ],
+      "targetAssets": [
+        {
+          "platform": "linux",
+          "arch": "x64",
+          "file": "gleam-v{{version}}-x86_64-unknown-linux-musl.tar.gz",
+          "binaryPath": "gleam"
+        },
+        {
+          "platform": "darwin",
+          "arch": "x64",
+          "file": "gleam-v{{version}}-x86_64-apple-darwin.tar.gz",
+          "binaryPath": "gleam"
+        },
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "file": "gleam-v{{version}}-aarch64-apple-darwin.tar.gz",
+          "binaryPath": "gleam"
+        },
+        {
+          "platform": "win32",
+          "arch": "x64",
+          "file": "gleam-v{{version}}-x86_64-pc-windows-msvc.zip",
+          "binaryPath": "gleam.exe"
+        }
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "gleam",
+        "server": {
+          "kind": "binary",
+          "package": "gleam",
+          "binary": {
+            "repo": "gleam-lang/gleam",
+            "asset": "gleam-v{{version}}-{{rust-target}}.tar.gz",
+            "binaryPath": "gleam",
+            "targetAssets": [
+              {
+                "platform": "linux",
+                "arch": "x64",
+                "file": "gleam-v{{version}}-x86_64-unknown-linux-musl.tar.gz",
+                "binaryPath": "gleam"
+              },
+              {
+                "platform": "darwin",
+                "arch": "x64",
+                "file": "gleam-v{{version}}-x86_64-apple-darwin.tar.gz",
+                "binaryPath": "gleam"
+              },
+              {
+                "platform": "darwin",
+                "arch": "arm64",
+                "file": "gleam-v{{version}}-aarch64-apple-darwin.tar.gz",
+                "binaryPath": "gleam"
+              },
+              {
+                "platform": "win32",
+                "arch": "x64",
+                "file": "gleam-v{{version}}-x86_64-pc-windows-msvc.zip",
+                "binaryPath": "gleam.exe"
+              }
+            ]
+          },
+          "args": [
+            "lsp"
+          ]
+        },
+        "languages": [
+          "gleam"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-pyright",
     "displayName": "Pyright",
     "description": "VS Code static type checking for Python — diagnostics, completion, navigation, type hints",
@@ -1129,6 +1228,237 @@
       }
     ],
     "minPluginVersion": "1.4.2"
+  },
+  {
+    "name": "vscode-marksman",
+    "displayName": "Marksman",
+    "description": "Markdown language server — cross-references, diagnostics, completion",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "artempyanykh/marksman-vscode"
+    },
+    "url": "https://github.com/artempyanykh/marksman-vscode",
+    "languages": [
+      "markdown"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.3",
+    "serverBinary": {
+      "repo": "artempyanykh/marksman",
+      "asset": "marksman-linux-x64",
+      "binaryPath": "marksman",
+      "targetAssets": [
+        {
+          "platform": "linux",
+          "arch": "",
+          "file": "marksman-linux-x64",
+          "binaryPath": "marksman"
+        },
+        {
+          "platform": "darwin",
+          "arch": "",
+          "file": "marksman-macos",
+          "binaryPath": "marksman"
+        },
+        {
+          "platform": "win32",
+          "arch": "",
+          "file": "marksman-win32-x64.exe",
+          "binaryPath": "marksman.exe"
+        }
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "marksman",
+        "server": {
+          "kind": "binary",
+          "package": "marksman",
+          "binary": {
+            "repo": "artempyanykh/marksman",
+            "asset": "marksman-linux-x64",
+            "binaryPath": "marksman",
+            "targetAssets": [
+              {
+                "platform": "linux",
+                "arch": "",
+                "file": "marksman-linux-x64",
+                "binaryPath": "marksman"
+              },
+              {
+                "platform": "darwin",
+                "arch": "",
+                "file": "marksman-macos",
+                "binaryPath": "marksman"
+              },
+              {
+                "platform": "win32",
+                "arch": "",
+                "file": "marksman-win32-x64.exe",
+                "binaryPath": "marksman.exe"
+              }
+            ]
+          }
+        },
+        "languages": [
+          "markdown"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-tinymist",
+    "displayName": "Tinymist",
+    "description": "Typst language server — completion, diagnostics, preview",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "Myriad-Dreamin/tinymist"
+    },
+    "url": "https://github.com/Myriad-Dreamin/tinymist",
+    "languages": [
+      "typst"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.3",
+    "serverBinary": {
+      "repo": "Myriad-Dreamin/tinymist",
+      "asset": "tinymist-{{rust-target}}.tar.gz",
+      "binaryPath": "tinymist-{{rust-target}}/tinymist"
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "tinymist",
+        "server": {
+          "kind": "binary",
+          "package": "tinymist",
+          "binary": {
+            "repo": "Myriad-Dreamin/tinymist",
+            "asset": "tinymist-{{rust-target}}.tar.gz",
+            "binaryPath": "tinymist-{{rust-target}}/tinymist"
+          }
+        },
+        "languages": [
+          "typst"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-texlab",
+    "displayName": "TexLab",
+    "description": "LaTeX language server — completion, formatting, diagnostics, build",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "latex-lsp/texlab-vscode"
+    },
+    "url": "https://github.com/latex-lsp/texlab-vscode",
+    "languages": [
+      "latex",
+      "bibtex",
+      "doctex"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.3",
+    "serverBinary": {
+      "repo": "latex-lsp/texlab",
+      "asset": "texlab-x86_64-linux.tar.gz",
+      "binaryPath": "texlab",
+      "targetAssets": [
+        {
+          "platform": "linux",
+          "arch": "x64",
+          "file": "texlab-x86_64-linux.tar.gz",
+          "binaryPath": "texlab"
+        },
+        {
+          "platform": "linux",
+          "arch": "arm64",
+          "file": "texlab-aarch64-linux.tar.gz",
+          "binaryPath": "texlab"
+        },
+        {
+          "platform": "darwin",
+          "arch": "x64",
+          "file": "texlab-x86_64-macos.tar.gz",
+          "binaryPath": "texlab"
+        },
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "file": "texlab-aarch64-macos.tar.gz",
+          "binaryPath": "texlab"
+        },
+        {
+          "platform": "win32",
+          "arch": "x64",
+          "file": "texlab-x86_64-windows.zip",
+          "binaryPath": "texlab.exe"
+        }
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "texlab",
+        "server": {
+          "kind": "binary",
+          "package": "texlab",
+          "binary": {
+            "repo": "latex-lsp/texlab",
+            "asset": "texlab-x86_64-linux.tar.gz",
+            "binaryPath": "texlab",
+            "targetAssets": [
+              {
+                "platform": "linux",
+                "arch": "x64",
+                "file": "texlab-x86_64-linux.tar.gz",
+                "binaryPath": "texlab"
+              },
+              {
+                "platform": "linux",
+                "arch": "arm64",
+                "file": "texlab-aarch64-linux.tar.gz",
+                "binaryPath": "texlab"
+              },
+              {
+                "platform": "darwin",
+                "arch": "x64",
+                "file": "texlab-x86_64-macos.tar.gz",
+                "binaryPath": "texlab"
+              },
+              {
+                "platform": "darwin",
+                "arch": "arm64",
+                "file": "texlab-aarch64-macos.tar.gz",
+                "binaryPath": "texlab"
+              },
+              {
+                "platform": "win32",
+                "arch": "x64",
+                "file": "texlab-x86_64-windows.zip",
+                "binaryPath": "texlab.exe"
+              }
+            ]
+          }
+        },
+        "languages": [
+          "latex",
+          "bibtex",
+          "doctex"
+        ]
+      }
+    ]
   },
   {
     "name": "vscode-html-css-support",
