@@ -1623,47 +1623,6 @@
     ]
   },
   {
-    "name": "vscode-shellcheck",
-    "displayName": "ShellCheck",
-    "description": "Integrates ShellCheck into VS Code, a linter for Shell scripts",
-    "type": "direct-api",
-    "source": {
-      "type": "github",
-      "repo": "vscode-shellcheck/vscode-shellcheck"
-    },
-    "url": "https://github.com/vscode-shellcheck/vscode-shellcheck",
-    "languages": [
-      "sh",
-      "bats"
-    ],
-    "categories": [
-      "Linter"
-    ],
-    "minPluginVersion": "1.2.9",
-    "convert": [
-      {
-        "type": "source",
-        "transforms": [
-          "import-mapping",
-          "class-to-factory",
-          "provider-register",
-          "enum-offset"
-        ],
-        "entry": "src/extension.ts",
-        "activationEvents": [
-          "onLanguage:sh",
-          "onLanguage:bats"
-        ],
-        "keepDeps": [
-          "execa",
-          "minimatch",
-          "remeda",
-          "semver"
-        ]
-      }
-    ]
-  },
-  {
     "name": "vscode-vue-snippets",
     "displayName": "Vue VSCode Snippets",
     "description": "Snippets for Vue.js 2",
