@@ -2,8 +2,13 @@
   "ts-bridge": {
     "type": "tsserver-forward",
     "options": {
-      "extensions": ["coc-tsserver"],
-      "services": ["tsserver"],
+      "extensions": [
+        "coc-tsserver-dev",
+        "coc-tsserver"
+      ],
+      "services": [
+        "tsserver"
+      ],
       "command": "typescript.tsserverRequest"
     }
   }
