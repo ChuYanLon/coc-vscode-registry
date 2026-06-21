@@ -1716,7 +1716,7 @@
     "categories": [
       "Other"
     ],
-    "minPluginVersion": "1.5.6",
+    "minPluginVersion": "1.5.7",
     "convert": [
       {
         "type": "source",
