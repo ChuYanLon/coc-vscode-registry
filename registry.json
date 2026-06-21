@@ -668,6 +668,7 @@
     "categories": [
       "LSP"
     ],
+    "minPluginVersion": "1.5.5",
     "convert": [
       {
         "type": "language-client",
@@ -865,6 +866,41 @@
         "type": "source",
         "transforms": [
           "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-language-viml",
+    "displayName": "VimL Language Server",
+    "description": "Vim script language support — completion, diagnostics, hover, go to definition",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "XadillaX/vscode-language-viml"
+    },
+    "url": "https://github.com/XadillaX/vscode-language-viml",
+    "languages": [
+      "vim",
+      "vim-help"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.5",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "vim",
+        "server": {
+          "kind": "module",
+          "package": "vim-language-server",
+          "entry": "bin",
+          "binName": "vim-language-server"
+        },
+        "languages": [
+          "vim",
+          "vim-help"
         ]
       }
     ]
@@ -1658,6 +1694,113 @@
         "entry": "src/extension.ts",
         "activationEvents": [
           "onCommand:gitignore.addgitignore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-clojure-lsp",
+    "displayName": "Clojure LSP",
+    "description": "Clojure language support — completion, diagnostics, navigation, refactoring",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "dvbeato/vscode-clojure-lsp"
+    },
+    "url": "https://github.com/dvbeato/vscode-clojure-lsp",
+    "languages": [
+      "clojure",
+      "clojurescript"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.5.5",
+    "serverBinary": {
+      "repo": "clojure-lsp/clojure-lsp",
+      "asset": "clojure-lsp-native-linux-amd64.zip",
+      "binaryPath": "clojure-lsp",
+      "targetAssets": [
+        {
+          "platform": "darwin",
+          "arch": "x64",
+          "file": "clojure-lsp-native-macos-amd64.zip",
+          "binaryPath": "clojure-lsp"
+        },
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "file": "clojure-lsp-native-macos-aarch64.zip",
+          "binaryPath": "clojure-lsp"
+        },
+        {
+          "platform": "linux",
+          "arch": "x64",
+          "file": "clojure-lsp-native-linux-amd64.zip",
+          "binaryPath": "clojure-lsp"
+        },
+        {
+          "platform": "linux",
+          "arch": "arm64",
+          "file": "clojure-lsp-native-linux-aarch64.zip",
+          "binaryPath": "clojure-lsp"
+        },
+        {
+          "platform": "win32",
+          "arch": "x64",
+          "file": "clojure-lsp-native-windows-amd64.zip",
+          "binaryPath": "clojure-lsp.exe"
+        }
+      ]
+    },
+    "convert": [
+      {
+        "type": "language-client",
+        "server": {
+          "kind": "binary",
+          "package": "clojure-lsp",
+          "binary": {
+            "repo": "clojure-lsp/clojure-lsp",
+            "asset": "clojure-lsp-native-linux-amd64.zip",
+            "binaryPath": "clojure-lsp",
+            "targetAssets": [
+              {
+                "platform": "darwin",
+                "arch": "x64",
+                "file": "clojure-lsp-native-macos-amd64.zip",
+                "binaryPath": "clojure-lsp"
+              },
+              {
+                "platform": "darwin",
+                "arch": "arm64",
+                "file": "clojure-lsp-native-macos-aarch64.zip",
+                "binaryPath": "clojure-lsp"
+              },
+              {
+                "platform": "linux",
+                "arch": "x64",
+                "file": "clojure-lsp-native-linux-amd64.zip",
+                "binaryPath": "clojure-lsp"
+              },
+              {
+                "platform": "linux",
+                "arch": "arm64",
+                "file": "clojure-lsp-native-linux-aarch64.zip",
+                "binaryPath": "clojure-lsp"
+              },
+              {
+                "platform": "win32",
+                "arch": "x64",
+                "file": "clojure-lsp-native-windows-amd64.zip",
+                "binaryPath": "clojure-lsp.exe"
+              }
+            ]
+          },
+          "args": []
+        },
+        "languages": [
+          "clojure",
+          "clojurescript"
         ]
       }
     ]
