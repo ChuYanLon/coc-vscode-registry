@@ -62,12 +62,36 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root` then copies binary to `server/`, e.g. `[{ "crate": "nil", "binary": "nil" }]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
+| `source.patches` | ❌ | 插件级文本替换（v1.4.2+）。在通用替换后执行。`[{ find: "regex", replace: "text" }]` |
+| `excludeDeps` | ❌ | 剔除不需要的依赖（v1.5.7+）。`["dep1", "@scope/"]` 支持前缀匹配 |
+| `keepDeps` | ❌ | 保留必要的依赖。数组（自动解析版本号）或对象 `{ name: "ver" }`（手动指定） |
 
 **Local server requirements** (`server.package` starts with `./` or `../`):
 - Source repo must have a `server/` directory with its own `package.json` + `tsconfig.json`
 - `minPluginVersion: "1.4.2"` (required for local server support in converter + pipeline)
 - Server code compiled automatically by `esbuild.mjs` at build time
 - Pipeline copies `server/` from source to build directory before `npm install`
+
+**Direct-API plugins with source patches** (`source.patches`, v1.4.2+):
+- 适用于直接使用 VS Code API 的插件（非 LSP），如 Code Runner、Live Server
+- 通过 `patches` 字段对转换后的源码做文本替换，修复 API 差异
+- patches 在 converter 通用替换（`.fileName` → `Uri.parse()`, `workspace.workspaceFolders` guard 等）之后执行
+- 示例（vscode-code-runner，简化）：
+```json
+{
+  "name": "vscode-code-runner",
+  "type": "direct-api",
+  "convert": [{
+    "type": "source",
+    "transforms": ["import-mapping", "class-to-factory"],
+    "patches": [
+      { "find": "vscode\\.window\\.createTerminal\\(\"Code\"\\)", "replace": "await vscode.window.createTerminal({ name: 'Code' })" },
+      { "find": "vscode\\.env\\.shell", "replace": "(process.env.SHELL || '/bin/bash')" },
+      { "find": "this\\._outputChannel\\.show\\(", "replace": "this._outputChannel.dispose(); this._outputChannel = vscode.window.createOutputChannel(\"Code\"); " }
+    ]
+  }]
+}
+```
 
 **Server patches** (`server.patches`, v1.4.5+):
 - 对 local server 编译后的 JS 文件做文本替换，在 `tsc` 编译后、`esbuild` 打包前执行
@@ -97,7 +121,7 @@ python3 -c "import json; json.load(open('coc-vscode-registry/registry.json'))"
 
 ```bash
 cd ../converter
-npm run test:smoke           # Converts all 114 entries, validates output
+npm run test:smoke           # Converts all 128 entries, validates output
 ```
 
 4. Submit a PR.

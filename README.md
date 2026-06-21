@@ -30,7 +30,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `languages` | ✅ | Language IDs this plugin supports |
 | `categories` | ✅ | Categories for filtering (e.g. `"LSP"`, `"Snippets"`) |
 | `convert` | ✅ | Array of conversion steps. See [coc-vscode-loader/CONTRIBUTING.md](../CONTRIBUTING.md) |
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`** |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`** |
 | `pipPackages` | ❌ | Python dependencies for pip install (`["ansible-lint"]`) |
 | `goPackages` | ❌ | Go packages, pipeline runs `go install`, binary goes to `server/` (`["golang.org/x/tools/gopls@latest"]`) |
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root`, binary copied to `server/` (`[{ "crate": "nil", "binary": "nil" }]`) |
@@ -41,10 +41,23 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | Type | Description |
 |------|-------------|
 | `language-client` | Generate a LanguageClient entry point for an LSP server. Supports both npm packages (`"package": "some-lsp"`) and **local servers** (`"package": "../server/out/server"`). Local servers auto-compile `server/` TypeScript at build time. |
-| `source` | Apply AST transforms to source files |
+| `source` | Apply AST transforms + text-level polyfills + plugin-specific patches to source files |
 | `bridge` | Generate bridge code (e.g. ts-bridge for Volar-like plugins) |
 | `mark-unsupported` | Comment out unsupported API calls |
 | `snippets` | Copy snippet files and generate empty entry for pure snippet extensions |
+
+#### source step fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `type` | ✅ | `"source"` |
+| `transforms` | ✅ | Array of transform names: `"import-mapping"`, `"class-to-factory"`, `"provider-register"`, `"enum-offset"` |
+| `entry` | ❌ | Entry point file (default `"src/extension.ts"`) |
+| `activationEvents` | ❌ | Coc activation events |
+| `excludeDeps` | ❌ | Dependency names to exclude from output `package.json`. Supports prefix matching. (`"1.5.7+"`) |
+| `keepDeps` | ❌ | Dependencies to keep (array for auto-resolve, object `{ name: "ver" }` for manual). Used when the converter can't find a dep in `dependencies`/`devDependencies`. |
+| `patches` | ❌ | Plugin-specific text find/replace pairs applied after all transforms. Array of `{ find: "regex", replace: "text" }`. |
+| `verbose` | ❌ | Enable debug logging during conversion |
 
 #### language-client step fields
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-06-21
+
+### Added
+- Code Runner (`vscode-code-runner`) — direct-api with 12 source patches
+- `source.patches`, `excludeDeps`, `keepDeps` field documentation in README and CONTRIBUTING
+
+### Changed
+- Registry expanded from 114 to 128 entries
+
 ## [1.1.0] - 2026-06-13
 
 ### Added
