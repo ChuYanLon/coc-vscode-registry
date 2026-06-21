@@ -649,6 +649,46 @@
     ]
   },
   {
+    "name": "vscode-ember",
+    "displayName": "Ember.js",
+    "description": "Ember.js language support — diagnostics, completion, navigation, code lenses, refactoring",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "ember-tooling/vscode-ember"
+    },
+    "url": "https://github.com/ember-tooling/vscode-ember",
+    "languages": [
+      "handlebars",
+      "glimmer-js",
+      "glimmer-ts",
+      "javascript",
+      "typescript"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "ember",
+        "server": {
+          "kind": "module",
+          "package": "@ember-tooling/ember-language-server",
+          "entry": "bin",
+          "binName": "ember-language-server"
+        },
+        "languages": [
+          "handlebars",
+          "glimmer-js",
+          "glimmer-ts",
+          "javascript",
+          "typescript"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-svelte",
     "displayName": "Svelte",
     "description": "Svelte language support — diagnostics, formatting, IntelliSense",
