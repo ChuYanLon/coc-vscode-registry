@@ -1699,6 +1699,170 @@
     ]
   },
   {
+    "name": "vscode-live-server",
+    "displayName": "Live Server",
+    "description": "Launch a development local Server with live reload feature for static & dynamic pages",
+    "type": "direct-api",
+    "source": {
+      "type": "github",
+      "repo": "ritwickdey/vscode-live-server"
+    },
+    "url": "https://github.com/ritwickdey/vscode-live-server",
+    "languages": [
+      "html",
+      "xml",
+      "svg"
+    ],
+    "categories": [
+      "Other"
+    ],
+    "minPluginVersion": "1.5.6",
+    "convert": [
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping",
+          "class-to-factory",
+          "provider-register"
+        ],
+        "entry": "src/extension.ts",
+        "activationEvents": [
+          "*",
+          "onCommand:extension.liveServer.goOnline",
+          "onCommand:extension.liveServer.goOffline",
+          "onCommand:extension.liveServer.changeWorkspace"
+        ],
+        "excludeDeps": [
+          "@types/glob", "@types/node", "@types/vscode",
+          "@vscode/test-electron", "@wdio", "glob", "husky",
+          "mocha", "npm-run-all", "semver", "ts-node", "tslint",
+          "typescript", "vsce", "wdio-vscode-service", "es5-ext",
+          "vsls", "live-server"
+        ],
+        "keepDeps": {
+          "live-server": "^1.2.2",
+          "http-shutdown": "^1.2.0",
+          "ips": "^2.1.3",
+          "opn": "^6.0.0"
+        },
+        "patches": [
+          {
+            "find": "window\\.activeTextEditor\\.Uri\\.parse\\(document\\.uri\\)\\.fsPath",
+            "replace": "Uri.parse(window.activeTextEditor.document.uri).fsPath"
+          },
+          {
+            "find": "private readonly liveShareHelper: LiveShareHelper;",
+            "replace": "// LiveShareHelper removed for coc.nvim"
+          },
+          {
+            "find": "this\\.liveShareHelper\\s*=\\s*new\\s+LiveShareHelper\\(this\\);",
+            "replace": "// LiveShareHelper removed for coc.nvim"
+          },
+          {
+            "find": "this\\.liveShareHelper\\.dispose\\(\\);",
+            "replace": "// LiveShareHelper.dispose() removed for coc.nvim"
+          },
+          {
+            "find": "import\\s*\\{[^}]*\\bLiveShareHelper\\b[^}]*\\}\\s*from\\s*['\"]\\./LiveShareHelper['\"]",
+            "replace": "// LiveShareHelper removed for coc.nvim"
+          },
+          {
+            "find": "import\\s*\\{[^}]*\\bStatusBarAlignment\\b[^}]*\\}\\s*from\\s*['\"]coc\\.nvim['\"]",
+            "replace": "import { StatusBarItem, window } from 'coc.nvim'"
+          },
+          {
+            "find": "StatusBarAlignment\\.Right,\\s*100",
+            "replace": "100"
+          },
+          {
+            "find": "extensions\\.getExtension\\('ritwickdey\\.LiveServer'\\)",
+            "replace": "require('../../package.json')"
+          },
+          {
+            "find": "context\\.globalState\\.setKeysForSync\\([^)]*\\);",
+            "replace": "// setKeysForSync no-op"
+          },
+          {
+            "find": "import\\s*\\{[^}]*\\bcheckNewAnnouncement,\\s*SETUP_STRING\\b[^}]*\\}\\s*from\\s*['\"]\\./announcement['\"]",
+            "replace": "// announcement removed for coc.nvim"
+          },
+          {
+            "find": "checkNewAnnouncement\\(context\\.globalState\\);",
+            "replace": "// checkNewAnnouncement removed for coc.nvim"
+          },
+          {
+            "find": "await workspace\\.saveAll\\(\\);",
+            "replace": "// workspace.saveAll not available in coc.nvim"
+          },
+          {
+            "find": "workspaceFolders\\[0\\]\\.uri\\.fsPath",
+            "replace": "Uri.parse(workspaceFolders[0].uri).fsPath"
+          },
+          {
+            "find": "workspaceFolders\\.find\\(e => e\\.name === workspaceName\\)\\.uri\\.fsPath",
+            "replace": "Uri.parse(workspaceFolders.find(e => e.name === workspaceName).uri).fsPath"
+          },
+          {
+            "find": "\\$\\(broadcast\\) Go Live",
+            "replace": "▶ Go Live"
+          },
+          {
+            "find": "StatusBarAlignment\\.Right,\\s*100",
+            "replace": "100"
+          },
+          {
+            "find": "extensions\\.getExtension\\('ritwickdey\\.LiveServer'\\)",
+            "replace": "require('../../package.json')"
+          },
+          {
+            "find": "context\\.globalState\\.setKeysForSync\\([^)]*\\);",
+            "replace": "// setKeysForSync no-op"
+          },
+          {
+            "find": "import\\s*\\{[^}]*\\bcheckNewAnnouncement,\\s*SETUP_STRING\\b[^}]*\\}\\s*from\\s*['\"]\\./announcement['\"]",
+            "replace": "// announcement removed for coc.nvim"
+          },
+          {
+            "find": "checkNewAnnouncement\\(context\\.globalState\\);",
+            "replace": "// checkNewAnnouncement removed for coc.nvim"
+          },
+          {
+            "find": "await workspace\\.saveAll\\(\\);",
+            "replace": "// workspace.saveAll not available in coc.nvim"
+          },
+          {
+            "find": "workspaceFolders\\[0\\]\\.uri\\.fsPath",
+            "replace": "Uri.parse(workspaceFolders[0].uri).fsPath"
+          },
+          {
+            "find": "workspaceFolders\\.find\\(e => e\\.name === workspaceName\\)\\.uri\\.fsPath",
+            "replace": "Uri.parse(workspaceFolders.find(e => e.name === workspaceName).uri).fsPath"
+          },
+          {
+            "find": "\\$\\(broadcast\\) Go Live",
+            "replace": "● Go Live"
+          },
+          {
+            "find": "\\$\\(circle-slash\\) Port",
+            "replace": "● Port"
+          },
+          {
+            "find": "\\$\\(pulse\\)",
+            "replace": "◌"
+          },
+          {
+            "find": "if \\(Config\\.getShowOnStatusbar\\)\\s*\n\\s*this\\.statusbar\\.show\\(\\);",
+            "replace": "this.statusbar.show();"
+          },
+          {
+            "find": "Go Live';",
+            "replace": "Go Live';\n      StatusbarUi.statusbar.show();"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-clojure-lsp",
     "displayName": "Clojure LSP",
     "description": "Clojure language support — completion, diagnostics, navigation, refactoring",
