@@ -1665,6 +1665,12 @@
         ],
         "keepDeps": [
           "prettier"
+        ],
+        "patches": [
+          {
+            "find": "if \\(document\\.uri\\.scheme !== \"file\"\\)",
+            "replace": "if (!String(document.uri).startsWith('file://'))"
+          }
         ]
       }
     ]
