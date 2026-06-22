@@ -108,6 +108,7 @@ function renderPackageCards(pkgs) {
               <span class="package-name">${escapeHtml(p.name)}</span>
             </div>
             <div class="package-desc">${escapeHtml(p.description)}</div>
+            ${p.notes ? `<div class="package-notes">⚠ ${escapeHtml(p.notes)}</div>` : ''}
             <div class="package-meta">
               ${typeTag}${langTags}${catTags}${extraTags}
             </div>

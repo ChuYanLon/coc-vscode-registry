@@ -336,6 +336,16 @@ header h1::before {
   line-height: 1.5;
 }
 
+.package-notes {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--yellow);
+  line-height: 1.4;
+  padding: 4px 8px;
+  background: var(--yellow-bg);
+  border-radius: 4px;
+}
+
 .package-meta {
   display: flex;
   flex-wrap: wrap;
