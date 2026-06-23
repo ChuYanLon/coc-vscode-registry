@@ -4,7 +4,7 @@
 >
 > ```vim
 > :CocUpdate coc-vscode-loader
-> :CocCommand loader.open   " then press U to reinstall all
+> :CocCommand loader.open   " then press R on each installed package
 > ```
 
 # coc-vscode-registry
