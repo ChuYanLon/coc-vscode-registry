@@ -1670,6 +1670,22 @@
           {
             "find": "if \\(document\\.uri\\.scheme !== \"file\"\\)",
             "replace": "if (!String(document.uri).startsWith('file://'))"
+          },
+          {
+            "find": "if \\(uri\\.scheme !== \"file\"",
+            "replace": "if (!String(uri).startsWith('file://')"
+          },
+          {
+            "find": "if \\(uri\\.scheme === \"file\"",
+            "replace": "if (String(uri).startsWith('file://')"
+          },
+          {
+            "find": "const \\{ document \\} = textEditor;",
+            "replace": "const document = textEditor && 'document' in textEditor ? textEditor.document : textEditor; if (!document) return;"
+          },
+          {
+            "find": "await editor\\.edit\\(",
+            "replace": "/* editor.edit not available - forceFormatDocument limited */ await Promise.resolve("
           }
         ]
       }
