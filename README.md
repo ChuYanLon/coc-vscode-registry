@@ -82,7 +82,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `server.patches` | ❌ | Post-compilation text patches for server output files (v1.4.5+). Array of `{ file, find, replace }`. Applied after tsc compilation, before esbuild bundle |
 | `languages` | ✅ | Language IDs to associate with this server |
 | `initializationOptions` | ❌ | JS object passed to LanguageClient during initialization |
-| `multRoot` | ❌ | Start one client per workspace folder |
+| `multiRoot` | ❌ | Start one client per workspace folder |
 | `id` | ❌ | Override the LanguageClient id (defaults to plugin name) |
 
 ### serverBinary config
@@ -104,7 +104,7 @@ Defines reusable bridge presets (currently only `ts-bridge`):
   "ts-bridge": {
     "type": "tsserver-forward",
     "options": {
-      "extensions": ["coc-tsserver"],
+      "extensions": ["coc-tsserver-dev"],
       "services": ["tsserver"],
       "command": "typescript.tsserverRequest"
     }
