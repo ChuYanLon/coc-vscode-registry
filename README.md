@@ -1,3 +1,12 @@
+> **⚠️ IMPORTANT: Requires Latest coc-vscode-loader**
+>
+> This registry is consumed by [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader). **Always use the latest version of the loader** — each release includes converter fixes that affect how plugins are converted. Plugins installed with an older loader carry broken conversion output and must be reinstalled after upgrading.
+>
+> ```vim
+> :CocUpdate coc-vscode-loader
+> :CocCommand loader.open   " then press U to reinstall all
+> ```
+
 # coc-vscode-registry
 
 [![website](https://img.shields.io/badge/🌐_Browse_Registry-coc--plugin.github.io-blue?style=for-the-badge)](https://coc-plugin.github.io/coc-vscode-registry/)
