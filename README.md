@@ -1,10 +1,10 @@
 > **⚠️ IMPORTANT: Requires Latest coc-vscode-loader**
 >
-> This registry is consumed by [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader). **Always use the latest version of the loader** — each release includes converter fixes that affect how plugins are converted. Plugins installed with an older loader carry broken conversion output and must be reinstalled after upgrading.
+> This registry is consumed by [coc-vscode-loader](https://github.com/coc-plugin/coc-vscode-loader). **Always use the latest version of the loader** — each release includes converter fixes that affect how plugins are converted. After upgrading, the loader auto-detects which installed plugins changed (`[changed]` in TUI) — only those need reinstalling.
 >
 > ```vim
 > :CocUpdate coc-vscode-loader
-> :CocCommand loader.open   " then press R on each installed package
+> :CocCommand loader.open   " check for [changed] markers, press R on those
 > ```
 
 # coc-vscode-registry
