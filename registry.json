@@ -1308,7 +1308,7 @@
   },
   {
     "name": "vscode-html-ls",
-    "displayName": "HTML Language Features",
+    "displayName": "html",
     "description": "HTML/Handlebars language support — completion, hover, formatting, diagnostics, folding",
     "type": "pure-lsp",
     "source": {
@@ -1350,7 +1350,6 @@
       {
         "type": "source",
         "transforms": [],
-        "entry": "",
         "keepDeps": {
           "typescript": "^6.0.0"
         }
@@ -1807,11 +1806,24 @@
           "onCommand:extension.liveServer.changeWorkspace"
         ],
         "excludeDeps": [
-          "@types/glob", "@types/node", "@types/vscode",
-          "@vscode/test-electron", "@wdio", "glob", "husky",
-          "mocha", "npm-run-all", "semver", "ts-node", "tslint",
-          "typescript", "vsce", "wdio-vscode-service", "es5-ext",
-          "vsls", "live-server"
+          "@types/glob",
+          "@types/node",
+          "@types/vscode",
+          "@vscode/test-electron",
+          "@wdio",
+          "glob",
+          "husky",
+          "mocha",
+          "npm-run-all",
+          "semver",
+          "ts-node",
+          "tslint",
+          "typescript",
+          "vsce",
+          "wdio-vscode-service",
+          "es5-ext",
+          "vsls",
+          "live-server"
         ],
         "keepDeps": {
           "live-server": "^1.2.2",
@@ -1947,15 +1959,54 @@
     },
     "url": "https://github.com/formulahendry/vscode-code-runner",
     "languages": [
-      "c", "cpp", "csharp", "java", "javascript", "typescript", "php",
-      "python", "perl", "ruby", "go", "rust", "dart", "haskell",
-      "lua", "groovy", "r", "swift", "kotlin", "scala", "zig",
-      "fortran", "pascal", "shellscript", "powershell", "bat",
-      "objective-c", "clojure", "haxe", "nim", "d", "racket",
-      "scheme", "fsharp", "vb", "coffeescript", "julia", "crystal",
-      "ocaml", "elixir", "erlang", "mojo", "gleam", "sml"
+      "c",
+      "cpp",
+      "csharp",
+      "java",
+      "javascript",
+      "typescript",
+      "php",
+      "python",
+      "perl",
+      "ruby",
+      "go",
+      "rust",
+      "dart",
+      "haskell",
+      "lua",
+      "groovy",
+      "r",
+      "swift",
+      "kotlin",
+      "scala",
+      "zig",
+      "fortran",
+      "pascal",
+      "shellscript",
+      "powershell",
+      "bat",
+      "objective-c",
+      "clojure",
+      "haxe",
+      "nim",
+      "d",
+      "racket",
+      "scheme",
+      "fsharp",
+      "vb",
+      "coffeescript",
+      "julia",
+      "crystal",
+      "ocaml",
+      "elixir",
+      "erlang",
+      "mojo",
+      "gleam",
+      "sml"
     ],
-    "categories": ["Other"],
+    "categories": [
+      "Other"
+    ],
     "minPluginVersion": "1.5.7",
     "convert": [
       {
@@ -1972,8 +2023,12 @@
           "onCommand:code-runner.runByLanguage"
         ],
         "excludeDeps": [
-          "@types/mocha", "@types/node", "@types/vscode",
-          "typescript", "mocha", "tslint"
+          "@types/mocha",
+          "@types/node",
+          "@types/vscode",
+          "typescript",
+          "mocha",
+          "tslint"
         ],
         "keepDeps": {
           "micromatch": "^4.0.2",
