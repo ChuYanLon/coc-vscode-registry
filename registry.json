@@ -1357,6 +1357,43 @@
     ]
   },
   {
+    "name": "vscode-css-ls",
+    "displayName": "css",
+    "description": "CSS/LESS/SCSS language support — completion, hover, formatting, diagnostics, linting, color picker",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "microsoft/vscode",
+      "subdir": "extensions/css-language-features"
+    },
+    "url": "https://github.com/microsoft/vscode/tree/main/extensions/css-language-features",
+    "languages": [
+      "css",
+      "scss",
+      "less"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.6.0",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "css",
+        "server": {
+          "kind": "module",
+          "package": "../server/out/node/cssServerMain"
+        },
+        "initializationOptions": "{ provideFormatter: true }",
+        "languages": [
+          "css",
+          "scss",
+          "less"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-marksman",
     "displayName": "Marksman",
     "description": "Markdown language server — cross-references, diagnostics, completion",
