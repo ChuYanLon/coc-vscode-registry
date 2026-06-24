@@ -1329,6 +1329,8 @@
       {
         "type": "language-client",
         "id": "html",
+        "autoInsertion": true,
+        "semanticTokens": true,
         "server": {
           "kind": "module",
           "package": "../server/out/node/htmlServerMain",
