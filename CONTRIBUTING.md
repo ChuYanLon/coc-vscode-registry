@@ -62,9 +62,9 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root` then copies binary to `server/`, e.g. `[{ "crate": "nil", "binary": "nil" }]` |
 | `serverBinary` | ❌ | Binary LSP download config. See README. |
 | `convert` | ❌ | Conversion steps. See loader's CONTRIBUTING.md for full reference. |
-| `source.patches` | ❌ | 插件级文本替换（v1.4.2+）。在通用替换后执行。`[{ find: "regex", replace: "text" }]` |
-| `excludeDeps` | ❌ | 剔除不需要的依赖（v1.5.7+）。`["dep1", "@scope/"]` 支持前缀匹配 |
-| `keepDeps` | ❌ | 保留必要的依赖。数组（自动解析版本号）或对象 `{ name: "ver" }`（手动指定） |
+| `source.patches` | ❌ | Plugin-level text replacements (v1.4.2+). Executed after generic replacements. `[{ find: "regex", replace: "text" }]` |
+| `excludeDeps` | ❌ | Exclude unwanted dependencies (v1.5.7+). `["dep1", "@scope/"]` supports prefix matching |
+| `keepDeps` | ❌ | Preserve necessary dependencies. Array (auto-resolve version) or object `{ name: "ver" }` (manual specification) |
 
 **Local server requirements** (`server.package` starts with `./` or `../`):
 - Source repo must have a `server/` directory with its own `package.json` + `tsconfig.json`
@@ -73,10 +73,10 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 - Pipeline copies `server/` from source to build directory before `npm install`
 
 **Direct-API plugins with source patches** (`source.patches`, v1.4.2+):
-- 适用于直接使用 VS Code API 的插件（非 LSP），如 Code Runner、Live Server
-- 通过 `patches` 字段对转换后的源码做文本替换，修复 API 差异
-- patches 在 converter 通用替换（`.fileName` → `Uri.parse()`, `workspace.workspaceFolders` guard 等）之后执行
-- 示例（vscode-code-runner，简化）：
+- Suitable for plugins that directly use VS Code API (non-LSP), such as Code Runner, Live Server
+- Applies text replacements to converted source code via the `patches` field to fix API differences
+- Patches are executed after converter generic replacements (`.fileName` → `Uri.parse()`, `workspace.workspaceFolders` guard, etc.)
+- Example (vscode-code-runner, simplified):
 ```json
 {
   "name": "vscode-code-runner",
@@ -94,17 +94,17 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 ```
 
 **Server patches** (`server.patches`, v1.4.5+):
-- 对 local server 编译后的 JS 文件做文本替换，在 `tsc` 编译后、`esbuild` 打包前执行
-- 适用于修复 server 端 behavior（如禁用 pull diagnostics、注入事件钩子等）
-- 示例：`{ "file": "eslintServer.js", "find": "connection\\.listen\\(\\);", "replace": "connection.listen();\\ndocuments.onDidOpen(...)..." }`
-- 使用 `server.patches` 时设置 `minPluginVersion: "1.4.5"`
-- 详见 loader 仓库的 [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#%E6%8F%92%E4%BB%B6%E7%BA%A7%E6%96%87%E6%9C%AC%E8%A1%A5%E4%B8%81-patchessource-step)
+- Applies text replacements to compiled JS files of a local server, after `tsc` compilation and before `esbuild` bundling
+- Suitable for fixing server-side behavior (e.g. disabling pull diagnostics, injecting event hooks)
+- Example: `{ "file": "eslintServer.js", "find": "connection\\.listen\\(\\);", "replace": "connection.listen();\\ndocuments.onDidOpen(...)..." }`
+- Set `minPluginVersion: "1.4.5"` when using `server.patches`
+- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#%E6%8F%92%E4%BB%B6%E7%BA%A7%E6%96%87%E6%9C%AC%E8%A1%A5%E4%B8%81-patches-source-step)
 
 **Per-platform assets** (`targetAssets`, v1.5.0+):
-- 当二进制发布使用非标准平台命名时（如 clangd 用 `mac`/`windows` 而非 `darwin`/`win32`），使用 `targetAssets` 定义各平台的 asset 文件和 binaryPath
-- 示例：`[ { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" } ]`
-- 使用 `targetAssets` 时设置 `minPluginVersion: "1.5.0"`
-- 详见 loader 仓库的 [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#targetassets-%E5%AD%97%E6%AE%B5v150)
+- When binary releases use non-standard platform naming (e.g. clangd uses `mac`/`windows` instead of `darwin`/`win32`), use `targetAssets` to define the asset file and binaryPath for each platform
+- Example: `[ { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" } ]`
+- Set `minPluginVersion: "1.5.0"` when using `targetAssets`
+- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#targetassets-%E5%AD%97%E6%AE%B5v150)
 
 2. Validate JSON:
 
