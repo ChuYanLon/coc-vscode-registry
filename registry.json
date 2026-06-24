@@ -1307,7 +1307,7 @@
     "minPluginVersion": "1.4.2"
   },
   {
-    "name": "vscode-html-language-features",
+    "name": "vscode-html-ls",
     "displayName": "HTML Language Features",
     "description": "HTML/Handlebars language support — completion, hover, formatting, diagnostics, folding",
     "type": "pure-lsp",
@@ -1324,7 +1324,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.5.9",
+    "minPluginVersion": "1.6.0",
     "convert": [
       {
         "type": "language-client",
