@@ -39,7 +39,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `languages` | ✅ | Language IDs this plugin supports |
 | `categories` | ✅ | Categories for filtering (e.g. `"LSP"`, `"Snippets"`) |
 | `convert` | ✅ | Array of conversion steps. See [coc-vscode-loader/CONTRIBUTING.md](../CONTRIBUTING.md) |
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`** |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`**, **`"1.6.0"` for `autoInsertion`/`semanticTokens`/`initializationOptions` in `language-client` step** |
 | `pipPackages` | ❌ | Python dependencies for pip install (`["ansible-lint"]`) |
 | `goPackages` | ❌ | Go packages, pipeline runs `go install`, binary goes to `server/` (`["golang.org/x/tools/gopls@latest"]`) |
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root`, binary copied to `server/` (`[{ "crate": "nil", "binary": "nil" }]`) |
@@ -82,6 +82,8 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `server.patches` | ❌ | Post-compilation text patches for server output files (v1.4.5+). Array of `{ file, find, replace }`. Applied after tsc compilation, before esbuild bundle |
 | `languages` | ✅ | Language IDs to associate with this server |
 | `initializationOptions` | ❌ | JS object passed to LanguageClient during initialization |
+| `autoInsertion` | ❌ | Enable auto-quote/auto-close. Generates `onDidChangeTextDocument` listener that sends custom LSP request (used by HTML language server, v1.6.0+) |
+| `semanticTokens` | ❌ | Enable semantic tokens highlighting. Generates `registerDocumentSemanticTokensProvider` with custom LSP requests (used by HTML language server, v1.6.0+) |
 | `multiRoot` | ❌ | Start one client per workspace folder |
 | `id` | ❌ | Override the LanguageClient id (defaults to plugin name) |
 
