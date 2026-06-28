@@ -1776,7 +1776,7 @@
           },
           {
             "find": "await editor\\.edit\\(\\(editBuilder\\) => \\{[\\s\\S]+?editBuilder\\.replace\\(edits\\[0\\]\\.range, edits\\[0\\]\\.newText\\);\\s+\\}\\);",
-            "replace": "await editor.document.applyEdits(edits, true);"
+            "replace": "await workspace.applyEdit({ changes: { [editor.document.uri]: edits } });"
           },
           {
             "find": "(?<!\\?\\.)uri\\.fsPath",
@@ -1821,6 +1821,14 @@
           {
             "find": "forceFormatDocumentCommand,\\n    \\.\\.\\.editService\\.registerDisposables\\(\\),?",
             "replace": "forceFormatDocumentCommand,\n    formatDocumentCommand,\n    ...editService.registerDisposables()"
+          },
+          {
+            "find": "document\\.getText\\(\\)",
+            "replace": "(document.textDocument || document).getText()"
+          },
+          {
+            "find": "document\\.positionAt\\(",
+            "replace": "(document.textDocument || document).positionAt("
           },
           {
             "find": "private allRangeLanguages: string\\[\\] = \\[\n    \"javascript\",\n    \"javascriptreact\",\n    \"typescript\",\n    \"typescriptreact\",\n    \"json\",\n    \"jsonc\",\n    \"graphql\",\n  \\];",
