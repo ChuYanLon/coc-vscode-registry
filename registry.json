@@ -1767,12 +1767,68 @@
             "replace": "if (String(uri).startsWith('file://')"
           },
           {
+            "find": "if \\(uri\\.scheme !== \"file\" && languageParsers\\.includes\\(languageId\\)\\)",
+            "replace": "if (!String(uri).startsWith('file://') && languageParsers.includes(languageId))"
+          },
+          {
             "find": "const \\{ document \\} = textEditor;",
             "replace": "const document = textEditor && 'document' in textEditor ? textEditor.document : textEditor; if (!document) return;"
           },
           {
-            "find": "await editor\\.edit\\(",
-            "replace": "/* editor.edit not available - forceFormatDocument limited */ await Promise.resolve("
+            "find": "await editor\\.edit\\(\\(editBuilder\\) => \\{[\\s\\S]+?editBuilder\\.replace\\(edits\\[0\\]\\.range, edits\\[0\\]\\.newText\\);\\s+\\}\\);",
+            "replace": "await editor.document.applyEdits(edits, true);"
+          },
+          {
+            "find": "uri\\.fsPath",
+            "replace": "Uri.parse(uri).fsPath"
+          },
+          {
+            "find": "documentUri\\.fsPath",
+            "replace": "Uri.parse(documentUri).fsPath"
+          },
+          {
+            "find": "workspaceFolderUri\\.fsPath",
+            "replace": "Uri.parse(workspaceFolderUri).fsPath"
+          },
+          {
+            "find": "workspaceFolder\\?\\.uri\\.fsPath",
+            "replace": "workspaceFolder ? Uri.parse(workspaceFolder.uri).fsPath : undefined"
+          },
+          {
+            "find": "workspace\\.getWorkspaceFolder\\(Uri\\.file\\(([^)]+)\\)\\)\\?\\.uri\\.fsPath",
+            "replace": "workspace.getWorkspaceFolder($1) ? Uri.parse(workspace.getWorkspaceFolder($1).uri).fsPath : undefined"
+          },
+          {
+            "find": "Uri\\.joinPath\\(([^,]+),\\s*([^)]+)\\)",
+            "replace": "path.join($1, $2)"
+          },
+          {
+            "find": "outputPath\\.scheme === \"file\" \\? outputPath\\.fsPath : undefined",
+            "replace": "typeof outputPath === 'string' ? outputPath : undefined"
+          },
+          {
+            "find": "outputPath\\.fsPath",
+            "replace": "outputPath"
+          },
+          {
+            "find": "workspace\\.fs\\.writeFile\\(outputPath,\\s*new TextEncoder\\(\\)\\.encode\\(templateSource\\)\\)",
+            "replace": "require('fs').promises.writeFile(outputPath, new TextEncoder().encode(templateSource))"
+          },
+          {
+            "find": "const forceFormatDocumentCommand = commands\\.registerCommand\\(\\s*\"prettier\\.forceFormatDocument\",\\s*editService\\.forceFormatDocument,?\\s*\\);",
+            "replace": "const forceFormatDocumentCommand = commands.registerCommand(\n      'prettier.forceFormatDocument',\n      editService.forceFormatDocument,\n    );\n    const formatDocumentCommand = commands.registerCommand(\n      'prettier.formatFile',\n      editService.forceFormatDocument,\n    );"
+          },
+          {
+            "find": "forceFormatDocumentCommand,\\n    \\.\\.\\.editService\\.registerDisposables\\(\\),?",
+            "replace": "forceFormatDocumentCommand,\n    formatDocumentCommand,\n    ...editService.registerDisposables()"
+          },
+          {
+            "find": "private allRangeLanguages: string\\[\\] = \\[\n    \"javascript\",\n    \"javascriptreact\",\n    \"typescript\",\n    \"typescriptreact\",\n    \"json\",\n    \"jsonc\",\n    \"graphql\",\n  \\];",
+            "replace": "private allRangeLanguages: string[] = [\n    \"javascript\",\n    \"javascriptreact\",\n    \"typescript\",\n    \"typescriptreact\",\n    \"json\",\n    \"jsonc\",\n    \"graphql\",\n    \"css\",\n    \"less\",\n    \"scss\",\n    \"html\",\n    \"markdown\",\n    \"yaml\",\n  ];"
+          },
+          {
+            "find": "extensionFormattingOptions\\.rangeEnd &&\\s*extensionFormattingOptions\\.rangeStart",
+            "replace": "extensionFormattingOptions.rangeEnd !== undefined && extensionFormattingOptions.rangeStart !== undefined"
           }
         ]
       }
