@@ -1800,7 +1800,7 @@
           },
           {
             "find": "Uri\\.joinPath\\(([^,]+),\\s*([^)]+)\\)",
-            "replace": "path.join($1, $2)"
+            "replace": "require('path').join($1, $2)"
           },
           {
             "find": "outputPath\\.scheme === \"file\" \\? outputPath\\.fsPath : undefined",
@@ -1811,7 +1811,7 @@
             "replace": "outputPath"
           },
           {
-            "find": "workspace\\.fs\\.writeFile\\(outputPath,\\s*new TextEncoder\\(\\)\\.encode\\(templateSource\\)\\)",
+            "find": "workspace\\.fs\\.writeFile\\(\\s*outputPath,\\s*new TextEncoder\\(\\)\\.encode\\(templateSource\\),?\\s*\\)",
             "replace": "require('fs').promises.writeFile(outputPath, new TextEncoder().encode(templateSource))"
           },
           {
@@ -1829,6 +1829,10 @@
           {
             "find": "extensionFormattingOptions\\.rangeEnd &&\\s*extensionFormattingOptions\\.rangeStart",
             "replace": "extensionFormattingOptions.rangeEnd !== undefined && extensionFormattingOptions.rangeStart !== undefined"
+          },
+          {
+            "find": "export const createConfigFile =\n  \\(templateService: TemplateService\\): createConfigFileFunction =>\n  async \\(\\) => \\{\n    const folderResult = await void 0 as any;\n    if \\(folderResult && folderResult\\.length === 1\\) \\{\n      const folderUri = folderResult\\[0\\];\n      await templateService\\.writeConfigFile\\(folderUri\\);\n    \\}\n  \\};",
+            "replace": "export const createConfigFile =\n  (templateService: TemplateService): createConfigFileFunction =>\n  async () => {\n    const workspace = require('coc.nvim').workspace;\n    try {\n      const cwd = workspace.cwd || process.cwd();\n      const folder = await workspace.nvim.callAsync(\n        'coc#util#with_callback',\n        ['input', ['Create .prettierrc in directory: ', cwd]]\n      );\n      if (!folder) return;\n      const stat = require('fs').statSync(folder);\n      if (stat.isDirectory()) {\n        await templateService.writeConfigFile(folder);\n        workspace.nvim.command('checktime', true);\n      } else {\n        require('coc.nvim').window.showErrorMessage('Not a directory: ' + folder);\n      }\n    } catch (e) {\n      require('coc.nvim').window.showErrorMessage('prettier.createConfigFile error: ' + (e as any).message);\n    }\n  };"
           }
         ]
       }
