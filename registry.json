@@ -1779,7 +1779,7 @@
             "replace": "await editor.document.applyEdits(edits, true);"
           },
           {
-            "find": "uri\\.fsPath",
+            "find": "(?<!\\?\\.)uri\\.fsPath",
             "replace": "Uri.parse(uri).fsPath"
           },
           {
