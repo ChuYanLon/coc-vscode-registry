@@ -1872,6 +1872,16 @@
         "entry": "src/extension.ts",
         "activationEvents": [
           "onCommand:gitignore.addgitignore"
+        ],
+        "patches": [
+          {
+            "find": "vscode\\.Promise\\.resolve\\(",
+            "replace": "Promise.resolve("
+          },
+          {
+            "find": "// Show success message\\n\\t*await showSuccessMessage\\(operation\\);",
+            "replace": "$&\n\n\t\t\t// Refresh buffer to show updated content\n\t\t\tawait vscode.workspace.nvim.command('checktime');"
+          }
         ]
       }
     ]
