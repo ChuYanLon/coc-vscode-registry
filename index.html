@@ -41,26 +41,42 @@
   </div>
 
   <main class="container">
-    <div class="controls">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input type="text" id="search" placeholder="Search by name, description, or language..." autofocus>
-      </div>
-      <div class="filters">
-        <div class="filter-group">
-          <span class="filter-label">Type</span>
-          <div class="filter-badges" id="type-filters"></div>
+    <div class="stats-bar">
+      <span><span class="stat-count" id="stat-total">0</span> packages</span>
+      <span class="stat-filtered" id="stat-filtered"></span>
+    </div>
+
+    <div class="controls-sticky">
+      <div class="controls">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="search" placeholder="Search by name, description, or language..." autofocus>
+          <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
         </div>
-        <div class="filter-group">
-          <span class="filter-label">Category</span>
-          <div class="filter-badges" id="category-filters"></div>
+        <div class="filters">
+          <div class="filter-group">
+            <span class="filter-label">Type</span>
+            <div class="filter-badges" id="type-filters"></div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Category</span>
+            <div class="filter-badges" id="category-filters"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="package-list" class="package-list"></div>
+    <div id="package-list" class="package-list">
+      <div class="skeleton-list" id="skeleton">
+        <div class="skeleton-card"><div class="skeleton-line title"></div><div class="skeleton-line desc"></div><div class="skeleton-line desc2"></div><div class="skeleton-line tags"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line title"></div><div class="skeleton-line desc"></div><div class="skeleton-line desc2"></div><div class="skeleton-line tags"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line title"></div><div class="skeleton-line desc"></div><div class="skeleton-line desc2"></div><div class="skeleton-line tags"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line title"></div><div class="skeleton-line desc"></div><div class="skeleton-line desc2"></div><div class="skeleton-line tags"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line title"></div><div class="skeleton-line desc"></div><div class="skeleton-line desc2"></div><div class="skeleton-line tags"></div></div>
+      </div>
+    </div>
   </main>
 
   <footer>
