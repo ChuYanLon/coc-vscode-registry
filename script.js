@@ -17,7 +17,7 @@ let activeTypeFilters = new Set()
 let activeCategoryFilters = new Set()
 let activeLangFilters = new Set()
 let searchQuery = ''
-let sortBy = 'name'
+let sortBy = 'default'
 let searchTimeout = null
 let currentPage = 1
 const PAGE_SIZE = 50
@@ -28,6 +28,7 @@ async function init() {
   try {
     const resp = await fetch('registry.json')
     allPackages = await resp.json()
+    allPackages.forEach((p, i) => p._index = i)
     buildStats()
   } catch (e) {
     showError('Failed to load registry. Please try again.')
@@ -85,6 +86,7 @@ function getInstallCmd(pkg) {
 
 function sortPackages(pkgs) {
   const s = document.getElementById('sort-select').value
+  if (s === 'default') return [...pkgs]
   const sorted = [...pkgs]
   switch (s) {
     case 'name':
