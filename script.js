@@ -465,4 +465,17 @@ document.getElementById('back-to-top')?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
+// Alert dismiss
+const banner = document.getElementById('alert-banner')
+const dismissBtn = document.getElementById('alert-dismiss')
+if (banner && dismissBtn) {
+  if (localStorage.getItem('coc-registry-alert-dismissed')) {
+    banner.classList.add('hidden')
+  }
+  dismissBtn.addEventListener('click', () => {
+    banner.classList.add('hidden')
+    localStorage.setItem('coc-registry-alert-dismissed', '1')
+  })
+}
+
 document.addEventListener('DOMContentLoaded', init)
