@@ -452,6 +452,24 @@ renderPackageCards = function(pkgs) {
   setupScrollObserver()
 }
 
+// Sticky detection
+const stickyEl = document.querySelector('.controls-sticky')
+let stickyObserver = null
+if (stickyEl) {
+  const sentinel = document.createElement('div')
+  sentinel.style.position = 'absolute'
+  sentinel.style.top = '0'
+  sentinel.style.left = '0'
+  sentinel.style.width = '1px'
+  sentinel.style.height = '1px'
+  sentinel.style.pointerEvents = 'none'
+  stickyEl.parentElement?.insertBefore(sentinel, stickyEl)
+  stickyObserver = new IntersectionObserver(([e]) => {
+    stickyEl.classList.toggle('is-stuck', !e.isIntersecting)
+  }, { threshold: [1] })
+  stickyObserver.observe(sentinel)
+}
+
 // Back to top
 window.addEventListener('scroll', () => {
   const btn = document.getElementById('back-to-top')
