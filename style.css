@@ -299,36 +299,8 @@ header h1::before {
   text-align: right;
 }
 
-/* ── Sticky Controls ── */
-.controls-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--bg);
-  padding: 0 0 10px;
-  transition: box-shadow 0.3s;
-  --sticky-border: transparent;
-}
-.controls-sticky::after {
-  content: '';
-  position: absolute;
-  left: -24px;
-  right: -24px;
-  bottom: 0;
-  height: 1px;
-  background: transparent;
-  transition: background 0.3s;
-  pointer-events: none;
-}
-.controls-sticky.is-stuck::after {
-  background: var(--border);
-}
-.controls-sticky.is-stuck {
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-}
-[data-theme="light"] .controls-sticky.is-stuck {
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
+/* ── Controls ── */
+.controls-wrap { padding: 0 0 10px; }
 
 .controls { padding: 10px 0 0; }
 .search-wrap { position: relative; }
