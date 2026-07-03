@@ -15,6 +15,7 @@
 let allPackages = []
 let activeTypeFilters = new Set()
 let activeCategoryFilters = new Set()
+let activeLangFilters = new Set()
 let searchQuery = ''
 let searchTimeout = null
 let currentPage = 1
@@ -64,6 +65,7 @@ function filterPackages() {
   return allPackages.filter(p => {
     if (activeTypeFilters.size > 0 && !activeTypeFilters.has(p.type)) return false
     if (activeCategoryFilters.size > 0 && !p.categories.some(c => activeCategoryFilters.has(c))) return false
+    if (activeLangFilters.size > 0 && !p.languages.some(l => activeLangFilters.has(l))) return false
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       const matchName = p.name.toLowerCase().includes(q)
@@ -84,6 +86,19 @@ function updateStats(total, filtered) {
   } else {
     el.textContent = ''
   }
+}
+
+function renderActiveFilters() {
+  const container = document.getElementById('active-filters')
+  const chips = []
+  for (const t of activeTypeFilters) chips.push({ type: 'type', label: t })
+  for (const c of activeCategoryFilters) chips.push({ type: 'category', label: c })
+  for (const l of activeLangFilters) chips.push({ type: 'lang', label: l })
+  if (chips.length === 0) { container.innerHTML = ''; return }
+  container.innerHTML = chips.map(c =>
+    `<span class="active-filter-tag" data-filter-type="${c.type}" data-filter-value="${escapeHtml(c.label)}">${escapeHtml(c.label)} <button class="active-filter-remove">✕</button></span>`
+  ).join('') +
+  `<button class="clear-filters-btn">Clear all</button>`
 }
 
 function renderFilters() {
@@ -183,6 +198,7 @@ function render() {
   const filtered = filterPackages()
   currentPage = 1
   renderFilters()
+  renderActiveFilters()
   renderPackageCards(filtered)
   window.scrollTo({ top: 0, behavior: 'smooth' })
   updateSearchClear()
@@ -251,6 +267,52 @@ renderPackageCards = function(pkgs) {
   origRender(pkgs)
   setupScrollObserver()
 }
+
+// Click tag in card to filter
+document.getElementById('package-list').addEventListener('click', e => {
+  const langTag = e.target.closest('.package-tag.lang')
+  if (langTag) {
+    const lang = langTag.textContent.trim()
+    if (activeLangFilters.has(lang)) activeLangFilters.delete(lang)
+    else activeLangFilters.add(lang)
+    render()
+    return
+  }
+  const catTag = e.target.closest('.package-tag.cat')
+  if (catTag) {
+    const cat = catTag.textContent.trim()
+    if (activeCategoryFilters.has(cat)) activeCategoryFilters.delete(cat)
+    else activeCategoryFilters.add(cat)
+    render()
+    return
+  }
+})
+
+// Active filters: remove individual or clear all
+document.getElementById('active-filters').addEventListener('click', e => {
+  const removeBtn = e.target.closest('.active-filter-remove')
+  if (removeBtn) {
+    const tag = removeBtn.closest('.active-filter-tag')
+    if (!tag) return
+    const type = tag.dataset.filterType
+    const val = tag.dataset.filterValue
+    if (type === 'type') activeTypeFilters.delete(val)
+    else if (type === 'category') activeCategoryFilters.delete(val)
+    else if (type === 'lang') activeLangFilters.delete(val)
+    render()
+    return
+  }
+  const clearBtn = e.target.closest('.clear-filters-btn')
+  if (clearBtn) {
+    activeTypeFilters.clear()
+    activeCategoryFilters.clear()
+    activeLangFilters.clear()
+    document.getElementById('search').value = ''
+    searchQuery = ''
+    render()
+    return
+  }
+})
 
 // Filter clicks
 document.getElementById('type-filters').addEventListener('click', e => {
