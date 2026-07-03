@@ -845,7 +845,7 @@ footer {
   .controls { padding: 6px 0 0; }
   .controls-row { flex-direction: column; align-items: stretch; gap: 6px; }
   .filters { flex-direction: column; gap: 4px; }
-  .filter-group { flex-direction: row; align-items: center; gap: 4px; min-width: 0; }
+  .filter-group { flex-direction: row; align-items: center; gap: 4px; min-width: 0; overflow: hidden; }
   .filter-label { font-size: 10px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.3px; }
   .filter-badges {
     display: flex;
@@ -853,12 +853,11 @@ footer {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 2px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
   .filter-badges::-webkit-scrollbar { display: none; }
-  .filter-badge { flex-shrink: 0; padding: 4px 10px; font-size: 11px; touch-action: manipulation; }
+  .filter-badge { padding: 4px 10px; font-size: 11px; }
   .sort-wrap { align-self: flex-end; }
   #sort-select { padding: 4px 26px 4px 8px; font-size: 11px; }
   .filter-count { font-size: 9px; }
