@@ -101,6 +101,7 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -823,6 +824,10 @@ footer {
   .container { padding: 0 16px; }
   .package-card { padding: 12px 14px; }
   .back-to-top { bottom: 20px; right: 20px; width: 36px; height: 36px; }
+  .filter-badge { padding: 5px 10px; }
+  .active-filter-tag { padding: 4px 10px 4px 12px; }
+  .active-filter-remove { width: 20px; height: 20px; }
+  .clear-filters-btn { padding: 4px 10px; }
 }
 
 @media (max-width: 640px) {
@@ -841,18 +846,40 @@ footer {
   .package-detail-row { flex-direction: column; gap: 2px; }
   .package-detail-label { min-width: auto; }
 
-  .filters { gap: 10px; }
-  .filter-badge { padding: 3px 8px; font-size: 11px; }
-  .controls-row { flex-direction: column; }
+  .filters { flex-direction: column; gap: 6px; }
+  .filter-label { min-width: auto; }
+  .controls-row { flex-direction: column; align-items: stretch; }
+  .sort-wrap { align-self: flex-end; }
+  .filter-badge { padding: 5px 10px; font-size: 12px; }
 
   #search { font-size: 16px; }
   .search-icon { left: 10px; width: 14px; height: 14px; }
   .stats-bar { font-size: 12px; flex-wrap: wrap; }
+  .stats-lang-grid { max-height: 160px; }
+  .btn { padding: 7px 12px; }
 }
 
 @media (max-width: 480px) {
-  .package-tag { font-size: 10px; padding: 1px 5px; }
+  .package-tag { font-size: 10px; padding: 2px 6px; }
   .container { padding: 0 12px; }
   .controls { padding: 8px 0 0; }
   .stats-bar { padding: 8px 0 2px; }
+  .alert-banner { padding: 10px 12px; font-size: 12px; }
+  .stats-panel { padding: 12px 14px; }
+  .stat-item { padding: 3px 8px; font-size: 11px; }
+  .package-detail { font-size: 12px; }
+  .package-detail-value code { font-size: 11px; }
+  .active-filter-tag { font-size: 11px; padding: 4px 8px 4px 10px; }
+  .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 10px; }
+  header h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; padding-left: 11px; }
+  .package-card { padding: 8px 10px; }
+  .package-title { font-size: 13px; }
+  .package-desc { font-size: 11px; }
+  .filter-badge { font-size: 11px; padding: 4px 8px; }
+  .btn { padding: 6px 10px; font-size: 11px; }
 }
