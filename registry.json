@@ -1625,6 +1625,124 @@
     ]
   },
   {
+    "name": "vscode-bitbake",
+    "displayName": "Yocto Project BitBake",
+    "description": "Yocto Project and BitBake language support — completion, diagnostics, navigation, recipes",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "yoctoproject/vscode-bitbake",
+      "subdir": "client"
+    },
+    "url": "https://github.com/yoctoproject/vscode-bitbake",
+    "languages": [
+      "bitbake"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.6.4",
+    "prebuilt": {
+      "type": "vsix",
+      "publisher": "yocto-project",
+      "extension": "yocto-bitbake",
+      "version": "2.9.0",
+      "serverPaths": [
+        "server"
+      ]
+    },
+    "notes": "Only core LSP features are supported. VS Code views (Recipes Explorer, Devtool Workspaces), task system, and walkthroughs are not available in coc.nvim.",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "bitbake",
+        "server": {
+          "kind": "module",
+          "package": "../server/out/server"
+        },
+        "languages": [
+          "bitbake"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-jq",
+    "displayName": "jq",
+    "description": "jq language support — syntax checking, completion, go-to-definition, hover documentation",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "wader/vscode-jq"
+    },
+    "url": "https://github.com/wader/vscode-jq",
+    "languages": [
+      "jq"
+    ],
+    "categories": [
+      "LSP"
+    ],
+    "minPluginVersion": "1.6.4",
+    "goPackages": [
+      "github.com/wader/jq-lsp@latest"
+    ],
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "jq",
+        "server": {
+          "kind": "binary",
+          "package": "jq-lsp",
+          "args": []
+        },
+        "languages": [
+          "jq"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-alex",
+    "displayName": "AlexJS Linter",
+    "description": "Find gender favouring, race related, religion inconsiderate or other unequal phrasing in text",
+    "type": "pure-lsp",
+    "source": {
+      "type": "github",
+      "repo": "tlahmann/vscode-alex"
+    },
+    "url": "https://github.com/tlahmann/vscode-alex",
+    "languages": [
+      "plaintext",
+      "markdown"
+    ],
+    "categories": [
+      "LSP",
+      "Linter"
+    ],
+    "minPluginVersion": "1.6.4",
+    "convert": [
+      {
+        "type": "language-client",
+        "id": "alex",
+        "server": {
+          "kind": "module",
+          "package": "alex-server",
+          "entry": "bin"
+        },
+        "languages": [
+          "plaintext",
+          "markdown"
+        ]
+      },
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ]
+      }
+    ]
+  },
+  {
     "name": "vscode-html-css-support",
     "displayName": "HTML CSS Support",
     "description": "CSS class name completion for HTML attributes",
@@ -2194,6 +2312,37 @@
             "find": "this\\._process = spawn\\(command, \\[\\], \\{ cwd: this\\._cwd, shell: true \\}\\)",
             "replace": "this._outputChannel.show(true); this._process = spawn(command, [], { cwd: this._cwd, shell: true })"
           }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-write-good",
+    "displayName": "Write Good Linter",
+    "description": "Write good linter for Markdown — catch insensitive, inconsiderate writing",
+    "type": "direct-api",
+    "source": {
+      "type": "github",
+      "repo": "TravisTheTechie/vscode-write-good"
+    },
+    "url": "https://github.com/TravisTheTechie/vscode-write-good",
+    "languages": [
+      "markdown",
+      "plaintext"
+    ],
+    "categories": [
+      "Linter"
+    ],
+    "minPluginVersion": "1.6.4",
+    "convert": [
+      {
+        "type": "source",
+        "transforms": [
+          "import-mapping"
+        ],
+        "entry": "src/extension.ts",
+        "activationEvents": [
+          "onStartupFinished"
         ]
       }
     ]
