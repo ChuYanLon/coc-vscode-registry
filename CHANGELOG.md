@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0] - 2026-07-03
+
+### Added
+- `vscode-bitbake` — pre-built VSIX server download via `prebuilt` field
+- `vscode-jq` — jq LSP with Go auto-install
+- `vscode-alex` — AlexJS text linter
+- `vscode-write-good` — Write Good Markdown linter (direct-api)
+- `prebuilt` field documentation in README and CONTRIBUTING
+
+### Changed
+- Registry expanded from 128 to 134 entries
+
 ## [1.2.0] - 2026-06-21
 
 ### Added

@@ -13,7 +13,7 @@
 
 Browse and install VS Code extensions on **coc.nvim** — search, filter, and copy install commands.
 
-![Registry preview](https://cdn.jsdelivr.net/gh/coc-plugin/coc-vscode-registry@main/assets/registry-preview.png?v=1.5.2)
+![Registry preview](https://cdn.jsdelivr.net/gh/coc-plugin/coc-vscode-registry@main/assets/registry-preview.png?v=1.6.4)
 
 ---
 
@@ -39,7 +39,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `languages` | ✅ | Language IDs this plugin supports |
 | `categories` | ✅ | Categories for filtering (e.g. `"LSP"`, `"Snippets"`) |
 | `convert` | ✅ | Array of conversion steps. See [coc-vscode-loader/CONTRIBUTING.md](../CONTRIBUTING.md) |
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`**, **`"1.6.0"` for `autoInsertion`/`semanticTokens`/`initializationOptions` in `language-client` step** |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version (semver, e.g. `"1.2.2"`). **`"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`**, **`"1.6.0"` for `autoInsertion`/`semanticTokens`/`initializationOptions` in `language-client` step**, **`"1.6.4"` for `prebuilt` field** |
 | `pipPackages` | ❌ | Python dependencies for pip install (`["ansible-lint"]`) |
 | `goPackages` | ❌ | Go packages, pipeline runs `go install`, binary goes to `server/` (`["golang.org/x/tools/gopls@latest"]`) |
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root`, binary copied to `server/` (`[{ "crate": "nil", "binary": "nil" }]`) |

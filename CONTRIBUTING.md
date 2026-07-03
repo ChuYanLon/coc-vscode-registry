@@ -56,7 +56,7 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**. |
+| `minPluginVersion` | ❌ | Minimum coc-vscode-loader version. **Must be `"1.4.2"` for local servers**, **`"1.4.3"` for module-kind servers with `args`**, **`"1.4.5"` for `server.patches`**, **`"1.5.0"` for `goPackages`/`cargoPackages`**, **`"1.5.7"` for `excludeDeps`**, **`"1.6.0"` for `autoInsertion`/`semanticTokens`/`initializationOptions`**, **`"1.6.4"` for `prebuilt`**. |
 | `pipPackages` | ❌ | Python pip dependencies, e.g. `["ansible-lint"]` |
 | `goPackages` | ❌ | Go packages, pipeline runs `go install` to compile to `server/`, e.g. `["golang.org/x/tools/gopls@latest"]` |
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root` then copies binary to `server/`, e.g. `[{ "crate": "nil", "binary": "nil" }]` |
@@ -98,13 +98,13 @@ For plugins with a **local language server** (TypeScript source in `server/` sub
 - Suitable for fixing server-side behavior (e.g. disabling pull diagnostics, injecting event hooks)
 - Example: `{ "file": "eslintServer.js", "find": "connection\\.listen\\(\\);", "replace": "connection.listen();\\ndocuments.onDidOpen(...)..." }`
 - Set `minPluginVersion: "1.4.5"` when using `server.patches`
-- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#%E6%8F%92%E4%BB%B6%E7%BA%A7%E6%96%87%E6%9C%AC%E8%A1%A5%E4%B8%81-patches-source-step)
+- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#registry-quirk)
 
 **Per-platform assets** (`targetAssets`, v1.5.0+):
 - When binary releases use non-standard platform naming (e.g. clangd uses `mac`/`windows` instead of `darwin`/`win32`), use `targetAssets` to define the asset file and binaryPath for each platform
 - Example: `[ { "platform": "darwin", "file": "clangd-mac-{{version}}.zip", "binaryPath": "clangd_{{version}}/bin/clangd" } ]`
 - Set `minPluginVersion: "1.5.0"` when using `targetAssets`
-- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#targetassets-%E5%AD%97%E6%AE%B5v150)
+- See the loader repository's [AGENTS.md](https://github.com/coc-plugin/coc-vscode-loader/blob/main/AGENTS.md#registry-quirk)
 
 2. Validate JSON:
 
