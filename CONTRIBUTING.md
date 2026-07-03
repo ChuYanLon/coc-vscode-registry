@@ -121,7 +121,7 @@ python3 -c "import json; json.load(open('coc-vscode-registry/registry.json'))"
 
 ```bash
 cd ../converter
-npm run test:smoke           # Converts all 128 entries, validates output
+npm run test:smoke           # Converts all 134 entries, validates output
 ```
 
 4. Submit a PR.

@@ -44,6 +44,7 @@ Package registry data for [coc-vscode-loader](https://github.com/coc-plugin/coc-
 | `goPackages` | ❌ | Go packages, pipeline runs `go install`, binary goes to `server/` (`["golang.org/x/tools/gopls@latest"]`) |
 | `cargoPackages` | ❌ | Rust crates, pipeline runs `cargo install --root`, binary copied to `server/` (`[{ "crate": "nil", "binary": "nil" }]`) |
 | `serverBinary` | ❌ | Auto-download a binary language server from GitHub Releases |
+| `prebuilt` | ❌ | Download pre-compiled server from VS Code marketplace instead of building from source. For `kind: "module"` servers that need compilation (TypeScript, wasm, etc.). `{ type: "vsix", publisher: "...", extension: "...", version: "...", serverPaths: ["server"] }` |
 | `notes` | ❌ | User-visible installation notes/hints (e.g. "requires coc-tsserver-dev"). Displayed as a warning on the registry website and available for TUI detail popup. |
 
 ### convert step types
