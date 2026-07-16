@@ -2631,10 +2631,10 @@
     ],
     "minPluginVersion": "1.2.6",
     "convert": [
-      {
-        "type": "snippets",
-        "build": "npm run compile"
-      }
+    {
+      "type": "snippets",
+      "build": "npx tsc -p ./ --outDir lib --noEmit false"
+    }
     ]
   },
   {
