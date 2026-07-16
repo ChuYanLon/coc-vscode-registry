@@ -2717,32 +2717,6 @@
     ]
   },
   {
-    "name": "vscode-react-native-snippets",
-    "displayName": "React Native Snippet",
-    "description": "React Native code snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "jundat95/react-native-snippet"
-    },
-    "url": "https://github.com/jundat95/react-native-snippet",
-    "languages": [
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-react-redux-react-router",
     "displayName": "React/Redux/react-router Snippets",
     "description": "React/Redux/react-router Snippets",
