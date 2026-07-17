@@ -741,10 +741,10 @@
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "withastro/language-tools",
-      "subdir": "packages/vscode"
+      "repo": "withastro/astro",
+      "subdir": "packages/language-tools/vscode"
     },
-    "url": "https://github.com/withastro/language-tools",
+    "url": "https://github.com/withastro/astro",
     "languages": [
       "astro"
     ],
@@ -773,7 +773,7 @@
           "import-mapping"
         ],
         "keepDeps": {
-          "typescript": "*"
+          "typescript": ">=5.0.0 <7.0.0"
         }
       }
     ]
