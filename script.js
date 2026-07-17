@@ -40,6 +40,7 @@ async function init() {
       p.lastUpdated = s.lastUpdated
     })
     buildStats()
+    buildRelationIndex()
   } catch (e) {
     showError('Failed to load registry. Please try again.')
     return
@@ -91,8 +92,84 @@ function buildStats() {
       .map(([k, v]) => `<span class="stat-item"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
 }
 
+let relationIndex = null
+
+function buildRelationIndex() {
+  const idx = { serverBinary: {}, pip: {}, lang: {} }
+  for (const p of allPackages) {
+    if (p.serverBinary?.repo) {
+      (idx.serverBinary[p.serverBinary.repo] ||= []).push(p.name)
+    }
+    if (p.pipPackages) {
+      for (const pip of p.pipPackages) {
+        (idx.pip[pip] ||= []).push(p.name)
+      }
+    }
+    for (const lang of p.languages) {
+      (idx.lang[lang] ||= []).push(p.name)
+    }
+  }
+  relationIndex = idx
+}
+
+function getRelated(p) {
+  const seen = new Set([p.name])
+  const groups = []
+
+  if (p.serverBinary?.repo) {
+    const related = (relationIndex.serverBinary[p.serverBinary.repo] || []).filter(n => !seen.has(n))
+    if (related.length) {
+      related.forEach(n => seen.add(n))
+      groups.push({ label: 'Same binary', names: related })
+    }
+  }
+
+  if (p.pipPackages) {
+    for (const pip of p.pipPackages) {
+      const related = (relationIndex.pip[pip] || []).filter(n => !seen.has(n))
+      if (related.length) {
+        related.forEach(n => seen.add(n))
+        groups.push({ label: `pip: ${pip}`, names: related })
+      }
+    }
+  }
+
+  if (p.languages.length >= 2) {
+    const counts = {}
+    for (const lang of p.languages) {
+      for (const name of (relationIndex.lang[lang] || [])) {
+        if (seen.has(name)) continue
+        counts[name] = (counts[name] || 0) + 1
+      }
+    }
+    const related = Object.entries(counts)
+      .filter(([, c]) => c >= 2)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([name]) => name)
+    if (related.length) {
+      related.forEach(n => seen.add(n))
+      groups.push({ label: 'Same languages', names: related })
+    }
+  }
+
+  return groups
+}
+
 function getInstallCmd(pkg) {
   return `:CocCommand loader.install ${pkg.name}`
+}
+
+function renderRelated(p) {
+  const groups = getRelated(p)
+  if (!groups.length) return ''
+  const items = groups.map(g =>
+    `<span class="related-group"><span class="related-group-label">${escapeHtml(g.label)}</span> ${g.names.map(n => {
+      const rp = allPackages.find(p2 => p2.name === n)
+      return rp ? `<a class="related-link" data-pkg="${escapeHtml(n)}" href="#">${escapeHtml(rp.displayName)}</a>` : ''
+    }).filter(Boolean).join(', ')}</span>`
+  ).join('')
+  return `<div class="package-detail-row"><span class="package-detail-label">Related</span><span class="package-detail-value related-list">${items}</span></div>`
 }
 
 function getSelectValue(name) {
@@ -268,6 +345,7 @@ function renderPackageCards(pkgs) {
           ${deps.length ? `<div class="package-detail-row"><span class="package-detail-label">Deps</span><span class="package-detail-value">${deps.join(' · ')}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
+          ${renderRelated(p)}
         </div>
       </div>
     `
@@ -331,6 +409,20 @@ document.getElementById('package-list').addEventListener('click', e => {
         else activeCategoryFilters.add(cat)
         render()
         return
+      }
+      return
+    }
+    const relatedLink = e.target.closest('.related-link')
+    if (relatedLink) {
+      e.preventDefault()
+      const targetName = relatedLink.dataset.pkg
+      const targetCard = document.querySelector(`.package-card[data-pkg-name="${targetName}"]`)
+      if (targetCard) {
+        document.querySelectorAll('.package-card.expanded').forEach(c => {
+          if (c.dataset.pkgName !== targetName) c.classList.remove('expanded')
+        })
+        targetCard.classList.add('expanded')
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
       return
     }

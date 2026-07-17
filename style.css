@@ -831,6 +831,33 @@ header h1::before {
 }
 .package-detail-value a { font-weight: 500; }
 
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.related-group {
+  display: inline;
+  line-height: 1.6;
+}
+.related-group-label {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+.related-link {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.related-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* ── No Results ── */
 .no-results {
   text-align: center;
