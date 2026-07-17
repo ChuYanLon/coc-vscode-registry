@@ -2613,30 +2613,6 @@
     ]
   },
   {
-    "name": "vscode-vue-typescript",
-    "displayName": "Vue TypeScript Snippets",
-    "description": "Vue TypeScript Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ducksoupdev/vscode-vue-typescript-snippets"
-    },
-    "url": "https://github.com/ducksoupdev/vscode-vue-typescript-snippets",
-    "languages": [
-      "html",
-      "typescript"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-vue2",
     "displayName": "Vue 2 Snippets",
     "description": "Vue 2 Snippets",
@@ -3313,35 +3289,6 @@
     ]
   },
   {
-    "name": "vscode-bootstrap-v4",
-    "displayName": "Bootstrap v4 Snippets",
-    "description": "Bootstrap v4 Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "Zaczero/bootstrap-v4-snippets",
-      "subdir": "bootstrap-v4-snippets"
-    },
-    "url": "https://github.com/Zaczero/bootstrap-v4-snippets",
-    "languages": [
-      "blade",
-      "cfml",
-      "html",
-      "razor",
-      "smarty",
-      "vue"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-bootstrap5-snippets",
     "displayName": "Bootstrap 5 & Font Awesome Snippets",
     "description": "Bootstrap 5 & Font Awesome Snippets",
@@ -3656,29 +3603,6 @@
     ]
   },
   {
-    "name": "vscode-python",
-    "displayName": "python-snippets",
-    "description": "python-snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "cstrap/python-snippets"
-    },
-    "url": "https://github.com/cstrap/python-snippets",
-    "languages": [
-      "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
     "name": "vscode-python-snippet-pack",
     "displayName": "python snippets",
     "description": "python snippets",
@@ -3807,29 +3731,6 @@
     "url": "https://github.com/lunaluvgood/tkinter-snippets",
     "languages": [
       "python"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-laravel-model",
-    "displayName": "Laravel Model Snippets",
-    "description": "Laravel Model Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "ahinkle/vscode-laravel-model-snippets"
-    },
-    "url": "https://github.com/ahinkle/vscode-laravel-model-snippets",
-    "languages": [
-      "php"
     ],
     "categories": [
       "Snippets"
@@ -4040,29 +3941,6 @@
       "repo": "tushortz/vscode-Java-Imports"
     },
     "url": "https://github.com/tushortz/vscode-Java-Imports",
-    "languages": [
-      "java"
-    ],
-    "categories": [
-      "Snippets"
-    ],
-    "minPluginVersion": "1.2.6",
-    "convert": [
-      {
-        "type": "snippets"
-      }
-    ]
-  },
-  {
-    "name": "vscode-java-snippets",
-    "displayName": "Java Snippets",
-    "description": "Java Snippets",
-    "type": "snippets",
-    "source": {
-      "type": "github",
-      "repo": "tushortz/vscode-Java-Snippets"
-    },
-    "url": "https://github.com/tushortz/vscode-Java-Snippets",
     "languages": [
       "java"
     ],
