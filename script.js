@@ -231,6 +231,7 @@ function renderPackageCards(pkgs) {
             </div>
             <div class="package-desc">${escapeHtml(p.description)}</div>
             ${p.notes ? `<div class="package-notes">⚠ ${escapeHtml(p.notes)}</div>` : ''}
+            ${p.lastUpdated ? `<div class="package-updated">${p.archived ? 'Archived' : 'Updated'} ${escapeHtml(p.lastUpdated)}</div>` : ''}
             <div class="package-meta">
               ${typeTag}${langTags}${catTags}${extraTags}
             </div>
