@@ -482,7 +482,15 @@ header h1::before {
   flex-shrink: 0;
 }
 .archived-toggle input { accent-color: var(--accent); }
-.package-card.archived { opacity: 0.65; }
+.package-card.archived {
+  border-color: var(--orange-border);
+  border-style: dashed;
+}
+.package-card.archived .package-tag.archived {
+  background: var(--orange-bg);
+  color: var(--orange);
+  border-color: var(--orange-border);
+}
 
 .active-filters {
   display: flex;
