@@ -16,6 +16,7 @@ let allPackages = []
 let activeTypeFilters = new Set()
 let activeCategoryFilters = new Set()
 let activeLangFilters = new Set()
+let showArchived = false
 let searchQuery = ''
 let sortBy = 'default'
 let searchTimeout = null
@@ -120,6 +121,7 @@ function filterPackages() {
     if (activeTypeFilters.size > 0 && !activeTypeFilters.has(p.type)) return false
     if (activeCategoryFilters.size > 0 && !p.categories.some(c => activeCategoryFilters.has(c))) return false
     if (activeLangFilters.size > 0 && !p.languages.some(l => activeLangFilters.has(l))) return false
+    if (!showArchived && p.archived) return false
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       const matchName = p.name.toLowerCase().includes(q)
@@ -224,7 +226,7 @@ function renderPackageCards(pkgs) {
     const sourceUrl = p.source?.repo ? `https://github.com/${p.source.repo}` : p.url
 
     return `
-      <div class="package-card ${isExpanded ? 'expanded' : ''}" data-pkg-name="${escapeHtml(p.name)}">
+      <div class="package-card${isExpanded ? ' expanded' : ''}${p.archived ? ' archived' : ''}" data-pkg-name="${escapeHtml(p.name)}">
         <div class="package-header">
           <div class="package-body">
             <div class="package-title">
@@ -404,6 +406,12 @@ document.getElementById('category-filters').addEventListener('click', e => {
 
 // Sort
 document.getElementById('sort-select').addEventListener('change', () => {
+  render()
+})
+
+// Archived filter
+document.getElementById('archived-check').addEventListener('change', e => {
+  showArchived = e.target.checked
   render()
 })
 

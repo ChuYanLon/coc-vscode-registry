@@ -471,6 +471,19 @@ header h1::before {
 #sort-select:focus { border-color: var(--border-focus); }
 
 /* ── Active Filters ── */
+.archived-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.archived-toggle input { accent-color: var(--accent); }
+.package-card.archived { opacity: 0.65; }
+
 .active-filters {
   display: flex;
   flex-wrap: wrap;
