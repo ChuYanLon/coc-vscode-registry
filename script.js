@@ -336,6 +336,8 @@ document.getElementById('package-list').addEventListener('click', e => {
     }
     const action = e.target.closest('.package-actions, .btn')
     if (action) return
+    const detail = e.target.closest('.package-detail')
+    if (detail) return
     card.classList.toggle('expanded')
     return
   }
