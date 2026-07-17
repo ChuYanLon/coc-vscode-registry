@@ -5,9 +5,14 @@ on:
     - cron: '0 0 * * 0'  # weekly Sunday 00:00 UTC
   workflow_dispatch:
 
+concurrency:
+  group: check-repo-status
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   check:
@@ -21,19 +26,23 @@ jobs:
       - name: Install tsx
         run: npm install -g tsx
 
-      - name: Check repo status
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx tsx scripts/check-repo-status.ts
-
-      - name: Create PR
+      - name: Check and update
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Run check script and capture output
+          OUTPUT=$(npx tsx scripts/check-repo-status.ts 2>&1)
+          echo "$OUTPUT"
+
+          # Detect newly archived repos
+          NEWLY_ARCHIVED=$(echo "$OUTPUT" | grep '^NEWLY_ARCHIVED:' | sed 's/^NEWLY_ARCHIVED://')
+
           if [[ -z "$(git status --porcelain repo-status.json)" ]]; then
             echo "No changes"
             exit 0
           fi
+
+          # Create PR with changes
           BRANCH="chore/repo-status-$(date +%s)"
           git config user.name 'coc-vscode-loader[bot]'
           git config user.email 'bot@coc-vscode-loader'
@@ -47,3 +56,24 @@ jobs:
             --base main \
             --head "$BRANCH"
           gh pr merge --squash --delete-branch "$BRANCH"
+
+          # Create issue for newly archived repos (skip if one is already open)
+          if [[ -n "$NEWLY_ARCHIVED" ]]; then
+            EXISTING=$(gh issue list --label archived --state open --json number -q 'length' 2>/dev/null || echo 0)
+            if [[ "$EXISTING" -eq 0 ]]; then
+              BODY="# Archived Repositories Detected\n\nThe following repositories have been archived:\n"
+              IFS=',' read -ra NAMES <<< "$NEWLY_ARCHIVED"
+              for name in "${NAMES[@]}"; do
+                repo=$(echo "$OUTPUT" | grep "$name" | awk '{print $NF}')
+                BODY="${BODY}\n- **${name}** (\`${repo}\`)"
+              done
+              BODY="${BODY}\n\nAction needed: consider updating or removing the registry entries for these packages."
+              gh issue create \
+                --title "archived repositories detected" \
+                --body "$BODY" \
+                --label archived \
+                --type Task
+            else
+              echo "Open issue already exists, skipping"
+            fi
+          fi

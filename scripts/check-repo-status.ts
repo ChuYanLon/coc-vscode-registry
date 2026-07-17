@@ -34,9 +34,14 @@ async function main() {
   const registry: any[] = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf-8'))
   const entries = registry.filter(e => e.source?.type === 'github' && e.source?.repo)
 
+  // Load old status for change detection
+  let oldStatus: Record<string, StatusEntry> = {}
+  try { oldStatus = JSON.parse(fs.readFileSync(STATUS_PATH, 'utf-8')) } catch {}
+
   console.log(`Checking ${entries.length} GitHub repos...\n`)
 
   const status: Record<string, StatusEntry> = {}
+  const newlyArchived: string[] = []
   let ok = 0, fail = 0
 
   const pool = new Set<Promise<void>>()
@@ -45,9 +50,15 @@ async function main() {
       const repo = entry.source!.repo!
       const data = ghApi(`repos/${repo}`)
       if (data) {
+        const archived = data.archived ?? false
         status[entry.name] = {
-          archived: data.archived ?? false,
+          archived,
           lastUpdated: (data.pushed_at || '').split('T')[0],
+        }
+        // Detect newly archived
+        const old = oldStatus[entry.name]
+        if (archived && old && !old.archived) {
+          newlyArchived.push(entry.name)
         }
         const icon = data.archived ? '📦' : '✓'
         console.log(`${icon} ${entry.name.padEnd(35)} ${repo}`)
@@ -64,6 +75,11 @@ async function main() {
 
   fs.writeFileSync(STATUS_PATH, JSON.stringify(status, null, 2) + '\n')
   console.log(`\nDone: ${ok} ok, ${fail} failed → ${STATUS_PATH}`)
+
+  // Output newly archived for workflow to consume
+  if (newlyArchived.length > 0) {
+    console.log(`\nNEWLY_ARCHIVED:${newlyArchived.join(',')}`)
+  }
 }
 
 main().catch(e => { console.error(e); process.exit(1) })
