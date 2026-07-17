@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'registry.json'
+      - 'repo-status.json'
       - 'index.html'
       - 'script.js'
       - 'style.css'
