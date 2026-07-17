@@ -611,13 +611,6 @@ header h1::before {
   flex-wrap: wrap;
   gap: 6px;
 }
-.archived-badge {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 6px;
-  cursor: help;
-  color: var(--text-secondary);
-}
 .package-name {
   font-size: 11px;
   color: var(--text-muted);
@@ -674,6 +667,7 @@ header h1::before {
 .package-tag.type.ts-bridge    { background: var(--purple-bg); color: var(--purple); border-color: var(--purple-border); }
 .package-tag.type.direct-api   { background: var(--pink-bg); color: var(--pink); border-color: var(--pink-border); }
 .package-tag.type.snippets     { background: var(--gray-bg); color: var(--gray); border-color: var(--gray-border); }
+.package-tag.archived { background: var(--gray-bg); color: var(--gray); border: 1px solid var(--gray-border); }
 .package-tag.version {
   background: var(--gray-bg);
   color: var(--text-tertiary);
