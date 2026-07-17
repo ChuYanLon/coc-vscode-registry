@@ -542,6 +542,11 @@ header h1::before {
   border-color: var(--orange-border);
 }
 
+.package-card.highlighted {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
 .active-filters {
   display: flex;
   flex-wrap: wrap;

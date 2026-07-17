@@ -33,6 +33,7 @@ let sortBy = 'default'
 let searchTimeout = null
 let currentPage = 1
 const PAGE_SIZE = 50
+let highlightIndex = -1
 let currentSort = null
 
 async function init() {
@@ -59,6 +60,7 @@ async function init() {
   }
   showSkeleton(false)
   initCustomSelects()
+  setupKeyboardNav()
   render()
 }
 
@@ -401,6 +403,7 @@ function formatRelativeDate(dateStr) {
 }
 
 function render() {
+  resetHighlight()
   const filtered = filterPackages()
   currentPage = 1
   renderFilters()
@@ -428,6 +431,9 @@ document.getElementById('package-list').addEventListener('click', e => {
 
   const card = e.target.closest('.package-card')
   if (card) {
+    const allCards = document.querySelectorAll('#package-list .package-card')
+    highlightIndex = Array.from(allCards).indexOf(card)
+    applyHighlight(allCards)
     const tag = e.target.closest('.package-tag')
     if (tag) {
       if (tag.classList.contains('lang')) {
@@ -576,6 +582,63 @@ function initCustomSelects() {
   document.addEventListener('click', () => {
     document.querySelectorAll('.custom-select.open').forEach(el => el.classList.remove('open'))
   })
+}
+
+// Keyboard navigation
+function setupKeyboardNav() {
+  document.addEventListener('keydown', e => {
+    const search = document.getElementById('search')
+    const isSearchFocused = document.activeElement === search
+    const cards = document.querySelectorAll('#package-list .package-card')
+
+    if (e.key === '/' && !isSearchFocused) {
+      e.preventDefault()
+      search?.focus()
+      return
+    }
+
+    if (e.key === 'Escape') {
+      if (isSearchFocused) { search.blur(); return }
+      document.querySelectorAll('.package-card.expanded').forEach(c => c.classList.remove('expanded'))
+      return
+    }
+
+    if (isSearchFocused || cards.length === 0) return
+
+    if (e.key === 'j' || e.key === 'ArrowDown') {
+      e.preventDefault()
+      highlightIndex = Math.min(highlightIndex + 1, cards.length - 1)
+      applyHighlight(cards)
+      return
+    }
+
+    if (e.key === 'k' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      highlightIndex = Math.max(highlightIndex - 1, 0)
+      applyHighlight(cards)
+      return
+    }
+
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (highlightIndex >= 0 && highlightIndex < cards.length) {
+        e.preventDefault()
+        cards[highlightIndex].classList.toggle('expanded')
+      }
+    }
+  })
+}
+
+function applyHighlight(cards) {
+  document.querySelectorAll('.package-card.highlighted').forEach(c => c.classList.remove('highlighted'))
+  if (highlightIndex >= 0 && cards && cards[highlightIndex]) {
+    cards[highlightIndex].classList.add('highlighted')
+    cards[highlightIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  }
+}
+
+function resetHighlight() {
+  highlightIndex = -1
+  document.querySelectorAll('.package-card.highlighted').forEach(c => c.classList.remove('highlighted'))
 }
 
 // Search
