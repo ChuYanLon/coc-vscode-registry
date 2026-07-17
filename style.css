@@ -615,9 +615,8 @@ header h1::before {
   display: inline-flex;
   align-items: center;
   margin-left: 6px;
-  opacity: 0.6;
   cursor: help;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 .package-name {
   font-size: 11px;
@@ -629,11 +628,10 @@ header h1::before {
   border-radius: 4px;
 }
 .package-updated {
-  font-size: 11px;
-  color: var(--text-muted);
+  font-size: 12px;
+  color: var(--text-secondary);
   margin-top: 4px;
   margin-bottom: 6px;
-  opacity: 0.7;
 }
 .package-desc {
   margin-top: 2px;
