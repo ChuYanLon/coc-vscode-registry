@@ -85,20 +85,32 @@
           </div>
           <div class="sort-wrap">
             <span class="sort-label">Sort</span>
-            <select id="sort-select">
-              <option value="default">Default</option>
-              <option value="name">Name</option>
-              <option value="type">Type</option>
-              <option value="category">Category</option>
-            </select>
+            <div class="custom-select" data-name="sort">
+              <button class="custom-select-trigger" type="button">
+                <span class="custom-select-value">Default</span>
+                <svg class="custom-select-arrow" width="10" height="6" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+              </button>
+              <div class="custom-select-dropdown">
+                <div class="custom-select-option selected" data-value="default">Default</div>
+                <div class="custom-select-option" data-value="name">Name</div>
+                <div class="custom-select-option" data-value="type">Type</div>
+                <div class="custom-select-option" data-value="category">Category</div>
+              </div>
+            </div>
           </div>
           <div class="sort-wrap">
             <span class="sort-label">Status</span>
-            <select id="status-select">
-              <option value="all">All</option>
-              <option value="active">Active</option>
-              <option value="archived">Archived</option>
-            </select>
+            <div class="custom-select" data-name="status">
+              <button class="custom-select-trigger" type="button">
+                <span class="custom-select-value">All</span>
+                <svg class="custom-select-arrow" width="10" height="6" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+              </button>
+              <div class="custom-select-dropdown">
+                <div class="custom-select-option selected" data-value="all">All</div>
+                <div class="custom-select-option" data-value="active">Active</div>
+                <div class="custom-select-option" data-value="archived">Archived</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

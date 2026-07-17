@@ -45,6 +45,7 @@ async function init() {
     return
   }
   showSkeleton(false)
+  initCustomSelects()
   render()
 }
 
@@ -94,8 +95,13 @@ function getInstallCmd(pkg) {
   return `:CocCommand loader.install ${pkg.name}`
 }
 
+function getSelectValue(name) {
+  const sel = document.querySelector(`.custom-select[data-name="${name}"]`)
+  return sel ? sel.dataset.value : ''
+}
+
 function sortPackages(pkgs) {
-  const s = document.getElementById('sort-select').value
+  const s = getSelectValue('sort')
   if (s === 'default') return [...pkgs]
   const sorted = [...pkgs]
   switch (s) {
@@ -121,8 +127,9 @@ function filterPackages() {
     if (activeTypeFilters.size > 0 && !activeTypeFilters.has(p.type)) return false
     if (activeCategoryFilters.size > 0 && !p.categories.some(c => activeCategoryFilters.has(c))) return false
     if (activeLangFilters.size > 0 && !p.languages.some(l => activeLangFilters.has(l))) return false
-    if (document.getElementById('status-select').value === 'active' && p.archived) return false
-    if (document.getElementById('status-select').value === 'archived' && !p.archived) return false
+    const sv = getSelectValue('status')
+    if (sv === 'active' && p.archived) return false
+    if (sv === 'archived' && !p.archived) return false
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       const matchName = p.name.toLowerCase().includes(q)
@@ -405,15 +412,43 @@ document.getElementById('category-filters').addEventListener('click', e => {
   render()
 })
 
-// Sort
-document.getElementById('sort-select').addEventListener('change', () => {
-  render()
-})
+// Custom Selects
+function initCustomSelects() {
+  document.querySelectorAll('.custom-select').forEach(sel => {
+    const trigger = sel.querySelector('.custom-select-trigger')
+    const options = sel.querySelectorAll('.custom-select-option')
+    const valueEl = sel.querySelector('.custom-select-value')
+    const selected = sel.querySelector('.custom-select-option.selected')
+    sel.dataset.value = selected ? selected.dataset.value : ''
 
-// Status filter
-document.getElementById('status-select').addEventListener('change', () => {
-  render()
-})
+    trigger.addEventListener('click', e => {
+      e.stopPropagation()
+      if (sel.classList.contains('open')) {
+        sel.classList.remove('open')
+      } else {
+        document.querySelectorAll('.custom-select.open').forEach(el => el.classList.remove('open'))
+        sel.classList.add('open')
+      }
+    })
+
+    options.forEach(opt => {
+      opt.addEventListener('click', e => {
+        e.stopPropagation()
+        const val = opt.dataset.value
+        valueEl.textContent = opt.textContent
+        sel.dataset.value = val
+        options.forEach(o => o.classList.remove('selected'))
+        opt.classList.add('selected')
+        sel.classList.remove('open')
+        render()
+      })
+    })
+  })
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-select.open').forEach(el => el.classList.remove('open'))
+  })
+}
 
 // Search
 document.getElementById('search').addEventListener('input', e => {
