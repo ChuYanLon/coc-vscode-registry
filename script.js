@@ -16,7 +16,7 @@ let allPackages = []
 let activeTypeFilters = new Set()
 let activeCategoryFilters = new Set()
 let activeLangFilters = new Set()
-let showArchived = false
+
 let searchQuery = ''
 let sortBy = 'default'
 let searchTimeout = null
@@ -121,7 +121,8 @@ function filterPackages() {
     if (activeTypeFilters.size > 0 && !activeTypeFilters.has(p.type)) return false
     if (activeCategoryFilters.size > 0 && !p.categories.some(c => activeCategoryFilters.has(c))) return false
     if (activeLangFilters.size > 0 && !p.languages.some(l => activeLangFilters.has(l))) return false
-    if (!showArchived && p.archived) return false
+    if (document.getElementById('status-select').value === 'active' && p.archived) return false
+    if (document.getElementById('status-select').value === 'archived' && !p.archived) return false
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       const matchName = p.name.toLowerCase().includes(q)
@@ -409,9 +410,8 @@ document.getElementById('sort-select').addEventListener('change', () => {
   render()
 })
 
-// Archived filter
-document.getElementById('archived-check').addEventListener('change', e => {
-  showArchived = e.target.checked
+// Status filter
+document.getElementById('status-select').addEventListener('change', () => {
   render()
 })
 
