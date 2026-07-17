@@ -449,7 +449,8 @@ header h1::before {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-#sort-select {
+#sort-select,
+#status-select {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -467,8 +468,10 @@ header h1::before {
   background-position: right 7px center;
   line-height: 1.5;
 }
-#sort-select:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-card-hover); }
-#sort-select:focus { border-color: var(--border-focus); }
+#sort-select:hover,
+#status-select:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-card-hover); }
+#sort-select:focus,
+#status-select:focus { border-color: var(--border-focus); }
 
 /* ── Active Filters ── */
 .package-card.archived {
@@ -867,7 +870,8 @@ footer {
   .filter-badges { display: flex; gap: 4px; flex-wrap: wrap; }
   .filter-badge { padding: 4px 10px; font-size: 11px; }
   .sort-wrap { align-self: flex-end; }
-  #sort-select { padding: 4px 26px 4px 8px; font-size: 11px; }
+  #sort-select,
+  #status-select { padding: 4px 26px 4px 8px; font-size: 11px; }
   .filter-count { font-size: 9px; }
 
   .active-filter-tag { padding: 4px 8px 4px 10px; font-size: 11px; }
@@ -927,7 +931,8 @@ footer {
   .filter-label { font-size: 9px; }
   .filter-badges { gap: 3px; }
   .filter-badge { padding: 3px 9px; font-size: 10.5px; }
-  #sort-select { font-size: 10.5px; padding: 4px 24px 4px 7px; }
+  #sort-select,
+  #status-select { font-size: 10.5px; padding: 4px 24px 4px 7px; }
 
   #search { font-size: 15px; padding: 8px 32px 8px 32px; border-radius: 8px; }
   .search-icon { left: 9px; width: 13px; height: 13px; }
@@ -987,7 +992,8 @@ footer {
   .controls-row { gap: 4px; }
   .filter-badge { padding: 4px 8px; font-size: 10px; }
   .filter-count { font-size: 8px; }
-  #sort-select { font-size: 10px; padding: 3px 22px 3px 6px; }
+  #sort-select,
+  #status-select { font-size: 10px; padding: 3px 22px 3px 6px; }
   .sort-label { font-size: 9px; }
 
   /* search */
