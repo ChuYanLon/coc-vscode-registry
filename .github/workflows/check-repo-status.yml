@@ -1,0 +1,36 @@
+name: Check Repo Status
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # weekly Sunday 00:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install tsx
+        run: npm install -g tsx
+
+      - name: Check repo status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx tsx scripts/check-repo-status.ts
+
+      - name: Commit updates
+        run: |
+          if [[ -n "$(git status --porcelain repo-status.json)" ]]; then
+            git config user.name 'coc-vscode-registry[bot]'
+            git config user.email 'bot@coc-vscode-registry'
+            git add repo-status.json
+            git commit -m 'chore: update repo status (archived/lastUpdated)'
+            git push
+          fi

@@ -26,9 +26,18 @@ let currentSort = null
 async function init() {
   showSkeleton(true)
   try {
-    const resp = await fetch('registry.json')
-    allPackages = await resp.json()
-    allPackages.forEach((p, i) => p._index = i)
+    const [regResp, statusResp] = await Promise.all([
+      fetch('registry.json'),
+      fetch('repo-status.json').catch(() => null),
+    ])
+    allPackages = await regResp.json()
+    const repoStatus = statusResp?.ok ? await statusResp.json() : {}
+    allPackages.forEach((p, i) => {
+      p._index = i
+      const s = repoStatus[p.name] || {}
+      p.archived = s.archived
+      p.lastUpdated = s.lastUpdated
+    })
     buildStats()
   } catch (e) {
     showError('Failed to load registry. Please try again.')
@@ -218,6 +227,7 @@ function renderPackageCards(pkgs) {
             <div class="package-title">
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
+              ${p.archived ? '<span class="archived-badge" title="Repository archived"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h8.5c.966 0 1.75.784 1.75 1.75v.5A1.75 1.75 0 0113.25 5h-8.5A1.75 1.75 0 013 3.25v-.5zM3 6.5v6.75c0 .966.784 1.75 1.75 1.75h6.5c.966 0 1.75-.784 1.75-1.75V6.5H3zm3.75 2a.75.75 0 000 1.5h2.5a.75.75 0 000-1.5h-2.5z"/></svg></span>' : ''}
             </div>
             <div class="package-desc">${escapeHtml(p.description)}</div>
             ${p.notes ? `<div class="package-notes">⚠ ${escapeHtml(p.notes)}</div>` : ''}

@@ -611,6 +611,14 @@ header h1::before {
   flex-wrap: wrap;
   gap: 6px;
 }
+.archived-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  opacity: 0.6;
+  cursor: help;
+  color: var(--text-muted);
+}
 .package-name {
   font-size: 11px;
   color: var(--text-muted);
