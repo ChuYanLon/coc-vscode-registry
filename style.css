@@ -627,11 +627,10 @@ header h1::before {
   padding: 1px 6px;
   border-radius: 4px;
 }
-.package-updated {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-  margin-bottom: 6px;
+.package-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 8px;
 }
 .package-desc {
   margin-top: 2px;
