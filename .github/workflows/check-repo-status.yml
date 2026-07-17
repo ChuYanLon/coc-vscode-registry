@@ -28,8 +28,8 @@ jobs:
       - name: Commit updates
         run: |
           if [[ -n "$(git status --porcelain repo-status.json)" ]]; then
-            git config user.name 'coc-vscode-registry[bot]'
-            git config user.email 'bot@coc-vscode-registry'
+            git config user.name 'coc-vscode-loader[bot]'
+            git config user.email 'bot@coc-vscode-loader'
             git add repo-status.json
             git commit -m 'chore: update repo status (archived/lastUpdated)'
             git push
