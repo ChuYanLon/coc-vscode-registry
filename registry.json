@@ -368,7 +368,7 @@
     "categories": [
       "LSP"
     ],
-    "minPluginVersion": "1.4.3",
+    "minPluginVersion": "1.6.7",
     "convert": [
       {
         "type": "language-client",
