@@ -357,9 +357,10 @@
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "angular/vscode-ng-language-service"
+      "repo": "angular/angular",
+      "subdir": "vscode-ng-language-service"
     },
-    "url": "https://github.com/angular/vscode-ng-language-service",
+    "url": "https://github.com/angular/angular",
     "languages": [
       "html",
       "typescript"
@@ -396,7 +397,7 @@
         ],
         "entry": "client/src/extension.ts",
         "keepDeps": {
-          "typescript": "*"
+          "typescript": ">=5.0.0 <7.0.0"
         }
       }
     ]
