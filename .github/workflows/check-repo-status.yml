@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   check:
@@ -25,12 +26,24 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx tsx scripts/check-repo-status.ts
 
-      - name: Commit updates
+      - name: Create PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [[ -n "$(git status --porcelain repo-status.json)" ]]; then
-            git config user.name 'coc-vscode-loader[bot]'
-            git config user.email 'bot@coc-vscode-loader'
-            git add repo-status.json
-            git commit -m 'chore: update repo status (archived/lastUpdated)'
-            git push
+          if [[ -z "$(git status --porcelain repo-status.json)" ]]; then
+            echo "No changes"
+            exit 0
           fi
+          BRANCH="chore/repo-status-$(date +%s)"
+          git config user.name 'coc-vscode-loader[bot]'
+          git config user.email 'bot@coc-vscode-loader'
+          git checkout -b "$BRANCH"
+          git add repo-status.json
+          git commit -m 'chore: update repo status (archived/lastUpdated)'
+          git push origin "$BRANCH"
+          gh pr create \
+            --title 'chore: update repo status' \
+            --body 'Automated update of repo-status.json (archived/lastUpdated fields).' \
+            --base main \
+            --head "$BRANCH"
+          gh pr merge --squash --delete-branch "$BRANCH"
