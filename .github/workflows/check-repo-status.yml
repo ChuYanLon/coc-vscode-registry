@@ -34,8 +34,8 @@ jobs:
           OUTPUT=$(npx tsx scripts/check-repo-status.ts 2>&1)
           echo "$OUTPUT"
 
-          # Detect newly archived repos
-          NEWLY_ARCHIVED=$(echo "$OUTPUT" | grep '^NEWLY_ARCHIVED:' | sed 's/^NEWLY_ARCHIVED://')
+          # Detect archived repos
+          ARCHIVED_LINE=$(echo "$OUTPUT" | grep '^ARCHIVED_REPOS:' | sed 's/^ARCHIVED_REPOS://')
 
           if [[ -z "$(git status --porcelain repo-status.json)" ]]; then
             echo "No changes"
@@ -57,23 +57,25 @@ jobs:
             --head "$BRANCH"
           gh pr merge --squash --delete-branch "$BRANCH"
 
-          # Create issue for newly archived repos (skip if one is already open)
-          if [[ -n "$NEWLY_ARCHIVED" ]]; then
-            EXISTING=$(gh issue list --label archived --state open --json number -q 'length' 2>/dev/null || echo 0)
-            if [[ "$EXISTING" -eq 0 ]]; then
-              BODY="# Archived Repositories Detected\n\nThe following repositories have been archived:\n"
-              IFS=',' read -ra NAMES <<< "$NEWLY_ARCHIVED"
-              for name in "${NAMES[@]}"; do
-                repo=$(echo "$OUTPUT" | grep "$name" | awk '{print $NF}')
-                BODY="${BODY}\n- **${name}** (\`${repo}\`)"
-              done
-              BODY="${BODY}\n\nAction needed: consider updating or removing the registry entries for these packages."
+          # Create/update issue listing all archived repos
+          if [[ -n "$ARCHIVED_LINE" ]]; then
+            BODY="# Archived Repositories\n\nThe following registry entries point to archived repositories:\n"
+            IFS='|' read -ra ENTRIES <<< "$ARCHIVED_LINE"
+            for entry in "${ENTRIES[@]}"; do
+              name="${entry%%:*}"
+              repo="${entry#*:}"
+              BODY="${BODY}\n- **${name}** (\`${repo}\`)"
+            done
+            BODY="${BODY}\n\nAction needed: consider updating or removing these registry entries."
+            EXISTING=$(gh issue list --label archived --state open --json number -q '.[0].number' 2>/dev/null || echo "")
+            if [[ -n "$EXISTING" ]]; then
+              gh issue update "$EXISTING" --body "$BODY"
+              echo "Updated issue #$EXISTING"
+            else
               gh issue create \
                 --title "archived repositories detected" \
                 --body "$BODY" \
                 --label archived \
                 --type Task
-            else
-              echo "Open issue already exists, skipping"
             fi
           fi
