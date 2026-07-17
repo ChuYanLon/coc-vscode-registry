@@ -1,518 +1,647 @@
 {
   "vscode-clangd": {
     "archived": false,
-    "lastUpdated": "2026-07-01"
+    "lastUpdated": "2026-07-01",
+    "stars": 821
   },
   "vscode-rust-analyzer": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 16664
   },
   "vscode-go": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 4259
   },
   "vscode-gleam": {
     "archived": false,
-    "lastUpdated": "2026-06-23"
+    "lastUpdated": "2026-06-23",
+    "stars": 234
   },
   "vscode-pyright": {
     "archived": false,
-    "lastUpdated": "2026-07-15"
+    "lastUpdated": "2026-07-15",
+    "stars": 15525
   },
   "vscode-ruff": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 1654
   },
   "vscode-ng-language-service": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 100575
   },
   "vscode-volar": {
     "archived": false,
-    "lastUpdated": "2026-07-12"
+    "lastUpdated": "2026-07-12",
+    "stars": 6692
   },
   "vscode-eslint": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 1933
   },
   "vscode-biome": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 421
   },
   "vscode-deno": {
     "archived": false,
-    "lastUpdated": "2026-07-02"
+    "lastUpdated": "2026-07-02",
+    "stars": 1549
   },
   "vscode-ember": {
     "archived": false,
-    "lastUpdated": "2026-07-10"
+    "lastUpdated": "2026-07-10",
+    "stars": 50
   },
   "vscode-svelte": {
     "archived": false,
-    "lastUpdated": "2026-07-15"
+    "lastUpdated": "2026-07-15",
+    "stars": 1437
   },
   "vscode-astro": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 61103
   },
   "vscode-tailwindcss": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 3451
   },
   "vscode-intelephense": {
     "archived": false,
-    "lastUpdated": "2026-06-21"
+    "lastUpdated": "2026-06-21",
+    "stars": 1860
   },
   "vscode-language-viml": {
     "archived": false,
-    "lastUpdated": "2026-07-08"
+    "lastUpdated": "2026-07-08",
+    "stars": 26
   },
   "vscode-lua": {
     "archived": false,
-    "lastUpdated": "2026-05-21"
+    "lastUpdated": "2026-05-21",
+    "stars": 213
   },
   "vscode-yaml": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 824
   },
   "vscode-xml": {
     "archived": false,
-    "lastUpdated": "2026-06-11"
+    "lastUpdated": "2026-06-11",
+    "stars": 320
   },
   "vscode-prisma": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 294
   },
   "vscode-ansible": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 477
   },
   "vscode-bash-language-server": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 2747
   },
   "vscode-docker": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 1312
   },
   "vscode-stylelint": {
     "archived": false,
-    "lastUpdated": "2026-07-10"
+    "lastUpdated": "2026-07-10",
+    "stars": 339
   },
   "vscode-taplo": {
     "archived": false,
-    "lastUpdated": "2026-03-11"
+    "lastUpdated": "2026-03-11",
+    "stars": 2336
   },
   "vscode-css-peek": {
     "archived": false,
-    "lastUpdated": "2026-05-17"
+    "lastUpdated": "2026-05-17",
+    "stars": 158
   },
   "vscode-html-ls": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 187624
   },
   "vscode-css-ls": {
     "archived": false,
-    "lastUpdated": "2026-07-17"
+    "lastUpdated": "2026-07-17",
+    "stars": 187624
   },
   "vscode-marksman": {
     "archived": false,
-    "lastUpdated": "2023-12-09"
+    "lastUpdated": "2023-12-09",
+    "stars": 58
   },
   "vscode-tinymist": {
     "archived": false,
-    "lastUpdated": "2026-07-15"
+    "lastUpdated": "2026-07-15",
+    "stars": 3411
   },
   "vscode-texlab": {
     "archived": false,
-    "lastUpdated": "2026-07-13"
+    "lastUpdated": "2026-07-13",
+    "stars": 103
   },
   "vscode-bitbake": {
     "archived": false,
-    "lastUpdated": "2026-07-16"
+    "lastUpdated": "2026-07-16",
+    "stars": 69
   },
   "vscode-jq": {
     "archived": false,
-    "lastUpdated": "2026-03-26"
+    "lastUpdated": "2026-03-26",
+    "stars": 31
   },
   "vscode-alex": {
     "archived": false,
-    "lastUpdated": "2021-09-21"
+    "lastUpdated": "2021-09-21",
+    "stars": 23
   },
   "vscode-html-css-support": {
     "archived": false,
-    "lastUpdated": "2026-05-28"
+    "lastUpdated": "2026-05-28",
+    "stars": 168
   },
   "vscode-css-modules": {
     "archived": false,
-    "lastUpdated": "2026-04-02"
+    "lastUpdated": "2026-04-02",
+    "stars": 152
   },
   "vscode-prettier-vscode": {
     "archived": false,
-    "lastUpdated": "2026-06-03"
+    "lastUpdated": "2026-06-03",
+    "stars": 5506
   },
   "vscode-gitignore": {
     "archived": false,
-    "lastUpdated": "2025-03-01"
+    "lastUpdated": "2025-03-01",
+    "stars": 89
   },
   "vscode-live-server": {
     "archived": false,
-    "lastUpdated": "2026-06-10"
+    "lastUpdated": "2026-06-10",
+    "stars": 6848
   },
   "vscode-code-runner": {
     "archived": false,
-    "lastUpdated": "2024-08-11"
+    "lastUpdated": "2024-08-11",
+    "stars": 2430
   },
   "vscode-write-good": {
     "archived": false,
-    "lastUpdated": "2026-03-24"
+    "lastUpdated": "2026-03-24",
+    "stars": 58
   },
   "vscode-clojure-lsp": {
     "archived": false,
-    "lastUpdated": "2020-10-08"
+    "lastUpdated": "2020-10-08",
+    "stars": 6
   },
   "vscode-vue-snippets": {
     "archived": false,
-    "lastUpdated": "2024-11-19"
+    "lastUpdated": "2024-11-19",
+    "stars": 1336
   },
   "vscode-vue2": {
     "archived": false,
-    "lastUpdated": "2024-11-26"
+    "lastUpdated": "2024-11-26",
+    "stars": 3
   },
   "vscode-vue3-snippets": {
     "archived": false,
-    "lastUpdated": "2024-06-10"
+    "lastUpdated": "2024-06-10",
+    "stars": 99
   },
   "vscode-vue3-snippets-for": {
     "archived": false,
-    "lastUpdated": "2022-08-16"
+    "lastUpdated": "2022-08-16",
+    "stars": 9
   },
   "vscode-es7-javascript-react": {
     "archived": false,
-    "lastUpdated": "2018-11-30"
+    "lastUpdated": "2018-11-30",
+    "stars": 8
   },
   "vscode-es7-react-snippets": {
     "archived": false,
-    "lastUpdated": "2026-05-01"
+    "lastUpdated": "2026-05-01",
+    "stars": 1870
   },
   "vscode-full-react": {
     "archived": false,
-    "lastUpdated": "2020-07-15"
+    "lastUpdated": "2020-07-15",
+    "stars": 21
   },
   "vscode-js-jsx-snippets": {
     "archived": false,
-    "lastUpdated": "2026-06-13"
+    "lastUpdated": "2026-06-13",
+    "stars": 18
   },
   "vscode-react-native-redux-snippets": {
     "archived": false,
-    "lastUpdated": "2020-10-09"
+    "lastUpdated": "2020-10-09",
+    "stars": 54
   },
   "vscode-react-redux-react-router": {
     "archived": false,
-    "lastUpdated": "2023-05-13"
+    "lastUpdated": "2023-05-13",
+    "stars": 31
   },
   "vscode-react-snippets": {
     "archived": false,
-    "lastUpdated": "2020-02-18"
+    "lastUpdated": "2020-02-18",
+    "stars": 383
   },
   "vscode-simple-react-snippets": {
     "archived": false,
-    "lastUpdated": "2024-07-26"
+    "lastUpdated": "2024-07-26",
+    "stars": 218
   },
   "vscode-styled-components-snippets": {
     "archived": false,
-    "lastUpdated": "2021-03-21"
+    "lastUpdated": "2021-03-21",
+    "stars": 9
   },
   "vscode-typescript-react-snippets": {
     "archived": false,
-    "lastUpdated": "2019-07-17"
+    "lastUpdated": "2019-07-17",
+    "stars": 39
   },
   "vscode-next.js": {
     "archived": false,
-    "lastUpdated": "2025-06-30"
+    "lastUpdated": "2025-06-30",
+    "stars": 31
   },
   "vscode-nextjs-snippets": {
     "archived": false,
-    "lastUpdated": "2020-12-01"
+    "lastUpdated": "2020-12-01",
+    "stars": 9
   },
   "vscode-solidjs-snippets": {
     "archived": false,
-    "lastUpdated": "2025-01-23"
+    "lastUpdated": "2025-01-23",
+    "stars": 33
   },
   "vscode-angular": {
     "archived": false,
-    "lastUpdated": "2026-07-10"
+    "lastUpdated": "2026-07-10",
+    "stars": 568
   },
   "vscode-angular-2": {
     "archived": false,
-    "lastUpdated": "2020-11-13"
+    "lastUpdated": "2020-11-13",
+    "stars": 25
   },
   "vscode-angular-bootstrap-code": {
     "archived": false,
-    "lastUpdated": "2017-12-09"
+    "lastUpdated": "2017-12-09",
+    "stars": 2
   },
   "vscode-angular-ngrx-snippets": {
     "archived": false,
-    "lastUpdated": "2024-07-11"
+    "lastUpdated": "2024-07-11",
+    "stars": 93
   },
   "vscode-angular1": {
     "archived": false,
-    "lastUpdated": "2019-05-05"
+    "lastUpdated": "2019-05-05",
+    "stars": 41
   },
   "vscode-angular2-test": {
     "archived": false,
-    "lastUpdated": "2017-01-25"
+    "lastUpdated": "2017-01-25",
+    "stars": 8
   },
   "vscode-ng2-typescript": {
     "archived": false,
-    "lastUpdated": "2017-02-06"
+    "lastUpdated": "2017-02-06",
+    "stars": 2
   },
   "vscode-svelte-2": {
     "archived": false,
-    "lastUpdated": "2023-06-26"
+    "lastUpdated": "2023-06-26",
+    "stars": 33
   },
   "vscode-svelte-snippets": {
     "archived": false,
-    "lastUpdated": "2021-11-08"
+    "lastUpdated": "2021-11-08",
+    "stars": 2
   },
   "vscode-bootstrap-3": {
     "archived": false,
-    "lastUpdated": "2022-04-30"
+    "lastUpdated": "2022-04-30",
+    "stars": 28
   },
   "vscode-bootstrap5-snippets": {
     "archived": false,
-    "lastUpdated": "2024-03-14"
+    "lastUpdated": "2024-03-14",
+    "stars": 53
   },
   "vscode-javascript": {
     "archived": false,
-    "lastUpdated": "2024-03-26"
+    "lastUpdated": "2024-03-26",
+    "stars": 47
   },
   "vscode-javascript-snippets": {
     "archived": false,
-    "lastUpdated": "2025-12-20"
+    "lastUpdated": "2025-12-20",
+    "stars": 340
   },
   "vscode-node": {
     "archived": false,
-    "lastUpdated": "2025-03-12"
+    "lastUpdated": "2025-03-12",
+    "stars": 12
   },
   "vscode-node-js": {
     "archived": false,
-    "lastUpdated": "2021-03-26"
+    "lastUpdated": "2021-03-26",
+    "stars": 7
   },
   "vscode-standardjs": {
     "archived": false,
-    "lastUpdated": "2022-01-09"
+    "lastUpdated": "2022-01-09",
+    "stars": 99
   },
   "vscode-djaneiro": {
     "archived": false,
-    "lastUpdated": "2023-03-03"
+    "lastUpdated": "2023-03-03",
+    "stars": 52
   },
   "vscode-django": {
     "archived": false,
-    "lastUpdated": "2018-11-16"
+    "lastUpdated": "2018-11-16",
+    "stars": 6
   },
   "vscode-fastapi-snippets": {
     "archived": false,
-    "lastUpdated": "2022-09-07"
+    "lastUpdated": "2022-09-07",
+    "stars": 5
   },
   "vscode-flask": {
     "archived": false,
-    "lastUpdated": "2023-06-16"
+    "lastUpdated": "2023-06-16",
+    "stars": 68
   },
   "vscode-opencv-snippets": {
     "archived": false,
-    "lastUpdated": "2024-03-02"
+    "lastUpdated": "2024-03-02",
+    "stars": 10
   },
   "vscode-pygame-snippets": {
     "archived": false,
-    "lastUpdated": "2021-09-13"
+    "lastUpdated": "2021-09-13",
+    "stars": 14
   },
   "vscode-python-snippet-pack": {
     "archived": false,
-    "lastUpdated": "2022-09-19"
+    "lastUpdated": "2022-09-19",
+    "stars": 61
   },
   "vscode-python-snippet-pack-2.0": {
     "archived": false,
-    "lastUpdated": "2024-01-18"
+    "lastUpdated": "2024-01-18",
+    "stars": 35
   },
   "vscode-pytorch": {
     "archived": false,
-    "lastUpdated": "2021-10-01"
+    "lastUpdated": "2021-10-01",
+    "stars": 61
   },
   "vscode-snp-pandas-basic": {
     "archived": false,
-    "lastUpdated": "2025-03-16"
+    "lastUpdated": "2025-03-16",
+    "stars": 4
   },
   "vscode-tensorflow2snippets": {
     "archived": false,
-    "lastUpdated": "2020-03-03"
+    "lastUpdated": "2020-03-03",
+    "stars": 12
   },
   "vscode-tkinter": {
     "archived": false,
-    "lastUpdated": "2021-01-30"
+    "lastUpdated": "2021-01-30",
+    "stars": 2
   },
   "vscode-laravel5-snippets": {
     "archived": false,
-    "lastUpdated": "2025-03-29"
+    "lastUpdated": "2025-03-29",
+    "stars": 35
   },
   "vscode-php-awesome": {
     "archived": false,
-    "lastUpdated": "2023-12-17"
+    "lastUpdated": "2023-12-17",
+    "stars": 34
   },
   "vscode-phpstorm-snippets-for": {
     "archived": false,
-    "lastUpdated": "2021-04-12"
+    "lastUpdated": "2021-04-12",
+    "stars": 17
   },
   "vscode-wordpress-toolbox": {
     "archived": false,
-    "lastUpdated": "2025-06-02"
+    "lastUpdated": "2025-06-02",
+    "stars": 44
   },
   "vscode-rust-flash": {
     "archived": false,
-    "lastUpdated": "2025-07-25"
+    "lastUpdated": "2025-07-25",
+    "stars": 9
   },
   "vscode-arduino": {
     "archived": false,
-    "lastUpdated": "2019-03-27"
+    "lastUpdated": "2019-03-27",
+    "stars": 15
   },
   "vscode-cpp": {
     "archived": false,
-    "lastUpdated": "2023-12-19"
+    "lastUpdated": "2023-12-19",
+    "stars": 69
   },
   "vscode-csharp": {
     "archived": false,
-    "lastUpdated": "2022-08-02"
+    "lastUpdated": "2022-08-02",
+    "stars": 30
   },
   "vscode-java-imports-snippets": {
     "archived": false,
-    "lastUpdated": "2017-09-05"
+    "lastUpdated": "2017-09-05",
+    "stars": 4
   },
   "vscode-awesome-flutter": {
     "archived": false,
-    "lastUpdated": "2022-10-02"
+    "lastUpdated": "2022-10-02",
+    "stars": 169
   },
   "vscode-flutter": {
     "archived": false,
-    "lastUpdated": "2023-01-08"
+    "lastUpdated": "2023-01-08",
+    "stars": 51
   },
   "vscode-flutter-2": {
     "archived": false,
-    "lastUpdated": "2024-12-02"
+    "lastUpdated": "2024-12-02",
+    "stars": 8
   },
   "vscode-flutter-riverpod": {
     "archived": false,
-    "lastUpdated": "2025-09-28"
+    "lastUpdated": "2025-09-28",
+    "stars": 69
   },
   "vscode-express": {
     "archived": false,
-    "lastUpdated": "2020-03-16"
+    "lastUpdated": "2020-03-16",
+    "stars": 12
   },
   "vscode-nestjs-snippets": {
     "archived": false,
-    "lastUpdated": "2025-08-13"
+    "lastUpdated": "2025-08-13",
+    "stars": 1
   },
   "vscode-nestsjs": {
     "archived": false,
-    "lastUpdated": "2020-08-11"
+    "lastUpdated": "2020-08-11",
+    "stars": 112
   },
   "vscode-springboot": {
     "archived": false,
-    "lastUpdated": "2020-12-11"
+    "lastUpdated": "2020-12-11",
+    "stars": 9
   },
   "vscode-chai-snippets": {
     "archived": false,
-    "lastUpdated": "2017-02-21"
+    "lastUpdated": "2017-02-21",
+    "stars": 5
   },
   "vscode-cypress-snippets": {
     "archived": false,
-    "lastUpdated": "2020-11-01"
+    "lastUpdated": "2020-11-01",
+    "stars": 0
   },
   "vscode-jest": {
     "archived": false,
-    "lastUpdated": "2026-02-28"
+    "lastUpdated": "2026-02-28",
+    "stars": 39
   },
   "vscode-playwright-snippets": {
     "archived": false,
-    "lastUpdated": "2024-11-11"
+    "lastUpdated": "2024-11-11",
+    "stars": 19
   },
   "vscode-mysql-snippets": {
     "archived": false,
-    "lastUpdated": "2025-02-05"
+    "lastUpdated": "2025-02-05",
+    "stars": 8
   },
   "vscode-postgresql-snippets": {
     "archived": false,
-    "lastUpdated": "2024-09-16"
+    "lastUpdated": "2024-09-16",
+    "stars": 2
   },
   "vscode-uni-app-snippets": {
     "archived": false,
-    "lastUpdated": "2026-06-25"
+    "lastUpdated": "2026-06-25",
+    "stars": 8
   },
   "vscode-uni-cloud-snippets": {
     "archived": false,
-    "lastUpdated": "2026-06-25"
+    "lastUpdated": "2026-06-25",
+    "stars": 1
   },
   "vscode-uni-ui-snippets": {
     "archived": false,
-    "lastUpdated": "2026-06-26"
+    "lastUpdated": "2026-06-26",
+    "stars": 3
   },
   "vscode-ue4-snippets-vs": {
     "archived": false,
-    "lastUpdated": "2020-08-26"
+    "lastUpdated": "2020-08-26",
+    "stars": 16
   },
   "vscode-unity": {
     "archived": false,
-    "lastUpdated": "2017-07-02"
+    "lastUpdated": "2017-07-02",
+    "stars": 18
   },
   "vscode-unity-2": {
     "archived": false,
-    "lastUpdated": "2018-03-22"
+    "lastUpdated": "2018-03-22",
+    "stars": 5
   },
   "vscode-unity-code": {
     "archived": false,
-    "lastUpdated": "2022-05-03"
+    "lastUpdated": "2022-05-03",
+    "stars": 5
   },
   "vscode-apacheconf": {
     "archived": false,
-    "lastUpdated": "2024-07-21"
+    "lastUpdated": "2024-07-21",
+    "stars": 8
   },
   "vscode-classic-asp": {
     "archived": false,
-    "lastUpdated": "2025-01-15"
+    "lastUpdated": "2025-01-15",
+    "stars": 26
   },
   "vscode-ejs-snippets": {
     "archived": false,
-    "lastUpdated": "2020-06-04"
+    "lastUpdated": "2020-06-04",
+    "stars": 8
   },
   "vscode-emoji-snippets": {
     "archived": false,
-    "lastUpdated": "2022-07-02"
+    "lastUpdated": "2022-07-02",
+    "stars": 70
   },
   "vscode-eslint-disable": {
     "archived": false,
-    "lastUpdated": "2023-08-16"
+    "lastUpdated": "2023-08-16",
+    "stars": 15
   },
   "vscode-font-awesome-codes-html": {
     "archived": false,
-    "lastUpdated": "2017-04-20"
+    "lastUpdated": "2017-04-20",
+    "stars": 3
   },
   "vscode-ionic": {
     "archived": false,
-    "lastUpdated": "2020-07-30"
+    "lastUpdated": "2020-07-30",
+    "stars": 27
   },
   "vscode-jquery-snippets": {
     "archived": false,
-    "lastUpdated": "2023-05-02"
+    "lastUpdated": "2023-05-02",
+    "stars": 40
   },
   "vscode-liquid": {
     "archived": false,
-    "lastUpdated": "2022-11-16"
+    "lastUpdated": "2022-11-16",
+    "stars": 30
   },
   "vscode-rxjs-snippets": {
     "archived": false,
-    "lastUpdated": "2017-01-28"
+    "lastUpdated": "2017-01-28",
+    "stars": 1
   },
   "vscode-vsc_html5_boilerplate": {
     "archived": false,
-    "lastUpdated": "2022-05-13"
+    "lastUpdated": "2022-05-13",
+    "stars": 51
   }
 }

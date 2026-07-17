@@ -691,10 +691,20 @@ header h1::before {
   padding: 1px 6px;
   border-radius: 4px;
 }
+.package-meta-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.package-stars {
+  font-size: 11px;
+  color: var(--yellow);
+  font-weight: 500;
+}
 .package-date {
   font-size: 11px;
   color: var(--text-muted);
-  margin-left: 8px;
 }
 .package-desc {
   margin-top: 2px;

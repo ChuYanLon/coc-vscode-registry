@@ -17,11 +17,12 @@ const CONCURRENCY = 8
 interface StatusEntry {
   archived: boolean
   lastUpdated: string
+  stars: number
 }
 
-function ghApi(url: string): { archived?: boolean; pushed_at?: string } | null {
+function ghApi(url: string): { archived?: boolean; pushed_at?: string; stargazers_count?: number } | null {
   try {
-    const out = execFileSync('gh', ['api', url, '--jq', '{ archived, pushed_at }'], {
+    const out = execFileSync('gh', ['api', url, '--jq', '{ archived, pushed_at, stargazers_count }'], {
       encoding: 'utf-8', timeout: 15000, maxBuffer: 1024 * 1024,
     })
     return JSON.parse(out.trim())
@@ -50,6 +51,7 @@ async function main() {
         status[entry.name] = {
           archived,
           lastUpdated: (data.pushed_at || '').split('T')[0],
+          stars: data.stargazers_count ?? 0,
         }
         if (archived) archivedList.push({ name: entry.name, repo })
         const icon = archived ? '📦' : '✓'

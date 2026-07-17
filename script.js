@@ -1,6 +1,16 @@
 (function() {
-  const saved = localStorage.getItem('coc-registry-theme') || 'dark'
-  document.documentElement.setAttribute('data-theme', saved)
+  const saved = localStorage.getItem('coc-registry-theme')
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
+  const theme = saved || (prefersDark.matches ? 'dark' : 'light')
+  document.documentElement.setAttribute('data-theme', theme)
+
+  let followSystem = !saved
+  prefersDark.addEventListener('change', e => {
+    if (followSystem) {
+      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light')
+    }
+  })
+
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('theme-toggle')?.addEventListener('click', () => {
       const html = document.documentElement
@@ -8,6 +18,7 @@
       const next = cur === 'dark' ? 'light' : 'dark'
       html.setAttribute('data-theme', next)
       localStorage.setItem('coc-registry-theme', next)
+      followSystem = false
     })
   })
 })()
@@ -38,6 +49,7 @@ async function init() {
       const s = repoStatus[p.name] || {}
       p.archived = s.archived
       p.lastUpdated = s.lastUpdated
+      p.stars = s.stars || 0
     })
     buildStats()
     buildRelationIndex()
@@ -317,7 +329,10 @@ function renderPackageCards(pkgs) {
             <div class="package-title">
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
-              ${p.lastUpdated ? `<span class="package-date">${escapeHtml(p.lastUpdated)}</span>` : ''}
+              <span class="package-meta-bar">
+                ${p.stars > 0 ? `<span class="package-stars">★ ${formatStars(p.stars)}</span>` : ''}
+                ${p.lastUpdated ? `<span class="package-date">${formatRelativeDate(p.lastUpdated)}</span>` : ''}
+              </span>
             </div>
             <div class="package-desc">${escapeHtml(p.description)}</div>
             ${p.notes ? `<div class="package-notes">⚠ ${escapeHtml(p.notes)}</div>` : ''}
@@ -364,6 +379,25 @@ function escapeHtml(s) {
   const div = document.createElement('div')
   div.textContent = s
   return div.innerHTML
+}
+
+function formatStars(n) {
+  if (n >= 10000) return (n / 1000).toFixed(0) + 'k'
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'k'
+  return String(n)
+}
+
+function formatRelativeDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const now = new Date()
+  const diff = now - d
+  const days = Math.floor(diff / 86400000)
+  if (days < 1) return 'today'
+  if (days < 7) return days + 'd ago'
+  if (days < 30) return Math.floor(days / 7) + 'w ago'
+  if (days < 365) return Math.floor(days / 30) + 'mo ago'
+  return Math.floor(days / 365) + 'y ago'
 }
 
 function render() {
