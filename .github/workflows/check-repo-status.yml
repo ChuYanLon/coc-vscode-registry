@@ -60,13 +60,15 @@ jobs:
           # Create/update issue listing all archived repos
           if [[ -n "$ARCHIVED_LINE" ]]; then
             BODY="# Archived Repositories\n\nThe following registry entries point to archived repositories:\n"
-            IFS='|' read -ra ENTRIES <<< "$ARCHIVED_LINE"
-            for entry in "${ENTRIES[@]}"; do
-              name="${entry%%:*}"
-              repo="${entry#*:}"
-              BODY="${BODY}\n- **${name}** (\`${repo}\`)"
-            done
+            while IFS='|' read -ra ENTRIES; do
+              for entry in "${ENTRIES[@]}"; do
+                name="${entry%%:*}"
+                repo="${entry#*:}"
+                BODY="${BODY}\n- **${name}** (\`${repo}\`)"
+              done
+            done <<< "$ARCHIVED_LINE"
             BODY="${BODY}\n\nAction needed: consider updating or removing these registry entries."
+            BODY="${BODY//\\n/$'\n'}"
             EXISTING=$(gh issue list --label archived --state open --json number -q '.[0].number' 2>/dev/null || echo "")
             if [[ -n "$EXISTING" ]]; then
               gh issue update "$EXISTING" --body "$BODY"
