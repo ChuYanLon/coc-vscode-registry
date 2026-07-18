@@ -828,20 +828,6 @@ header h1::before {
   gap: 5px;
 }
 
-.star-chart-img {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 12px;
-  width: 160px;
-  height: 28px;
-  border-radius: 4px;
-}
-.star-count {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--yellow);
-  vertical-align: middle;
-}
 .star-bar {
   display: inline-block;
   height: 5px;

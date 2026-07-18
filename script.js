@@ -407,7 +407,6 @@ function renderPackageCards(pkgs) {
           ${p.releaseTag ? `<div class="package-detail-row"><span class="package-detail-label">Release</span><span class="package-detail-value">${escapeHtml(p.releaseTag)}${p.releaseDate ? ` · ${escapeHtml(p.releaseDate)}` : ''}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
-          ${p.stars > 0 ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span><canvas class="star-chart-img" data-pkg="${escapeHtml(p.name)}"></canvas></span></div>` : ''}
           ${renderRelated(p)}
           ${renderRecommendations(p)}
         </div>
@@ -422,12 +421,7 @@ function renderPackageCards(pkgs) {
   html += '<div class="scroll-sentinel"></div>'
 
   container.innerHTML = html
-
-  requestAnimationFrame(() => {
-    for (const canvas of document.querySelectorAll('.star-chart-img')) {
-      const pkg = allPackages.find(p => p.name === canvas.dataset.pkg)
-      if (pkg?.starHistory?.length >= 2) drawStarChart(canvas, pkg.starHistory)
-    }
+}
   })
 }
 
@@ -451,27 +445,29 @@ function drawStarChart(canvas, history) {
   const len = values.length
 
   const pts = values.map((v, i) => ({
-    x: padX + (i / (len - 1)) * chartW,
+    x: padX + (i / (len - 1 || 1)) * chartW,
     y: padY + chartH - ((v - min) / range) * chartH
   }))
 
-  ctx.beginPath()
-  ctx.moveTo(pts[0].x, padY + chartH)
-  for (const p of pts) ctx.lineTo(p.x, p.y)
-  ctx.lineTo(pts[len - 1].x, padY + chartH)
-  ctx.closePath()
-  const g = ctx.createLinearGradient(0, padY, 0, padY + chartH)
-  g.addColorStop(0, accent + '4d')
-  g.addColorStop(1, accent + '00')
-  ctx.fillStyle = g
-  ctx.fill()
+  if (len > 1) {
+    ctx.beginPath()
+    ctx.moveTo(pts[0].x, padY + chartH)
+    for (const p of pts) ctx.lineTo(p.x, p.y)
+    ctx.lineTo(pts[len - 1].x, padY + chartH)
+    ctx.closePath()
+    const g = ctx.createLinearGradient(0, padY, 0, padY + chartH)
+    g.addColorStop(0, accent + '4d')
+    g.addColorStop(1, accent + '00')
+    ctx.fillStyle = g
+    ctx.fill()
 
-  ctx.beginPath()
-  ctx.moveTo(pts[0].x, pts[0].y)
-  for (let i = 1; i < len; i++) ctx.lineTo(pts[i].x, pts[i].y)
-  ctx.strokeStyle = accent
-  ctx.lineWidth = 1.5
-  ctx.stroke()
+    ctx.beginPath()
+    ctx.moveTo(pts[0].x, pts[0].y)
+    for (let i = 1; i < len; i++) ctx.lineTo(pts[i].x, pts[i].y)
+    ctx.strokeStyle = accent
+    ctx.lineWidth = 1.5
+    ctx.stroke()
+  }
 
   ctx.beginPath()
   ctx.arc(pts[len - 1].x, pts[len - 1].y, 2.5, 0, Math.PI * 2)
