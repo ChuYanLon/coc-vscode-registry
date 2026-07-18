@@ -827,6 +827,13 @@ header h1::before {
   align-items: center;
   gap: 5px;
 }
+.sparkline {
+  display: block;
+  max-width: 280px;
+  height: 40px;
+  border-radius: 4px;
+  background: var(--bg-tag);
+}
 .star-bar {
   display: inline-block;
   height: 5px;
