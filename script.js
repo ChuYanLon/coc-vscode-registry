@@ -37,6 +37,7 @@ let highlightIndex = -1
 let timelineEntries = []
 let suggestIndex = -1
 let versionFilter = ''
+let maxStars = 0
 
 async function init() {
   showSkeleton(true)
@@ -56,6 +57,7 @@ async function init() {
       p.releaseTag = s.releaseTag || ''
       p.releaseDate = s.releaseDate || ''
     })
+    maxStars = Math.max(...allPackages.map(p => p.stars), 1)
     buildStats()
     buildRelationIndex()
     await loadTimeline()
@@ -371,7 +373,7 @@ function renderPackageCards(pkgs) {
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
               <span class="package-meta-bar">
-                ${p.stars > 0 ? `<span class="package-stars">★ ${formatStars(p.stars)}</span>` : ''}
+                ${p.stars > 0 ? `<span class="package-stars"><span class="star-bar" style="width:${Math.round(p.stars / maxStars * 60)}px"></span>★ ${formatStars(p.stars)}</span>` : ''}
                 ${p.releaseTag ? `<span class="package-release">${escapeHtml(p.releaseTag)}</span>` : ''}
                 ${p.lastUpdated ? `<span class="package-date">${formatRelativeDate(p.lastUpdated)}</span>` : ''}
               </span>
@@ -517,6 +519,50 @@ function getSearchSuggestions(q) {
   return [...names, ...descs, ...langs].slice(0, 10)
 }
 
+const presets = [
+  { label: 'LSP', icon: '⚡', type: ['pure-lsp'] },
+  { label: 'Formatter', icon: '🎨', category: ['Formatter'] },
+  { label: 'Linter', icon: '🔍', category: ['Linter'] },
+  { label: 'Python', icon: '🐍', lang: ['python'] },
+  { label: 'Web Frontend', icon: '🌐', lang: ['typescript', 'javascript', 'css', 'html', 'react'] },
+  { label: 'Rust', icon: '🦀', lang: ['rust'] },
+  { label: 'Go', icon: '🔷', lang: ['go'] },
+  { label: 'Snippets', icon: '📋', type: ['snippets'] },
+  { label: 'Archived', icon: '📦', status: 'archived' },
+]
+
+function renderPresets() {
+  const el = document.getElementById('presets')
+  el.innerHTML = presets.map(p => `<span class="preset-tag" data-preset="${escapeHtml(p.label)}">${p.icon} ${escapeHtml(p.label)}</span>`).join('')
+}
+
+document.getElementById('presets').addEventListener('click', e => {
+  const tag = e.target.closest('.preset-tag')
+  if (!tag) return
+  const p = presets.find(p => p.label === tag.dataset.preset)
+  if (!p) return
+  activeTypeFilters.clear()
+  activeCategoryFilters.clear()
+  activeLangFilters.clear()
+  versionFilter = ''
+  document.getElementById('search').value = ''
+  searchQuery = ''
+  if (p.type) p.type.forEach(t => activeTypeFilters.add(t))
+  if (p.category) p.category.forEach(c => activeCategoryFilters.add(c))
+  if (p.lang) p.lang.forEach(l => activeLangFilters.add(l))
+  if (p.status) {
+    const sel = document.querySelector('.custom-select[data-name="status"]')
+    const opt = sel?.querySelector(`.custom-select-option[data-value="${p.status}"]`)
+    if (opt) {
+      sel.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'))
+      opt.classList.add('selected')
+      sel.querySelector('.custom-select-value').textContent = opt.textContent
+      sel.dataset.value = p.status
+    }
+  }
+  render()
+})
+
 function syncURL() {
   const params = []
   if (searchQuery) params.push('q=' + encodeURIComponent(searchQuery))
@@ -571,6 +617,7 @@ function render() {
   resetHighlight()
   const filtered = filterPackages()
   currentPage = 1
+  renderPresets()
   renderFilters()
   renderActiveFilters()
   renderPackageCards(filtered)

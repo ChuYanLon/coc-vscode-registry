@@ -628,6 +628,31 @@ header h1::before {
   outline-offset: -2px;
 }
 
+.presets {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.preset-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.preset-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--blue-bg);
+}
+
 .active-filters {
   display: flex;
   flex-wrap: wrap;
@@ -793,6 +818,17 @@ header h1::before {
   font-size: 11px;
   color: var(--yellow);
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.star-bar {
+  display: inline-block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--yellow);
+  opacity: 0.25;
+  flex-shrink: 0;
 }
 .package-release {
   font-size: 11px;
