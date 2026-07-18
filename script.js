@@ -407,7 +407,7 @@ function renderPackageCards(pkgs) {
           ${p.releaseTag ? `<div class="package-detail-row"><span class="package-detail-label">Release</span><span class="package-detail-value">${escapeHtml(p.releaseTag)}${p.releaseDate ? ` · ${escapeHtml(p.releaseDate)}` : ''}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
-          ${p.stars > 0 && p.source?.repo ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span><img class="star-chart-img" src="https://api.star-history.com/svg?repos=${encodeURIComponent(p.source.repo)}&type=Date" alt="star history" loading="lazy" onerror="this.style.display='none'" onload="this.style.opacity=1"></span></div>` : ''}
+          ${p.stars > 0 ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span><canvas class="star-chart-img" data-pkg="${escapeHtml(p.name)}"></canvas></span></div>` : ''}
           ${renderRelated(p)}
           ${renderRecommendations(p)}
         </div>
@@ -422,6 +422,76 @@ function renderPackageCards(pkgs) {
   html += '<div class="scroll-sentinel"></div>'
 
   container.innerHTML = html
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.star-chart-img').forEach(canvas => {
+      const pkgName = canvas.dataset.pkg
+      const pkg = allPackages.find(p => p.name === pkgName)
+      if (pkg && pkg.starHistory && pkg.starHistory.length >= 2) {
+        drawStarChart(canvas, pkg.starHistory)
+      }
+    })
+  })
+}
+
+function drawStarChart(canvas, history) {
+  const dpr = window.devicePixelRatio || 1
+  const w = 160
+  const h = 28
+  canvas.width = w * dpr
+  canvas.height = h * dpr
+  canvas.style.width = w + 'px'
+  canvas.style.height = h + 'px'
+  const ctx = canvas.getContext('2d')
+  ctx.scale(dpr, dpr)
+
+  const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#4a7cff'
+
+  const values = history.map(h => h.count)
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const range = max - min || 1
+
+  const padX = 2
+  const padY = 3
+  const chartW = w - padX * 2
+  const chartH = h - padY * 2
+  const len = values.length
+
+  const points = values.map((v, i) => ({
+    x: padX + (i / (len - 1)) * chartW,
+    y: padY + chartH - ((v - min) / range) * chartH
+  }))
+
+  // Gradient fill below line
+  const gradient = ctx.createLinearGradient(0, padY, 0, padY + chartH)
+  gradient.addColorStop(0, accent + '4d')
+  gradient.addColorStop(1, accent + '00')
+  ctx.beginPath()
+  ctx.moveTo(points[0].x, padY + chartH)
+  for (const p of points) ctx.lineTo(p.x, p.y)
+  ctx.lineTo(points[len - 1].x, padY + chartH)
+  ctx.closePath()
+  ctx.fillStyle = gradient
+  ctx.fill()
+
+  // Line
+  ctx.beginPath()
+  for (let i = 0; i < len; i++) {
+    i === 0 ? ctx.moveTo(points[i].x, points[i].y) : ctx.lineTo(points[i].x, points[i].y)
+  }
+  ctx.strokeStyle = accent
+  ctx.lineWidth = 1.5
+  ctx.lineJoin = 'round'
+  ctx.lineCap = 'round'
+  ctx.stroke()
+
+  // Dot on last point
+  const last = points[len - 1]
+  ctx.beginPath()
+  ctx.arc(last.x, last.y, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = accent
+  ctx.fill()
 }
 
 function escapeHtml(s) {

@@ -73,7 +73,7 @@ async function main() {
         const history = prevEntry?.starHistory ? [...prevEntry.starHistory] : []
         if (!history.length || history[history.length - 1].date !== today) {
           history.push({ date: today, count: stars })
-          if (history.length > 52) history.splice(0, history.length - 52)
+          if (history.length > 365) history.splice(0, history.length - 365)
         }
         const entry_data: StatusEntry = {
           archived,

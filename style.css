@@ -831,11 +831,9 @@ header h1::before {
   display: inline-block;
   vertical-align: middle;
   margin-left: 12px;
+  width: 160px;
   height: 28px;
   border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  max-width: 160px;
 }
 .star-count {
   font-size: 12px;
