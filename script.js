@@ -332,9 +332,9 @@ function renderPackageCards(pkgs) {
         <div class="package-header">
           <div class="package-body">
             <div class="package-title">
+              <span class="health-dot" style="background:${health.color}" title="${escapeHtml(health.label)}"></span>
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
-              <span class="health-dot" style="background:${health.color}" title="${escapeHtml(health.label)}"></span>
               <span class="package-meta-bar">
                 ${p.stars > 0 ? `<span class="package-stars">★ ${formatStars(p.stars)}</span>` : ''}
                 ${p.releaseTag ? `<span class="package-release">${escapeHtml(p.releaseTag)}</span>` : ''}
