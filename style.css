@@ -500,6 +500,13 @@ header h1::before {
   border-color: var(--accent);
   color: #fff;
 }
+.filter-badge.lang-more {
+  color: var(--accent);
+  font-weight: 500;
+  border-style: dashed;
+}
+.filter-badge.lang-more:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
+
 .filter-badge.active:hover {
   background: linear-gradient(135deg, var(--accent-hover), var(--accent));
 }

@@ -288,12 +288,17 @@ function renderFilters() {
     return `<span class="filter-badge category ${active}" data-cat="${c}">${escapeHtml(c)} <span class="filter-count">${count}</span></span>`
   }).join('')
 
-  const langs = getAllLanguages(allPackages)
-  document.getElementById('lang-filters').innerHTML = langs.map(l => {
-    const count = allPackages.filter(p => p.languages.includes(l)).length
+  const langEntries = getAllLanguages(allPackages).map(l => ({
+    lang: l, count: allPackages.filter(p => p.languages.includes(l)).length
+  })).sort((a, b) => b.count - a.count)
+  const maxLang = 15
+  const showAll = document.getElementById('lang-filters').dataset.showAll === '1'
+  const visible = showAll ? langEntries : langEntries.slice(0, maxLang)
+  document.getElementById('lang-filters').innerHTML = visible.map(({ lang: l, count }) => {
     const active = activeLangFilters.has(l) ? 'active' : ''
     return `<span class="filter-badge lang ${active}" data-lang="${l}">${escapeHtml(l)} <span class="filter-count">${count}</span></span>`
-  }).join('')
+  }).join('') + (langEntries.length > maxLang && !showAll
+    ? `<span class="filter-badge lang-more" id="lang-show-more">+${langEntries.length - maxLang} more</span>` : '')
 
   updateStats(allPackages.length, filtered.length)
 }
@@ -658,6 +663,8 @@ document.getElementById('category-filters').addEventListener('click', e => {
 })
 
 document.getElementById('lang-filters').addEventListener('click', e => {
+  const more = e.target.closest('.lang-more')
+  if (more) { document.getElementById('lang-filters').dataset.showAll = '1'; render(); return }
   const el = e.target.closest('.filter-badge.lang')
   if (!el) return
   const l = el.dataset.lang
