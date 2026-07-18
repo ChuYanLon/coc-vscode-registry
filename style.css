@@ -827,13 +827,16 @@ header h1::before {
   align-items: center;
   gap: 5px;
 }
-.sparkline-svg {
+.star-chart-img {
   display: inline-block;
   vertical-align: middle;
   margin-left: 12px;
+  height: 28px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  max-width: 160px;
 }
-.sparkline-up { color: var(--green); }
-.sparkline-down { color: var(--pink); }
 .star-count {
   font-size: 12px;
   font-weight: 600;

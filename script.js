@@ -407,7 +407,7 @@ function renderPackageCards(pkgs) {
           ${p.releaseTag ? `<div class="package-detail-row"><span class="package-detail-label">Release</span><span class="package-detail-value">${escapeHtml(p.releaseTag)}${p.releaseDate ? ` · ${escapeHtml(p.releaseDate)}` : ''}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
-          ${p.stars > 0 ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span>${renderSparkline(p.starHistory)}</span></div>` : ''}
+          ${p.stars > 0 && p.source?.repo ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span><img class="star-chart-img" src="https://api.star-history.com/svg?repos=${encodeURIComponent(p.source.repo)}&type=Date" alt="star history" loading="lazy" onerror="this.style.display='none'" onload="this.style.opacity=1"></span></div>` : ''}
           ${renderRelated(p)}
           ${renderRecommendations(p)}
         </div>
