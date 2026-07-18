@@ -829,10 +829,10 @@ header h1::before {
 }
 .star-bar {
   display: inline-block;
-  height: 4px;
-  border-radius: 2px;
+  height: 5px;
+  border-radius: 3px;
   background: var(--yellow);
-  opacity: 0.25;
+  opacity: 0.4;
   flex-shrink: 0;
 }
 .package-release {

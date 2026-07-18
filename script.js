@@ -374,7 +374,7 @@ function renderPackageCards(pkgs) {
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
               <span class="package-meta-bar">
-                ${p.stars > 0 ? `<span class="package-stars"><span class="star-bar" style="width:${Math.round(p.stars / maxStars * 60)}px"></span>★ ${formatStars(p.stars)}</span>` : ''}
+                ${p.stars > 0 ? `<span class="package-stars"><span class="star-bar" style="width:${Math.max(4, Math.round(Math.sqrt(p.stars) / Math.sqrt(maxStars) * 80))}px"></span>★ ${formatStars(p.stars)}</span>` : ''}
                 ${p.releaseTag ? `<span class="package-release">${escapeHtml(p.releaseTag)}</span>` : ''}
                 ${p.lastUpdated ? `<span class="package-date">${formatRelativeDate(p.lastUpdated)}</span>` : ''}
               </span>
