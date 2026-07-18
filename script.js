@@ -297,8 +297,8 @@ function renderFilters() {
   document.getElementById('lang-filters').innerHTML = visible.map(({ lang: l, count }) => {
     const active = activeLangFilters.has(l) ? 'active' : ''
     return `<span class="filter-badge lang ${active}" data-lang="${l}">${escapeHtml(l)} <span class="filter-count">${count}</span></span>`
-  }).join('') + (langEntries.length > maxLang && !showAll
-    ? `<span class="filter-badge lang-more" id="lang-show-more">+${langEntries.length - maxLang} more</span>` : '')
+  }).join('') + (langEntries.length > maxLang
+    ? `<span class="filter-badge lang-more" id="lang-show-more">${showAll ? '▴ Show less' : '+'+ (langEntries.length - maxLang) + ' more'}</span>` : '')
 
   updateStats(allPackages.length, filtered.length)
 }
@@ -664,7 +664,11 @@ document.getElementById('category-filters').addEventListener('click', e => {
 
 document.getElementById('lang-filters').addEventListener('click', e => {
   const more = e.target.closest('.lang-more')
-  if (more) { document.getElementById('lang-filters').dataset.showAll = '1'; render(); return }
+  if (more) {
+    const el = document.getElementById('lang-filters')
+    el.dataset.showAll = el.dataset.showAll === '1' ? '' : '1'
+    render(); return
+  }
   const el = e.target.closest('.filter-badge.lang')
   if (!el) return
   const l = el.dataset.lang
