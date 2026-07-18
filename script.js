@@ -201,6 +201,17 @@ function sortPackages(pkgs) {
     case 'name':
       sorted.sort((a, b) => a.displayName.localeCompare(b.displayName))
       break
+    case 'stars':
+      sorted.sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.displayName.localeCompare(b.displayName))
+      break
+    case 'updated':
+      sorted.sort((a, b) => {
+        if (!a.lastUpdated && !b.lastUpdated) return a.displayName.localeCompare(b.displayName)
+        if (!a.lastUpdated) return 1
+        if (!b.lastUpdated) return -1
+        return b.lastUpdated.localeCompare(a.lastUpdated) || a.displayName.localeCompare(b.displayName)
+      })
+      break
     case 'type':
       sorted.sort((a, b) => a.type.localeCompare(b.type) || a.displayName.localeCompare(b.displayName))
       break
