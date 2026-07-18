@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Check all GitHub repos in registry.json for archived status and last update time.
- * Generates repo-status.json (map of entry name → { archived, lastUpdated }).
+ * Check all GitHub repos in registry.json for archived status, stars, and latest release.
+ * Generates repo-status.json (map of entry name → { archived, lastUpdated, stars, releaseTag, releaseDate }).
  * Requires gh CLI authenticated.
  *
  * Usage: npx tsx scripts/check-repo-status.ts
@@ -18,12 +18,26 @@ interface StatusEntry {
   archived: boolean
   lastUpdated: string
   stars: number
+  releaseTag?: string
+  releaseDate?: string
 }
 
 function ghApi(url: string): { archived?: boolean; pushed_at?: string; stargazers_count?: number } | null {
   try {
     const out = execFileSync('gh', ['api', url, '--jq', '{ archived, pushed_at, stargazers_count }'], {
       encoding: 'utf-8', timeout: 15000, maxBuffer: 1024 * 1024,
+    })
+    return JSON.parse(out.trim())
+  } catch {
+    return null
+  }
+}
+
+function ghApiRelease(url: string): { tag_name?: string; published_at?: string } | null {
+  try {
+    const out = execFileSync('gh', ['api', url, '--jq', '{ tag_name, published_at }'], {
+      encoding: 'utf-8', timeout: 15000, maxBuffer: 1024 * 1024,
+      stdio: ['pipe', 'pipe', 'ignore'],
     })
     return JSON.parse(out.trim())
   } catch {
@@ -46,13 +60,19 @@ async function main() {
     const p = (async () => {
       const repo = entry.source!.repo!
       const data = ghApi(`repos/${repo}`)
+      const release = ghApiRelease(`repos/${repo}/releases/latest`)
       if (data) {
         const archived = data.archived ?? false
-        status[entry.name] = {
+        const entry_data: StatusEntry = {
           archived,
           lastUpdated: (data.pushed_at || '').split('T')[0],
           stars: data.stargazers_count ?? 0,
         }
+        if (release?.tag_name) {
+          entry_data.releaseTag = release.tag_name
+          entry_data.releaseDate = (release.published_at || '').split('T')[0]
+        }
+        status[entry.name] = entry_data
         if (archived) archivedList.push({ name: entry.name, repo })
         const icon = archived ? '📦' : '✓'
         console.log(`${icon} ${entry.name.padEnd(35)} ${repo}`)

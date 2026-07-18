@@ -702,10 +702,21 @@ header h1::before {
   gap: 8px;
   margin-left: auto;
 }
+.health-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 .package-stars {
   font-size: 11px;
   color: var(--yellow);
   font-weight: 500;
+}
+.package-release {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace;
 }
 .package-date {
   font-size: 11px;

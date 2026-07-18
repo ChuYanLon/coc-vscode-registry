@@ -2,132 +2,184 @@
   "vscode-clangd": {
     "archived": false,
     "lastUpdated": "2026-07-01",
-    "stars": 821
+    "stars": 821,
+    "releaseTag": "0.6.0",
+    "releaseDate": "2026-05-21"
   },
   "vscode-rust-analyzer": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 16664
+    "stars": 16664,
+    "releaseTag": "2026-07-13",
+    "releaseDate": "2026-07-13"
   },
   "vscode-go": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 4259
+    "stars": 4259,
+    "releaseTag": "v0.56.0",
+    "releaseDate": "2026-07-15"
   },
   "vscode-gleam": {
     "archived": false,
     "lastUpdated": "2026-06-23",
-    "stars": 234
+    "stars": 234,
+    "releaseTag": "v2.12.0",
+    "releaseDate": "2025-04-21"
   },
   "vscode-pyright": {
     "archived": false,
     "lastUpdated": "2026-07-15",
-    "stars": 15525
+    "stars": 15525,
+    "releaseTag": "1.1.411",
+    "releaseDate": "2026-06-25"
   },
   "vscode-ruff": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 1654
+    "stars": 1654,
+    "releaseTag": "2026.62.0",
+    "releaseDate": "2026-07-16"
   },
   "vscode-ng-language-service": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 100575
+    "stars": 100575,
+    "releaseTag": "v22.0.7",
+    "releaseDate": "2026-07-16"
   },
   "vscode-volar": {
     "archived": false,
     "lastUpdated": "2026-07-12",
-    "stars": 6692
+    "stars": 6692,
+    "releaseTag": "v3.3.7",
+    "releaseDate": "2026-07-08"
   },
   "vscode-eslint": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 1933
+    "stars": 1933,
+    "releaseTag": "release/3.0.34",
+    "releaseDate": "2026-07-16"
   },
   "vscode-biome": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 421
+    "stars": 421,
+    "releaseTag": "v3.7.0",
+    "releaseDate": "2026-06-12"
   },
   "vscode-deno": {
     "archived": false,
     "lastUpdated": "2026-07-02",
-    "stars": 1549
+    "stars": 1549,
+    "releaseTag": "3.53.0",
+    "releaseDate": "2026-07-02"
   },
   "vscode-ember": {
     "archived": false,
     "lastUpdated": "2026-07-10",
-    "stars": 50
+    "stars": 50,
+    "releaseTag": "v3.0.69",
+    "releaseDate": "2026-04-27"
   },
   "vscode-svelte": {
     "archived": false,
     "lastUpdated": "2026-07-15",
-    "stars": 1437
+    "stars": 1437,
+    "releaseTag": "extensions-110.3.0",
+    "releaseDate": "2026-07-15"
   },
   "vscode-astro": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 61103
+    "stars": 61103,
+    "releaseTag": "astro@7.1.1",
+    "releaseDate": "2026-07-17"
   },
   "vscode-tailwindcss": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 3451
+    "stars": 3451,
+    "releaseTag": "v0.16.0",
+    "releaseDate": "2026-07-17"
   },
   "vscode-intelephense": {
     "archived": false,
     "lastUpdated": "2026-06-21",
-    "stars": 1860
+    "stars": 1860,
+    "releaseTag": "v1.18.5",
+    "releaseDate": "2026-06-21"
   },
   "vscode-language-viml": {
     "archived": false,
     "lastUpdated": "2026-07-08",
-    "stars": 26
+    "stars": 26,
+    "releaseTag": "v2.2.0",
+    "releaseDate": "2023-05-22"
   },
   "vscode-lua": {
     "archived": false,
     "lastUpdated": "2026-05-21",
-    "stars": 213
+    "stars": 213,
+    "releaseTag": "v3.18.2",
+    "releaseDate": "2026-04-14"
   },
   "vscode-yaml": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 824
+    "stars": 824,
+    "releaseTag": "1.24.0",
+    "releaseDate": "2026-07-07"
   },
   "vscode-xml": {
     "archived": false,
     "lastUpdated": "2026-06-11",
-    "stars": 320
+    "stars": 320,
+    "releaseTag": "0.29.3",
+    "releaseDate": "2026-06-08"
   },
   "vscode-prisma": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 294
+    "stars": 294,
+    "releaseTag": "31.11.0",
+    "releaseDate": "2026-05-19"
   },
   "vscode-ansible": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 477
+    "stars": 477,
+    "releaseTag": "v26.6.0",
+    "releaseDate": "2026-06-01"
   },
   "vscode-bash-language-server": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 2747
+    "stars": 2747,
+    "releaseTag": "server-5.6.0",
+    "releaseDate": "2025-04-13"
   },
   "vscode-docker": {
     "archived": false,
     "lastUpdated": "2026-07-17",
-    "stars": 1312
+    "stars": 1312,
+    "releaseTag": "v2.0.0",
+    "releaseDate": "2025-05-28"
   },
   "vscode-stylelint": {
     "archived": false,
     "lastUpdated": "2026-07-10",
-    "stars": 339
+    "stars": 339,
+    "releaseTag": "2.2.1",
+    "releaseDate": "2026-03-31"
   },
   "vscode-taplo": {
     "archived": false,
     "lastUpdated": "2026-03-11",
-    "stars": 2336
+    "stars": 2336,
+    "releaseTag": "0.10.0",
+    "releaseDate": "2025-05-23"
   },
   "vscode-css-peek": {
     "archived": false,
@@ -136,13 +188,17 @@
   },
   "vscode-html-ls": {
     "archived": false,
-    "lastUpdated": "2026-07-17",
-    "stars": 187624
+    "lastUpdated": "2026-07-18",
+    "stars": 187624,
+    "releaseTag": "1.129.1",
+    "releaseDate": "2026-07-17"
   },
   "vscode-css-ls": {
     "archived": false,
-    "lastUpdated": "2026-07-17",
-    "stars": 187624
+    "lastUpdated": "2026-07-18",
+    "stars": 187624,
+    "releaseTag": "1.129.1",
+    "releaseDate": "2026-07-17"
   },
   "vscode-marksman": {
     "archived": false,
@@ -152,17 +208,23 @@
   "vscode-tinymist": {
     "archived": false,
     "lastUpdated": "2026-07-15",
-    "stars": 3411
+    "stars": 3411,
+    "releaseTag": "v0.15.2",
+    "releaseDate": "2026-06-22"
   },
   "vscode-texlab": {
     "archived": false,
     "lastUpdated": "2026-07-13",
-    "stars": 103
+    "stars": 103,
+    "releaseTag": "v5.26.0",
+    "releaseDate": "2026-06-25"
   },
   "vscode-bitbake": {
     "archived": false,
     "lastUpdated": "2026-07-16",
-    "stars": 69
+    "stars": 69,
+    "releaseTag": "v2.9.0",
+    "releaseDate": "2026-06-08"
   },
   "vscode-jq": {
     "archived": false,
@@ -177,17 +239,23 @@
   "vscode-html-css-support": {
     "archived": false,
     "lastUpdated": "2026-05-28",
-    "stars": 168
+    "stars": 168,
+    "releaseTag": "2.0.14",
+    "releaseDate": "2026-02-12"
   },
   "vscode-css-modules": {
     "archived": false,
     "lastUpdated": "2026-04-02",
-    "stars": 152
+    "stars": 152,
+    "releaseTag": "v0.5.1",
+    "releaseDate": "2023-04-21"
   },
   "vscode-prettier-vscode": {
     "archived": false,
     "lastUpdated": "2026-06-03",
-    "stars": 5506
+    "stars": 5506,
+    "releaseTag": "v12.4.0",
+    "releaseDate": "2026-03-16"
   },
   "vscode-gitignore": {
     "archived": false,
@@ -197,12 +265,16 @@
   "vscode-live-server": {
     "archived": false,
     "lastUpdated": "2026-06-10",
-    "stars": 6848
+    "stars": 6848,
+    "releaseTag": "5.7.10",
+    "releaseDate": "2026-02-27"
   },
   "vscode-code-runner": {
     "archived": false,
     "lastUpdated": "2024-08-11",
-    "stars": 2430
+    "stars": 2430,
+    "releaseTag": "0.9.17",
+    "releaseDate": "2020-03-11"
   },
   "vscode-write-good": {
     "archived": false,
@@ -227,7 +299,9 @@
   "vscode-vue3-snippets": {
     "archived": false,
     "lastUpdated": "2024-06-10",
-    "stars": 99
+    "stars": 99,
+    "releaseTag": "v0.1.12",
+    "releaseDate": "2020-07-26"
   },
   "vscode-vue3-snippets-for": {
     "archived": false,
@@ -252,12 +326,16 @@
   "vscode-js-jsx-snippets": {
     "archived": false,
     "lastUpdated": "2026-06-13",
-    "stars": 18
+    "stars": 18,
+    "releaseTag": "v12.0.2",
+    "releaseDate": "2026-03-29"
   },
   "vscode-react-native-redux-snippets": {
     "archived": false,
     "lastUpdated": "2020-10-09",
-    "stars": 54
+    "stars": 54,
+    "releaseTag": "v0.2.2",
+    "releaseDate": "2017-04-19"
   },
   "vscode-react-redux-react-router": {
     "archived": false,
@@ -267,7 +345,9 @@
   "vscode-react-snippets": {
     "archived": false,
     "lastUpdated": "2020-02-18",
-    "stars": 383
+    "stars": 383,
+    "releaseTag": "v2.4.0",
+    "releaseDate": "2019-10-29"
   },
   "vscode-simple-react-snippets": {
     "archived": false,
@@ -282,7 +362,9 @@
   "vscode-typescript-react-snippets": {
     "archived": false,
     "lastUpdated": "2019-07-17",
-    "stars": 39
+    "stars": 39,
+    "releaseTag": "v1.3.0",
+    "releaseDate": "2019-07-05"
   },
   "vscode-next.js": {
     "archived": false,
@@ -292,7 +374,9 @@
   "vscode-nextjs-snippets": {
     "archived": false,
     "lastUpdated": "2020-12-01",
-    "stars": 9
+    "stars": 9,
+    "releaseTag": "v1.6.0",
+    "releaseDate": "2020-10-29"
   },
   "vscode-solidjs-snippets": {
     "archived": false,
@@ -337,7 +421,9 @@
   "vscode-svelte-2": {
     "archived": false,
     "lastUpdated": "2023-06-26",
-    "stars": 33
+    "stars": 33,
+    "releaseTag": "v0.5.0",
+    "releaseDate": "2020-07-13"
   },
   "vscode-svelte-snippets": {
     "archived": false,
@@ -362,7 +448,9 @@
   "vscode-javascript-snippets": {
     "archived": false,
     "lastUpdated": "2025-12-20",
-    "stars": 340
+    "stars": 340,
+    "releaseTag": "v1.8.0",
+    "releaseDate": "2020-04-21"
   },
   "vscode-node": {
     "archived": false,
@@ -377,7 +465,9 @@
   "vscode-standardjs": {
     "archived": false,
     "lastUpdated": "2022-01-09",
-    "stars": 99
+    "stars": 99,
+    "releaseTag": "0.4.1",
+    "releaseDate": "2017-02-14"
   },
   "vscode-djaneiro": {
     "archived": false,
@@ -402,7 +492,9 @@
   "vscode-opencv-snippets": {
     "archived": false,
     "lastUpdated": "2024-03-02",
-    "stars": 10
+    "stars": 10,
+    "releaseTag": "v1.2.2",
+    "releaseDate": "2020-07-02"
   },
   "vscode-pygame-snippets": {
     "archived": false,
@@ -422,7 +514,9 @@
   "vscode-pytorch": {
     "archived": false,
     "lastUpdated": "2021-10-01",
-    "stars": 61
+    "stars": 61,
+    "releaseTag": "v0.2.2",
+    "releaseDate": "2018-11-14"
   },
   "vscode-snp-pandas-basic": {
     "archived": false,
@@ -432,7 +526,9 @@
   "vscode-tensorflow2snippets": {
     "archived": false,
     "lastUpdated": "2020-03-03",
-    "stars": 12
+    "stars": 12,
+    "releaseTag": "0.1.0",
+    "releaseDate": "2020-03-03"
   },
   "vscode-tkinter": {
     "archived": false,
@@ -462,7 +558,9 @@
   "vscode-rust-flash": {
     "archived": false,
     "lastUpdated": "2025-07-25",
-    "stars": 9
+    "stars": 9,
+    "releaseTag": "v3.1.2",
+    "releaseDate": "2025-07-25"
   },
   "vscode-arduino": {
     "archived": false,
@@ -487,7 +585,9 @@
   "vscode-awesome-flutter": {
     "archived": false,
     "lastUpdated": "2022-10-02",
-    "stars": 169
+    "stars": 169,
+    "releaseTag": "version-4",
+    "releaseDate": "2022-07-31"
   },
   "vscode-flutter": {
     "archived": false,
@@ -502,7 +602,9 @@
   "vscode-flutter-riverpod": {
     "archived": false,
     "lastUpdated": "2025-09-28",
-    "stars": 69
+    "stars": 69,
+    "releaseTag": "1.1.1",
+    "releaseDate": "2022-06-18"
   },
   "vscode-express": {
     "archived": false,
@@ -532,22 +634,30 @@
   "vscode-cypress-snippets": {
     "archived": false,
     "lastUpdated": "2020-11-01",
-    "stars": 0
+    "stars": 0,
+    "releaseTag": "v1.0.1",
+    "releaseDate": "2020-11-01"
   },
   "vscode-jest": {
     "archived": false,
     "lastUpdated": "2026-02-28",
-    "stars": 39
+    "stars": 39,
+    "releaseTag": "v2.0.1",
+    "releaseDate": "2026-02-28"
   },
   "vscode-playwright-snippets": {
     "archived": false,
     "lastUpdated": "2024-11-11",
-    "stars": 19
+    "stars": 19,
+    "releaseTag": "1.0.0",
+    "releaseDate": "2021-02-27"
   },
   "vscode-mysql-snippets": {
     "archived": false,
     "lastUpdated": "2025-02-05",
-    "stars": 8
+    "stars": 8,
+    "releaseTag": "v0.0.10",
+    "releaseDate": "2025-02-05"
   },
   "vscode-postgresql-snippets": {
     "archived": false,
@@ -557,17 +667,23 @@
   "vscode-uni-app-snippets": {
     "archived": false,
     "lastUpdated": "2026-06-25",
-    "stars": 8
+    "stars": 8,
+    "releaseTag": "v0.11.2",
+    "releaseDate": "2026-06-25"
   },
   "vscode-uni-cloud-snippets": {
     "archived": false,
     "lastUpdated": "2026-06-25",
-    "stars": 1
+    "stars": 1,
+    "releaseTag": "v0.4.2",
+    "releaseDate": "2026-06-25"
   },
   "vscode-uni-ui-snippets": {
     "archived": false,
     "lastUpdated": "2026-06-26",
-    "stars": 3
+    "stars": 3,
+    "releaseTag": "v0.7.1",
+    "releaseDate": "2026-05-08"
   },
   "vscode-ue4-snippets-vs": {
     "archived": false,
@@ -592,7 +708,9 @@
   "vscode-apacheconf": {
     "archived": false,
     "lastUpdated": "2024-07-21",
-    "stars": 8
+    "stars": 8,
+    "releaseTag": "v1.4.0",
+    "releaseDate": "2024-07-21"
   },
   "vscode-classic-asp": {
     "archived": false,
@@ -622,7 +740,9 @@
   "vscode-ionic": {
     "archived": false,
     "lastUpdated": "2020-07-30",
-    "stars": 27
+    "stars": 27,
+    "releaseTag": "v2.2.2",
+    "releaseDate": "2020-07-30"
   },
   "vscode-jquery-snippets": {
     "archived": false,
@@ -642,6 +762,8 @@
   "vscode-vsc_html5_boilerplate": {
     "archived": false,
     "lastUpdated": "2022-05-13",
-    "stars": 51
+    "stars": 51,
+    "releaseTag": "1.1.0",
+    "releaseDate": "2020-09-28"
   }
 }

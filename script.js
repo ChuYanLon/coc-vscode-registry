@@ -51,6 +51,8 @@ async function init() {
       p.archived = s.archived
       p.lastUpdated = s.lastUpdated
       p.stars = s.stars || 0
+      p.releaseTag = s.releaseTag || ''
+      p.releaseDate = s.releaseDate || ''
     })
     buildStats()
     buildRelationIndex()
@@ -323,6 +325,7 @@ function renderPackageCards(pkgs) {
     if (p.prebuilt) deps.push('prebuilt-vsix')
 
     const sourceUrl = p.source?.repo ? `https://github.com/${p.source.repo}` : p.url
+    const health = computeHealth(p)
 
     return `
       <div class="package-card${isExpanded ? ' expanded' : ''}${p.archived ? ' archived' : ''}" data-pkg-name="${escapeHtml(p.name)}">
@@ -332,7 +335,9 @@ function renderPackageCards(pkgs) {
               ${escapeHtml(p.displayName)}
               <span class="package-name">${escapeHtml(p.name)}</span>
               <span class="package-meta-bar">
+                <span class="health-dot" style="background:${health.color}" title="${escapeHtml(health.label)}"></span>
                 ${p.stars > 0 ? `<span class="package-stars">★ ${formatStars(p.stars)}</span>` : ''}
+                ${p.releaseTag ? `<span class="package-release">${escapeHtml(p.releaseTag)}</span>` : ''}
                 ${p.lastUpdated ? `<span class="package-date">${formatRelativeDate(p.lastUpdated)}</span>` : ''}
               </span>
             </div>
@@ -360,6 +365,7 @@ function renderPackageCards(pkgs) {
           </div>
           ${sourceUrl ? `<div class="package-detail-row"><span class="package-detail-label">Source</span><span class="package-detail-value"><a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(sourceUrl)}</a></span></div>` : ''}
           ${deps.length ? `<div class="package-detail-row"><span class="package-detail-label">Deps</span><span class="package-detail-value">${deps.join(' · ')}</span></div>` : ''}
+          ${p.releaseTag ? `<div class="package-detail-row"><span class="package-detail-label">Release</span><span class="package-detail-value">${escapeHtml(p.releaseTag)}${p.releaseDate ? ` · ${escapeHtml(p.releaseDate)}` : ''}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
           ${renderRelated(p)}
@@ -400,6 +406,30 @@ function formatRelativeDate(dateStr) {
   if (days < 30) return Math.floor(days / 7) + 'w ago'
   if (days < 365) return Math.floor(days / 30) + 'mo ago'
   return Math.floor(days / 365) + 'y ago'
+}
+
+function computeHealth(p) {
+  if (p.archived) return { label: 'Archived', color: 'var(--pink)' }
+
+  let score = 50
+  if (p.stars >= 10000) score += 25
+  else if (p.stars >= 1000) score += 20
+  else if (p.stars >= 100) score += 15
+  else if (p.stars >= 10) score += 10
+
+  const diff = Date.now() - new Date(p.lastUpdated || 0).getTime()
+  const days = Math.floor(diff / 86400000)
+  if (days < 30) score += 25
+  else if (days < 90) score += 20
+  else if (days < 180) score += 15
+  else if (days < 365) score += 10
+
+  if (p.type === 'snippets') score = Math.max(score - 5, 0)
+  if (p.type === 'pure-lsp') score = Math.min(score + 5, 100)
+
+  if (score >= 80) return { label: 'Healthy', color: 'var(--green)' }
+  if (score >= 50) return { label: 'Fair', color: 'var(--orange)' }
+  return { label: 'Stale', color: 'var(--pink)' }
 }
 
 function render() {
