@@ -424,20 +424,16 @@ function renderPackageCards(pkgs) {
   container.innerHTML = html
 
   requestAnimationFrame(() => {
-    document.querySelectorAll('.star-chart-img').forEach(canvas => {
-      const pkgName = canvas.dataset.pkg
-      const pkg = allPackages.find(p => p.name === pkgName)
-      if (pkg && pkg.starHistory && pkg.starHistory.length >= 2) {
-        drawStarChart(canvas, pkg.starHistory)
-      }
-    })
+    for (const canvas of document.querySelectorAll('.star-chart-img')) {
+      const pkg = allPackages.find(p => p.name === canvas.dataset.pkg)
+      if (pkg?.starHistory?.length >= 2) drawStarChart(canvas, pkg.starHistory)
+    }
   })
 }
 
 function drawStarChart(canvas, history) {
   const dpr = window.devicePixelRatio || 1
-  const w = 160
-  const h = 28
+  const w = 160, h = 28
   canvas.width = w * dpr
   canvas.height = h * dpr
   canvas.style.width = w + 'px'
@@ -446,50 +442,39 @@ function drawStarChart(canvas, history) {
   ctx.scale(dpr, dpr)
 
   const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#4a7cff'
-
   const values = history.map(h => h.count)
   const min = Math.min(...values)
   const max = Math.max(...values)
   const range = max - min || 1
-
-  const padX = 2
-  const padY = 3
-  const chartW = w - padX * 2
-  const chartH = h - padY * 2
+  const padX = 2, padY = 3
+  const chartW = w - padX * 2, chartH = h - padY * 2
   const len = values.length
 
-  const points = values.map((v, i) => ({
+  const pts = values.map((v, i) => ({
     x: padX + (i / (len - 1)) * chartW,
     y: padY + chartH - ((v - min) / range) * chartH
   }))
 
-  // Gradient fill below line
-  const gradient = ctx.createLinearGradient(0, padY, 0, padY + chartH)
-  gradient.addColorStop(0, accent + '4d')
-  gradient.addColorStop(1, accent + '00')
   ctx.beginPath()
-  ctx.moveTo(points[0].x, padY + chartH)
-  for (const p of points) ctx.lineTo(p.x, p.y)
-  ctx.lineTo(points[len - 1].x, padY + chartH)
+  ctx.moveTo(pts[0].x, padY + chartH)
+  for (const p of pts) ctx.lineTo(p.x, p.y)
+  ctx.lineTo(pts[len - 1].x, padY + chartH)
   ctx.closePath()
-  ctx.fillStyle = gradient
+  const g = ctx.createLinearGradient(0, padY, 0, padY + chartH)
+  g.addColorStop(0, accent + '4d')
+  g.addColorStop(1, accent + '00')
+  ctx.fillStyle = g
   ctx.fill()
 
-  // Line
   ctx.beginPath()
-  for (let i = 0; i < len; i++) {
-    i === 0 ? ctx.moveTo(points[i].x, points[i].y) : ctx.lineTo(points[i].x, points[i].y)
-  }
+  ctx.moveTo(pts[0].x, pts[0].y)
+  for (let i = 1; i < len; i++) ctx.lineTo(pts[i].x, pts[i].y)
   ctx.strokeStyle = accent
   ctx.lineWidth = 1.5
-  ctx.lineJoin = 'round'
-  ctx.lineCap = 'round'
   ctx.stroke()
 
-  // Dot on last point
-  const last = points[len - 1]
   ctx.beginPath()
-  ctx.arc(last.x, last.y, 2.5, 0, Math.PI * 2)
+  ctx.arc(pts[len - 1].x, pts[len - 1].y, 2.5, 0, Math.PI * 2)
   ctx.fillStyle = accent
   ctx.fill()
 }

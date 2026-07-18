@@ -827,6 +827,7 @@ header h1::before {
   align-items: center;
   gap: 5px;
 }
+
 .star-chart-img {
   display: inline-block;
   vertical-align: middle;
