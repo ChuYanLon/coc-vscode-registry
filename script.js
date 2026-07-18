@@ -447,17 +447,22 @@ function computeHealth(p) {
 }
 
 async function loadTimeline() {
-  try {
-    const resp = await fetch('CHANGELOG.md')
-    const text = await resp.text()
-    const sections = text.split(/\n(?=## )/).slice(1)
-    timelineEntries = sections.map(s => {
-      const m = s.match(/^## \[([^\]]+)\] - (\d{4}-\d{2}-\d{2})/)
-      if (!m) return null
-      const added = [...s.matchAll(/`([^`]+)`/g)].map(x => x[1])
-      return { version: m[1], date: m[2], added }
-    }).filter(Boolean).reverse()
-  } catch {}
+  const groups = {}
+  for (const p of allPackages) {
+    const v = p.minPluginVersion || '0.0.0'
+    if (!groups[v]) groups[v] = []
+    groups[v].push(p.name)
+  }
+  timelineEntries = Object.entries(groups)
+    .map(([version, added]) => ({ version, added }))
+    .sort((a, b) => {
+      const pa = a.version.split('.').map(Number)
+      const pb = b.version.split('.').map(Number)
+      for (let i = 0; i < 3; i++) {
+        if ((pa[i]||0) !== (pb[i]||0)) return (pa[i]||0) - (pb[i]||0)
+      }
+      return 0
+    })
 }
 
 function getRecommendations(p, count) {
@@ -835,10 +840,11 @@ function renderTimeline() {
   list.innerHTML = timelineEntries.map(e =>
     `<div class="timeline-entry" data-version="${escapeHtml(e.version)}">
       <span class="timeline-version">${escapeHtml(e.version)}</span>
-      <span class="timeline-date">${escapeHtml(e.date)}</span>
-      <span class="timeline-pkgs">${e.added.filter(n => allPackages.some(p => p.name === n)).map(n =>
-        `<a class="related-link" data-pkg="${escapeHtml(n)}" href="#">${escapeHtml(n)}</a>`
-      ).join(', ')}</span>
+      <span class="timeline-count">+${e.added.length}</span>
+      <span class="timeline-pkgs">${e.added.map(n => {
+        const p = allPackages.find(p2 => p2.name === n)
+        return p ? `<a class="related-link" data-pkg="${escapeHtml(n)}" href="#">${escapeHtml(p.displayName)}</a>` : escapeHtml(n)
+      }).join(', ')}</span>
     </div>`
   ).join('')
 }

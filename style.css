@@ -298,11 +298,11 @@ header h1::before {
   white-space: nowrap;
   min-width: 48px;
 }
-.timeline-date {
+.timeline-count {
   font-size: 11px;
-  color: var(--text-muted);
+  color: var(--text-tertiary);
   white-space: nowrap;
-  min-width: 80px;
+  min-width: 32px;
 }
 .timeline-pkgs {
   color: var(--text-secondary);
