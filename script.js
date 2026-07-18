@@ -545,6 +545,20 @@ document.getElementById('presets').addEventListener('click', e => {
   const label = tag.dataset.preset
   if (activePreset === label) {
     activePreset = ''
+    activeTypeFilters.clear()
+    activeCategoryFilters.clear()
+    activeLangFilters.clear()
+    versionFilter = ''
+    document.getElementById('search').value = ''
+    searchQuery = ''
+    const sel = document.querySelector('.custom-select[data-name="status"]')
+    const opt = sel?.querySelector('.custom-select-option[data-value="all"]')
+    if (opt) {
+      sel.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'))
+      opt.classList.add('selected')
+      sel.querySelector('.custom-select-value').textContent = opt.textContent
+      sel.dataset.value = 'all'
+    }
     render()
     return
   }
