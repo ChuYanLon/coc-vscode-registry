@@ -521,21 +521,21 @@ function getSearchSuggestions(q) {
 }
 
 const presets = [
-  { label: 'LSP', icon: '⚡', type: ['pure-lsp'] },
-  { label: 'Formatter', icon: '🎨', category: ['Formatter'] },
-  { label: 'Linter', icon: '🔍', category: ['Linter'] },
-  { label: 'Python', icon: '🐍', lang: ['python'] },
-  { label: 'Web Frontend', icon: '🌐', lang: ['typescript', 'javascript', 'css', 'html', 'react'] },
-  { label: 'Rust', icon: '🦀', lang: ['rust'] },
-  { label: 'Go', icon: '🔷', lang: ['go'] },
-  { label: 'Snippets', icon: '📋', type: ['snippets'] },
-  { label: 'Archived', icon: '📦', status: 'archived' },
+  { label: 'LSP', type: ['pure-lsp'] },
+  { label: 'Formatter', category: ['Formatter'] },
+  { label: 'Linter', category: ['Linter'] },
+  { label: 'Python', lang: ['python'] },
+  { label: 'Web Frontend', lang: ['typescript', 'javascript', 'css', 'html', 'react'] },
+  { label: 'Rust', lang: ['rust'] },
+  { label: 'Go', lang: ['go'] },
+  { label: 'Snippets', type: ['snippets'] },
+  { label: 'Archived', status: 'archived' },
 ]
 
 function renderPresets() {
   const el = document.getElementById('presets')
   el.innerHTML = presets.map(p =>
-    `<span class="preset-tag${activePreset === p.label ? ' active' : ''}" data-preset="${escapeHtml(p.label)}">${p.icon} ${escapeHtml(p.label)}</span>`
+    `<span class="preset-tag${activePreset === p.label ? ' active' : ''}" data-preset="${escapeHtml(p.label)}">${escapeHtml(p.label)}</span>`
   ).join('')
 }
 
