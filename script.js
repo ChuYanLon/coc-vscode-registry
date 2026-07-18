@@ -36,6 +36,7 @@ const PAGE_SIZE = 50
 let highlightIndex = -1
 let timelineEntries = []
 let suggestIndex = -1
+let versionFilter = ''
 
 async function init() {
   showSkeleton(true)
@@ -99,15 +100,15 @@ function buildStats() {
 
   document.getElementById('stats-types').innerHTML =
     Object.entries(typeCounts).sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => `<span class="stat-item" style="border-color:${typeColors[k]||'var(--border)'};color:${typeColors[k]||'var(--text-secondary)'}"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
+      .map(([k, v]) => `<span class="stat-item" data-stat-type="${escapeHtml(k)}" style="border-color:${typeColors[k]||'var(--border)'};color:${typeColors[k]||'var(--text-secondary)'}"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
 
   document.getElementById('stats-categories').innerHTML =
     Object.entries(catCounts).sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => `<span class="stat-item"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
+      .map(([k, v]) => `<span class="stat-item" data-stat-category="${escapeHtml(k)}"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
 
   document.getElementById('stats-languages').innerHTML =
     Object.entries(langCounts).sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => `<span class="stat-item"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
+      .map(([k, v]) => `<span class="stat-item" data-stat-lang="${escapeHtml(k)}"><span class="stat-num">${v}</span>${escapeHtml(k)}</span>`).join('')
 }
 
 let relationIndex = null
@@ -236,6 +237,7 @@ function filterPackages() {
     const sv = getSelectValue('status')
     if (sv === 'active' && p.archived) return false
     if (sv === 'archived' && !p.archived) return false
+    if (versionFilter && p.minPluginVersion !== versionFilter) return false
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       const matchName = p.name.toLowerCase().includes(q)
@@ -261,6 +263,7 @@ function renderActiveFilters() {
   for (const t of activeTypeFilters) chips.push({ type: 'type', label: t })
   for (const c of activeCategoryFilters) chips.push({ type: 'category', label: c })
   for (const l of activeLangFilters) chips.push({ type: 'lang', label: l })
+  if (versionFilter) chips.push({ type: 'version', label: 'v' + versionFilter })
   if (chips.length === 0) { container.innerHTML = ''; return }
   container.innerHTML = chips.map(c =>
     `<span class="active-filter-tag" data-filter-type="${c.type}" data-filter-value="${escapeHtml(c.label)}">${escapeHtml(c.label)} <button class="active-filter-remove">✕</button></span>`
@@ -285,6 +288,13 @@ function renderFilters() {
     return `<span class="filter-badge category ${active}" data-cat="${c}">${escapeHtml(c)} <span class="filter-count">${count}</span></span>`
   }).join('')
 
+  const langs = getAllLanguages(allPackages)
+  document.getElementById('lang-filters').innerHTML = langs.map(l => {
+    const count = allPackages.filter(p => p.languages.includes(l)).length
+    const active = activeLangFilters.has(l) ? 'active' : ''
+    return `<span class="filter-badge lang ${active}" data-lang="${l}">${escapeHtml(l)} <span class="filter-count">${count}</span></span>`
+  }).join('')
+
   updateStats(allPackages.length, filtered.length)
 }
 
@@ -295,6 +305,12 @@ function getAllTypes(pkgs) {
 function getAllCategories(pkgs) {
   const set = new Set()
   pkgs.forEach(p => p.categories.forEach(c => set.add(c)))
+  return [...set].sort()
+}
+
+function getAllLanguages(pkgs) {
+  const set = new Set()
+  pkgs.forEach(p => p.languages.forEach(l => set.add(l)))
   return [...set].sort()
 }
 
@@ -605,6 +621,7 @@ document.getElementById('active-filters').addEventListener('click', e => {
     if (type === 'type') activeTypeFilters.delete(val)
     else if (type === 'category') activeCategoryFilters.delete(val)
     else if (type === 'lang') activeLangFilters.delete(val)
+    else if (type === 'version') versionFilter = ''
     render()
     return
   }
@@ -613,6 +630,7 @@ document.getElementById('active-filters').addEventListener('click', e => {
     activeTypeFilters.clear()
     activeCategoryFilters.clear()
     activeLangFilters.clear()
+    versionFilter = ''
     document.getElementById('search').value = ''
     searchQuery = ''
     render()
@@ -636,6 +654,15 @@ document.getElementById('category-filters').addEventListener('click', e => {
   const c = el.dataset.cat
   if (activeCategoryFilters.has(c)) activeCategoryFilters.delete(c)
   else activeCategoryFilters.add(c)
+  render()
+})
+
+document.getElementById('lang-filters').addEventListener('click', e => {
+  const el = e.target.closest('.filter-badge.lang')
+  if (!el) return
+  const l = el.dataset.lang
+  if (activeLangFilters.has(l)) activeLangFilters.delete(l)
+  else activeLangFilters.add(l)
   render()
 })
 
@@ -824,6 +851,29 @@ document.getElementById('stats-toggle')?.addEventListener('click', () => {
   btn.textContent = isOpen ? '▾ Stats' : '▸ Stats'
 })
 
+// Click stats to filter
+document.getElementById('stats-types').addEventListener('click', e => {
+  const el = e.target.closest('[data-stat-type]')
+  if (!el) return
+  const t = el.dataset.statType
+  if (activeTypeFilters.has(t)) activeTypeFilters.delete(t); else activeTypeFilters.add(t)
+  render()
+})
+document.getElementById('stats-categories').addEventListener('click', e => {
+  const el = e.target.closest('[data-stat-category]')
+  if (!el) return
+  const c = el.dataset.statCategory
+  if (activeCategoryFilters.has(c)) activeCategoryFilters.delete(c); else activeCategoryFilters.add(c)
+  render()
+})
+document.getElementById('stats-languages').addEventListener('click', e => {
+  const el = e.target.closest('[data-stat-lang]')
+  if (!el) return
+  const l = el.dataset.statLang
+  if (activeLangFilters.has(l)) activeLangFilters.delete(l); else activeLangFilters.add(l)
+  render()
+})
+
 // Timeline
 document.getElementById('timeline-toggle')?.addEventListener('click', () => {
   const panel = document.getElementById('timeline-panel')
@@ -838,7 +888,7 @@ function renderTimeline() {
   const list = document.getElementById('timeline-list')
   if (!list || !timelineEntries.length) return
   list.innerHTML = timelineEntries.map(e =>
-    `<div class="timeline-entry" data-version="${escapeHtml(e.version)}">
+    `<div class="timeline-entry${versionFilter === e.version ? ' active' : ''}" data-version="${escapeHtml(e.version)}">
       <span class="timeline-version">${escapeHtml(e.version)}</span>
       <span class="timeline-count">+${e.added.length}</span>
       <span class="timeline-pkgs">${e.added.map(n => {
@@ -848,6 +898,15 @@ function renderTimeline() {
     </div>`
   ).join('')
 }
+
+document.getElementById('timeline-list').addEventListener('click', e => {
+  const entry = e.target.closest('.timeline-entry')
+  if (!entry) return
+  const v = entry.dataset.version
+  versionFilter = versionFilter === v ? '' : v
+  render()
+  renderTimeline()
+})
 
 // Infinite scroll
 let scrollObserver = null

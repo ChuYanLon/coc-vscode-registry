@@ -287,10 +287,16 @@ header h1::before {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  padding: 6px 0;
+  padding: 6px 8px;
+  margin: 0 -8px;
   font-size: 13px;
   border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s;
 }
+.timeline-entry:hover { background: var(--bg-card-hover); }
+.timeline-entry.active { background: var(--blue-bg); }
 .timeline-entry:last-child { border-bottom: none; }
 .timeline-version {
   font-weight: 600;
@@ -342,8 +348,10 @@ header h1::before {
   border: 1px solid var(--border);
   background: var(--bg-filter);
   color: var(--text-secondary);
-  line-height: 1.5;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
 }
+.stat-item:hover { background: var(--bg-filter-hover); border-color: var(--border-hover); }
 .stat-item .stat-num {
   font-weight: 600;
   font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace;
