@@ -422,58 +422,6 @@ function renderPackageCards(pkgs) {
 
   container.innerHTML = html
 }
-  })
-}
-
-function drawStarChart(canvas, history) {
-  const dpr = window.devicePixelRatio || 1
-  const w = 160, h = 28
-  canvas.width = w * dpr
-  canvas.height = h * dpr
-  canvas.style.width = w + 'px'
-  canvas.style.height = h + 'px'
-  const ctx = canvas.getContext('2d')
-  ctx.scale(dpr, dpr)
-
-  const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#4a7cff'
-  const values = history.map(h => h.count)
-  const min = Math.min(...values)
-  const max = Math.max(...values)
-  const range = max - min || 1
-  const padX = 2, padY = 3
-  const chartW = w - padX * 2, chartH = h - padY * 2
-  const len = values.length
-
-  const pts = values.map((v, i) => ({
-    x: padX + (i / (len - 1 || 1)) * chartW,
-    y: padY + chartH - ((v - min) / range) * chartH
-  }))
-
-  if (len > 1) {
-    ctx.beginPath()
-    ctx.moveTo(pts[0].x, padY + chartH)
-    for (const p of pts) ctx.lineTo(p.x, p.y)
-    ctx.lineTo(pts[len - 1].x, padY + chartH)
-    ctx.closePath()
-    const g = ctx.createLinearGradient(0, padY, 0, padY + chartH)
-    g.addColorStop(0, accent + '4d')
-    g.addColorStop(1, accent + '00')
-    ctx.fillStyle = g
-    ctx.fill()
-
-    ctx.beginPath()
-    ctx.moveTo(pts[0].x, pts[0].y)
-    for (let i = 1; i < len; i++) ctx.lineTo(pts[i].x, pts[i].y)
-    ctx.strokeStyle = accent
-    ctx.lineWidth = 1.5
-    ctx.stroke()
-  }
-
-  ctx.beginPath()
-  ctx.arc(pts[len - 1].x, pts[len - 1].y, 2.5, 0, Math.PI * 2)
-  ctx.fillStyle = accent
-  ctx.fill()
-}
 
 function escapeHtml(s) {
   const div = document.createElement('div')
