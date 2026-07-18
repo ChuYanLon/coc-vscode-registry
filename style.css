@@ -652,6 +652,11 @@ header h1::before {
   color: var(--accent);
   background: var(--blue-bg);
 }
+.preset-tag.active {
+  border-color: var(--accent);
+  color: #fff;
+  background: var(--accent);
+}
 
 .active-filters {
   display: flex;

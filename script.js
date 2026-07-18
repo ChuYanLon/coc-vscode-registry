@@ -38,6 +38,7 @@ let timelineEntries = []
 let suggestIndex = -1
 let versionFilter = ''
 let maxStars = 0
+let activePreset = ''
 
 async function init() {
   showSkeleton(true)
@@ -533,14 +534,23 @@ const presets = [
 
 function renderPresets() {
   const el = document.getElementById('presets')
-  el.innerHTML = presets.map(p => `<span class="preset-tag" data-preset="${escapeHtml(p.label)}">${p.icon} ${escapeHtml(p.label)}</span>`).join('')
+  el.innerHTML = presets.map(p =>
+    `<span class="preset-tag${activePreset === p.label ? ' active' : ''}" data-preset="${escapeHtml(p.label)}">${p.icon} ${escapeHtml(p.label)}</span>`
+  ).join('')
 }
 
 document.getElementById('presets').addEventListener('click', e => {
   const tag = e.target.closest('.preset-tag')
   if (!tag) return
-  const p = presets.find(p => p.label === tag.dataset.preset)
+  const label = tag.dataset.preset
+  if (activePreset === label) {
+    activePreset = ''
+    render()
+    return
+  }
+  const p = presets.find(p => p.label === label)
   if (!p) return
+  activePreset = label
   activeTypeFilters.clear()
   activeCategoryFilters.clear()
   activeLangFilters.clear()
@@ -735,6 +745,7 @@ document.getElementById('active-filters').addEventListener('click', e => {
     activeCategoryFilters.clear()
     activeLangFilters.clear()
     versionFilter = ''
+    activePreset = ''
     document.getElementById('search').value = ''
     searchQuery = ''
     render()
