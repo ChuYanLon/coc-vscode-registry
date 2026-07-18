@@ -57,6 +57,7 @@ async function init() {
       p.stars = s.stars || 0
       p.releaseTag = s.releaseTag || ''
       p.releaseDate = s.releaseDate || ''
+      p.starHistory = s.starHistory || []
     })
     maxStars = Math.max(...allPackages.map(p => p.stars), 1)
     buildStats()
@@ -406,7 +407,7 @@ function renderPackageCards(pkgs) {
           ${p.releaseTag ? `<div class="package-detail-row"><span class="package-detail-label">Release</span><span class="package-detail-value">${escapeHtml(p.releaseTag)}${p.releaseDate ? ` · ${escapeHtml(p.releaseDate)}` : ''}</span></div>` : ''}
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
-          ${p.stars > 0 && p.source?.repo ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><img class="sparkline" src="https://api.star-history.com/svg?repos=${encodeURIComponent(p.source.repo)}&type=Date" alt="star history" loading="lazy" onerror="this.style.display='none'"></span></div>` : ''}
+          ${p.stars > 0 ? `<div class="package-detail-row"><span class="package-detail-label">Stars</span><span class="package-detail-value"><span class="star-count">★ ${formatStars(p.stars)}</span>${renderSparkline(p.starHistory)}</span></div>` : ''}
           ${renderRelated(p)}
           ${renderRecommendations(p)}
         </div>
@@ -470,6 +471,25 @@ function computeHealth(p) {
   if (score >= 80) return { label: 'Healthy', color: 'var(--green)' }
   if (score >= 50) return { label: 'Fair', color: 'var(--orange)' }
   return { label: 'Stale', color: 'var(--pink)' }
+}
+
+function renderSparkline(history) {
+  if (!history || history.length < 1) return ''
+  const w = 140, h = 28, pad = 2
+  const values = history.map(p => p.count)
+  const min = Math.min(...values), max = Math.max(...values)
+  const range = Math.max(max - min, 1)
+  const xStep = values.length > 1 ? (w - pad * 2) / (values.length - 1) : 0
+  const points = values.map((v, i) => {
+    const x = values.length > 1 ? pad + i * xStep : w / 2
+    const y = h - pad - ((v - min) / range) * (h - pad * 2)
+    return `${x},${y}`
+  }).join(' ')
+  const trend = values[values.length - 1] >= values[0]
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" class="sparkline-svg sparkline-${trend ? 'up' : 'down'}">
+    <polyline fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="${points}"/>
+    ${values.length === 1 ? `<circle cx="${w/2}" cy="${h-pad}" r="2" fill="currentColor"/>` : ''}
+  </svg>`
 }
 
 async function loadTimeline() {

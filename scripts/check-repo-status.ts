@@ -14,10 +14,13 @@ const REGISTRY_PATH = path.resolve(__dirname, '../registry.json')
 const STATUS_PATH = path.resolve(__dirname, '../repo-status.json')
 const CONCURRENCY = 8
 
+interface StarPoint { date: string; count: number }
+
 interface StatusEntry {
   archived: boolean
   lastUpdated: string
   stars: number
+  starHistory?: StarPoint[]
   releaseTag?: string
   releaseDate?: string
 }
@@ -51,6 +54,8 @@ async function main() {
 
   console.log(`Checking ${entries.length} GitHub repos...\n`)
 
+  const prev: Record<string, StatusEntry> = JSON.parse(fs.readFileSync(STATUS_PATH, 'utf-8'))
+  const today = new Date().toISOString().split('T')[0]
   const status: Record<string, StatusEntry> = {}
   const archivedList: Array<{ name: string; repo: string }> = []
   let ok = 0, fail = 0
@@ -63,10 +68,18 @@ async function main() {
       const release = ghApiRelease(`repos/${repo}/releases/latest`)
       if (data) {
         const archived = data.archived ?? false
+        const stars = data.stargazers_count ?? 0
+        const prevEntry = prev[entry.name]
+        const history = prevEntry?.starHistory ? [...prevEntry.starHistory] : []
+        if (!history.length || history[history.length - 1].date !== today) {
+          history.push({ date: today, count: stars })
+          if (history.length > 52) history.splice(0, history.length - 52)
+        }
         const entry_data: StatusEntry = {
           archived,
           lastUpdated: (data.pushed_at || '').split('T')[0],
-          stars: data.stargazers_count ?? 0,
+          stars,
+          starHistory: history,
         }
         if (release?.tag_name) {
           entry_data.releaseTag = release.tag_name

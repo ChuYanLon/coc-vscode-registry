@@ -827,12 +827,18 @@ header h1::before {
   align-items: center;
   gap: 5px;
 }
-.sparkline {
-  display: block;
-  max-width: 280px;
-  height: 40px;
-  border-radius: 4px;
-  background: var(--bg-tag);
+.sparkline-svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+.sparkline-up { color: var(--green); }
+.sparkline-down { color: var(--pink); }
+.star-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--yellow);
+  vertical-align: middle;
 }
 .star-bar {
   display: inline-block;
