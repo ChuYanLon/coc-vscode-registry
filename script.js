@@ -34,7 +34,8 @@ let searchTimeout = null
 let currentPage = 1
 const PAGE_SIZE = 50
 let highlightIndex = -1
-let currentSort = null
+let timelineEntries = []
+let suggestIndex = -1
 
 async function init() {
   showSkeleton(true)
@@ -56,6 +57,7 @@ async function init() {
     })
     buildStats()
     buildRelationIndex()
+    await loadTimeline()
   } catch (e) {
     showError('Failed to load registry. Please try again.')
     return
@@ -380,6 +382,7 @@ function renderPackageCards(pkgs) {
           ${p.type && p.type !== 'snippets' ? `<div class="package-detail-row"><span class="package-detail-label">Type</span><span class="package-detail-value">${escapeHtml(p.type)}</span></div>` : ''}
           ${p.languages.length ? `<div class="package-detail-row"><span class="package-detail-label">Languages</span><span class="package-detail-value">${p.languages.join(', ')}</span></div>` : ''}
           ${renderRelated(p)}
+          ${renderRecommendations(p)}
         </div>
       </div>
     `
@@ -441,6 +444,50 @@ function computeHealth(p) {
   if (score >= 80) return { label: 'Healthy', color: 'var(--green)' }
   if (score >= 50) return { label: 'Fair', color: 'var(--orange)' }
   return { label: 'Stale', color: 'var(--pink)' }
+}
+
+async function loadTimeline() {
+  try {
+    const resp = await fetch('CHANGELOG.md')
+    const text = await resp.text()
+    const sections = text.split(/\n(?=## )/).slice(1)
+    timelineEntries = sections.map(s => {
+      const m = s.match(/^## \[([^\]]+)\] - (\d{4}-\d{2}-\d{2})/)
+      if (!m) return null
+      const added = [...s.matchAll(/`([^`]+)`/g)].map(x => x[1])
+      return { version: m[1], date: m[2], added }
+    }).filter(Boolean).reverse()
+  } catch {}
+}
+
+function getRecommendations(p, count) {
+  const pTags = new Set([p.type, ...p.languages, ...p.categories])
+  const scored = allPackages.filter(o => o.name !== p.name).map(o => {
+    const oTags = new Set([o.type, ...o.languages, ...o.categories])
+    let inter = 0
+    for (const t of pTags) if (oTags.has(t)) inter++
+    const union = new Set([...pTags, ...oTags]).size
+    return { pkg: o, score: union ? inter / union : 0 }
+  }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, count || 5)
+  return scored
+}
+
+function renderRecommendations(p) {
+  const recs = getRecommendations(p, 4)
+  if (!recs.length) return ''
+  const items = recs.map(r =>
+    `<a class="related-link" data-pkg="${escapeHtml(r.pkg.name)}" href="#">${escapeHtml(r.pkg.displayName)}</a>`
+  ).join(', ')
+  return `<div class="package-detail-row"><span class="package-detail-label">You may like</span><span class="package-detail-value related-list">${items}</span></div>`
+}
+
+function getSearchSuggestions(q) {
+  if (!q || q.length < 1) return []
+  const low = q.toLowerCase()
+  const names = allPackages.filter(p => p.name.toLowerCase().includes(low)).map(p => ({ type: 'pkg', label: p.name, display: p.displayName })).slice(0, 5)
+  const descs = allPackages.filter(p => !names.some(n => n.label === p.name) && p.description.toLowerCase().includes(low)).map(p => ({ type: 'pkg', label: p.name, display: p.displayName })).slice(0, 3)
+  const langs = [...new Set(allPackages.flatMap(p => p.languages).filter(l => l.toLowerCase().includes(low)))].map(l => ({ type: 'lang', label: l, display: l })).slice(0, 3)
+  return [...names, ...descs, ...langs].slice(0, 10)
 }
 
 function render() {
@@ -688,7 +735,62 @@ document.getElementById('search').addEventListener('input', e => {
   searchTimeout = setTimeout(() => {
     searchQuery = e.target.value
     render()
-  }, 200)
+    renderSuggestions()
+  }, 150)
+})
+
+document.getElementById('search').addEventListener('focus', () => {
+  if (searchQuery) renderSuggestions()
+})
+
+document.getElementById('search').addEventListener('keydown', e => {
+  const list = document.getElementById('search-suggestions')
+  const items = list?.querySelectorAll('.suggestion-item')
+  if (!items?.length) return
+  if (e.key === 'ArrowDown') { e.preventDefault(); suggestIndex = Math.min(suggestIndex + 1, items.length - 1); highlightSuggestion(items) }
+  if (e.key === 'ArrowUp') { e.preventDefault(); suggestIndex = Math.max(suggestIndex - 1, 0); highlightSuggestion(items) }
+  if (e.key === 'Enter' && suggestIndex >= 0) { e.preventDefault(); items[suggestIndex].click() }
+  if (e.key === 'Escape') { hideSuggestions(); e.stopPropagation() }
+})
+
+function highlightSuggestion(items) {
+  items.forEach((el, i) => el.classList.toggle('suggestion-highlighted', i === suggestIndex))
+}
+
+function renderSuggestions() {
+  const list = document.getElementById('search-suggestions')
+  if (!list) return
+  if (!searchQuery) { list.style.display = 'none'; return }
+  const suggestions = getSearchSuggestions(searchQuery)
+  if (!suggestions.length) { list.style.display = 'none'; return }
+  suggestIndex = -1
+  list.innerHTML = suggestions.map((s, i) =>
+    `<div class="suggestion-item${i === suggestIndex ? ' suggestion-highlighted' : ''}" data-value="${escapeHtml(s.label)}" data-type="${s.type}">
+      <span class="suggestion-label">${escapeHtml(s.type === 'lang' ? s.label : s.display)}</span>
+      <span class="suggestion-meta">${escapeHtml(s.type === 'lang' ? 'language' : s.label)}</span>
+    </div>`
+  ).join('')
+  list.style.display = 'block'
+}
+
+function hideSuggestions() {
+  const list = document.getElementById('search-suggestions')
+  if (list) list.style.display = 'none'
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) hideSuggestions()
+})
+
+document.getElementById('search-suggestions')?.addEventListener('click', e => {
+  const item = e.target.closest('.suggestion-item')
+  if (!item) return
+  const input = document.getElementById('search')
+  input.value = item.dataset.value
+  searchQuery = item.dataset.value
+  hideSuggestions()
+  render()
+  input.focus()
 })
 
 function updateSearchClear() {
@@ -716,6 +818,30 @@ document.getElementById('stats-toggle')?.addEventListener('click', () => {
   btn.classList.toggle('open')
   btn.textContent = isOpen ? '▾ Stats' : '▸ Stats'
 })
+
+// Timeline
+document.getElementById('timeline-toggle')?.addEventListener('click', () => {
+  const panel = document.getElementById('timeline-panel')
+  const btn = document.getElementById('timeline-toggle')
+  const isOpen = panel.classList.toggle('open')
+  btn.classList.toggle('open')
+  btn.textContent = isOpen ? '▾ Timeline' : '▸ Timeline'
+  if (isOpen) renderTimeline()
+})
+
+function renderTimeline() {
+  const list = document.getElementById('timeline-list')
+  if (!list || !timelineEntries.length) return
+  list.innerHTML = timelineEntries.map(e =>
+    `<div class="timeline-entry" data-version="${escapeHtml(e.version)}">
+      <span class="timeline-version">${escapeHtml(e.version)}</span>
+      <span class="timeline-date">${escapeHtml(e.date)}</span>
+      <span class="timeline-pkgs">${e.added.filter(n => allPackages.some(p => p.name === n)).map(n =>
+        `<a class="related-link" data-pkg="${escapeHtml(n)}" href="#">${escapeHtml(n)}</a>`
+      ).join(', ')}</span>
+    </div>`
+  ).join('')
+}
 
 // Infinite scroll
 let scrollObserver = null

@@ -46,6 +46,7 @@
       <span><span class="stat-count" id="stat-total">0</span> packages</span>
       <span class="stat-filtered" id="stat-filtered"></span>
       <button class="stats-toggle" id="stats-toggle" aria-label="Toggle stats">▸ Stats</button>
+      <button class="stats-toggle" id="timeline-toggle" aria-label="Toggle timeline">▸ Timeline</button>
     </div>
 
     <div class="stats-panel" id="stats-panel">
@@ -63,14 +64,19 @@
       </div>
     </div>
 
+    <div class="timeline-panel" id="timeline-panel">
+      <div class="timeline-list" id="timeline-list"></div>
+    </div>
+
     <div class="controls-wrap">
       <div class="controls">
         <div class="search-wrap">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
-          <input type="text" id="search" placeholder="Search by name, description, or language..." autofocus>
+          <input type="text" id="search" placeholder="Search by name, description, or language..." autofocus autocomplete="off">
           <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+          <div class="search-suggestions" id="search-suggestions"></div>
         </div>
         <div class="controls-row">
           <div class="filters">
