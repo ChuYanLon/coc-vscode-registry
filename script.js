@@ -65,6 +65,7 @@ async function init() {
   }
   showSkeleton(false)
   initCustomSelects()
+  loadFromURL()
   setupKeyboardNav()
   render()
 }
@@ -516,6 +517,56 @@ function getSearchSuggestions(q) {
   return [...names, ...descs, ...langs].slice(0, 10)
 }
 
+function syncURL() {
+  const params = []
+  if (searchQuery) params.push('q=' + encodeURIComponent(searchQuery))
+  for (const t of activeTypeFilters) params.push('type=' + encodeURIComponent(t))
+  for (const c of activeCategoryFilters) params.push('cat=' + encodeURIComponent(c))
+  for (const l of activeLangFilters) params.push('lang=' + encodeURIComponent(l))
+  const sort = getSelectValue('sort')
+  if (sort !== 'default') params.push('sort=' + encodeURIComponent(sort))
+  const status = getSelectValue('status')
+  if (status !== 'all') params.push('status=' + encodeURIComponent(status))
+  if (versionFilter) params.push('version=' + encodeURIComponent(versionFilter))
+  const hash = params.length ? '#' + params.join('&') : ''
+  history.replaceState(null, '', hash || window.location.pathname)
+}
+
+function loadFromURL() {
+  if (!location.hash) return
+  const params = new URLSearchParams(location.hash.slice(1))
+  searchQuery = params.get('q') || ''
+  const input = document.getElementById('search')
+  if (input) input.value = searchQuery
+  for (const v of params.getAll('type')) activeTypeFilters.add(v)
+  for (const v of params.getAll('cat')) activeCategoryFilters.add(v)
+  for (const v of params.getAll('lang')) activeLangFilters.add(v)
+  versionFilter = params.get('version') || ''
+
+  const sort = params.get('sort')
+  if (sort) {
+    const sel = document.querySelector('.custom-select[data-name="sort"]')
+    const opt = sel?.querySelector(`.custom-select-option[data-value="${sort}"]`)
+    if (opt) {
+      sel.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'))
+      opt.classList.add('selected')
+      sel.querySelector('.custom-select-value').textContent = opt.textContent
+      sel.dataset.value = sort
+    }
+  }
+  const status = params.get('status')
+  if (status) {
+    const sel = document.querySelector('.custom-select[data-name="status"]')
+    const opt = sel?.querySelector(`.custom-select-option[data-value="${status}"]`)
+    if (opt) {
+      sel.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'))
+      opt.classList.add('selected')
+      sel.querySelector('.custom-select-value').textContent = opt.textContent
+      sel.dataset.value = status
+    }
+  }
+}
+
 function render() {
   resetHighlight()
   const filtered = filterPackages()
@@ -525,6 +576,7 @@ function render() {
   renderPackageCards(filtered)
   window.scrollTo({ top: 0, behavior: 'smooth' })
   updateSearchClear()
+  syncURL()
 }
 
 // Card click: toggle expand
