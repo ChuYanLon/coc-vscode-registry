@@ -1258,9 +1258,10 @@
     "type": "pure-lsp",
     "source": {
       "type": "github",
-      "repo": "microsoft/vscode-docker"
+      "repo": "microsoft/vscode-containers",
+      "subdir": "extensions/vscode-docker"
     },
-    "url": "https://github.com/microsoft/vscode-docker",
+    "url": "https://github.com/microsoft/vscode-containers",
     "languages": [
       "dockerfile"
     ],
