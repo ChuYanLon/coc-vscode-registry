@@ -54,7 +54,9 @@ async function main() {
 
   console.log(`Checking ${entries.length} GitHub repos...\n`)
 
-  const prev: Record<string, StatusEntry> = JSON.parse(fs.readFileSync(STATUS_PATH, 'utf-8'))
+  const prev: Record<string, StatusEntry> = fs.existsSync(STATUS_PATH)
+    ? JSON.parse(fs.readFileSync(STATUS_PATH, 'utf-8'))
+    : {}
   const today = new Date().toISOString().split('T')[0]
   const status: Record<string, StatusEntry> = {}
   const archivedList: Array<{ name: string; repo: string }> = []
