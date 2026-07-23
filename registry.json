@@ -2744,7 +2744,7 @@
     "convert": [
     {
       "type": "snippets",
-      "build": "mkdir -p lib/snippets && cp src/snippets/generated.code-snippets lib/snippets/generated.code-snippets && npx tsc -p ./ --outDir lib --noEmit false"
+      "build": "node -e \"require('fs').mkdirSync('lib/snippets',{recursive:true});require('fs').copyFileSync('src/snippets/generated.code-snippets','lib/snippets/generated.code-snippets')\" && npx tsc -p ./ --outDir lib --noEmit false"
     }
     ]
   },
